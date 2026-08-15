@@ -65,7 +65,7 @@ export function Navbar() {
               <div className="hidden xl:flex items-center border-l border-border-subtle pl-3 ml-1 shrink-0">
                 <div className="flex items-center space-x-2 text-txt-secondary font-mono text-[10px] tracking-[0.08em] uppercase shrink-0">
                   <span className="h-1.5 w-1.5 rounded-full bg-brand-cyan animate-pulse shrink-0" />
-                  <span className="whitespace-nowrap">ACCEPTING PROJECTS · JAIPUR</span>
+                  <span className="whitespace-nowrap"></span>
                 </div>
               </div>
             </div>
