@@ -149,11 +149,6 @@ export function Footer() {
                   CONTACT STUDIO
                 </Link>
               </li>
-              <li className="pt-2 border-t border-white/10">
-                <Link href="/cw-control-x7k9m2/login" className="text-[10px] text-zinc-400 hover:text-white transition-colors">
-                  ADMIN PORTAL
-                </Link>
-              </li>
             </ul>
           </div>
         </div>
