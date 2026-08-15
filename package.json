@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && prisma db push --accept-data-loss && npx tsx prisma/seed.ts && cp prisma/dev.db prisma/seed.db && next build",
+    "build": "export DATABASE_URL=${DATABASE_URL:-\"file:./dev.db\"} && prisma generate && prisma db push --accept-data-loss && npx tsx prisma/seed.ts && cp prisma/dev.db prisma/seed.db && next build",
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "postinstall": "prisma generate"
+    "postinstall": "export DATABASE_URL=${DATABASE_URL:-\"file:./dev.db\"} && prisma generate"
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",
