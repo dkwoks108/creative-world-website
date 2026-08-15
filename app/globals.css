@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Official Logo Color Spectrum Tokens */
+  --brand-cyan: #00CFFF;
+  --brand-blue: #1769FF;
+  --brand-violet: #673BFF;
+  --brand-magenta: #D900FF;
+  --brand-gradient: linear-gradient(90deg, #00CFFF 0%, #1769FF 30%, #673BFF 62%, #D900FF 100%);
+  
+  /* Canvas & Neutral Background Palette */
+  --bg-ivory: #FAF9FC;            /* Clean neutral editorial canvas */
+  --bg-cream: #F5F7FB;            /* Soft cool secondary background */
+  --bg-plum: #111111;             /* Deep Ink contrast sections & footer */
+  --ink: #111111;                 /* Primary Deep Ink text */
+  --ink-soft: #18151F;            /* Soft black secondary surface */
+  
+  /* Surfaces */
+  --surface-white: #FFFFFF;       /* Card surfaces, input backgrounds */
+  --surface-primary: #FFFFFF;     /* Cards, containers, section blocks */
+  --surface-secondary: #F5F7FB;   /* Hover surfaces, secondary elevated cards */
+  --surface-glass: rgba(255, 255, 255, 0.82); /* Glass navigation & pill overlays */
+  
+  /* Structural Borders */
+  --border-subtle: rgba(17, 17, 17, 0.10);  /* 1px subtle editorial borders */
+  --border-active: rgba(17, 17, 17, 0.18);  /* Focused input & card borders */
+
+  /* Typography Colors */
+  --text-primary: #111111;        /* Deep Ink primary text */
+  --text-secondary: #686575;      /* Muted secondary body text */
+  --text-muted: #8A8793;          /* Captions, tags, metadata */
+  --text-on-dark: #FFFFFF;        /* Pure white text on dark sections */
+  --text-on-dark-muted: rgba(255, 255, 255, 0.70);
+
+  /* Brand Accents */
+  --accent-coral: #1769FF;        /* Primary interactive blue accent */
+  --accent-coral-hover: #1456D6;  /* Deep blue hover state */
+  --accent-terracotta: #673BFF;   /* Violet secondary accent */
+  --accent-gold: #00CFFF;         /* Cyan atmospheric accent */
+
+  /* Semantic Colors */
+  --semantic-success: #10B981;    /* Verification indicators */
+  --semantic-warning: #F59E0B;    /* Warnings & badges */
+  --semantic-error: #EF4444;      /* Form validation errors */
+
+  /* Border Radius Tokens */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-pill: 9999px;
+}
+
+/* Global Reset & Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--bg-ivory);
+  color: var(--text-primary);
+  font-family: var(--font-body), sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--bg-ivory);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+/* Interactive Controls Baseline Pointer States */
+a, button, input[type="submit"], input[type="button"], select, label[for] {
+  cursor: pointer;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="number"], textarea {
+  cursor: text;
+}
+
+button:disabled, input:disabled, select:disabled, textarea:disabled {
+  cursor: not-allowed !important;
+}
+
+/* Reusable Brand Gradient Utilities */
+.bg-brand-gradient {
+  background: var(--brand-gradient);
+}
+
+.text-brand-gradient {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Accessibility Focus Outline Baseline */
+:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 3px;
+}
+
+/* Prefers Reduced Motion Safeguard */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

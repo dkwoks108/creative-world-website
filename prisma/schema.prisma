@@ -1,0 +1,180 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model AdminUser {
+  id           String    @id @default(uuid())
+  email        String    @unique
+  passwordHash String
+  name         String
+  role         String    @default("ADMIN")
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  sessions     Session[]
+}
+
+model Session {
+  id                String    @id @default(uuid())
+  userId            String
+  user              AdminUser @relation(fields: [userId], references: [id], onDelete: Cascade)
+  token             String    @unique
+  expiresAt         DateTime
+  lastActivityAt    DateTime  @default(now())
+  absoluteExpiresAt DateTime
+  revokedAt         DateTime?
+  userAgent         String?
+  ipHash            String?
+  createdAt         DateTime  @default(now())
+}
+
+model Author {
+  id        String   @id @default(uuid())
+  name      String
+  role      String
+  bio       String?
+  avatarUrl String?
+  createdAt DateTime @default(now())
+  posts     Post[]
+}
+
+model Category {
+  id          String   @id @default(uuid())
+  name        String   @unique
+  slug        String   @unique
+  description String?
+  isArchived  Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  posts       Post[]
+}
+
+model Tag {
+  id        String    @id @default(uuid())
+  name      String    @unique
+  slug      String    @unique
+  createdAt DateTime  @default(now())
+  posts     PostTag[]
+}
+
+model Post {
+  id               String         @id @default(uuid())
+  title            String
+  slug             String         @unique
+  excerpt          String?
+  content          String         // Structured JSON or HTML string
+  authorId         String?
+  author           Author?        @relation(fields: [authorId], references: [id])
+  categoryId       String?
+  category         Category?      @relation(fields: [categoryId], references: [id])
+  featuredImage    String?
+  featuredImageAlt String?
+  imageCaption     String?
+  status           String         @default("DRAFT") // DRAFT, REVIEW, SCHEDULED, PUBLISHED, ARCHIVED
+  publishAt        DateTime?
+  seoTitle         String?
+  metaDescription  String?
+  canonicalUrl     String?
+  ogTitle          String?
+  ogDescription    String?
+  ogImage          String?
+  noIndex          Boolean        @default(false)
+  noFollow         Boolean        @default(false)
+  primaryKeyword   String?
+  secondaryKeywords String?
+  faqsJson         String?
+  lastEditor       String?
+  views            Int            @default(0)
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+  tags             PostTag[]
+  revisions        PostRevision[]
+
+  @@index([slug])
+  @@index([status])
+  @@index([publishAt])
+}
+
+model PostTag {
+  postId String
+  tagId  String
+  post   Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
+  tag    Tag    @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([postId, tagId])
+}
+
+model PostRevision {
+  id              String   @id @default(uuid())
+  postId          String
+  post            Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  title           String
+  content         String
+  seoTitle        String?
+  metaDescription String?
+  createdBy       String
+  createdAt       DateTime @default(now())
+}
+
+model Media {
+  id        String   @id @default(uuid())
+  filename  String
+  url       String
+  mimeType  String
+  size      Int
+  width     Int?
+  height    Int?
+  altText   String?
+  caption   String?
+  createdAt DateTime @default(now())
+}
+
+model Inquiry {
+  id           String        @id @default(uuid())
+  name         String
+  email        String
+  phone        String?
+  businessName String?
+  websiteUrl   String?
+  goal         String?
+  budget       String?
+  message      String
+  status       String        @default("NEW") // NEW, READ, CONTACTED, QUALIFIED, CLOSED, SPAM
+  source       String        @default("Website Form")
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  notes        InquiryNote[]
+
+  @@index([status])
+  @@index([createdAt])
+}
+
+model InquiryNote {
+  id        String   @id @default(uuid())
+  inquiryId String
+  inquiry   Inquiry  @relation(fields: [inquiryId], references: [id], onDelete: Cascade)
+  content   String
+  createdBy String
+  createdAt DateTime @default(now())
+}
+
+model Redirect {
+  id         String   @id @default(uuid())
+  sourcePath String   @unique
+  targetPath String
+  statusCode Int      @default(301)
+  createdAt  DateTime @default(now())
+}
+
+model AuditLog {
+  id         String   @id @default(uuid())
+  userId     String?
+  action     String
+  resource   String
+  resourceId String?
+  details    String?
+  createdAt  DateTime @default(now())
+}
