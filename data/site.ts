@@ -11,13 +11,13 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  brandName: "Ceativee World",
-  brandTagline: "Digital Marketing Built Around Business Growth.",
-  subheadline: "Ceativee World helps Jaipur businesses turn digital marketing into a practical growth channel—from search visibility and paid acquisition to websites built to convert enquiries into revenue.",
+  brandName: "Surnax Technologies",
+  brandTagline: "Digital Innovation & Marketing Edge",
+  subheadline: "Surnax Technologies helps Jaipur and Indian businesses combine custom web development, video production, performance marketing, and search intelligence into a growth engine built for revenue.",
   primaryCTA: "Get a Free Growth Audit",
   secondaryCTA: "Explore Our Work",
   statusIndicator: "● Accepting Select Growth Projects in Jaipur",
-  contactEmailPlaceholder: "hello@creativeworld.in",
-  websiteUrlPlaceholder: "https://creativeworld.in",
+  contactEmailPlaceholder: "hello@surnaxtech.com",
+  websiteUrlPlaceholder: "https://surnaxtech.com",
   locationPlaceholder: "Jaipur, Rajasthan, India",
 };

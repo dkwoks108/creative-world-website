@@ -62,10 +62,10 @@ export function MobileMenu({ isOpen, onClose, links }: MobileMenuProps) {
     >
       {/* Drawer Header */}
       <div className="flex h-20 items-center justify-between px-6 border-b border-border-subtle">
-        <Link href="/" onClick={onClose} aria-label="Ceativee World home">
+        <Link href="/" onClick={onClose} aria-label="Surnax Technologies home">
           <Image
             src="/brand/logo-horizontal-transparent.png"
-            alt="Ceativee World"
+            alt="Surnax Technologies"
             width={140}
             height={38}
             className="h-8 w-auto object-contain"

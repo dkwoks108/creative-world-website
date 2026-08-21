@@ -9,74 +9,90 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Official Logo Spectrum Tokens
-        brand: {
-          cyan: 'var(--brand-cyan)',
-          blue: 'var(--brand-blue)',
-          violet: 'var(--brand-violet)',
-          magenta: 'var(--brand-magenta)',
-        },
-        ink: {
-          DEFAULT: 'var(--ink)',
-          soft: 'var(--ink-soft)',
+        // Minimalist Monochrome Tokens
+        mono: {
+          bg: '#FFFFFF',
+          fg: '#000000',
+          muted: '#F5F5F5',
+          darkgray: '#525252',
+          border: '#000000',
+          lightborder: '#E5E5E5',
+          card: '#FFFFFF',
+          accent: '#000000',
+          accentForeground: '#FFFFFF',
         },
 
-        // Base Canvas & Surfaces
-        ivory: 'var(--bg-ivory)',
-        cream: 'var(--bg-cream)',
-        plum: 'var(--bg-plum)', // Deep Ink (#111111)
-        obsidian: 'var(--bg-ivory)',
+        // Brand Color Tokens
+        brand: {
+          lime: '#B8FF2C',
+          cobalt: '#4D5CFF',
+          cyan: '#31E7FF',
+        },
+        obsidian: {
+          DEFAULT: '#08090C',
+          charcoal: '#101218',
+          surface: '#151821',
+          inverted: '#F4F5F0',
+        },
+        ivory: '#08090C',
+        cream: '#101218',
+        plum: '#08090C',
 
         surface: {
-          white: 'var(--surface-white)',
           glass: 'var(--surface-glass)',
-          primary: 'var(--surface-primary)',
-          secondary: 'var(--surface-secondary)',
+          primary: '#151821',
+          secondary: '#101218',
         },
 
         border: {
-          subtle: 'var(--border-subtle)',
-          active: 'var(--border-active)',
-        },
-
-        // Brand Accents
-        coral: {
-          DEFAULT: 'var(--accent-coral)',
-          hover: 'var(--accent-coral-hover)',
-        },
-        terracotta: 'var(--accent-terracotta)',
-        gold: 'var(--accent-gold)',
-        
-        signal: {
-          cyan: 'var(--brand-cyan)',
-          hover: 'var(--brand-blue)',
-        },
-        quantum: {
-          violet: 'var(--brand-violet)',
+          subtle: 'rgba(255, 255, 255, 0.10)',
+          active: 'rgba(184, 255, 44, 0.40)',
+          mono: '#000000',
+          monoLight: '#E5E5E5',
         },
 
         // Typography Colors
         txt: {
-          primary: 'var(--text-primary)', // Deep Ink (#111111)
-          secondary: 'var(--text-secondary)', // Muted Ink (#686575)
-          muted: 'var(--text-muted)', // Muted Gray (#8A8793)
-          onDark: 'var(--text-on-dark)', // Pure white (#FFFFFF)
-          onDarkMuted: 'var(--text-on-dark-muted)',
+          primary: '#F5F7FA',
+          secondary: '#C5CBD3',
+          muted: '#9299A8',
+          inverted: '#08090C',
         },
+
+        // Legacy compatibility mappings
+        coral: {
+          DEFAULT: '#B8FF2C',
+          hover: '#a6f514',
+        },
+        gold: '#B8FF2C',
 
         // Functional Semantics
         semantic: {
-          success: 'var(--semantic-success)',
-          warning: 'var(--semantic-warning)',
-          error: 'var(--semantic-error)',
+          success: '#10B981',
+          warning: '#F59E0B',
+          error: '#EF4444',
         },
       },
       fontFamily: {
-        display: ['var(--font-display)', 'serif'],
+        display: ['var(--font-display-grotesk)', 'sans-serif'],
+        serif: ['var(--font-playfair)', 'var(--font-display-serif)', 'Georgia', 'serif'],
+        serifBody: ['var(--font-source-serif)', 'Georgia', 'serif'],
         body: ['var(--font-body)', 'sans-serif'],
         mono: ['var(--font-mono)', 'monospace'],
       },
+      fontSize: {
+        '8xl': ['8rem', { lineHeight: '1' }],
+        '9xl': ['10rem', { lineHeight: '1' }],
+      },
+      borderWidth: {
+        hairline: '1px',
+        thin: '1px',
+        medium: '2px',
+        thick: '4px',
+        ultra: '8px',
+      },
       borderRadius: {
+        none: '0px',
         sm: '8px',
         md: '12px',
         lg: '18px',

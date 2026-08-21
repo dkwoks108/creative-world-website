@@ -12,11 +12,11 @@ import { GrowthAuditForm } from '@/components/ui/GrowthAuditForm';
 import { contactData } from '@/data/contact';
 
 export const metadata: Metadata = {
-  title: 'Contact Ceativee World | Digital Growth Agency Jaipur',
-  description: 'Connect with Ceativee World in Jaipur for performance marketing, local SEO, website development, and business growth audits.',
+  title: 'Contact Surnax Technologies | Web Engineering & Marketing Studio',
+  description: 'Connect with Surnax Technologies in Jaipur for custom web development, video production, performance marketing, local SEO, and growth audits.',
   openGraph: {
-    title: 'Contact Ceativee World | Growth Agency Jaipur',
-    description: 'Direct agency contact, location details, and Growth Audit requests in Jaipur.',
+    title: 'Contact Surnax Technologies | Web & Digital Growth Agency',
+    description: 'Direct agency contact, location details, and Growth Audit requests for Surnax Technologies.',
   },
 };
 
@@ -29,9 +29,9 @@ export default function ContactPage() {
         <main>
           <PageHero
             eyebrow="AGENCY CONTACT"
-            title="Connect With Ceativee World"
+            title="Connect With Surnax Technologies"
             titleHighlight="Jaipur."
-            description="Whether you have questions about our growth packages, local search optimization, or ad campaign management, our strategic team is ready to review your business goals."
+            description="Whether you have questions about custom web engineering, video reel production, local search optimization, or performance ads, our team is ready to review your project."
             breadcrumbs={[{ label: 'Contact' }]}
           />
 

@@ -27,38 +27,38 @@ export function GrowthCoreMesh() {
 
   return (
     <group>
-      {/* Central Icosahedron Geometry in Deep Ink */}
+      {/* Central Icosahedron Geometry in Obsidian Metallic */}
       <mesh ref={meshRef} position={[0, 0, 0]}>
         <icosahedronGeometry args={[1.6, 1]} />
         <meshStandardMaterial
-          color="#111111"
-          roughness={0.25}
-          metalness={0.7}
-          emissive="#1769FF"
-          emissiveIntensity={0.3}
+          color="#08090C"
+          roughness={0.15}
+          metalness={0.9}
+          emissive="#B8FF2C"
+          emissiveIntensity={0.2}
           wireframe={false}
         />
       </mesh>
 
-      {/* Emissive Wireframe Overlay in Cyan */}
+      {/* Emissive Wireframe Overlay in Acid Lime */}
       <mesh position={[0, 0, 0]}>
         <icosahedronGeometry args={[1.62, 1]} />
         <meshBasicMaterial
-          color="#00CFFF"
+          color="#B8FF2C"
           wireframe={true}
           transparent={true}
-          opacity={0.4}
+          opacity={0.65}
         />
       </mesh>
 
-      {/* Orbiting Signal Ring in Magenta */}
+      {/* Orbiting Precision Ring in Hyper Cobalt */}
       <mesh ref={outerRingRef} position={[0, 0, 0]}>
-        <torusGeometry args={[2.5, 0.02, 16, 100]} />
+        <torusGeometry args={[2.5, 0.025, 16, 100]} />
         <meshStandardMaterial
-          color="#D900FF"
-          emissive="#D900FF"
-          emissiveIntensity={0.8}
-          roughness={0.2}
+          color="#4D5CFF"
+          emissive="#4D5CFF"
+          emissiveIntensity={1.0}
+          roughness={0.1}
         />
       </mesh>
     </group>

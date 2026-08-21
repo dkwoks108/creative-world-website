@@ -41,7 +41,7 @@ export default async function AdminSettingsPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
           <div className="p-4 bg-[#FAF9FC] rounded-xl border border-black/5 space-y-1">
             <span className="text-[10px] font-mono text-txt-muted uppercase">Agency Brand</span>
-            <p className="font-semibold text-ink">Ceativee World Digital Growth Agency</p>
+            <p className="font-semibold text-ink">Surnax Technologies</p>
           </div>
 
           <div className="p-4 bg-[#FAF9FC] rounded-xl border border-black/5 space-y-1">

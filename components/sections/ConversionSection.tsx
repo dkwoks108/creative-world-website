@@ -7,60 +7,57 @@ import { CheckCircle2, ShieldCheck } from 'lucide-react';
 
 export function ConversionSection() {
   return (
-    <section id="contact" className="relative py-28 bg-ivory border-b border-border-subtle overflow-hidden">
-      {/* Background Lighting Accents */}
-      <div className="pointer-events-none absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-coral/5 blur-[170px] rounded-full" />
-      <div className="pointer-events-none absolute bottom-10 right-10 w-[450px] h-[450px] bg-gold/10 blur-[160px] rounded-full" />
+    <section id="contact" className="relative py-28 bg-[#08090C] text-white border-b border-white/10 overflow-hidden">
+      {/* Precision Grid Overlay */}
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:5rem_5rem]" />
 
       <Container variant="wide" className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Editorial Narrative (5 cols on desktop) */}
           <RevealOnScroll variant="fade-up" className="lg:col-span-5 space-y-8">
             <div className="space-y-4">
-              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white border border-border-subtle shadow-editorial-sm">
-                <span className="h-1.5 w-1.5 rounded-full bg-coral animate-pulse" />
-                <span className="font-mono text-xs uppercase tracking-widest text-txt-secondary">
-                  START A GROWTH AUDIT
+              <div className="inline-flex items-center space-x-2.5 px-3 py-1 rounded-sm bg-white/10 border border-white/15 text-white">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#B8FF2C] animate-pulse" />
+                <span className="font-mono text-[11px] uppercase tracking-widest text-[#B8FF2C]">
+                  [ REQUEST STRATEGIC AUDIT ]
                 </span>
               </div>
 
               <RevealText>
-                <h2 className="font-display font-normal text-4xl sm:text-6xl text-plum tracking-tight leading-[1.08]">
-                  Let&apos;s Find Your <br />
-                  <span className="text-coral italic font-normal">Highest-Leverage</span> <br />
-                  Growth Opportunity.
+                <h2 className="font-display font-bold text-4xl sm:text-6xl text-white tracking-tighter uppercase leading-[1.02]">
+                  READY TO ESCAPE <br />
+                  <span className="text-[#B8FF2C]">AGENCY MEDIOCRITY?</span>
                 </h2>
               </RevealText>
 
-              <p className="text-base text-txt-secondary leading-relaxed font-normal">
-                Tell us where growth is getting stuck. We&apos;ll audit your acquisition channels, conversion funnel, and search architecture to uncover high-impact opportunities.
+              <p className="text-base text-[#C5CBD3] leading-relaxed font-normal">
+                Tell us where your revenue growth is stalling. Our engineering & performance leads will audit your position, web architecture, and acquisition funnel within 24 hours.
               </p>
-
             </div>
 
             {/* Value Reassurance Items */}
-            <div className="space-y-4 pt-2 border-t border-border-subtle">
-              <div className="flex items-start space-x-3 text-xs text-txt-secondary">
-                <CheckCircle2 className="h-4 w-4 text-coral shrink-0 mt-0.5" />
+            <div className="space-y-4 pt-4 border-t border-white/10">
+              <div className="flex items-start space-x-3 text-xs text-[#C5CBD3]">
+                <CheckCircle2 className="h-4 w-4 text-[#B8FF2C] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-plum block font-semibold">Forensic Channel Audit:</strong>
+                  <strong className="text-white block font-bold">Forensic Channel Audit:</strong>
                   <span>Pinpoint wasted spend across Meta, Google, and organic search.</span>
                 </div>
               </div>
 
-              <div className="flex items-start space-x-3 text-xs text-txt-secondary">
-                <CheckCircle2 className="h-4 w-4 text-coral shrink-0 mt-0.5" />
+              <div className="flex items-start space-x-3 text-xs text-[#C5CBD3]">
+                <CheckCircle2 className="h-4 w-4 text-[#B8FF2C] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-plum block font-semibold">Attribution & CRM Health:</strong>
-                  <span>Diagnose server-side tracking and pipeline conversion bottlenecks.</span>
+                  <strong className="text-white block font-bold">Attribution & Technical Health:</strong>
+                  <span>Diagnose server-side tracking and funnel conversion drop-offs.</span>
                 </div>
               </div>
 
-              <div className="flex items-start space-x-3 text-xs text-txt-secondary">
-                <ShieldCheck className="h-4 w-4 text-semantic-success shrink-0 mt-0.5" />
+              <div className="flex items-start space-x-3 text-xs text-[#C5CBD3]">
+                <ShieldCheck className="h-4 w-4 text-[#31E7FF] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-plum block font-semibold">Zero Sales Pressure:</strong>
-                  <span>Direct technical review by senior growth architects.</span>
+                  <strong className="text-white block font-bold">No Spam & Zero High-Pressure Sales:</strong>
+                  <span>Direct technical review by senior growth architects within 24 hours.</span>
                 </div>
               </div>
             </div>

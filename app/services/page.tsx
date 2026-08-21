@@ -11,11 +11,11 @@ import { Button } from '@/components/ui/Button';
 import { servicesData } from '@/data/services';
 
 export const metadata: Metadata = {
-  title: 'Digital Marketing & Growth Services in Jaipur | Ceativee World',
-  description: 'Explore Ceativee World\'s 5 core growth services: Performance Marketing, Local SEO, Social Media & Reels, Business Websites, and Integrated Growth Packages in Jaipur.',
+  title: 'Web Engineering & Digital Services | Surnax Technologies',
+  description: 'Explore Surnax Technologies core growth services: Web Engineering, Video Production, Performance Marketing, Local SEO, and Social Media Reels.',
   openGraph: {
-    title: 'Digital Marketing Services in Jaipur | Ceativee World',
-    description: 'Connected digital growth services engineered to drive qualified leads, local search dominance, and business growth for Jaipur companies.',
+    title: 'Digital Engineering & Growth Services | Surnax Technologies',
+    description: 'Connected web engineering and digital growth services designed to drive qualified leads and business scale.',
   },
 };
 
@@ -28,9 +28,9 @@ export default function ServicesPage() {
         <main>
           <PageHero
             eyebrow="SYSTEMIC GROWTH PILLARS"
-            title="Connected Digital Growth Services"
-            titleHighlight="Built for Jaipur Businesses."
-            description="Traditional agencies sell isolated marketing tasks. Ceativee World delivers a connected growth system where paid acquisition, search visibility, brand content, and web platforms compound to drive customer enquiries."
+            title="Connected Web & Digital Growth Services"
+            titleHighlight="Built for Growth-Minded Brands."
+            description="Traditional agencies sell isolated marketing tasks. Surnax Technologies delivers a connected growth system where web engineering, video production, local SEO, and paid acquisition compound to drive enterprise growth."
             breadcrumbs={[{ label: 'Services' }]}
           />
 

@@ -29,15 +29,15 @@ export async function generateMetadata({ params }: IndustryPageProps): Promise<M
 
   if (!industry) {
     return {
-      title: 'Industry Strategy Not Found | Ceativee World',
+      title: 'Industry Strategy Not Found | Surnax Technologies',
     };
   }
 
   return {
-    title: `${industry.title} Digital Marketing Jaipur | Ceativee World`,
+    title: `${industry.title} Growth Strategy | Surnax Technologies`,
     description: industry.shortDescription,
     openGraph: {
-      title: `${industry.title} Growth Strategy in Jaipur | Ceativee World`,
+      title: `${industry.title} Growth Strategy | Surnax Technologies`,
       description: industry.shortDescription,
     },
   };

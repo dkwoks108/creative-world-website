@@ -9,7 +9,7 @@ export const insightsData: InsightArticle[] = [
     category: 'Websites',
     publishedDate: 'August 10, 2026',
     readTime: '5 min read',
-    author: 'Ceativee World Editorial Team',
+    author: 'Surnax Technologies Editorial Team',
     image: '/images/insights/cw-insight-website-2026-01.webp',
     summary: 'Social media pages build initial interest, but a custom website serves as your permanent digital storefront—converting search traffic into verified phone calls and business enquiries.',
     sections: [
@@ -44,7 +44,7 @@ export const insightsData: InsightArticle[] = [
     category: 'SEO',
     publishedDate: 'August 02, 2026',
     readTime: '6 min read',
-    author: 'Ceativee World Editorial Team',
+    author: 'Surnax Technologies Editorial Team',
     image: '/images/insights/cw-insight-seo-vs-ads-01.webp',
     summary: 'Google Ads provides instant traffic for immediate sales cycles, while Local SEO builds compounding organic visibility over time. Discover how to balance both channels.',
     sections: [
@@ -78,7 +78,7 @@ export const insightsData: InsightArticle[] = [
     category: 'Social Media',
     publishedDate: 'July 26, 2026',
     readTime: '4 min read',
-    author: 'Ceativee World Editorial Team',
+    author: 'Surnax Technologies Editorial Team',
     image: '/images/insights/cw-insight-reels-mistakes-01.webp',
     summary: 'Viral trends don\'t always equal customer enquiries. Learn how to align short-form video reels with local brand trust and clear action triggers.',
     sections: [

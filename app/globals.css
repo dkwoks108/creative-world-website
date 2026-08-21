@@ -3,53 +3,55 @@
 @tailwind utilities;
 
 :root {
-  /* Official Logo Color Spectrum Tokens */
-  --brand-cyan: #00CFFF;
-  --brand-blue: #1769FF;
-  --brand-violet: #673BFF;
-  --brand-magenta: #D900FF;
-  --brand-gradient: linear-gradient(90deg, #00CFFF 0%, #1769FF 30%, #673BFF 62%, #D900FF 100%);
+  /* Minimalist Monochrome Tokens */
+  --mono-bg: #FFFFFF;
+  --mono-fg: #000000;
+  --mono-muted: #F5F5F5;
+  --mono-muted-fg: #525252;
+  --mono-accent: #000000;
+  --mono-accent-fg: #FFFFFF;
+  --mono-border: #000000;
+  --mono-border-light: #E5E5E5;
+  --mono-card: #FFFFFF;
+  --mono-card-fg: #000000;
+  --mono-ring: #000000;
+
+  /* Brand Color Spectrum Tokens (Obsidian x Acid Lime x Hyper Cobalt) */
+  --brand-lime: #B8FF2C;           /* Acid Lime primary brand signature */
+  --brand-lime-hover: #a6f514;
+  --brand-cobalt: #4D5CFF;         /* Hyper Cobalt supporting tech accent */
+  --brand-cyan: #31E7FF;           /* Electric Cyan data accent */
+  --brand-gradient: linear-gradient(135deg, #B8FF2C 0%, #4D5CFF 100%);
   
-  /* Canvas & Neutral Background Palette */
-  --bg-ivory: #FAF9FC;            /* Clean neutral editorial canvas */
-  --bg-cream: #F5F7FB;            /* Soft cool secondary background */
-  --bg-plum: #111111;             /* Deep Ink contrast sections & footer */
-  --ink: #111111;                 /* Primary Deep Ink text */
-  --ink-soft: #18151F;            /* Soft black secondary surface */
+  /* Canvas & Dark Surfaces */
+  --bg-obsidian: #08090C;          /* Main Obsidian canvas background */
+  --bg-charcoal: #101218;          /* Dark charcoal secondary background */
+  --bg-surface: #151821;           /* Elevated surface for cards & inputs */
+  --bg-inverted: #F4F5F0;          /* Inverted off-white manifesto visual break */
   
   /* Surfaces */
-  --surface-white: #FFFFFF;       /* Card surfaces, input backgrounds */
-  --surface-primary: #FFFFFF;     /* Cards, containers, section blocks */
-  --surface-secondary: #F5F7FB;   /* Hover surfaces, secondary elevated cards */
-  --surface-glass: rgba(255, 255, 255, 0.82); /* Glass navigation & pill overlays */
+  --surface-glass: rgba(16, 18, 24, 0.85); /* Glass navigation & floating overlays */
   
   /* Structural Borders */
-  --border-subtle: rgba(17, 17, 17, 0.10);  /* 1px subtle editorial borders */
-  --border-active: rgba(17, 17, 17, 0.18);  /* Focused input & card borders */
+  --border-subtle: rgba(255, 255, 255, 0.10);  /* 1px crisp grid borders */
+  --border-active: rgba(184, 255, 44, 0.40);   /* Active Acid Lime focus border */
 
   /* Typography Colors */
-  --text-primary: #111111;        /* Deep Ink primary text */
-  --text-secondary: #686575;      /* Muted secondary body text */
-  --text-muted: #8A8793;          /* Captions, tags, metadata */
-  --text-on-dark: #FFFFFF;        /* Pure white text on dark sections */
-  --text-on-dark-muted: rgba(255, 255, 255, 0.70);
-
-  /* Brand Accents */
-  --accent-coral: #1769FF;        /* Primary interactive blue accent */
-  --accent-coral-hover: #1456D6;  /* Deep blue hover state */
-  --accent-terracotta: #673BFF;   /* Violet secondary accent */
-  --accent-gold: #00CFFF;         /* Cyan atmospheric accent */
+  --text-primary: #F5F7FA;         /* Off-white primary text */
+  --text-secondary: #C5CBD3;       /* High-contrast body text */
+  --text-muted: #9299A8;           /* Captions, tags, metadata */
+  --text-inverted: #08090C;        /* Dark text on light inverted section */
 
   /* Semantic Colors */
-  --semantic-success: #10B981;    /* Verification indicators */
-  --semantic-warning: #F59E0B;    /* Warnings & badges */
-  --semantic-error: #EF4444;      /* Form validation errors */
+  --semantic-success: #10B981;
+  --semantic-warning: #F59E0B;
+  --semantic-error: #EF4444;
 
   /* Border Radius Tokens */
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 18px;
-  --radius-xl: 24px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
   --radius-pill: 9999px;
 }
 
@@ -59,7 +61,7 @@
 }
 
 html {
-  background-color: var(--bg-ivory);
+  background-color: #08090C;
   color: var(--text-primary);
   font-family: var(--font-body), sans-serif;
   text-rendering: optimizeLegibility;
@@ -71,7 +73,7 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background-color: var(--bg-ivory);
+  background-color: #08090C;
   color: var(--text-primary);
   overflow-x: hidden;
 }
@@ -98,6 +100,58 @@ button:disabled, input:disabled, select:disabled, textarea:disabled {
   background: var(--brand-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* Minimalist Monochrome Texture Overlay Utilities */
+.bg-texture-lines {
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 1px,
+    #000000 1px,
+    #000000 2px
+  );
+  background-size: 100% 4px;
+}
+
+.bg-texture-grid {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.bg-texture-diagonal {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 40px,
+    rgba(0, 0, 0, 0.03) 40px,
+    rgba(0, 0, 0, 0.03) 42px
+  );
+}
+
+.bg-texture-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+.bg-texture-stats {
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 1px,
+    rgba(255, 255, 255, 0.05) 1px,
+    rgba(255, 255, 255, 0.05) 2px
+  );
+  background-size: 4px 100%;
+}
+
+.bg-texture-cta {
+  background-image: radial-gradient(
+    circle at top center,
+    rgba(255, 255, 255, 0.08),
+    transparent 70%
+  );
 }
 
 /* Accessibility Focus Outline Baseline */

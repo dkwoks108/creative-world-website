@@ -10,30 +10,28 @@ export function CaseStudiesSection() {
   const secondaryStudies = caseStudiesData.filter((cs) => cs.id !== featuredStudy.id);
 
   return (
-    <section id="work" className="relative py-28 bg-ivory border-b border-border-subtle overflow-hidden">
-      {/* Background Glow */}
-      <div className="pointer-events-none absolute top-1/4 left-10 w-[500px] h-[500px] bg-coral/5 blur-[160px] rounded-full" />
-      <div className="pointer-events-none absolute bottom-10 right-10 w-[500px] h-[500px] bg-gold/10 blur-[160px] rounded-full" />
+    <section id="work" className="relative py-28 bg-[#08090C] text-white border-b border-white/10 overflow-hidden">
+      {/* Precision Grid Lines */}
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:5rem_5rem]" />
 
       <Container variant="wide" className="relative z-10 space-y-16">
         {/* Section Header */}
-        <div className="max-w-3xl space-y-4 text-left">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white border border-border-subtle shadow-editorial-sm">
-            <span className="h-1.5 w-1.5 rounded-full bg-coral animate-pulse" />
-            <span className="font-mono text-xs uppercase tracking-widest text-txt-secondary">
-              PROVEN CASE STUDIES
+        <div className="max-w-4xl space-y-4 text-left">
+          <div className="inline-flex items-center space-x-2.5 px-3 py-1 rounded-sm bg-white/10 border border-white/15 text-white">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#B8FF2C] animate-pulse" />
+            <span className="font-mono text-[11px] uppercase tracking-widest text-[#B8FF2C]">
+              [ SELECTED CASE STUDIES & PROOF ]
             </span>
           </div>
 
           <RevealText>
-            <h2 className="font-display font-normal text-4xl sm:text-6xl lg:text-7xl text-plum tracking-tight leading-[1.08]">
-              Work That Moved <br />
-              <span className="text-coral italic font-normal">the Business.</span>
+            <h2 className="font-display font-bold text-4xl sm:text-6xl text-white tracking-tighter uppercase leading-[1.05]">
+              WORK THAT MOVED <span className="text-[#B8FF2C]">THE COMMERCIAL NEEDLE.</span>
             </h2>
           </RevealText>
 
-          <p className="text-base sm:text-lg text-txt-secondary leading-relaxed font-normal">
-            Explore how our connected growth system turns marketing investments into measurable revenue scale across tech, e-commerce, and enterprise sectors.
+          <p className="text-base sm:text-lg text-[#C5CBD3] leading-relaxed font-normal max-w-2xl">
+            Explore how our integrated growth systems turn strategy and engineering into verified revenue scale across direct-to-consumer, real estate, and hospitality brands.
           </p>
         </div>
 

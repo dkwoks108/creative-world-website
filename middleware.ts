@@ -3,7 +3,7 @@ import { jwtVerify } from 'jose';
 
 const COOKIE_NAME = 'cw_admin_session';
 const SECRET_KEY = new TextEncoder().encode(
-  process.env.SESSION_SECRET || 'ceativee-world-super-secret-session-key-2026-jaipur-growth'
+  process.env.SESSION_SECRET || 'surnax-technologies-super-secret-session-key-2026-growth'
 );
 
 export async function middleware(request: NextRequest) {
