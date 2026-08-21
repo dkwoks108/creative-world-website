@@ -2,9 +2,11 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Check } from 'lucide-react';
 import { MonochromeSection } from '@/components/monochrome/MonochromeSection';
 import { MonochromeButton } from '@/components/monochrome/MonochromeButton';
+import { MaskReveal } from '@/components/motion/MaskReveal';
 import { servicesData } from '@/data/services';
 
 export function ServicesSection() {
@@ -72,13 +74,31 @@ export function ServicesSection() {
                 <span className="w-3 h-3 bg-black inline-block" />
               </div>
 
-              <h3 className="font-serif font-bold text-4xl text-black uppercase tracking-tight">
-                {activeService.title}
-              </h3>
+              <div className="flex flex-col md:flex-row gap-6 items-start">
+                <div className="flex-1 space-y-4">
+                  <h3 className="font-serif font-bold text-4xl text-black uppercase tracking-tight">
+                    {activeService.title}
+                  </h3>
 
-              <p className="font-serifBody text-base text-neutral-800 leading-relaxed">
-                {activeService.description}
-              </p>
+                  <p className="font-serifBody text-base text-neutral-800 leading-relaxed">
+                    {activeService.description}
+                  </p>
+                </div>
+
+                {/* Bespoke Discipline Visual */}
+                <div className="w-full md:w-48 h-48 relative border-2 border-black bg-black shrink-0 overflow-hidden">
+                  <Image
+                    src={activeService.image || '/images/services/web-engineering.png'}
+                    alt={`${activeService.title} technical discipline architecture visualization`}
+                    fill
+                    sizes="200px"
+                    className="object-cover object-center grayscale contrast-125"
+                  />
+                  <div className="absolute bottom-2 left-2 right-2 bg-black/80 px-2 py-1 border border-white/20 font-mono text-[9px] uppercase tracking-widest text-white">
+                    SYS_VISUAL // {activeService.number}
+                  </div>
+                </div>
+              </div>
 
               {/* Deliverables Checklist */}
               <div className="space-y-4 pt-2">

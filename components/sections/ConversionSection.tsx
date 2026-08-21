@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { MonochromeSection } from '@/components/monochrome/MonochromeSection';
 import { GrowthAuditForm } from '@/components/ui/GrowthAuditForm';
 import { Check, ShieldCheck } from 'lucide-react';
@@ -25,6 +26,22 @@ export function ConversionSection() {
             <p className="font-serifBody text-base sm:text-lg text-neutral-800 leading-relaxed font-normal">
               Tell us where your revenue growth is stalling. Our engineering & performance leads will audit your position, web architecture, and acquisition funnel within 24 hours.
             </p>
+          </div>
+
+          {/* Bespoke Telemetry Dashboard Visual */}
+          <div className="border-2 border-black bg-black p-3 relative overflow-hidden">
+            <div className="relative h-36 w-full border border-neutral-800">
+              <Image
+                src="/images/sections/growth-audit-telemetry.png"
+                alt="Surnax Growth Audit Diagnostics Telemetry Dashboard"
+                fill
+                sizes="(max-width: 768px) 100vw, 400px"
+                className="object-cover object-center grayscale contrast-125 opacity-90"
+              />
+              <div className="absolute bottom-2 left-2 bg-black/80 px-2 py-1 border border-white/20 font-mono text-[9px] uppercase tracking-widest text-white">
+                AUDIT_TELEMETRY // LIVE DIAGNOSTICS
+              </div>
+            </div>
           </div>
 
           {/* Value Reassurance Items */}

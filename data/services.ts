@@ -7,7 +7,7 @@ export const servicesData: ServiceItem[] = [
     slug: 'website-development',
     title: 'Custom Website Development',
     kicker: 'REACT, NODE, WORDPRESS & SHOPIFY',
-    image: '/images/services/cw-service-web-01.webp',
+    image: '/images/services/web-engineering.png',
     description: 'Custom React, Node.js, WordPress, and Shopify web applications engineered for speed, UX, and conversion.',
     fullDescription: 'At Surnax Technologies, website development is rooted in custom engineering rather than restrictive visual templates. We build fast, mobile-responsive corporate websites, custom React/Node.js web applications, e-commerce storefronts (Shopify & WooCommerce), and high-converting landing pages. Every build features clean semantic code, fast Core Web Vitals, custom UI components, and direct lead integration.',
     deliverables: [
@@ -49,7 +49,7 @@ export const servicesData: ServiceItem[] = [
     slug: 'video-editing',
     title: 'Video Editing & Production',
     kicker: 'REELS, SHORTS & MOTION GRAPHICS',
-    image: '/images/services/cw-service-social-01.webp',
+    image: '/images/services/video-production.png',
     description: 'Engaging Instagram Reels, YouTube Shorts, explainer videos, kinetic typography, and motion graphics built to capture brand attention.',
     fullDescription: 'Video is the single most powerful tool for capturing digital attention in 2026. Surnax Technologies delivers end-to-end video editing and production—from short-form Instagram Reels and YouTube Shorts to long-form YouTube episodes, podcasts, corporate films, and product showcases. We combine kinetic typography, seamless cuts, sound design, and color grading to tell stories that convert viewers into customers.',
     deliverables: [
@@ -91,7 +91,7 @@ export const servicesData: ServiceItem[] = [
     slug: 'social-media-marketing',
     title: 'Social Media Marketing',
     kicker: 'STRATEGY, CONTENT & ORGANIC GROWTH',
-    image: '/images/services/cw-service-social-01.webp',
+    image: '/images/services/performance-marketing.png',
     description: 'Strategic social content, visual brand identity, content calendars, and community management engineered for organic brand growth.',
     fullDescription: 'Social media management at Surnax Technologies builds genuine market authority. We plan, design, and manage your social channels across Instagram, Facebook, LinkedIn, and YouTube. By combining strategic content pillars, eye-catching graphics, and active community engagement, we build trust and turn scrollers into brand advocates.',
     deliverables: [
@@ -129,7 +129,7 @@ export const servicesData: ServiceItem[] = [
     slug: 'performance-marketing',
     title: 'Paid Advertising & Meta / Google Ads',
     kicker: 'FULL-FUNNEL PPC & CPA OPTIMIZATION',
-    image: '/images/services/cw-service-performance-01.webp',
+    image: '/images/services/performance-marketing.png',
     description: 'High-intent Google Search campaigns and targeted Meta ads (Instagram & Facebook) engineered to generate qualified customer leads.',
     fullDescription: 'Performance marketing at Surnax Technologies focuses strictly on customer acquisition and return on ad spend (ROAS). We build targeted paid ad funnels across Google Search and Meta (Facebook & Instagram) engineered to connect your business with buyers actively looking for your services in Jaipur and across India. We optimize ad copy, bid strategies, and landing pages to drive down cost per lead.',
     deliverables: [
@@ -167,7 +167,7 @@ export const servicesData: ServiceItem[] = [
     slug: 'seo',
     title: 'SEO & Search Engine Intelligence',
     kicker: 'TECHNICAL SEO & LOCAL MAP PACK',
-    image: '/images/services/cw-service-seo-01.webp',
+    image: '/images/services/search-intelligence.png',
     description: 'Technical search optimization, site speed enhancement, local Jaipur keyword strategies, and Google Business Profile optimization.',
     fullDescription: 'Search Engine Optimization (SEO) at Surnax Technologies builds long-term digital equity. We optimize technical crawlability, Core Web Vitals, Schema.org structured data, and local search signals so your brand dominates search results in Jaipur and nationwide. We help nearby customers find your business first on Google Maps and organic search.',
     deliverables: [

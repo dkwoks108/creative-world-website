@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { MonochromeSection } from '@/components/monochrome/MonochromeSection';
 import { Zap, Layers, RefreshCw, BarChart3, Search, Share2, Sparkles, ShieldCheck } from 'lucide-react';
 import { CinematicVideoPlayer } from '@/components/monochrome/CinematicVideoPlayer';
@@ -123,26 +124,18 @@ export function MarketDifferenceSection() {
                   </span>
                 </div>
 
-                {/* Connected Core Diagram */}
-                <div className="p-6 border-2 border-black bg-neutral-50 space-y-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 items-center text-center">
-                    <div className="p-3 border-2 border-black bg-white text-left space-y-1">
-                      <Sparkles size={16} strokeWidth={2} className="text-black" />
-                      <span className="font-mono text-xs font-bold text-black block uppercase">Data Signals</span>
-                      <span className="text-[10px] text-neutral-600 font-serifBody block">Real-time attribution</span>
-                    </div>
-
-                    <div className="p-4 border-2 border-black bg-black text-white text-center space-y-1">
-                      <ShieldCheck size={20} strokeWidth={2} className="text-white mx-auto" />
-                      <span className="font-mono text-xs font-bold uppercase tracking-wider block">
-                        Growth Engine
-                      </span>
-                    </div>
-
-                    <div className="p-3 border-2 border-black bg-white text-left space-y-1">
-                      <Zap size={16} strokeWidth={2} className="text-black" />
-                      <span className="font-mono text-xs font-bold text-black block uppercase">Execution</span>
-                      <span className="text-[10px] text-neutral-600 font-serifBody block">Continuous optimization</span>
+                {/* Connected Core Diagram & Engine Visual */}
+                <div className="p-4 border-2 border-black bg-black space-y-4 text-white relative overflow-hidden">
+                  <div className="relative h-44 w-full border border-neutral-800">
+                    <Image
+                      src="/images/sections/market-difference-engine.png"
+                      alt="Surnax Revenue Engine Node Architecture Graph"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 600px"
+                      className="object-cover object-center grayscale contrast-125 opacity-90"
+                    />
+                    <div className="absolute bottom-2 left-2 bg-black/80 px-2 py-1 border border-white/20 font-mono text-[9px] uppercase tracking-widest text-white">
+                      REV_ENGINE // NODE MATRIX
                     </div>
                   </div>
                 </div>

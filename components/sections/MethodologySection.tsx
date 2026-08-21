@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { MonochromeSection } from '@/components/monochrome/MonochromeSection';
 import { ProcessTimeline } from '@/components/ui/ProcessTimeline';
 import { processData } from '@/data/process';
@@ -86,8 +87,23 @@ export function MethodologySection() {
           </div>
         </div>
 
-        {/* Desktop Process System */}
-        <div className="hidden lg:block">
+        {/* Desktop Architectural Execution Diagram & Process System */}
+        <div className="hidden lg:block space-y-8">
+          <div className="border-4 border-black bg-black p-4 relative overflow-hidden">
+            <div className="relative h-56 w-full border border-neutral-800">
+              <Image
+                src="/images/sections/methodology-protocol-network.png"
+                alt="Surnax Architectural Execution Process Flow Network"
+                fill
+                sizes="1200px"
+                className="object-cover object-center grayscale contrast-125 opacity-90"
+              />
+              <div className="absolute bottom-2 left-2 bg-black/80 px-2.5 py-1 border border-white/20 font-mono text-[10px] uppercase tracking-widest text-white">
+                SYSTEM SCHEMATIC // ARCHITECTURAL EXECUTION PROCESS FLOW
+              </div>
+            </div>
+          </div>
+
           <ProcessTimeline
             steps={processData}
             activeStepIndex={activeStepIndex}
