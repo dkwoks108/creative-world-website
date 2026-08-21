@@ -21,52 +21,25 @@ const navLinks = [
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
-    let lastScrollY = typeof window !== 'undefined' ? window.scrollY : 0;
-    let scrollStopTimer: NodeJS.Timeout | null = null;
-
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
       setIsScrolled(currentScrollY > 20);
-
-      // Always show near top
-      if (currentScrollY <= 50) {
-        setIsVisible(true);
-      } else if (currentScrollY > lastScrollY + 5) {
-        // Scrolling DOWN (towards footer) -> hide navbar
-        setIsVisible(false);
-      } else if (currentScrollY < lastScrollY - 5) {
-        // Scrolling UP (towards hero) -> show navbar
-        setIsVisible(true);
-      }
-
-      lastScrollY = currentScrollY;
-
-      // Show navbar when scrolling stops
-      if (scrollStopTimer) clearTimeout(scrollStopTimer);
-      scrollStopTimer = setTimeout(() => {
-        setIsVisible(true);
-      }, 350);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      if (scrollStopTimer) clearTimeout(scrollStopTimer);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 bg-white border-b-4 border-black text-black transform transition-transform duration-300 ease-in-out ${
-          isVisible || isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
-        } ${isScrolled ? 'py-2 shadow-none' : 'py-4'}`}
+        className={`fixed top-0 left-0 right-0 z-50 bg-white border-b-4 border-black text-black transform transition-transform duration-300 ease-in-out translate-y-0 ${
+          isScrolled ? 'py-2 shadow-sm' : 'py-4'
+        }`}
       >
         <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-12 flex items-center justify-between">
           {/* Brand Logo */}

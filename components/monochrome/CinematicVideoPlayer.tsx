@@ -64,23 +64,41 @@ export function CinematicVideoPlayer({
     video.defaultMuted = true;
     video.playsInline = true;
 
+    if (!video.src && src) {
+      video.src = src;
+      video.load();
+    } else if (video.readyState >= 2) {
+      setIsLoaded(true);
+    }
+
     if (isVisible && !prefersReducedMotion) {
       const playPromise = video.play();
       if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          document.addEventListener(
-            'touchstart',
-            () => {
-              video.play().catch(() => {});
-            },
-            { once: true }
-          );
-        });
+        playPromise.catch(() => {});
       }
     } else {
       video.pause();
     }
-  }, [isVisible, shouldAttachSource, prefersReducedMotion]);
+  }, [isVisible, shouldAttachSource, prefersReducedMotion, src]);
+
+  // Handle load fallback
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleCanPlay = () => setIsLoaded(true);
+    video.addEventListener('canplay', handleCanPlay);
+    video.addEventListener('loadeddata', handleCanPlay);
+
+    if (video.readyState >= 2) {
+      setIsLoaded(true);
+    }
+
+    return () => {
+      video.removeEventListener('canplay', handleCanPlay);
+      video.removeEventListener('loadeddata', handleCanPlay);
+    };
+  }, []);
 
   // Scroll-linked progress logic
   const { scrollYProgress } = useScroll({
@@ -156,12 +174,15 @@ export function CinematicVideoPlayer({
     >
       <video
         ref={videoRef}
+        src={shouldAttachSource ? src : undefined}
         poster={poster}
         playsInline
+        autoPlay
         muted
         loop
+        preload={priority ? 'auto' : 'metadata'}
         onLoadedData={() => setIsLoaded(true)}
-        className={`w-full h-full object-cover transition-opacity duration-700 ${
+        className={`w-full h-full object-cover transition-opacity duration-500 ${
           isLoaded ? 'opacity-100' : 'opacity-0'
         }`}
         style={{

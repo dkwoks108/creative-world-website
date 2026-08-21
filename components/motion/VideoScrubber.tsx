@@ -53,7 +53,7 @@ export function VideoScrubber({
     return () => window.removeEventListener('resize', checkTouch);
   }, []);
 
-  // Viewport playback control
+  // Viewport playback control & initial source load
   useEffect(() => {
     const video = videoRef.current;
     if (!video || !shouldAttachSource) return;
@@ -62,12 +62,42 @@ export function VideoScrubber({
     video.defaultMuted = true;
     video.playsInline = true;
 
+    // Force load if source is attached and video is not initialized
+    if (!video.src && src) {
+      video.src = src;
+      video.load();
+    } else if (video.readyState >= 2) {
+      setIsLoaded(true);
+    }
+
     if (isVisible && !prefersReducedMotion) {
-      video.play().catch(() => {});
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {});
+      }
     } else {
       video.pause();
     }
-  }, [isVisible, shouldAttachSource, prefersReducedMotion]);
+  }, [isVisible, shouldAttachSource, prefersReducedMotion, src]);
+
+  // Handle load fallback
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleCanPlay = () => setIsLoaded(true);
+    video.addEventListener('canplay', handleCanPlay);
+    video.addEventListener('loadeddata', handleCanPlay);
+
+    if (video.readyState >= 2) {
+      setIsLoaded(true);
+    }
+
+    return () => {
+      video.removeEventListener('canplay', handleCanPlay);
+      video.removeEventListener('loadeddata', handleCanPlay);
+    };
+  }, []);
 
   // Mobile scroll fallback progress
   const { scrollYProgress } = useScroll({
@@ -144,12 +174,15 @@ export function VideoScrubber({
     >
       <video
         ref={videoRef}
+        src={shouldAttachSource ? src : undefined}
         poster={poster}
         playsInline
+        autoPlay
         muted
         loop
+        preload={priority ? 'auto' : 'metadata'}
         onLoadedData={() => setIsLoaded(true)}
-        className={`w-full h-full object-cover transition-opacity duration-700 ${
+        className={`w-full h-full object-cover transition-opacity duration-500 ${
           isLoaded ? 'opacity-100' : 'opacity-0'
         }`}
         style={{
