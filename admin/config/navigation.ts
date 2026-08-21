@@ -1,0 +1,38 @@
+import {
+  BarChart3,
+  Users,
+  Settings,
+  FileText,
+  Briefcase,
+  Tag,
+  PieChart,
+  Layers,
+  FileEdit,
+  Mail,
+  Navigation,
+  Shield,
+  TrendingUp,
+  Bot,
+  Globe,
+  Search,
+  MessageSquare,
+  Image,
+} from "lucide-react";
+import { NavItem } from "../types/admin";
+
+export const allNavItems: NavItem[] = [
+  { href: "/admin/dashboard", label: "Dashboard", icon: BarChart3, permissions: ["analytics.view"] },
+  { href: "/admin/leads", label: "Leads & CRM", icon: Users, permissions: ["users.view"] },
+  { href: "/admin/chatbot-leads", label: "Chatbot Leads", icon: Bot, permissions: ["users.view"] },
+  { href: "/admin/newsletter", label: "Newsletter", icon: Mail, permissions: ["users.view"] },
+  { href: "/admin/blogs", label: "Blogs & Articles", icon: FileEdit, permissions: ["content.create", "content.edit"] },
+  { href: "/admin/media", label: "Media Library", icon: Image, permissions: ["content.create", "content.edit"] },
+  { href: "/admin/services", label: "Services", icon: Layers, permissions: ["content.edit"] },
+  { href: "/admin/pricing", label: "Pricing Tiers", icon: Tag, permissions: ["settings.general"] },
+  { href: "/admin/case-studies", label: "Case Studies", icon: Briefcase, permissions: ["content.create", "content.edit"] },
+  { href: "/admin/comments", label: "Comments", icon: MessageSquare, permissions: ["content.create", "content.edit"] },
+  { href: "/admin/analytics", label: "Analytics", icon: PieChart, permissions: ["analytics.view"] },
+  { href: "/admin/seo-tools", label: "SEO Tools", icon: Search, permissions: ["settings.general"] },
+  { href: "/admin/settings", label: "Site Settings", icon: Settings, permissions: ["settings.general", "settings.security"] },
+  { href: "/admin/users", label: "Users & Roles", icon: Shield, permissions: ["users.view", "users.create"] },
+];

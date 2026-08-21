@@ -10,11 +10,11 @@ import { Container } from '@/components/ui/Container';
 import { GrowthAuditForm } from '@/components/ui/GrowthAuditForm';
 
 export const metadata: Metadata = {
-  title: 'Free Digital Growth Audit | Surnax Technologies',
-  description: 'Request a free 2-step digital growth audit for your business. We evaluate web engineering, search visibility, paid ad bottlenecks, and video content conversion.',
+  title: 'Free Digital Growth Audit | Ceativee World Jaipur',
+  description: 'Request a free 2-step digital growth audit for your Jaipur business. We evaluate search visibility, paid ad bottlenecks, and web lead conversion.',
   openGraph: {
-    title: 'Free Digital Growth Audit | Surnax Technologies',
-    description: 'Get an actionable digital marketing and tech review tailored for your business goals.',
+    title: 'Free Digital Growth Audit | Ceativee World Jaipur',
+    description: 'Get an actionable digital marketing review tailored for Jaipur business owners.',
   },
 };
 
@@ -28,7 +28,7 @@ export default function GrowthAuditPage() {
           <PageHero
             eyebrow="2-STEP GROWTH DIAGNOSIS"
             title="Request Your Free Growth Audit"
-            description="Our strategic team will review your website, search rankings, current ad channels, and market competitors—providing actionable recommendations without sales pressure."
+            description="Our strategic growth team will review your website, search rankings, current ad channels, and market competitors in Jaipur—providing actionable recommendations without sales pressure."
             breadcrumbs={[{ label: 'Free Growth Audit' }]}
           />
 
@@ -54,7 +54,7 @@ export default function GrowthAuditPage() {
                   <div className="relative h-[200px] w-full rounded-xl overflow-hidden border border-border-subtle shadow-editorial">
                     <Image
                       src="/images/audit/cw-growth-audit-atmosphere-01.webp"
-                      alt="Surnax Technologies Strategic Growth Diagnostic Workspace"
+                      alt="Ceativee World Strategic Growth Diagnostic Workspace"
                       fill
                       sizes="(max-width: 1024px) 100vw, 40vw"
                       className="object-cover object-center"

@@ -138,15 +138,25 @@ model Inquiry {
   email        String
   phone        String?
   businessName String?
+  companyName  String?
   websiteUrl   String?
   goal         String?
   budget       String?
+  budgetRange  String?
+  businessSize String?
+  timeline     String?
+  priority     String?       @default("Medium")
+  assignedTo   String?
+  lastContacted DateTime?
+  nextFollowup  DateTime?
+  leadScore    Int?          @default(0)
   message      String
-  status       String        @default("NEW") // NEW, READ, CONTACTED, QUALIFIED, CLOSED, SPAM
+  status       String        @default("New") // New, Contacted, Qualified, Proposal Sent, Closed Won, Closed Lost, Spam
   source       String        @default("Website Form")
+  service      String?
+  notes        InquiryNote[]
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
-  notes        InquiryNote[]
 
   @@index([status])
   @@index([createdAt])
@@ -159,6 +169,87 @@ model InquiryNote {
   content   String
   createdBy String
   createdAt DateTime @default(now())
+}
+
+model Service {
+  id          String   @id @default(uuid())
+  name        String
+  slug        String   @unique
+  description String?
+  content     String?
+  status      String   @default("Published") // Published, Draft
+  icon        String?
+  features    String?  // JSON array string
+  sortOrder   Int      @default(0)
+  seoTitle    String?
+  seoDesc     String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model PricingPlan {
+  id            String   @id @default(uuid())
+  name          String
+  slug          String   @unique
+  price         String
+  billingPeriod String   @default("/month")
+  description   String?
+  features      String?  // JSON array string
+  isPopular     Boolean  @default(false)
+  status        String   @default("Published")
+  sortOrder     Int      @default(0)
+  ctaText       String   @default("Get Started")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model NewsletterSubscriber {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  status    String   @default("Subscribed")
+  source    String   @default("Footer")
+  createdAt DateTime @default(now())
+}
+
+model BlogComment {
+  id        String   @id @default(uuid())
+  postId    String
+  name      String
+  email     String
+  content   String
+  status    String   @default("Pending") // Pending, Approved, Rejected, Spam
+  createdAt DateTime @default(now())
+}
+
+model CaseStudy {
+  id        String   @id @default(uuid())
+  title     String
+  slug      String   @unique
+  client    String?
+  industry  String?
+  summary   String?
+  content   String?
+  results   String?  // JSON or text
+  image     String?
+  status    String   @default("Published")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ChatbotLead {
+  id           String   @id @default(uuid())
+  name         String?
+  email        String?
+  phone        String?
+  conversation String?  // JSON or text transcript
+  status       String   @default("New")
+  createdAt    DateTime @default(now())
+}
+
+model SiteSetting {
+  key       String   @id
+  value     String
+  updatedAt DateTime @updatedAt
 }
 
 model Redirect {
@@ -178,3 +269,4 @@ model AuditLog {
   details    String?
   createdAt  DateTime @default(now())
 }
+

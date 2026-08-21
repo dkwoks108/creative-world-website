@@ -45,7 +45,7 @@ export function LegalPageLayout({
             <Container variant="wide" className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs font-mono">
               <div className="flex items-center space-x-2 text-coral font-medium">
                 <ShieldCheck className="h-4 w-4 shrink-0" />
-                <span>SURNAX TECHNOLOGIES OFFICIAL LEGAL DOCUMENTATION</span>
+                <span>CEATIVEe WORLD OFFICIAL LEGAL DOCUMENTATION</span>
               </div>
               <div className="flex items-center space-x-2 text-txt-muted">
                 <FileText className="h-3.5 w-3.5 shrink-0" />
@@ -94,7 +94,7 @@ export function LegalPageLayout({
                       <span>LEGAL NOTICE & JURISDICTION SUMMARY</span>
                     </div>
                     <p className="text-xs sm:text-sm text-plum/80 leading-relaxed font-normal">
-                      This documentation outlines the terms and data protection policies governing Surnax Technologies digital growth consulting services, audit requests, and web operations. Business agreements and formal client scopes are finalized via individual written proposals under <strong>[BUSINESS JURISDICTION TO BE CONFIRMED]</strong>.
+                      This documentation outlines the terms and data protection policies governing Ceativee World digital growth consulting services, audit requests, and web operations. Business agreements and formal client scopes are finalized via individual written proposals under <strong>[BUSINESS JURISDICTION TO BE CONFIRMED]</strong>.
                     </p>
                   </div>
 

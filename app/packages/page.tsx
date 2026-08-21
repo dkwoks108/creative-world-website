@@ -12,11 +12,11 @@ import { PackageCard } from '@/components/ui/PackageCard';
 import { packagesData } from '@/data/packages';
 
 export const metadata: Metadata = {
-  title: 'Growth Packages & Custom Quotes | Surnax Technologies',
-  description: 'Structured growth packages and custom retainers for web engineering, video production, performance ads, and SEO at Surnax Technologies.',
+  title: 'Growth Packages & Pricing | Ceativee World Jaipur',
+  description: 'Structured monthly growth packages for Jaipur businesses with custom quotation per month tailored to your business stage.',
   openGraph: {
-    title: 'Growth Packages & Retainers | Surnax Technologies',
-    description: 'Bespoke retainer structures and transparent project pricing tailored to your business scale and technical goals.',
+    title: 'Growth Packages & Custom Quotation | Ceativee World Jaipur',
+    description: 'Structured, transparent monthly marketing packages with custom quotation tailored to your business stage in Jaipur.',
   },
 };
 
@@ -29,8 +29,8 @@ export default function PackagesPage() {
         <main>
           <PageHero
             eyebrow="COMMERCIAL GROWTH TIERS"
-            title="Custom Growth Packages & Retainers"
-            description="Predictable deliverables, transparent scope, and custom quotes built around your business goals in Jaipur and beyond. Select your target scope to begin."
+            title="Structured Monthly Growth Packages"
+            description="Predictable deliverables, transparent scope, and custom quotation per month tailored to your business stage in Jaipur. Choose the growth package aligned with your acquisition goals."
             breadcrumbs={[{ label: 'Packages & Pricing' }]}
           />
 
@@ -39,7 +39,7 @@ export default function PackagesPage() {
             <Container variant="wide" className="flex items-center space-x-3 text-xs font-mono text-signal-cyan">
               <ShieldCheck className="h-4 w-4 shrink-0" />
               <span>
-                TRANSPARENT PRICING POLICY: Custom scope proposals with transparent ad platform management and milestone deliverables.
+                TRANSPARENT PRICING POLICY: Plain-English monthly scopes with direct platform ad spend billing.
               </span>
             </Container>
           </section>
@@ -76,7 +76,7 @@ export default function PackagesPage() {
                     How is ad spend handled for Google Ads & Meta Ads?
                   </h3>
                   <p className="text-xs sm:text-sm text-txt-secondary leading-relaxed">
-                    Ad budget is paid directly to Google or Meta via your business ad account. Surnax Technologies manages the strategy, targeting, creative assets, video editing, copywriting, and bid optimization transparently.
+                    Ad budget is paid directly to Google or Meta via your business ad account. Ceativee World manages the strategy, targeting, creative assets, copywriting, and bid optimization transparently.
                   </p>
                 </div>
 

@@ -1,37 +1,14 @@
 import type { Metadata } from 'next';
-import { Instrument_Serif, Inter, JetBrains_Mono, Playfair_Display, Source_Serif_4, Space_Grotesk } from 'next/font/google';
+import { Instrument_Serif, Inter, JetBrains_Mono } from 'next/font/google';
 import { siteConfig } from '@/data/site';
 import { CustomCursor } from '@/components/ui/CustomCursor';
 import './globals.css';
 
-const fontDisplayGrotesk = Space_Grotesk({
+const fontDisplay = Instrument_Serif({
   subsets: ['latin'],
-  variable: '--font-display-grotesk',
-  display: 'swap',
-  weight: ['400', '500', '600', '700'],
-});
-
-const fontDisplaySerif = Instrument_Serif({
-  subsets: ['latin'],
-  variable: '--font-display-serif',
+  variable: '--font-display',
   display: 'swap',
   weight: ['400'],
-  style: ['normal', 'italic'],
-});
-
-const fontPlayfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair',
-  display: 'swap',
-  weight: ['400', '500', '600', '700', '800', '900'],
-  style: ['normal', 'italic'],
-});
-
-const fontSourceSerif = Source_Serif_4({
-  subsets: ['latin'],
-  variable: '--font-source-serif',
-  display: 'swap',
-  weight: ['400', '600'],
   style: ['normal', 'italic'],
 });
 
@@ -51,29 +28,28 @@ const fontMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: `Surnax Technologies | Digital Innovation & Marketing Edge`,
-    template: `%s | Surnax Technologies`,
+    default: `Ceativee World | Digital Growth & Marketing Agency in Jaipur`,
+    template: `%s | Ceativee World Jaipur`,
   },
-  description: 'Surnax Technologies is a performance-first digital marketing agency, web engineering studio, and video production house in Jaipur, India. Founded by Anuj Bhamboo.',
+  description: 'Ceativee World is a result-driven digital growth agency in Jaipur helping local businesses generate qualified leads, improve search engine visibility, run Meta & Google Ads, and build high-converting websites.',
   keywords: [
-    'surnax tech',
-    'surnax technologies',
-    'website development services in jaipur',
-    'custom react website development india',
-    'video editing services in jaipur',
-    'short form reel editing agency for brands',
-    'social media marketing jaipur',
-    'digital marketing agency jaipur',
+    'digital marketing agency in Jaipur',
+    'digital marketing company Jaipur',
+    'SEO services Jaipur',
     'Google Ads agency Jaipur',
     'performance marketing Jaipur',
+    'website development in Jaipur',
+    'social media marketing Jaipur',
+    'local SEO agency Jaipur',
+    'digital growth agency Jaipur',
   ],
-  authors: [{ name: 'Surnax Technologies' }],
+  authors: [{ name: 'Ceativee World' }],
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    siteName: 'Surnax Technologies',
-    title: 'Surnax Technologies | Digital Innovation & Marketing Edge',
-    description: 'Surnax Technologies combines custom web development, video production, performance marketing, and search intelligence for brands in Jaipur and across India.',
+    siteName: 'Ceativee World',
+    title: 'Ceativee World | Digital Growth & Marketing Agency in Jaipur',
+    description: 'Result-driven digital growth agency in Jaipur helping local businesses generate qualified leads, scale revenue, and build high-converting digital platforms.',
   },
 };
 
@@ -83,36 +59,31 @@ const jsonLdSchema = {
     {
       '@type': 'Organization',
       '@id': `${siteConfig.websiteUrlPlaceholder}/#organization`,
-      'name': 'Surnax Technologies',
+      'name': 'Ceativee World',
       'url': siteConfig.websiteUrlPlaceholder,
       'email': siteConfig.contactEmailPlaceholder,
-      'founder': {
-        '@type': 'Person',
-        'name': 'Anuj Bhamboo'
-      },
       'address': {
         '@type': 'PostalAddress',
         'addressLocality': 'Jaipur',
         'addressRegion': 'Rajasthan',
         'addressCountry': 'IN',
       },
-      'description': 'Digital marketing, custom web engineering, video production, and search intelligence agency based in Jaipur, Rajasthan, India.',
+      'description': 'Result-driven digital growth agency helping Jaipur businesses generate leads, improve online search visibility, and build high-converting web systems.',
     },
     {
       '@type': 'LocalBusiness',
       '@id': `${siteConfig.websiteUrlPlaceholder}/#localbusiness`,
-      'name': 'Surnax Technologies',
+      'name': 'Ceativee World - Digital Growth Agency',
       'url': siteConfig.websiteUrlPlaceholder,
       'email': siteConfig.contactEmailPlaceholder,
-      'telephone': '+917062597062',
       'address': {
         '@type': 'PostalAddress',
         'addressLocality': 'Jaipur',
         'addressRegion': 'Rajasthan',
         'addressCountry': 'IN',
       },
-      'areaServed': ['Jaipur', 'Rajasthan', 'India'],
-      'priceRange': 'Custom Quote',
+      'areaServed': 'Jaipur',
+      'priceRange': '₹7999 - ₹40000+',
     },
   ],
 };
@@ -125,7 +96,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fontDisplayGrotesk.variable} ${fontDisplaySerif.variable} ${fontPlayfair.variable} ${fontSourceSerif.variable} ${fontBody.variable} ${fontMono.variable}`}
+      className={`${fontDisplay.variable} ${fontBody.variable} ${fontMono.variable}`}
     >
       <head>
         <script

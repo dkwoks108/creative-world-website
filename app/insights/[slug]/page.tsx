@@ -26,12 +26,12 @@ export async function generateMetadata({ params }: InsightPageProps): Promise<Me
 
   if (!article) {
     return {
-      title: 'Article Not Found | Surnax Technologies',
+      title: 'Article Not Found | Ceativee World',
     };
   }
 
   return {
-    title: `${article.title} | Surnax Technologies`,
+    title: `${article.title} | Ceativee World Jaipur`,
     description: article.description,
     openGraph: {
       title: article.title,
@@ -57,19 +57,19 @@ export default async function InsightDetailPage({ params }: InsightPageProps) {
     description: article.description,
     author: {
       '@type': 'Organization',
-      name: 'Surnax Technologies',
-      url: 'https://surnaxtech.com',
+      name: 'Ceativee World',
+      url: 'https://creativeworld.in',
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Surnax Technologies',
+      name: 'Ceativee World',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://surnaxtech.com/logo-horizontal-transparent.png',
+        url: 'https://creativeworld.in/logo.png',
       },
     },
     datePublished: article.publishedDate,
-    mainEntityOfPage: `https://surnaxtech.com/insights/${article.slug}`,
+    mainEntityOfPage: `https://creativeworld.in/insights/${article.slug}`,
   };
 
   return (

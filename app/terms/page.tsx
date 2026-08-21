@@ -4,11 +4,11 @@ import { LegalPageLayout, TocItem } from '@/components/ui/LegalPageLayout';
 import { siteConfig } from '@/data/site';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | Surnax Technologies',
-  description: 'Review the commercial terms, service engagement conditions, ad spend disclaimers, and governance policies for Surnax Technologies.',
+  title: 'Terms of Service | Ceativee World Jaipur',
+  description: 'Review the commercial terms, service engagement conditions, ad spend disclaimers, and agency governance policies for Ceativee World.',
   openGraph: {
-    title: 'Terms of Service | Surnax Technologies Studio',
-    description: 'Commercial terms of service for web engineering, video production, performance ads, and SEO engagements at Surnax Technologies.',
+    title: 'Terms of Service | Ceativee World Digital Growth Studio',
+    description: 'Commercial terms of service for digital marketing, performance ads, SEO, and website development engagements in Jaipur.',
   },
 };
 
@@ -42,7 +42,7 @@ export default function TermsOfServicePage() {
     <LegalPageLayout
       title="Terms of Service"
       lastUpdated="August 15, 2026"
-      description="Commercial engagement terms, service delivery scope, media spend boundaries, and governance standards for Surnax Technologies engagements."
+      description="Commercial engagement terms, service delivery scope, media spend boundaries, and governance standards for Ceativee World engagements."
       toc={termsToc}
     >
       {/* 01. Introduction */}
@@ -54,7 +54,7 @@ export default function TermsOfServicePage() {
           1. Introduction & Terms Acceptance
         </h2>
         <p className="text-sm sm:text-base text-plum/80 leading-relaxed font-normal">
-          Welcome to <strong>Surnax Technologies</strong> (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;), a digital growth and web engineering studio headquartered in Jaipur, Rajasthan, India. By accessing our website, submitting an audit enquiry, or contracting our services, you agree to comply with and be bound by these Terms of Service.
+          Welcome to <strong>Ceativee World</strong> (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;), a digital growth agency headquartered in Jaipur, Rajasthan, India. By accessing our website, submitting an audit enquiry, or contracting our digital marketing services, you agree to comply with and be bound by these Terms of Service.
         </p>
       </section>
 
@@ -80,7 +80,7 @@ export default function TermsOfServicePage() {
           3. Services We Provide
         </h2>
         <p className="text-sm sm:text-base text-plum/80 leading-relaxed font-normal">
-          Surnax Technologies delivers connected digital growth services tailored for Jaipur and regional businesses across five core service pillars:
+          Ceativee World delivers connected digital growth services tailored for Jaipur and regional businesses across five core service pillars:
         </p>
         <ul className="list-disc pl-6 space-y-2 text-sm sm:text-base text-plum/80 font-normal">
           <li><strong>Performance Marketing:</strong> Google Search ad campaigns, Meta Ads (Instagram & Facebook), target audience setup, copy creation, and ad optimization.</li>
@@ -157,7 +157,7 @@ export default function TermsOfServicePage() {
           8. Advertising & Media Spend (Crucial Boundary)
         </h2>
         <p className="text-sm sm:text-base text-plum/80 leading-relaxed font-normal">
-          <strong>Important Separation:</strong> Agency service fees cover Surnax Technologies consulting, campaign setup, creative design, copywriting, and campaign management. Direct ad media budgets paid to ad platforms (Google Ads, Meta Ads) are <strong>not included</strong> in agency package fees and must be funded directly by the client via their own platform ad account billing.
+          <strong>Important Separation:</strong> Agency service fees cover Ceativee World consulting, campaign setup, creative design, copywriting, and campaign management. Direct ad media budgets paid to ad platforms (Google Ads, Meta Ads) are <strong>not included</strong> in agency package fees and must be funded directly by the client via their own platform ad account billing.
         </p>
       </section>
 
@@ -170,7 +170,7 @@ export default function TermsOfServicePage() {
           9. Third-Party Platforms
         </h2>
         <p className="text-sm sm:text-base text-plum/80 leading-relaxed font-normal">
-          We manage campaigns across external platforms (Google, Meta, Instagram, WhatsApp, web hosting providers). Surnax Technologies is not liable for platform-wide server outages, policy modifications, account suspensions, or ad approval delays enforced by third-party tech platforms.
+          We manage campaigns across external platforms (Google, Meta, Instagram, WhatsApp, web hosting providers). Ceativee World is not liable for platform-wide server outages, policy modifications, account suspensions, or ad approval delays enforced by third-party tech platforms.
         </p>
       </section>
 
@@ -196,7 +196,7 @@ export default function TermsOfServicePage() {
           11. SEO & Growth Disclaimers (No Fake Guarantees)
         </h2>
         <p className="text-sm sm:text-base text-plum/80 leading-relaxed font-normal">
-          Surnax Technologies applies industry best practices, data-driven ad strategy, and conversion optimization techniques. However, digital marketing outcomes depend on external factors including regional market competition, seasonal buyer demand, search engine algorithm updates, and client sales follow-up speed. 
+          Ceativee World applies industry best practices, data-driven ad strategy, and conversion optimization techniques. However, digital marketing outcomes depend on external factors including regional market competition, seasonal buyer demand, search engine algorithm updates, and client sales follow-up speed. 
         </p>
         <p className="text-sm sm:text-base text-plum/80 leading-relaxed font-normal">
           We do not guarantee specific numeric revenue targets or artificial #1 rank positions on search engines, and no statements on our website constitute a legal guarantee of earnings.
@@ -212,7 +212,7 @@ export default function TermsOfServicePage() {
           12. Intellectual Property Rights
         </h2>
         <p className="text-sm sm:text-base text-plum/80 leading-relaxed font-normal">
-          Upon receipt of full invoice payment for completed custom website or creative deliverables, rights to final customized client graphics, website source files, and campaign copy transfer to the client. Surnax Technologies retains rights to proprietary agency methodologies, underlying diagnostic frameworks, and non-confidential portfolio presentation rights.
+          Upon receipt of full invoice payment for completed custom website or creative deliverables, rights to final customized client graphics, website source files, and campaign copy transfer to the client. Ceativee World retains rights to proprietary agency methodologies, underlying diagnostic frameworks, and non-confidential portfolio presentation rights.
         </p>
       </section>
 
@@ -225,7 +225,7 @@ export default function TermsOfServicePage() {
           13. Client Materials & Assets
         </h2>
         <p className="text-sm sm:text-base text-plum/80 leading-relaxed font-normal">
-          Clients represent that all trademarks, product photography, text copy, and brand assets provided to Surnax Technologies for campaign use are owned by the client or properly licensed, free of copyright infringement.
+          Clients represent that all trademarks, product photography, text copy, and brand assets provided to Ceativee World for campaign use are owned by the client or properly licensed, free of copyright infringement.
         </p>
       </section>
 
@@ -264,7 +264,7 @@ export default function TermsOfServicePage() {
           16. Limitation of Liability
         </h2>
         <p className="text-sm sm:text-base text-plum/80 leading-relaxed font-normal">
-          To the maximum extent permitted by law, Surnax Technologies shall not be liable for indirect, incidental, or consequential damages, lost profits, or business interruption arising from website use or service execution. Our total aggregate liability under any agreement shall not exceed the monthly agency service fees paid by the client in the preceding month.
+          To the maximum extent permitted by law, Ceativee World shall not be liable for indirect, incidental, or consequential damages, lost profits, or business interruption arising from website use or service execution. Our total aggregate liability under any agreement shall not exceed the monthly agency service fees paid by the client in the preceding month.
         </p>
       </section>
 
@@ -303,7 +303,7 @@ export default function TermsOfServicePage() {
           19. Changes to Services
         </h2>
         <p className="text-sm sm:text-base text-plum/80 leading-relaxed font-normal">
-          Surnax Technologies continuously refines service offerings and package structures to deliver optimal value. Any modification to ongoing client service scopes will be communicated transparently in advance.
+          Ceativee World continuously refines service offerings and package structures to deliver optimal value. Any modification to ongoing client service scopes will be communicated transparently in advance.
         </p>
       </section>
 
@@ -316,7 +316,7 @@ export default function TermsOfServicePage() {
           20. Governing Law & Dispute Resolution
         </h2>
         <p className="text-sm sm:text-base text-plum/80 leading-relaxed font-normal">
-          These Terms and any commercial agreements shall be governed by and construed in accordance with the laws of <strong>India</strong>. Any legal disputes shall be subject to the exclusive jurisdiction of the competent courts in Jaipur, Rajasthan, India.
+          These Terms and any commercial agreements shall be governed by and construed in accordance with the laws of <strong>[BUSINESS JURISDICTION TO BE CONFIRMED]</strong>. Any legal disputes shall be subject to the exclusive jurisdiction of the competent courts in Rajasthan, India.
         </p>
       </section>
 
@@ -345,7 +345,7 @@ export default function TermsOfServicePage() {
           For questions regarding these Terms of Service or commercial engagement inquiries, please reach out to our team:
         </p>
         <div className="p-6 rounded-xl bg-white border border-border-subtle shadow-editorial-sm space-y-2 font-mono text-xs text-plum">
-          <p className="font-bold text-coral text-sm">SURNAX TECHNOLOGIES COMMERCIAL TEAM</p>
+          <p className="font-bold text-coral text-sm">CEATIVEe WORLD COMMERCIAL TEAM</p>
           <p>Email: {siteConfig.contactEmailPlaceholder}</p>
           <p>Location: {siteConfig.locationPlaceholder}</p>
         </div>

@@ -12,11 +12,11 @@ import { ArticleCard } from '@/components/ui/ArticleCard';
 import { getPublishedInsights } from '@/lib/db-content';
 
 export const metadata: Metadata = {
-  title: 'Insights & Digital Growth Guides | Surnax Technologies',
-  description: 'Practical guides and technical articles on Web Engineering, Local Search, Performance Marketing, Video Production, and Web Conversion.',
+  title: 'Insights & Digital Growth Guides | Ceativee World Jaipur',
+  description: 'Practical guides and articles on SEO, Local Search, Performance Marketing, Social Media Reels, and Web Conversion for Jaipur business owners.',
   openGraph: {
-    title: 'Insights & Technical Growth Guides | Surnax Technologies',
-    description: 'Expert digital marketing and engineering articles tailored to growth-oriented businesses.',
+    title: 'Insights & Digital Growth Guides | Ceativee World Jaipur',
+    description: 'Expert digital marketing articles tailored to Jaipur market dynamics.',
   },
 };
 

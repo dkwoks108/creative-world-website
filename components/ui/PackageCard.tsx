@@ -11,14 +11,14 @@ interface PackageCardProps {
 export function PackageCard({ pkg }: PackageCardProps) {
   return (
     <div
-      className={`relative flex flex-col justify-between p-8 rounded-2xl bg-surface-primary border transition-all space-y-8 ${
+      className={`relative flex flex-col justify-between p-8 rounded-2xl bg-surface-primary border transition-all duration-300 space-y-8 shadow-elevated hover:shadow-hover hover:-translate-y-1 ${
         pkg.featured
-          ? 'border-signal-cyan shadow-[0_0_30px_rgba(0,240,255,0.1)]'
+          ? 'border-signal-cyan shadow-glow'
           : 'border-border-subtle hover:border-border-active'
       }`}
     >
       {pkg.featured && (
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-signal-cyan text-obsidian font-mono text-[10px] font-bold uppercase tracking-widest">
+        <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-signal-cyan text-obsidian font-mono text-[10px] font-bold uppercase tracking-widest shadow-subtle">
           MOST POPULAR GROWTH TIER
         </div>
       )}

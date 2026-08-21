@@ -30,7 +30,7 @@ export async function POST(request: Request) {
     return NextResponse.json({
       success: true,
       inquiryId: inquiry.id,
-      message: 'Your inquiry was received by Surnax Technologies.',
+      message: 'Your inquiry was received by Ceativee World.',
     });
   } catch (err) {
     console.error('Inquiry API Error:', err);

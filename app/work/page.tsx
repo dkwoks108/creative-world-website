@@ -13,11 +13,11 @@ import { CaseStudyCard } from '@/components/ui/CaseStudyCard';
 import { caseStudiesData } from '@/data/case-studies';
 
 export const metadata: Metadata = {
-  title: 'Growth Playbooks & Sector Frameworks | Surnax Technologies',
-  description: 'Explore Surnax Technologies strategic digital growth playbooks engineered for Jaipur education, real estate, tech, and retail sectors.',
+  title: 'Growth Playbooks & Sector Frameworks | Ceativee World Jaipur',
+  description: 'Explore Ceativee World\'s strategic digital growth playbooks engineered for Jaipur education, real estate, and retail sectors.',
   openGraph: {
-    title: 'Growth Playbooks & Frameworks | Surnax Technologies',
-    description: 'Strategic growth execution blueprints demonstrating our approach to Jaipur and national digital acquisition and web engineering.',
+    title: 'Growth Playbooks & Frameworks | Ceativee World Jaipur',
+    description: 'Strategic growth execution blueprints demonstrating our approach to Jaipur digital acquisition and conversion.',
   },
 };
 

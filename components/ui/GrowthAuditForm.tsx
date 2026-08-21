@@ -68,24 +68,24 @@ export function GrowthAuditForm() {
 
   if (isSubmitted) {
     return (
-      <div className="p-8 sm:p-10 rounded-2xl bg-[#151821] border border-white/10 shadow-2xl text-center space-y-6">
-        <div className="h-16 w-16 rounded-full bg-[#B8FF2C]/10 border border-[#B8FF2C] flex items-center justify-center mx-auto text-[#B8FF2C]">
+      <div className="p-8 sm:p-10 rounded-2xl bg-white border border-border-active shadow-editorial-lg text-center space-y-6">
+        <div className="h-16 w-16 rounded-full bg-coral/10 border border-coral flex items-center justify-center mx-auto text-coral shadow-subtle">
           <CheckCircle2 className="h-8 w-8" />
         </div>
 
         <div className="space-y-2">
-          <span className="font-mono text-xs text-[#B8FF2C] uppercase tracking-widest block font-bold">
+          <span className="font-mono text-xs text-coral uppercase tracking-widest block font-medium">
             REQUEST RECEIVED
           </span>
-          <h3 className="font-display font-bold text-3xl text-white uppercase">
+          <h3 className="font-display font-normal text-3xl text-plum">
             Your Growth Audit Request Is In.
           </h3>
-          <p className="text-sm text-[#C5CBD3] leading-relaxed max-w-md mx-auto">
+          <p className="text-sm text-txt-secondary leading-relaxed max-w-md mx-auto">
             We will review your submission details and analyze your growth opportunities. Expect a direct email from our strategic team.
           </p>
         </div>
 
-        <div className="pt-4 border-t border-white/10 text-xs font-mono text-white/50">
+        <div className="pt-4 border-t border-border-subtle text-xs font-mono text-txt-muted">
           <span>NO AUTOMATED SALES SEQUENCE • DIRECT STRATEGIC REVIEW</span>
         </div>
       </div>
@@ -96,22 +96,22 @@ export function GrowthAuditForm() {
     <form
       id="audit-form"
       onSubmit={handleSubmit(onSubmit)}
-      className="p-8 sm:p-10 rounded-2xl bg-[#151821] border border-white/10 space-y-6 shadow-2xl"
+      className="p-8 sm:p-10 rounded-2xl bg-white border border-border-subtle space-y-6 shadow-editorial-lg"
     >
       {/* Form Progress Indicator */}
-      <div className="flex items-center justify-between border-b border-white/10 pb-4">
-        <span className="font-mono text-xs text-[#B8FF2C] uppercase tracking-widest font-bold">
+      <div className="flex items-center justify-between border-b border-border-subtle pb-4">
+        <span className="font-mono text-xs text-coral uppercase tracking-widest font-medium">
           STEP {step} OF 2 — {step === 1 ? 'GROWTH CONTEXT' : 'PROJECT DETAILS'}
         </span>
         <div className="flex items-center space-x-1.5">
           <span
             className={`h-2 w-8 rounded-full transition-colors ${
-              step >= 1 ? 'bg-[#B8FF2C]' : 'bg-white/10'
+              step >= 1 ? 'bg-coral' : 'bg-border-subtle'
             }`}
           />
           <span
             className={`h-2 w-8 rounded-full transition-colors ${
-              step === 2 ? 'bg-[#B8FF2C]' : 'bg-white/10'
+              step === 2 ? 'bg-coral' : 'bg-border-subtle'
             }`}
           />
         </div>
@@ -121,59 +121,59 @@ export function GrowthAuditForm() {
       {step === 1 && (
         <div className="space-y-4">
           <div>
-            <label className="block text-xs font-mono uppercase text-white/70 mb-1.5 font-semibold">
-              FULL NAME <span className="text-[#B8FF2C]">*</span>
+            <label className="block text-xs font-mono uppercase text-txt-secondary mb-1.5">
+              FULL NAME <span className="text-semantic-error">*</span>
             </label>
             <input
               {...register('fullName')}
               placeholder="e.g. Sarah Jenkins"
-              className="w-full px-4 py-3 rounded-xl bg-[#08090C] border border-white/10 text-white placeholder-white/40 text-sm focus:outline-none focus:border-[#B8FF2C] focus:ring-1 focus:ring-[#B8FF2C] transition-colors"
+              className="w-full px-4 py-3 rounded-xl bg-ivory/60 border border-border-subtle text-plum text-sm focus:outline-none focus:border-plum focus:ring-1 focus:ring-plum transition-all shadow-input-recessed"
             />
             {errors.fullName && (
-              <span className="text-xs text-red-400 mt-1 block">{errors.fullName.message}</span>
+              <span className="text-xs text-semantic-error mt-1 block">{errors.fullName.message}</span>
             )}
           </div>
 
           <div>
-            <label className="block text-xs font-mono uppercase text-white/70 mb-1.5 font-semibold">
-              BUSINESS EMAIL <span className="text-[#B8FF2C]">*</span>
+            <label className="block text-xs font-mono uppercase text-txt-secondary mb-1.5">
+              BUSINESS EMAIL <span className="text-semantic-error">*</span>
             </label>
             <input
               {...register('email')}
               type="email"
               placeholder="sarah@company.com"
-              className="w-full px-4 py-3 rounded-xl bg-[#08090C] border border-white/10 text-white placeholder-white/40 text-sm focus:outline-none focus:border-[#B8FF2C] focus:ring-1 focus:ring-[#B8FF2C] transition-colors"
+              className="w-full px-4 py-3 rounded-xl bg-ivory/60 border border-border-subtle text-plum text-sm focus:outline-none focus:border-plum focus:ring-1 focus:ring-plum transition-all shadow-input-recessed"
             />
             {errors.email && (
-              <span className="text-xs text-red-400 mt-1 block">{errors.email.message}</span>
+              <span className="text-xs text-semantic-error mt-1 block">{errors.email.message}</span>
             )}
           </div>
 
           <div>
-            <label className="block text-xs font-mono uppercase text-white/70 mb-1.5 font-semibold">
+            <label className="block text-xs font-mono uppercase text-txt-secondary mb-1.5">
               COMPANY WEBSITE (OPTIONAL)
             </label>
             <input
               {...register('website')}
               placeholder="https://company.com"
-              className="w-full px-4 py-3 rounded-xl bg-[#08090C] border border-white/10 text-white placeholder-white/40 text-sm focus:outline-none focus:border-[#B8FF2C] focus:ring-1 focus:ring-[#B8FF2C] transition-colors"
+              className="w-full px-4 py-3 rounded-xl bg-ivory/60 border border-border-subtle text-plum text-sm focus:outline-none focus:border-plum focus:ring-1 focus:ring-plum transition-all shadow-input-recessed"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-mono uppercase text-white/70 mb-1.5 font-semibold">
-              PRIMARY GROWTH GOAL <span className="text-[#B8FF2C]">*</span>
+            <label className="block text-xs font-mono uppercase text-txt-secondary mb-1.5">
+              PRIMARY GROWTH GOAL <span className="text-semantic-error">*</span>
             </label>
             <select
               {...register('primaryGoal')}
-              className="w-full px-4 py-3 rounded-xl bg-[#08090C] border border-white/10 text-white text-sm focus:outline-none focus:border-[#B8FF2C] focus:ring-1 focus:ring-[#B8FF2C] transition-colors"
+              className="w-full px-4 py-3 rounded-xl bg-ivory/60 border border-border-subtle text-plum text-sm focus:outline-none focus:border-plum focus:ring-1 focus:ring-plum transition-all shadow-input-recessed cursor-pointer"
             >
-              <option value="Performance Marketing" className="bg-[#08090C]">Performance Marketing & Paid Ads (Google / Meta)</option>
-              <option value="Local SEO & Search" className="bg-[#08090C]">SEO & Local Search Visibility (Jaipur Focus)</option>
-              <option value="Social Media & Creative" className="bg-[#08090C]">Social Media Strategy & Short-Form Reels</option>
-              <option value="Website & Conversion" className="bg-[#08090C]">Business Website & Lead Landing Pages</option>
-              <option value="Integrated Growth Package" className="bg-[#08090C]">Integrated Growth Package (Starter / Growth / Premium)</option>
-              <option value="Full Growth Audit" className="bg-[#08090C]">Not Sure Yet / Full Digital Growth Audit</option>
+              <option value="Performance Marketing">Performance Marketing & Paid Ads (Google / Meta)</option>
+              <option value="Local SEO & Search">SEO & Local Search Visibility (Jaipur Focus)</option>
+              <option value="Social Media & Creative">Social Media Strategy & Short-Form Reels</option>
+              <option value="Website & Conversion">Business Website & Lead Landing Pages</option>
+              <option value="Integrated Growth Package">Integrated Growth Package (Starter / Growth / Premium)</option>
+              <option value="Full Growth Audit">Not Sure Yet / Full Digital Growth Audit</option>
             </select>
           </div>
 
@@ -181,7 +181,7 @@ export function GrowthAuditForm() {
             type="button"
             variant="primary"
             size="lg"
-            className="w-full mt-4 bg-[#B8FF2C] text-[#08090C] font-bold hover:bg-[#a6f514]"
+            className="w-full mt-4 shadow-elevated hover:shadow-hover"
             onClick={handleNextStep}
             icon={<ArrowRight className="h-4 w-4" />}
           >
@@ -194,50 +194,50 @@ export function GrowthAuditForm() {
       {step === 2 && (
         <div className="space-y-4">
           <div>
-            <label className="block text-xs font-mono uppercase text-white/70 mb-1.5 font-semibold">
+            <label className="block text-xs font-mono uppercase text-txt-secondary mb-1.5">
               ESTIMATED MONTHLY BUDGET
             </label>
             <select
               {...register('budgetRange')}
-              className="w-full px-4 py-3 rounded-xl bg-[#08090C] border border-white/10 text-white text-sm focus:outline-none focus:border-[#B8FF2C] focus:ring-1 focus:ring-[#B8FF2C] transition-colors"
+              className="w-full px-4 py-3 rounded-xl bg-ivory/60 border border-border-subtle text-plum text-sm focus:outline-none focus:border-plum focus:ring-1 focus:ring-plum transition-all shadow-input-recessed cursor-pointer"
             >
-              <option value="Starter (₹7.9k–₹13k/mo)" className="bg-[#08090C]">Starter Package (₹7,999 – ₹12,999 / month)</option>
-              <option value="Growth (₹15k–₹25k/mo)" className="bg-[#08090C]">Growth Package (₹15,000 – ₹25,000 / month)</option>
-              <option value="Premium (₹40k+/mo)" className="bg-[#08090C]">Premium Growth Package (₹40,000+ / month)</option>
-              <option value="Custom Project" className="bg-[#08090C]">Custom Project / Enterprise Budget</option>
-              <option value="Not sure yet" className="bg-[#08090C]">Not sure yet</option>
+              <option value="Starter">Starter Package (Custom Quotation / month)</option>
+              <option value="Growth">Growth Package (Custom Quotation / month)</option>
+              <option value="Premium">Premium Growth Package (Custom Quotation / month)</option>
+              <option value="Custom Project">Custom Project / Enterprise Scope</option>
+              <option value="Not sure yet">Not sure yet</option>
             </select>
           </div>
 
           <div>
-            <label className="block text-xs font-mono uppercase text-white/70 mb-1.5 font-semibold">
+            <label className="block text-xs font-mono uppercase text-txt-secondary mb-1.5">
               EXPECTED TIMELINE
             </label>
             <select
               {...register('timeline')}
-              className="w-full px-4 py-3 rounded-xl bg-[#08090C] border border-white/10 text-white text-sm focus:outline-none focus:border-[#B8FF2C] focus:ring-1 focus:ring-[#B8FF2C] transition-colors"
+              className="w-full px-4 py-3 rounded-xl bg-ivory/60 border border-border-subtle text-plum text-sm focus:outline-none focus:border-plum focus:ring-1 focus:ring-plum transition-all shadow-input-recessed cursor-pointer"
             >
-              <option value="As soon as possible" className="bg-[#08090C]">As soon as possible</option>
-              <option value="Within 30 days" className="bg-[#08090C]">Within 30 days</option>
-              <option value="1–3 months" className="bg-[#08090C]">1–3 months</option>
-              <option value="Exploring" className="bg-[#08090C]">Exploring options</option>
+              <option value="As soon as possible">As soon as possible</option>
+              <option value="Within 30 days">Within 30 days</option>
+              <option value="1–3 months">1–3 months</option>
+              <option value="Exploring">Exploring options</option>
             </select>
           </div>
 
           <div>
-            <label className="block text-xs font-mono uppercase text-white/70 mb-1.5 font-semibold">
+            <label className="block text-xs font-mono uppercase text-txt-secondary mb-1.5">
               PROJECT NOTES / GROWTH CHALLENGES
             </label>
             <textarea
               {...register('notes')}
               rows={3}
               placeholder="What are your current growth bottlenecks?"
-              className="w-full px-4 py-3 rounded-xl bg-[#08090C] border border-white/10 text-white placeholder-white/40 text-sm focus:outline-none focus:border-[#B8FF2C] focus:ring-1 focus:ring-[#B8FF2C] transition-colors resize-none"
+              className="w-full px-4 py-3 rounded-xl bg-ivory/60 border border-border-subtle text-plum text-sm focus:outline-none focus:border-plum focus:ring-1 focus:ring-plum transition-all shadow-input-recessed resize-none"
             />
           </div>
 
           {submitError && (
-            <div className="flex items-center space-x-2 text-xs text-red-400 p-3 rounded bg-red-500/10 border border-red-500/20">
+            <div className="flex items-center space-x-2 text-xs text-semantic-error p-3 rounded bg-semantic-error/10 border border-semantic-error/20">
               <AlertCircle className="h-4 w-4 shrink-0" />
               <span>{submitError}</span>
             </div>
@@ -248,7 +248,7 @@ export function GrowthAuditForm() {
               type="button"
               variant="outline"
               size="lg"
-              className="w-1/3 text-white border-white/20 hover:border-[#B8FF2C]"
+              className="w-1/3 shadow-subtle"
               onClick={() => setStep(1)}
               disabled={isSubmitting}
             >
@@ -259,7 +259,7 @@ export function GrowthAuditForm() {
               type="submit"
               variant="primary"
               size="lg"
-              className="w-2/3 bg-[#B8FF2C] text-[#08090C] font-bold hover:bg-[#a6f514]"
+              className="w-2/3 shadow-elevated hover:shadow-hover"
               disabled={isSubmitting}
               icon={isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : <ArrowRight className="h-4 w-4" />}
             >
@@ -271,7 +271,7 @@ export function GrowthAuditForm() {
 
       {/* Reassurance Privacy Note */}
       <div className="pt-2 text-center">
-        <p className="text-[11px] text-white/40 leading-relaxed font-mono">
+        <p className="text-[11px] text-txt-muted leading-relaxed font-mono">
           No spam. No automated sales sequence. Just a focused conversation about your growth opportunities.
         </p>
       </div>

@@ -20,7 +20,7 @@ export function ProcessTimeline({
       {/* Horizontal Interactive Stage Selector (Desktop) */}
       <div className="hidden lg:grid grid-cols-4 gap-4 relative">
         {/* Connecting Pathway Line */}
-        <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-white/10 -translate-y-1/2 z-0" />
+        <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-border-subtle -translate-y-1/2 z-0" />
 
         {steps.map((step, idx) => {
           const isActive = idx === activeStepIndex;
@@ -32,16 +32,16 @@ export function ProcessTimeline({
               onClick={() => onStepSelect(idx)}
               className={`relative z-10 p-5 rounded-xl text-left transition-all duration-300 border ${
                 isActive
-                  ? 'bg-[#08090C] border-[#B8FF2C] shadow-[0_0_20px_rgba(184,255,44,0.15)]'
+                  ? 'bg-white border-plum shadow-editorial'
                   : isPassed
-                  ? 'bg-[#08090C]/80 border-white/20'
-                  : 'bg-[#08090C]/40 border-white/10 hover:border-white/20'
+                  ? 'bg-white/80 border-border-active'
+                  : 'bg-cream/30 border-border-subtle hover:border-border-active'
               }`}
             >
               <div className="flex items-center justify-between">
                 <span
                   className={`font-mono text-xs font-bold ${
-                    isActive ? 'text-[#B8FF2C]' : 'text-[#9299A8]'
+                    isActive ? 'text-coral' : 'text-txt-muted'
                   }`}
                 >
                   STEP {step.number}
@@ -49,17 +49,17 @@ export function ProcessTimeline({
                 <span
                   className={`h-2 w-2 rounded-full ${
                     isActive
-                      ? 'bg-[#B8FF2C] animate-pulse'
+                      ? 'bg-coral animate-pulse'
                       : isPassed
-                      ? 'bg-[#4D5CFF]'
-                      : 'bg-white/20'
+                      ? 'bg-semantic-success'
+                      : 'bg-txt-muted/30'
                   }`}
                 />
               </div>
 
               <h3
-                className={`font-display font-bold text-xl uppercase mt-3 ${
-                  isActive ? 'text-white' : 'text-white/70'
+                className={`font-display font-normal text-xl mt-3 ${
+                  isActive ? 'text-plum font-semibold' : 'text-txt-secondary'
                 }`}
               >
                 {step.title}
@@ -71,37 +71,37 @@ export function ProcessTimeline({
 
       {/* Active Step Detailed Overview Panel */}
       {steps[activeStepIndex] && (
-        <div className="p-8 rounded-2xl bg-[#08090C] border border-white/10 shadow-2xl space-y-6">
-          <div className="flex items-center justify-between border-b border-white/10 pb-4">
+        <div className="p-8 rounded-2xl bg-white border border-border-subtle shadow-editorial space-y-6">
+          <div className="flex items-center justify-between border-b border-border-subtle pb-4">
             <div>
-              <span className="font-mono text-xs text-[#B8FF2C] uppercase tracking-widest block font-bold">
+              <span className="font-mono text-xs text-coral uppercase tracking-widest block font-medium">
                 STAGE {steps[activeStepIndex].number} EXECUTION PROTOCOL
               </span>
-              <h3 className="font-display font-bold text-3xl sm:text-4xl text-white uppercase mt-1">
+              <h3 className="font-display font-normal text-3xl sm:text-4xl text-plum mt-1">
                 {steps[activeStepIndex].title} — {steps[activeStepIndex].kicker}
               </h3>
             </div>
-            <span className="px-3 py-1 text-xs font-mono bg-white/10 border border-white/10 rounded text-white font-medium">
+            <span className="px-3 py-1 text-xs font-mono bg-cream/60 border border-border-subtle rounded text-plum font-medium">
               STAGE {activeStepIndex + 1} OF {steps.length}
             </span>
           </div>
 
-          <p className="text-base text-[#C5CBD3] leading-relaxed max-w-3xl">
+          <p className="text-base text-txt-secondary leading-relaxed max-w-3xl">
             {steps[activeStepIndex].description}
           </p>
 
           {/* Activities List */}
           <div className="space-y-3 pt-2">
-            <span className="font-mono text-xs text-[#9299A8] uppercase tracking-wider block font-bold">
+            <span className="font-mono text-xs text-txt-muted uppercase tracking-wider block font-medium">
               CORE SYSTEM ACTIONS & ACTIVITIES:
             </span>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {steps[activeStepIndex].activities.map((activity, aIdx) => (
                 <div
                   key={aIdx}
-                  className="flex items-start space-x-2.5 p-3 rounded-lg bg-[#151821] border border-white/10 text-xs text-white"
+                  className="flex items-start space-x-2.5 p-3 rounded-lg bg-cream/40 border border-border-subtle text-xs text-plum"
                 >
-                  <CheckCircle2 className="h-4 w-4 text-[#B8FF2C] shrink-0 mt-0.5" />
+                  <CheckCircle2 className="h-4 w-4 text-coral shrink-0 mt-0.5" />
                   <span>{activity}</span>
                 </div>
               ))}
@@ -109,16 +109,16 @@ export function ProcessTimeline({
           </div>
 
           {/* Step Outcome Callout */}
-          <div className="p-4 rounded-xl bg-[#151821] border border-[#B8FF2C]/30 flex items-center justify-between text-xs font-mono">
+          <div className="p-4 rounded-xl bg-cream/60 border border-border-active flex items-center justify-between text-xs font-mono">
             <div className="space-y-1">
-              <span className="text-[#B8FF2C] font-bold uppercase tracking-wider block">
+              <span className="text-coral font-bold uppercase tracking-wider block">
                 STAGE DELIVERABLE & OUTCOME:
               </span>
-              <p className="text-white font-medium text-xs">
+              <p className="text-plum font-normal text-xs">
                 {steps[activeStepIndex].outcome}
               </p>
             </div>
-            <ArrowRight className="h-5 w-5 text-[#B8FF2C] shrink-0 ml-4 hidden sm:block" />
+            <ArrowRight className="h-5 w-5 text-coral shrink-0 ml-4 hidden sm:block" />
           </div>
         </div>
       )}

@@ -36,7 +36,7 @@ export default function AdminLoginPage() {
           <div className="inline-flex items-center justify-center bg-ivory border border-black/10 p-3 rounded-2xl shadow-sm">
             <Image
               src="/logo-horizontal-transparent.png"
-              alt="Surnax Technologies Official Logo"
+              alt="Ceativee World Official Logo"
               width={160}
               height={45}
               priority
@@ -48,7 +48,7 @@ export default function AdminLoginPage() {
               Control Panel Authentication
             </h1>
             <p className="text-xs font-mono text-txt-secondary mt-1 uppercase tracking-wider">
-              Private Technical CMS & Inquiry Portal
+              Private Agency CMS & Inquiry Portal
             </p>
           </div>
         </div>
@@ -80,7 +80,7 @@ export default function AdminLoginPage() {
                 type="email"
                 name="email"
                 required
-                placeholder="admin@surnaxtech.com"
+                placeholder="admin@ceativeeworld.com"
                 className="w-full h-11 pl-10 pr-4 bg-[#FAF9FC] border border-black/10 rounded-xl text-sm text-ink placeholder:text-txt-muted focus:outline-none focus:border-ink focus:bg-white transition-all cursor-text"
               />
             </div>
@@ -128,7 +128,7 @@ export default function AdminLoginPage() {
         {/* Footer info */}
         <div className="text-center pt-2 border-t border-black/5">
           <p className="text-[11px] text-txt-muted">
-            Surnax Technologies &copy; {new Date().getFullYear()}
+            Ceativee World Digital Growth Agency &copy; {new Date().getFullYear()}
           </p>
         </div>
       </div>

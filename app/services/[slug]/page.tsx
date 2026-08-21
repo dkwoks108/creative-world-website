@@ -29,15 +29,15 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 
   if (!service) {
     return {
-      title: 'Service Not Found | Surnax Technologies',
+      title: 'Service Not Found | Ceativee World',
     };
   }
 
   return {
-    title: `${service.title} | Surnax Technologies`,
+    title: `${service.title} in Jaipur | Ceativee World`,
     description: service.description,
     openGraph: {
-      title: `${service.title} | Surnax Technologies Studio`,
+      title: `${service.title} in Jaipur | Ceativee World Growth Agency`,
       description: service.description,
     },
   };
@@ -56,8 +56,8 @@ export default function ServiceDetailPage({ params }: ServicePageProps) {
     name: service.title,
     provider: {
       '@type': 'Organization',
-      name: 'Surnax Technologies',
-      url: 'https://surnaxtech.com',
+      name: 'Ceativee World',
+      url: 'https://creativeworld.in',
     },
     areaServed: {
       '@type': 'City',

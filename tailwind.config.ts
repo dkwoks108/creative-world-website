@@ -9,90 +9,74 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Minimalist Monochrome Tokens
-        mono: {
-          bg: '#FFFFFF',
-          fg: '#000000',
-          muted: '#F5F5F5',
-          darkgray: '#525252',
-          border: '#000000',
-          lightborder: '#E5E5E5',
-          card: '#FFFFFF',
-          accent: '#000000',
-          accentForeground: '#FFFFFF',
+        // Official Logo Spectrum Tokens
+        brand: {
+          cyan: 'var(--brand-cyan)',
+          blue: 'var(--brand-blue)',
+          violet: 'var(--brand-violet)',
+          magenta: 'var(--brand-magenta)',
+        },
+        ink: {
+          DEFAULT: 'var(--ink)',
+          soft: 'var(--ink-soft)',
         },
 
-        // Brand Color Tokens
-        brand: {
-          lime: '#B8FF2C',
-          cobalt: '#4D5CFF',
-          cyan: '#31E7FF',
-        },
-        obsidian: {
-          DEFAULT: '#08090C',
-          charcoal: '#101218',
-          surface: '#151821',
-          inverted: '#F4F5F0',
-        },
-        ivory: '#08090C',
-        cream: '#101218',
-        plum: '#08090C',
+        // Base Canvas & Surfaces
+        ivory: 'var(--bg-ivory)',
+        cream: 'var(--bg-cream)',
+        plum: 'var(--bg-plum)', // Deep Ink (#111111)
+        obsidian: 'var(--bg-ivory)',
 
         surface: {
+          white: 'var(--surface-white)',
           glass: 'var(--surface-glass)',
-          primary: '#151821',
-          secondary: '#101218',
+          primary: 'var(--surface-primary)',
+          secondary: 'var(--surface-secondary)',
         },
 
         border: {
-          subtle: 'rgba(255, 255, 255, 0.10)',
-          active: 'rgba(184, 255, 44, 0.40)',
-          mono: '#000000',
-          monoLight: '#E5E5E5',
+          subtle: 'var(--border-subtle)',
+          active: 'var(--border-active)',
+        },
+
+        // Brand Accents
+        coral: {
+          DEFAULT: 'var(--accent-coral)',
+          hover: 'var(--accent-coral-hover)',
+        },
+        terracotta: 'var(--accent-terracotta)',
+        gold: 'var(--accent-gold)',
+        
+        signal: {
+          cyan: 'var(--brand-cyan)',
+          hover: 'var(--brand-blue)',
+        },
+        quantum: {
+          violet: 'var(--brand-violet)',
         },
 
         // Typography Colors
         txt: {
-          primary: '#F5F7FA',
-          secondary: '#C5CBD3',
-          muted: '#9299A8',
-          inverted: '#08090C',
+          primary: 'var(--text-primary)', // Deep Ink (#111111)
+          secondary: 'var(--text-secondary)', // Muted Ink (#686575)
+          muted: 'var(--text-muted)', // Muted Gray (#8A8793)
+          onDark: 'var(--text-on-dark)', // Pure white (#FFFFFF)
+          onDarkMuted: 'var(--text-on-dark-muted)',
         },
-
-        // Legacy compatibility mappings
-        coral: {
-          DEFAULT: '#B8FF2C',
-          hover: '#a6f514',
-        },
-        gold: '#B8FF2C',
 
         // Functional Semantics
         semantic: {
-          success: '#10B981',
-          warning: '#F59E0B',
-          error: '#EF4444',
+          success: 'var(--semantic-success)',
+          warning: 'var(--semantic-warning)',
+          error: 'var(--semantic-error)',
         },
       },
       fontFamily: {
-        display: ['var(--font-display-grotesk)', 'sans-serif'],
-        serif: ['var(--font-playfair)', 'var(--font-display-serif)', 'Georgia', 'serif'],
-        serifBody: ['var(--font-source-serif)', 'Georgia', 'serif'],
+        display: ['var(--font-display)', 'serif'],
         body: ['var(--font-body)', 'sans-serif'],
         mono: ['var(--font-mono)', 'monospace'],
       },
-      fontSize: {
-        '8xl': ['8rem', { lineHeight: '1' }],
-        '9xl': ['10rem', { lineHeight: '1' }],
-      },
-      borderWidth: {
-        hairline: '1px',
-        thin: '1px',
-        medium: '2px',
-        thick: '4px',
-        ultra: '8px',
-      },
       borderRadius: {
-        none: '0px',
         sm: '8px',
         md: '12px',
         lg: '18px',
@@ -100,9 +84,16 @@ const config: Config = {
         pill: '9999px',
       },
       boxShadow: {
-        editorial: '0 8px 30px rgba(17, 17, 17, 0.05)',
-        'editorial-lg': '0 16px 50px rgba(17, 17, 17, 0.08)',
+        subtle: '0 2px 8px rgba(17, 17, 17, 0.04)',
+        elevated: '0 8px 24px -4px rgba(17, 17, 17, 0.06), 0 2px 6px -1px rgba(17, 17, 17, 0.03)',
+        hover: '0 20px 40px -8px rgba(17, 17, 17, 0.12), 0 4px 12px -2px rgba(17, 17, 17, 0.04)',
+        pressed: '0 3px 10px rgba(17, 17, 17, 0.08)',
+        inset: 'inset 0 2px 4px rgba(17, 17, 17, 0.06)',
+        'inset-deep': 'inset 0 3px 8px rgba(17, 17, 17, 0.12)',
+        editorial: '0 8px 30px rgba(17, 17, 17, 0.06)',
+        'editorial-lg': '0 20px 45px rgba(17, 17, 17, 0.10)',
         'editorial-sm': '0 2px 8px rgba(17, 17, 17, 0.04)',
+        glow: '0 0 25px rgba(23, 105, 255, 0.15)',
       },
     },
   },

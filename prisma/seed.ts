@@ -4,11 +4,11 @@ import bcrypt from 'bcryptjs';
 const prisma = new PrismaClient();
 
 async function main() {
-  console.log('Seeding Surnax Technologies Admin & Content database...');
+  console.log('Seeding Ceativee World Admin & Content database...');
 
   // 1. Seed Admin User
-  const defaultEmail = process.env.ADMIN_EMAIL || 'admin@surnaxtech.com';
-  const defaultPassword = 'SurnaxAdmin2026!';
+  const defaultEmail = process.env.ADMIN_EMAIL || 'admin@ceativeeworld.com';
+  const defaultPassword = 'CeativeeAdmin2026!';
   const hashedPassword = await bcrypt.hash(defaultPassword, 10);
 
   const admin = await prisma.adminUser.upsert({
@@ -16,7 +16,7 @@ async function main() {
     update: { passwordHash: hashedPassword },
     create: {
       email: defaultEmail,
-      name: 'Surnax Admin',
+      name: 'Agency Admin',
       passwordHash: hashedPassword,
       role: 'ADMIN',
     },
@@ -25,13 +25,13 @@ async function main() {
 
   // 2. Seed Default Author
   const author = await prisma.author.upsert({
-    where: { id: 'author-surnax-editorial' },
+    where: { id: 'author-cw-editorial' },
     update: {},
     create: {
-      id: 'author-surnax-editorial',
-      name: 'Surnax Technologies Editorial Team',
-      role: 'Growth & Technology Team',
-      bio: 'Web engineers, video producers, and growth strategists at Surnax Technologies Jaipur.',
+      id: 'author-cw-editorial',
+      name: 'Ceativee World Editorial Team',
+      role: 'Growth & Strategy Team',
+      bio: 'Growth strategists and performance marketers at Ceativee World Jaipur.',
       avatarUrl: '/logo-symbol.png',
     },
   });
@@ -74,7 +74,7 @@ async function main() {
       featuredImage: '/images/insights/cw-insight-website-2026-01.webp',
       featuredImageAlt: 'Business owner looking at digital growth dashboard website',
       status: 'PUBLISHED',
-      seoTitle: 'Why Jaipur Businesses Need More Than an Instagram Page in 2026 | Surnax Technologies',
+      seoTitle: 'Why Jaipur Businesses Need More Than an Instagram Page in 2026 | Ceativee World',
       metaDescription: 'Relying solely on social media leaves your business vulnerable to algorithm changes. Learn why a fast, high-converting website is essential for sustainable growth in Jaipur.',
       content: JSON.stringify([
         {
@@ -102,7 +102,7 @@ async function main() {
       featuredImage: '/images/insights/cw-insight-seo-vs-ads-01.webp',
       featuredImageAlt: 'Local SEO vs Google Ads search comparison for Jaipur business',
       status: 'PUBLISHED',
-      seoTitle: 'Local SEO vs. Google Ads: Which Should Your Jaipur Business Choose? | Surnax Technologies',
+      seoTitle: 'Local SEO vs. Google Ads: Which Should Your Jaipur Business Choose? | Ceativee World',
       metaDescription: 'A practical comparison of immediate paid search acquisition versus long-term organic Google rankings for local Jaipur companies.',
       content: JSON.stringify([
         {
@@ -129,7 +129,7 @@ async function main() {
       featuredImage: '/images/insights/cw-insight-reels-mistakes-01.webp',
       featuredImageAlt: 'Instagram reels camera recording video for Jaipur business',
       status: 'PUBLISHED',
-      seoTitle: '3 Instagram Reel Mistakes Costing Jaipur Local Brands Customers | Surnax Technologies',
+      seoTitle: '3 Instagram Reel Mistakes Costing Jaipur Local Brands Customers | Ceativee World',
       metaDescription: 'Are your video reels getting views but zero enquiries? Here is how to fix local content strategy and drive actual business walk-ins.',
       content: JSON.stringify([
         {
@@ -167,7 +167,7 @@ async function main() {
         publishAt: new Date(),
         seoTitle: article.seoTitle,
         metaDescription: article.metaDescription,
-        canonicalUrl: `https://surnaxtech.com/insights/${article.slug}`,
+        canonicalUrl: `https://ceativeeworld.com/insights/${article.slug}`,
       },
     });
   }

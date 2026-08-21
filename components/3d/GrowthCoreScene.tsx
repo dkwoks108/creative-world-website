@@ -22,12 +22,13 @@ function SceneContent({ particleCount }: { particleCount: number }) {
 
   return (
     <group ref={groupRef}>
-      {/* Lighting Setup: Obsidian x Acid Lime Signature Spectrum */}
-      <ambientLight intensity={0.9} />
-      <directionalLight position={[6, 6, 6]} intensity={1.8} color="#FFFFFF" />
-      <pointLight position={[-4, 4, 3]} color="#B8FF2C" intensity={4.5} distance={15} />
-      <pointLight position={[4, -3, 3]} color="#4D5CFF" intensity={3.5} distance={12} />
-      <pointLight position={[0, 4, -3]} color="#31E7FF" intensity={2.0} distance={10} />
+      {/* Lighting Setup: Official Logo Light Spectrum (Cyan -> Blue -> Violet -> Magenta) */}
+      <ambientLight intensity={0.7} />
+      <directionalLight position={[5, 5, 5]} intensity={1.2} color="#FFFFFF" />
+      <pointLight position={[-4, 3, 3]} color="#00CFFF" intensity={2.5} distance={12} />
+      <pointLight position={[4, -3, 2]} color="#1769FF" intensity={2.0} distance={12} />
+      <pointLight position={[0, 4, -3]} color="#673BFF" intensity={2.0} distance={12} />
+      <pointLight position={[3, 3, -2]} color="#D900FF" intensity={2.2} distance={12} />
 
       {/* 3D Scene Components */}
       <GrowthCoreMesh />

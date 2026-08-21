@@ -12,11 +12,11 @@ import { IndustryCard } from '@/components/ui/IndustryCard';
 import { industriesData } from '@/data/industries';
 
 export const metadata: Metadata = {
-  title: 'Industry Growth Strategies | Surnax Technologies',
-  description: 'Tailored digital growth systems for business sectors: Coaching, Real Estate, Restaurants, Salons & Clinics, Jewelry, Clothing boutiques, and Tech.',
+  title: 'Industry Growth Strategies in Jaipur | Ceativee World',
+  description: 'Tailored digital growth systems for Jaipur business sectors: Coaching, Real Estate, Restaurants, Salons & Clinics, Jewelry, and Clothing boutiques.',
   openGraph: {
-    title: 'Industry Digital Marketing Strategies | Surnax Technologies',
-    description: 'Explore sector-specific search, video production, paid ads, and web engineering strategies designed for growth-oriented brands.',
+    title: 'Industry Digital Marketing Strategies Jaipur | Ceativee World',
+    description: 'Explore sector-specific search, social, paid ads, and website strategies designed for Jaipur business markets.',
   },
 };
 
