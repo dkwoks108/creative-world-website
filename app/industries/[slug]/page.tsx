@@ -3,13 +3,12 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, CheckCircle2, HelpCircle } from 'lucide-react';
+import { Check, HelpCircle } from 'lucide-react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { MotionProvider } from '@/components/motion/MotionProvider';
-import { PageHero } from '@/components/ui/PageHero';
-import { Container } from '@/components/ui/Container';
-import { Button } from '@/components/ui/Button';
+import { MonochromeSection } from '@/components/monochrome/MonochromeSection';
+import { MonochromeButton } from '@/components/monochrome/MonochromeButton';
 import { industriesData } from '@/data/industries';
 
 interface IndustryPageProps {
@@ -52,64 +51,80 @@ export default function IndustryDetailPage({ params }: IndustryPageProps) {
 
   return (
     <MotionProvider>
-      <div className="relative min-h-screen bg-obsidian text-txt-primary">
+      <div className="relative min-h-screen bg-white text-black font-serifBody selection:bg-black selection:text-white">
         <Navbar />
 
         <main>
-          <PageHero
-            eyebrow={industry.kicker}
-            title={industry.title}
-            description={industry.overview}
-            breadcrumbs={[
-              { label: 'Industries', href: '/industries' },
-              { label: industry.title },
-            ]}
-          />
+          {/* 1. EDITORIAL HERO HEADER */}
+          <MonochromeSection divider="none" texture="lines" className="!py-16 md:!py-24 border-b-4 border-black">
+            <div className="flex flex-col gap-6">
+              <div className="flex items-center justify-between font-mono text-xs uppercase tracking-widest text-neutral-600 font-bold">
+                <div className="flex items-center gap-3">
+                  <span className="w-4 h-4 border-2 border-black bg-white inline-block" aria-hidden="true" />
+                  <span>SECTOR DOSSIER — {industry.kicker}</span>
+                </div>
+                <Link href="/industries" className="hover:underline underline-offset-4 text-black">
+                  ← Back to All Sectors
+                </Link>
+              </div>
 
-          {/* Industry Editorial Hero Image */}
+              <h1 className="font-serif font-bold text-5xl sm:text-7xl lg:text-8xl uppercase tracking-tighter leading-none text-black my-4">
+                {industry.title}<span className="text-neutral-400">.</span>
+              </h1>
+
+              <div className="w-full h-1 bg-black my-4" />
+
+              <p className="font-serif text-xl sm:text-2xl md:text-3xl leading-relaxed text-black tracking-tight font-normal max-w-4xl">
+                {industry.overview}
+              </p>
+            </div>
+          </MonochromeSection>
+
+          {/* 2. EDITORIAL HERO IMAGE */}
           {industry.image && (
-            <section className="py-8 bg-obsidian border-b border-border-subtle/50">
-              <Container variant="wide">
-                <div className="relative h-64 sm:h-96 w-full rounded-2xl overflow-hidden border border-border-subtle shadow-2xl">
+            <MonochromeSection divider="thick" texture="none" className="!py-12 bg-neutral-50">
+              <div className="border-4 border-black p-4 bg-white">
+                <div className="relative h-64 sm:h-96 md:h-[480px] w-full overflow-hidden border-2 border-black bg-neutral-100">
                   <Image
                     src={industry.image}
                     alt={`${industry.title} growth strategy editorial image - Jaipur`}
                     fill
                     sizes="(max-width: 1200px) 100vw, 1200px"
-                    className="object-cover object-center"
+                    className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-500"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/30 to-transparent opacity-90" />
-                  <div className="absolute bottom-6 left-6 right-6 max-w-xl space-y-1">
-                    <span className="font-mono text-xs text-signal-cyan uppercase tracking-widest font-bold">
-                      JAIPUR SECTOR EDITORIAL ASSET
-                    </span>
-                    <p className="text-sm text-txt-secondary">
-                      Commercial art-direction tailored for {industry.title.toLowerCase()} in Rajasthan.
-                    </p>
-                  </div>
                 </div>
-              </Container>
-            </section>
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between pt-4 gap-2 font-mono text-xs uppercase tracking-widest text-neutral-600 font-bold">
+                  <span>STRATEGY ASSET — {industry.title}</span>
+                  <span>COMMERCIAL DIRECTION / JAIPUR, RAJASTHAN</span>
+                </div>
+              </div>
+            </MonochromeSection>
           )}
 
-          {/* Challenges & Strategy Grid */}
-          <section className="py-20 bg-surface-primary border-b border-border-subtle/50">
-            <Container variant="wide" className="space-y-16">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                {/* Sector Challenges */}
+          {/* 3. BOTTLENECKS & SOLUTION PLAYBOOK GRID */}
+          <MonochromeSection divider="thick" texture="grid">
+            <div className="space-y-16">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                {/* Sector Bottlenecks */}
                 <div className="space-y-6">
-                  <span className="font-mono text-xs font-bold text-signal-cyan uppercase tracking-widest block">
-                    SECTOR BOTTLENECKS
+                  <span className="font-mono text-xs font-bold text-neutral-500 uppercase tracking-widest block">
+                    01 / SECTOR BOTTLENECKS
                   </span>
-                  <h2 className="font-display font-bold text-2xl sm:text-3xl text-txt-primary">
-                    Common Growth Challenges in Jaipur
+                  <h2 className="font-serif font-bold text-3xl sm:text-4xl tracking-tight leading-none text-black">
+                    Growth Challenges in Jaipur
                   </h2>
-                  <div className="space-y-3">
+                  <div className="w-12 h-1 bg-black mb-6" />
+                  <div className="space-y-4">
                     {industry.growthChallenges.map((challenge, idx) => (
-                      <div key={idx} className="p-4 rounded-xl bg-obsidian/60 border border-border-subtle text-xs sm:text-sm text-txt-secondary flex items-start space-x-3">
-                        <span className="font-mono text-xs font-bold text-semantic-error shrink-0 mt-0.5">✕</span>
-                        <span>{challenge}</span>
+                      <div key={idx} className="p-6 border-2 border-black bg-white space-y-2 hover:bg-neutral-50 transition-colors duration-100">
+                        <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest font-bold text-neutral-500">
+                          <span className="w-5 h-5 border border-black flex items-center justify-center text-black font-bold text-[10px]">✕</span>
+                          <span>CHALLENGE 0{idx + 1}</span>
+                        </div>
+                        <p className="font-serifBody text-base text-black leading-relaxed">
+                          {challenge}
+                        </p>
                       </div>
                     ))}
                   </div>
@@ -117,94 +132,101 @@ export default function IndustryDetailPage({ params }: IndustryPageProps) {
 
                 {/* Strategy Points */}
                 <div className="space-y-6">
-                  <span className="font-mono text-xs font-bold text-signal-cyan uppercase tracking-widest block">
-                    RECOMMENDED PLAYBOOK
+                  <span className="font-mono text-xs font-bold text-neutral-500 uppercase tracking-widest block">
+                    02 / RECOMMENDED PLAYBOOK
                   </span>
-                  <h2 className="font-display font-bold text-2xl sm:text-3xl text-txt-primary">
-                    Our Sector Growth Solution
+                  <h2 className="font-serif font-bold text-3xl sm:text-4xl tracking-tight leading-none text-black">
+                    Our Sector Solution
                   </h2>
-                  <div className="space-y-3">
+                  <div className="w-12 h-1 bg-black mb-6" />
+                  <div className="space-y-4">
                     {industry.strategyPoints.map((point, idx) => (
-                      <div key={idx} className="p-4 rounded-xl bg-obsidian/80 border border-border-subtle text-xs sm:text-sm text-txt-secondary flex items-start space-x-3">
-                        <CheckCircle2 className="h-4 w-4 text-signal-cyan shrink-0 mt-0.5" />
-                        <span>{point}</span>
+                      <div key={idx} className="p-6 border-2 border-black bg-white group hover:bg-black hover:text-white transition-colors duration-100 space-y-2">
+                        <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest font-bold text-neutral-500 group-hover:text-neutral-400">
+                          <Check size={16} strokeWidth={2} className="text-black group-hover:text-white transition-colors duration-100" />
+                          <span>STRATEGY 0{idx + 1}</span>
+                        </div>
+                        <p className="font-serifBody text-base leading-relaxed">
+                          {point}
+                        </p>
                       </div>
                     ))}
                   </div>
                 </div>
               </div>
 
-              {/* Related Playbook Link */}
+              {/* Playbook Link */}
               {industry.playbookSlug && (
-                <div className="p-6 rounded-2xl bg-obsidian border border-signal-cyan/40 flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <div className="space-y-1 text-center sm:text-left">
-                    <span className="font-mono text-xs text-signal-cyan uppercase font-bold">
-                      STRATEGIC GROWTH PLAYBOOK AVAILABLE
+                <div className="p-8 bg-black text-white border-4 border-black flex flex-col sm:flex-row items-center justify-between gap-6">
+                  <div className="space-y-2 text-center sm:text-left">
+                    <span className="font-mono text-xs text-neutral-400 uppercase font-bold tracking-widest">
+                      STRATEGIC FRAMEWORK DISPATCH
                     </span>
-                    <p className="text-sm text-txt-primary font-semibold">
-                      Explore our conceptual execution framework for this Jaipur industry sector.
-                    </p>
+                    <h3 className="font-serif text-2xl font-bold tracking-tight">
+                      Explore the execution playbook for {industry.title}
+                    </h3>
                   </div>
                   <Link href={`/work/${industry.playbookSlug}`}>
-                    <Button variant="primary" size="sm" icon={<ArrowRight className="h-3.5 w-3.5" />}>
-                      View Playbook Framework
-                    </Button>
+                    <MonochromeButton variant="primary" className="!bg-white !text-black hover:!bg-neutral-200" showArrow>
+                      View Framework
+                    </MonochromeButton>
                   </Link>
                 </div>
               )}
-            </Container>
-          </section>
+            </div>
+          </MonochromeSection>
 
-          {/* Sector FAQs */}
+          {/* 4. SECTOR FAQS SECTION */}
           {industry.faqs && industry.faqs.length > 0 && (
-            <section className="py-20 bg-obsidian border-b border-border-subtle/50">
-              <Container variant="standard" className="space-y-12">
+            <MonochromeSection divider="thick" texture="noise">
+              <div className="space-y-12 max-w-4xl mx-auto">
                 <div className="space-y-3 text-center">
-                  <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-surface-primary border border-border-subtle mx-auto">
-                    <HelpCircle className="h-3.5 w-3.5 text-signal-cyan" />
-                    <span className="font-mono text-xs uppercase tracking-widest text-signal-cyan">
-                      INDUSTRY INSIGHTS
-                    </span>
+                  <div className="inline-flex items-center gap-2 px-4 py-2 border-2 border-black font-mono text-xs uppercase tracking-widest font-bold bg-white">
+                    <HelpCircle size={14} strokeWidth={1.5} />
+                    <span>SECTOR INQUIRIES & INSIGHTS</span>
                   </div>
-                  <h2 className="font-display font-bold text-3xl text-txt-primary">
-                    Sector FAQs
+                  <h2 className="font-serif font-bold text-4xl sm:text-5xl tracking-tight text-black pt-2">
+                    Frequently Asked Questions
                   </h2>
                 </div>
 
-                <div className="space-y-6 max-w-3xl mx-auto">
+                <div className="space-y-6">
                   {industry.faqs.map((faq, idx) => (
-                    <div key={idx} className="p-6 rounded-xl bg-surface-primary border border-border-subtle space-y-2">
-                      <h3 className="font-display font-bold text-base text-txt-primary">
+                    <div key={idx} className="p-8 border-2 border-black bg-white space-y-3 hover:bg-neutral-50 transition-colors duration-100">
+                      <h3 className="font-serif font-bold text-xl text-black">
                         {faq.question}
                       </h3>
-                      <p className="text-xs sm:text-sm text-txt-secondary leading-relaxed font-normal">
+                      <p className="font-serifBody text-base text-neutral-700 leading-relaxed">
                         {faq.answer}
                       </p>
                     </div>
                   ))}
                 </div>
-              </Container>
-            </section>
+              </div>
+            </MonochromeSection>
           )}
 
-          {/* Bottom CTA */}
-          <section className="py-20 bg-surface-primary text-center">
-            <Container variant="standard" className="space-y-6">
-              <h2 className="font-display font-bold text-3xl sm:text-4xl text-txt-primary">
+          {/* 5. INVERTED BOTTOM CTA SECTION */}
+          <MonochromeSection inverted divider="ultra" texture="cta" className="text-center">
+            <div className="max-w-3xl mx-auto space-y-6">
+              <span className="font-mono text-xs uppercase tracking-widest text-neutral-400 font-bold block">
+                STRATEGIC ENGAGEMENT
+              </span>
+              <h2 className="font-serif text-4xl sm:text-6xl font-bold tracking-tight leading-none">
                 Accelerate Growth for Your {industry.title}
               </h2>
-              <p className="text-sm sm:text-base text-txt-secondary leading-relaxed max-w-xl mx-auto">
+              <p className="font-serifBody text-base sm:text-xl text-neutral-300 leading-relaxed max-w-2xl mx-auto">
                 Request a free growth audit to review your current channel presence, local search ranking, and lead generation pipeline.
               </p>
-              <div className="pt-2">
+              <div className="pt-4">
                 <Link href="/growth-audit">
-                  <Button variant="primary" size="lg" icon={<ArrowRight className="h-4 w-4" />}>
+                  <MonochromeButton variant="primary" className="!bg-white !text-black hover:!bg-neutral-200" showArrow>
                     Schedule Free Sector Audit
-                  </Button>
+                  </MonochromeButton>
                 </Link>
               </div>
-            </Container>
-          </section>
+            </div>
+          </MonochromeSection>
         </main>
 
         <Footer />
@@ -212,3 +234,4 @@ export default function IndustryDetailPage({ params }: IndustryPageProps) {
     </MotionProvider>
   );
 }
+

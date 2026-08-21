@@ -5,10 +5,9 @@ import { ArrowRight } from 'lucide-react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { MotionProvider } from '@/components/motion/MotionProvider';
-import { PageHero } from '@/components/ui/PageHero';
-import { Container } from '@/components/ui/Container';
-import { Button } from '@/components/ui/Button';
 import { IndustryCard } from '@/components/ui/IndustryCard';
+import { MonochromeSection } from '@/components/monochrome/MonochromeSection';
+import { MonochromeButton } from '@/components/monochrome/MonochromeButton';
 import { industriesData } from '@/data/industries';
 
 export const metadata: Metadata = {
@@ -23,47 +22,86 @@ export const metadata: Metadata = {
 export default function IndustriesPage() {
   return (
     <MotionProvider>
-      <div className="relative min-h-screen bg-obsidian text-txt-primary">
+      <div className="relative min-h-screen bg-white text-black font-serifBody selection:bg-black selection:text-white">
         <Navbar />
 
         <main>
-          <PageHero
-            eyebrow="SECTOR-SPECIFIC GROWTH"
-            title="Tailored Growth Strategies"
-            titleHighlight="For Jaipur Businesses."
-            description="Generic marketing templates fail because every local industry operates with distinct buying cycles, trust barriers, and search behaviors. Explore our specialized digital strategies for key Jaipur sectors."
-            breadcrumbs={[{ label: 'Industries' }]}
-          />
-
-          {/* Industry Cards Grid */}
-          <section className="py-24 bg-obsidian border-b border-border-subtle/50">
-            <Container variant="wide" className="space-y-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {industriesData.map((industry) => (
-                  <IndustryCard key={industry.id} industry={industry} />
-                ))}
+          {/* 1. EDITORIAL HERO SECTION */}
+          <MonochromeSection divider="none" texture="lines" className="!py-16 md:!py-24 border-b-4 border-black">
+            <div className="flex flex-col gap-6">
+              <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-neutral-600 font-bold">
+                <span className="w-4 h-4 border-2 border-black bg-white inline-block" aria-hidden="true" />
+                <span>SECTOR GROWTH & PLAYBOOKS</span>
               </div>
-            </Container>
-          </section>
 
-          {/* Bottom CTA */}
-          <section className="py-20 bg-surface-primary border-b border-border-subtle/50 text-center">
-            <Container variant="standard" className="space-y-6">
-              <h2 className="font-display font-bold text-3xl sm:text-4xl text-txt-primary">
+              <h1 className="font-serif font-bold text-6xl sm:text-8xl lg:text-9xl uppercase tracking-tighter leading-none text-black my-4">
+                SECTOR-SPECIFIC<br />
+                GROWTH SYSTEMS<span className="text-neutral-400">.</span>
+              </h1>
+
+              <div className="w-full h-1 bg-black my-4" />
+
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+                <div className="lg:col-span-8">
+                  <p className="font-serif text-xl sm:text-2xl md:text-3xl leading-relaxed text-black tracking-tight font-normal">
+                    Generic marketing templates fail because every local industry operates with distinct buying cycles, trust barriers, and search behaviors. Explore our specialized digital strategies for key Jaipur sectors.
+                  </p>
+                </div>
+                <div className="lg:col-span-4 flex justify-start lg:justify-end">
+                  <Link href="/growth-audit">
+                    <MonochromeButton variant="primary" showArrow>
+                      Request Sector Audit
+                    </MonochromeButton>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </MonochromeSection>
+
+          {/* 2. INDUSTRY CARDS GRID SECTION */}
+          <MonochromeSection divider="thick" texture="grid">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+              <div>
+                <span className="font-mono text-xs uppercase tracking-widest text-neutral-500 font-bold block mb-2">
+                  SECTOR ARCHITECTURE
+                </span>
+                <h2 className="font-serif text-4xl md:text-6xl font-bold tracking-tight leading-none">
+                  Jaipur Sector Frameworks
+                </h2>
+              </div>
+              <p className="font-mono text-xs uppercase tracking-widest text-neutral-600 max-w-xs font-semibold">
+                Hover cards to inspect sector focus and binary interaction states.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {industriesData.map((industry) => (
+                <IndustryCard key={industry.id} industry={industry} />
+              ))}
+            </div>
+          </MonochromeSection>
+
+          {/* 3. INVERTED BOTTOM CTA SECTION */}
+          <MonochromeSection inverted divider="ultra" texture="cta" className="text-center">
+            <div className="max-w-3xl mx-auto space-y-6">
+              <span className="font-mono text-xs uppercase tracking-widest text-neutral-400 font-bold block">
+                CUSTOM SECTOR ENGAGEMENT
+              </span>
+              <h2 className="font-serif text-4xl sm:text-6xl font-bold tracking-tight leading-none">
                 Don&apos;t See Your Specific Industry Listed?
               </h2>
-              <p className="text-sm sm:text-base text-txt-secondary leading-relaxed max-w-xl mx-auto">
-                Our core growth principles—search intent capture, local trust building, high-converting ad funnels, and responsive web design—apply across all local B2B and consumer sectors in Jaipur.
+              <p className="font-serifBody text-base sm:text-xl text-neutral-300 leading-relaxed max-w-2xl mx-auto">
+                Our core growth principles—search intent capture, local trust building, high-converting ad funnels, and responsive web engineering—apply across all B2B and consumer sectors in Jaipur.
               </p>
-              <div className="pt-2">
+              <div className="pt-4">
                 <Link href="/growth-audit">
-                  <Button variant="primary" size="lg" icon={<ArrowRight className="h-4 w-4" />}>
+                  <MonochromeButton variant="primary" className="!bg-white !text-black hover:!bg-neutral-200" showArrow>
                     Discuss Your Business Sector
-                  </Button>
+                  </MonochromeButton>
                 </Link>
               </div>
-            </Container>
-          </section>
+            </div>
+          </MonochromeSection>
         </main>
 
         <Footer />
@@ -71,3 +109,4 @@ export default function IndustriesPage() {
     </MotionProvider>
   );
 }
+

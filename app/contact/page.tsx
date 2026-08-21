@@ -1,13 +1,10 @@
 import React from 'react';
 import { Metadata } from 'next';
-import Link from 'next/link';
-import { Mail, MapPin, MessageSquare, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Mail, MapPin, MessageSquare, ShieldCheck } from 'lucide-react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { MotionProvider } from '@/components/motion/MotionProvider';
-import { PageHero } from '@/components/ui/PageHero';
-import { Container } from '@/components/ui/Container';
-import { Button } from '@/components/ui/Button';
+import { MonochromeSection } from '@/components/monochrome/MonochromeSection';
 import { GrowthAuditForm } from '@/components/ui/GrowthAuditForm';
 import { contactData } from '@/data/contact';
 
@@ -23,114 +20,126 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <MotionProvider>
-      <div className="relative min-h-screen bg-ivory text-txt-primary">
+      <div className="relative min-h-screen bg-white text-black font-serifBody selection:bg-black selection:text-white">
         <Navbar />
 
         <main>
-          <PageHero
-            eyebrow="AGENCY CONTACT"
-            title="Connect With Surnax Technologies"
-            titleHighlight="Jaipur."
-            description="Whether you have questions about custom web engineering, video reel production, local search optimization, or performance ads, our team is ready to review your project."
-            breadcrumbs={[{ label: 'Contact' }]}
-          />
+          {/* 1. EDITORIAL HERO SECTION */}
+          <MonochromeSection divider="none" texture="lines" className="!py-16 md:!py-24 border-b-4 border-black">
+            <div className="flex flex-col gap-6">
+              <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-neutral-600 font-bold">
+                <span className="w-4 h-4 border-2 border-black bg-white inline-block" aria-hidden="true" />
+                <span>CONTACT SURNAX STUDIO</span>
+              </div>
 
-          {/* Contact Details & Audit Form Grid */}
-          <section className="py-20 bg-surface-primary border-b border-border-subtle/50">
-            <Container variant="wide" className="space-y-16">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                {/* Contact Information Column (5 cols) */}
-                <div className="lg:col-span-5 space-y-8">
-                  <div className="space-y-4">
-                    <span className="font-mono text-xs font-bold text-signal-cyan uppercase tracking-widest block">
-                      DIRECT CHANNELS
-                    </span>
-                    <h2 className="font-display font-bold text-2xl sm:text-3xl text-txt-primary">
-                      Reach Our Growth Team
-                    </h2>
-                    <p className="text-xs sm:text-sm text-txt-secondary leading-relaxed">
-                      {contactData.responseExpectation}
-                    </p>
-                  </div>
+              <h1 className="font-serif font-bold text-6xl sm:text-8xl lg:text-9xl uppercase tracking-tighter leading-none text-black my-4">
+                CONNECT WITH<br />
+                STUDIO JAIPUR<span className="text-neutral-400">.</span>
+              </h1>
 
-                  <div className="space-y-4">
-                    {/* Location */}
-                    <div className="p-5 rounded-xl bg-obsidian/70 border border-border-subtle flex items-start space-x-4">
-                      <MapPin className="h-5 w-5 text-signal-cyan shrink-0 mt-1" />
-                      <div className="space-y-1">
-                        <span className="font-mono text-xs text-txt-muted uppercase block">LOCATION</span>
-                        <p className="text-sm font-semibold text-txt-primary">{contactData.location}</p>
-                      </div>
-                    </div>
+              <div className="w-full h-1 bg-black my-4" />
 
-                    {/* Email */}
-                    <div className="p-5 rounded-xl bg-obsidian/70 border border-border-subtle flex items-start space-x-4">
-                      <Mail className="h-5 w-5 text-signal-cyan shrink-0 mt-1" />
-                      <div className="space-y-1">
-                        <span className="font-mono text-xs text-txt-muted uppercase block">EMAIL ENQUIRIES</span>
-                        <p className="text-sm font-semibold text-txt-primary">{contactData.email}</p>
-                      </div>
-                    </div>
+              <p className="font-serif text-xl sm:text-2xl md:text-3xl leading-relaxed text-black tracking-tight font-normal max-w-4xl">
+                Whether you have questions about custom web engineering, video reel production, local search optimization, or performance ads, our team is ready to review your project.
+              </p>
+            </div>
+          </MonochromeSection>
 
-                    {/* Response Policy */}
-                    <div className="p-5 rounded-xl bg-obsidian/70 border border-border-subtle flex items-start space-x-4">
-                      <MessageSquare className="h-5 w-5 text-signal-cyan shrink-0 mt-1" />
-                      <div className="space-y-1">
-                        <span className="font-mono text-xs text-txt-muted uppercase block">WHATSAPP DIRECT</span>
-                        <p className="text-sm font-semibold text-txt-primary">{contactData.whatsappMessage}</p>
-                      </div>
+          {/* 2. DIRECT CHANNELS & AUDIT FORM */}
+          <MonochromeSection divider="thick" texture="grid">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+              {/* Contact Information Column (5 cols) */}
+              <div className="lg:col-span-5 space-y-8">
+                <div className="space-y-4">
+                  <span className="font-mono text-xs font-bold text-black uppercase tracking-widest block">
+                    DIRECT CHANNELS
+                  </span>
+                  <h2 className="font-serif font-bold text-3xl sm:text-4xl text-black uppercase">
+                    Reach Our Growth Team
+                  </h2>
+                  <p className="font-serifBody text-base text-neutral-800 leading-relaxed">
+                    {contactData.responseExpectation}
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  {/* Location */}
+                  <div className="p-5 border-2 border-black bg-white flex items-start space-x-4">
+                    <MapPin size={20} className="text-black shrink-0 mt-1" />
+                    <div className="space-y-1">
+                      <span className="font-mono text-xs text-neutral-600 uppercase block font-bold">LOCATION</span>
+                      <p className="font-serifBody text-sm font-semibold text-black">{contactData.location}</p>
                     </div>
                   </div>
 
-                  {/* Privacy Notice */}
-                  <div className="p-4 rounded-xl bg-obsidian border border-border-subtle flex items-center space-x-3 text-xs font-mono text-txt-muted">
-                    <ShieldCheck className="h-4 w-4 text-signal-cyan shrink-0" />
-                    <span>Your details are kept confidential. Zero aggressive cold calls.</span>
+                  {/* Email */}
+                  <div className="p-5 border-2 border-black bg-white flex items-start space-x-4">
+                    <Mail size={20} className="text-black shrink-0 mt-1" />
+                    <div className="space-y-1">
+                      <span className="font-mono text-xs text-neutral-600 uppercase block font-bold">EMAIL ENQUIRIES</span>
+                      <p className="font-serifBody text-sm font-semibold text-black">{contactData.email}</p>
+                    </div>
+                  </div>
+
+                  {/* Response Policy */}
+                  <div className="p-5 border-2 border-black bg-white flex items-start space-x-4">
+                    <MessageSquare size={20} className="text-black shrink-0 mt-1" />
+                    <div className="space-y-1">
+                      <span className="font-mono text-xs text-neutral-600 uppercase block font-bold">WHATSAPP DIRECT</span>
+                      <p className="font-serifBody text-sm font-semibold text-black">{contactData.whatsappMessage}</p>
+                    </div>
                   </div>
                 </div>
 
-                {/* Growth Audit Form Column (7 cols) */}
-                <div className="lg:col-span-7 space-y-6">
-                  <div className="space-y-2">
-                    <span className="font-mono text-xs font-bold text-signal-cyan uppercase tracking-widest block">
-                      REQUEST A FREE GROWTH AUDIT
-                    </span>
-                    <h2 className="font-display font-bold text-2xl sm:text-3xl text-txt-primary">
-                      Submit Your Business Information
-                    </h2>
-                  </div>
-
-                  <div className="p-6 sm:p-8 rounded-2xl bg-obsidian border border-border-subtle">
-                    <GrowthAuditForm />
-                  </div>
+                {/* Privacy Notice */}
+                <div className="p-4 border-2 border-black bg-neutral-100 flex items-center space-x-3 text-xs font-mono font-bold text-black uppercase tracking-widest">
+                  <ShieldCheck size={16} className="text-black shrink-0" />
+                  <span>Your details are kept confidential. Zero aggressive cold calls.</span>
                 </div>
               </div>
-            </Container>
-          </section>
 
-          {/* Contact FAQs */}
-          <section className="py-20 bg-obsidian border-b border-border-subtle/50">
-            <Container variant="standard" className="space-y-12">
+              {/* Growth Audit Form Column (7 cols) */}
+              <div className="lg:col-span-7 space-y-6">
+                <div className="space-y-2">
+                  <span className="font-mono text-xs font-bold text-black uppercase tracking-widest block">
+                    REQUEST A FREE GROWTH AUDIT
+                  </span>
+                  <h2 className="font-serif font-bold text-3xl sm:text-4xl text-black uppercase">
+                    Submit Your Business Information
+                  </h2>
+                </div>
+
+                <GrowthAuditForm />
+              </div>
+            </div>
+          </MonochromeSection>
+
+          {/* 3. CONTACT FAQS */}
+          <MonochromeSection divider="thick" texture="lines">
+            <div className="max-w-3xl mx-auto space-y-12">
               <div className="space-y-3 text-center">
-                <h2 className="font-display font-bold text-3xl text-txt-primary">
+                <span className="font-mono text-xs uppercase tracking-widest text-black font-bold block">
+                  INQUIRIES & SUPPORT
+                </span>
+                <h2 className="font-serif font-bold text-4xl text-black uppercase">
                   Frequently Asked Questions
                 </h2>
               </div>
 
-              <div className="space-y-6 max-w-3xl mx-auto">
+              <div className="space-y-6">
                 {contactData.faqs.map((faq, idx) => (
-                  <div key={idx} className="p-6 rounded-xl bg-surface-primary border border-border-subtle space-y-2">
-                    <h3 className="font-display font-bold text-base text-txt-primary">
+                  <div key={idx} className="p-6 border-2 border-black bg-white space-y-2">
+                    <h3 className="font-serif font-bold text-xl text-black uppercase">
                       {faq.question}
                     </h3>
-                    <p className="text-xs sm:text-sm text-txt-secondary leading-relaxed font-normal">
+                    <p className="font-serifBody text-base text-neutral-800 leading-relaxed font-normal">
                       {faq.answer}
                     </p>
                   </div>
                 ))}
               </div>
-            </Container>
-          </section>
+            </div>
+          </MonochromeSection>
         </main>
 
         <Footer />
@@ -138,3 +147,4 @@ export default function ContactPage() {
     </MotionProvider>
   );
 }
+

@@ -1,12 +1,11 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Image from 'next/image';
-import { ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { ShieldCheck, Check } from 'lucide-react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { MotionProvider } from '@/components/motion/MotionProvider';
-import { PageHero } from '@/components/ui/PageHero';
-import { Container } from '@/components/ui/Container';
+import { MonochromeSection } from '@/components/monochrome/MonochromeSection';
 import { GrowthAuditForm } from '@/components/ui/GrowthAuditForm';
 
 export const metadata: Metadata = {
@@ -21,110 +20,113 @@ export const metadata: Metadata = {
 export default function GrowthAuditPage() {
   return (
     <MotionProvider>
-      <div className="relative min-h-screen bg-ivory text-txt-primary">
+      <div className="relative min-h-screen bg-white text-black font-serifBody selection:bg-black selection:text-white">
         <Navbar />
 
         <main>
-          <PageHero
-            eyebrow="2-STEP GROWTH DIAGNOSIS"
-            title="Request Your Free Growth Audit"
-            description="Our strategic team will review your website, search rankings, current ad channels, and market competitors—providing actionable recommendations without sales pressure."
-            breadcrumbs={[{ label: 'Free Growth Audit' }]}
-          />
+          {/* 1. EDITORIAL HERO SECTION */}
+          <MonochromeSection divider="none" texture="lines" className="!py-16 md:!py-24 border-b-4 border-black">
+            <div className="flex flex-col gap-6">
+              <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-neutral-600 font-bold">
+                <span className="w-4 h-4 border-2 border-black bg-white inline-block" aria-hidden="true" />
+                <span>FREE GROWTH AUDIT & DIAGNOSTICS</span>
+              </div>
 
-          {/* Audit Process & Form Container */}
-          <section className="py-20 bg-ivory border-b border-border-subtle">
-            <Container variant="wide" className="space-y-16">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                {/* Left Side: What We Review (5 cols) */}
-                <div className="lg:col-span-5 space-y-8">
-                  <div className="space-y-4">
-                    <span className="font-mono text-xs font-bold text-coral uppercase tracking-widest block">
-                      DIAGNOSTIC SCOPE
-                    </span>
-                    <h2 className="font-display font-normal text-2xl sm:text-3xl text-plum">
-                      What Our Team Reviews
-                    </h2>
-                    <p className="text-xs sm:text-sm text-txt-secondary leading-relaxed">
-                      We analyze your entire customer acquisition funnel to identify where interested buyers are dropping off.
+              <h1 className="font-serif font-bold text-6xl sm:text-8xl lg:text-9xl uppercase tracking-tighter leading-none text-black my-4">
+                FREE DIGITAL<br />
+                GROWTH AUDIT<span className="text-neutral-400">.</span>
+              </h1>
+
+              <div className="w-full h-1 bg-black my-4" />
+
+              <p className="font-serif text-xl sm:text-2xl md:text-3xl leading-relaxed text-black tracking-tight font-normal max-w-4xl">
+                Our strategic team will review your website, search rankings, current ad channels, and market competitors—providing actionable recommendations without sales pressure.
+              </p>
+            </div>
+          </MonochromeSection>
+
+          {/* 2. DIAGNOSTIC SCOPE & AUDIT FORM */}
+          <MonochromeSection divider="thick" texture="grid">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+              {/* Left Side: What We Review (5 cols) */}
+              <div className="lg:col-span-5 space-y-8">
+                <div className="space-y-4">
+                  <span className="font-mono text-xs font-bold text-black uppercase tracking-widest block">
+                    DIAGNOSTIC SCOPE
+                  </span>
+                  <h2 className="font-serif font-bold text-3xl sm:text-4xl text-black uppercase">
+                    What Our Team Reviews
+                  </h2>
+                  <p className="font-serifBody text-base text-neutral-800 leading-relaxed font-normal">
+                    We analyze your entire customer acquisition funnel to identify where interested buyers are dropping off.
+                  </p>
+                </div>
+
+                {/* Strategic Atmosphere Image */}
+                <div className="relative h-[220px] w-full border-4 border-black bg-white overflow-hidden">
+                  <Image
+                    src="/images/audit/cw-growth-audit-atmosphere-01.webp"
+                    alt="Surnax Technologies Strategic Growth Diagnostic Workspace"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-300"
+                  />
+                </div>
+
+                <div className="space-y-4">
+                  <div className="p-5 border-2 border-black bg-white space-y-2">
+                    <div className="flex items-center gap-2 font-mono text-xs text-black font-bold uppercase">
+                      <Check size={16} strokeWidth={2} />
+                      <span>LOCAL SEARCH & GOOGLE MAPS</span>
+                    </div>
+                    <p className="font-serifBody text-sm text-neutral-800 leading-relaxed">
+                      Evaluation of your Google Business Profile rankings, local keyword coverage, and map pack placement in Jaipur.
                     </p>
                   </div>
 
-                  {/* Strategic Atmosphere Image */}
-                  <div className="relative h-[200px] w-full rounded-xl overflow-hidden border border-border-subtle shadow-editorial">
-                    <Image
-                      src="/images/audit/cw-growth-audit-atmosphere-01.webp"
-                      alt="Surnax Technologies Strategic Growth Diagnostic Workspace"
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 40vw"
-                      className="object-cover object-center"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/30 to-transparent pointer-events-none" />
-                    <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[10px] font-mono text-txt-muted z-10">
-                      <span className="px-2 py-0.5 rounded bg-obsidian/90 backdrop-blur-sm border border-border-subtle text-txt-primary">
-                        JAIPUR DIAGNOSTIC STUDIO
-                      </span>
-                      <span className="text-signal-cyan">AUDIT READY</span>
+                  <div className="p-5 border-2 border-black bg-white space-y-2">
+                    <div className="flex items-center gap-2 font-mono text-xs text-black font-bold uppercase">
+                      <Check size={16} strokeWidth={2} />
+                      <span>ADVERTISING & SEARCH INTENT</span>
                     </div>
+                    <p className="font-serifBody text-sm text-neutral-800 leading-relaxed">
+                      Review of your current or planned Google Search & Instagram ad campaigns for budget leaks and audience targeting.
+                    </p>
                   </div>
 
-                  <div className="space-y-4">
-                    <div className="p-5 rounded-xl bg-obsidian/70 border border-border-subtle space-y-2">
-                      <div className="flex items-center space-x-2 font-mono text-xs text-signal-cyan font-bold">
-                        <CheckCircle2 className="h-4 w-4" />
-                        <span>01 LOCAL SEARCH & GOOGLE MAPS</span>
-                      </div>
-                      <p className="text-xs text-txt-secondary leading-relaxed">
-                        Evaluation of your Google Business Profile rankings, local keyword coverage, and map pack placement in Jaipur.
-                      </p>
+                  <div className="p-5 border-2 border-black bg-white space-y-2">
+                    <div className="flex items-center gap-2 font-mono text-xs text-black font-bold uppercase">
+                      <Check size={16} strokeWidth={2} />
+                      <span>WEBSITE LANDING & CONVERSION</span>
                     </div>
-
-                    <div className="p-5 rounded-xl bg-obsidian/70 border border-border-subtle space-y-2">
-                      <div className="flex items-center space-x-2 font-mono text-xs text-signal-cyan font-bold">
-                        <CheckCircle2 className="h-4 w-4" />
-                        <span>02 ADVERTISING & SEARCH INTENT</span>
-                      </div>
-                      <p className="text-xs text-txt-secondary leading-relaxed">
-                        Review of your current or planned Google Search & Instagram ad campaigns for budget leaks and audience targeting.
-                      </p>
-                    </div>
-
-                    <div className="p-5 rounded-xl bg-obsidian/70 border border-border-subtle space-y-2">
-                      <div className="flex items-center space-x-2 font-mono text-xs text-signal-cyan font-bold">
-                        <CheckCircle2 className="h-4 w-4" />
-                        <span>03 WEBSITE LANDING & CONVERSION</span>
-                      </div>
-                      <p className="text-xs text-txt-secondary leading-relaxed">
-                        Audit of page load speed, mobile UX, enquiry forms, and CTA clarity across smartphone devices.
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Honest Audit Guarantee */}
-                  <div className="p-4 rounded-xl bg-obsidian border border-border-subtle flex items-center space-x-3 text-xs font-mono text-txt-muted">
-                    <ShieldCheck className="h-4 w-4 text-signal-cyan shrink-0" />
-                    <span>Free analysis delivered within 24 business hours. No pushy sales calls.</span>
+                    <p className="font-serifBody text-sm text-neutral-800 leading-relaxed">
+                      Audit of page load speed, mobile UX, enquiry forms, and CTA clarity across smartphone devices.
+                    </p>
                   </div>
                 </div>
 
-                {/* Right Side: Audit Form (7 cols) */}
-                <div className="lg:col-span-7">
-                  <div className="p-6 sm:p-10 rounded-2xl bg-obsidian border border-border-subtle space-y-6">
-                    <div className="space-y-2">
-                      <h3 className="font-display font-bold text-xl text-txt-primary">
-                        Enter Your Business Details
-                      </h3>
-                      <p className="text-xs text-txt-secondary">
-                        Fill out the 2-step form below so we can prepare your custom growth analysis.
-                      </p>
-                    </div>
-
-                    <GrowthAuditForm />
-                  </div>
+                {/* Honest Audit Guarantee */}
+                <div className="p-4 border-2 border-black bg-neutral-100 flex items-center space-x-3 text-xs font-mono font-bold text-black uppercase tracking-widest">
+                  <ShieldCheck size={16} className="text-black shrink-0" />
+                  <span>Free analysis delivered within 24 business hours. No pushy sales calls.</span>
                 </div>
               </div>
-            </Container>
-          </section>
+
+              {/* Right Side: Audit Form (7 cols) */}
+              <div className="lg:col-span-7 space-y-6">
+                <div className="space-y-2">
+                  <span className="font-mono text-xs font-bold text-black uppercase tracking-widest block">
+                    ENTER BUSINESS DETAILS
+                  </span>
+                  <h2 className="font-serif font-bold text-3xl sm:text-4xl text-black uppercase">
+                    Custom Diagnostic Request
+                  </h2>
+                </div>
+
+                <GrowthAuditForm />
+              </div>
+            </div>
+          </MonochromeSection>
         </main>
 
         <Footer />
@@ -132,3 +134,4 @@ export default function GrowthAuditPage() {
     </MotionProvider>
   );
 }
+

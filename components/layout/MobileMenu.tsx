@@ -2,10 +2,10 @@
 
 import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { X, ArrowRight } from 'lucide-react';
 import gsap from 'gsap';
-import { Button } from '@/components/ui/Button';
+import { SurnaxLogo } from '@/components/ui/SurnaxLogo';
+import { MonochromeButton } from '@/components/monochrome/MonochromeButton';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -46,7 +46,7 @@ export function MobileMenu({ isOpen, onClose, links }: MobileMenuProps) {
     gsap.fromTo(
       linkElements,
       { opacity: 0, y: 15 },
-      { opacity: 1, y: 0, duration: 0.4, stagger: 0.05, ease: 'power2.out', delay: 0.1 }
+      { opacity: 1, y: 0, duration: 0.2, stagger: 0.04, ease: 'power2.out' }
     );
   }, [isOpen]);
 
@@ -55,40 +55,34 @@ export function MobileMenu({ isOpen, onClose, links }: MobileMenuProps) {
   return (
     <div
       ref={menuRef}
-      className="fixed inset-0 z-[60] flex flex-col bg-surface-white/98 backdrop-blur-xl transition-all duration-300 lg:hidden"
+      className="fixed inset-0 z-[60] flex flex-col bg-white text-black border-l-4 border-black transition-all duration-100 lg:hidden font-serifBody"
       role="dialog"
       aria-modal="true"
       aria-label="Navigation Menu"
     >
       {/* Drawer Header */}
-      <div className="flex h-20 items-center justify-between px-6 border-b border-border-subtle">
+      <div className="flex h-20 items-center justify-between px-6 border-b-2 border-black">
         <Link href="/" onClick={onClose} aria-label="Surnax Technologies home">
-          <Image
-            src="/brand/logo-horizontal-transparent.png"
-            alt="Surnax Technologies"
-            width={140}
-            height={38}
-            className="h-8 w-auto object-contain"
-          />
+          <SurnaxLogo accentColor="#000000" brandColor="#000000" textColor="#000000" height={28} />
         </Link>
         <button
           onClick={onClose}
-          className="p-2 text-txt-secondary hover:text-txt-primary hover:bg-black/5 rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-plum"
+          className="p-2 text-black border-2 border-black hover:bg-black hover:text-white transition-colors focus-visible:outline focus-visible:outline-3 focus-visible:outline-black"
           aria-label="Close menu"
         >
-          <X className="h-6 w-6" />
+          <X size={20} strokeWidth={1.5} />
         </button>
       </div>
 
       {/* Drawer Links */}
-      <div className="flex flex-1 flex-col justify-between p-6">
-        <nav className="flex flex-col space-y-5 pt-4">
+      <div className="flex flex-1 flex-col justify-between p-6 overflow-y-auto">
+        <nav className="flex flex-col space-y-4 pt-4">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={onClose}
-              className="mobile-link text-3xl sm:text-4xl font-display font-normal text-txt-primary hover:text-brand-blue transition-colors"
+              className="mobile-link font-serif text-3xl sm:text-4xl font-bold text-black hover:underline underline-offset-4 tracking-tight"
             >
               {link.label}
             </Link>
@@ -96,24 +90,20 @@ export function MobileMenu({ isOpen, onClose, links }: MobileMenuProps) {
         </nav>
 
         {/* Drawer Footer & CTA */}
-        <div className="space-y-6 pb-8 border-t border-border-subtle pt-6">
-          <div className="flex items-center space-x-2 font-mono text-xs text-txt-secondary">
-            <span className="h-2 w-2 rounded-full bg-brand-cyan animate-pulse" />
-            <span>● ACCEPTING SELECT PROJECTS IN JAIPUR</span>
+        <div className="space-y-6 pb-8 border-t-2 border-black pt-6">
+          <div className="flex items-center space-x-2 font-mono text-xs text-neutral-600 uppercase font-bold tracking-widest">
+            <span className="w-2 h-2 border border-black bg-black inline-block" />
+            <span>JAIPUR STUDIO • CONNECTED GROWTH</span>
           </div>
 
           <Link href="/growth-audit" onClick={onClose} className="block w-full">
-            <Button
-              variant="primary"
-              size="lg"
-              className="w-full rounded-full bg-plum text-white hover:bg-ink-soft"
-              icon={<ArrowRight className="h-4 w-4" />}
-            >
-              Get a Free Growth Audit
-            </Button>
+            <MonochromeButton variant="primary" showArrow className="w-full justify-center">
+              Request Free Sector Audit
+            </MonochromeButton>
           </Link>
         </div>
       </div>
     </div>
   );
 }
+

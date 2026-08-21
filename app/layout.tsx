@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Instrument_Serif, Inter, JetBrains_Mono, Playfair_Display, Source_Serif_4, Space_Grotesk } from 'next/font/google';
 import { siteConfig } from '@/data/site';
 import { CustomCursor } from '@/components/ui/CustomCursor';
+import { InitialLoader } from '@/components/ui/InitialLoader';
 import './globals.css';
 
 const fontDisplayGrotesk = Space_Grotesk({
@@ -23,8 +24,8 @@ const fontPlayfair = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-playfair',
   display: 'swap',
-  weight: ['400', '500', '600', '700', '800', '900'],
-  style: ['normal', 'italic'],
+  weight: ['400', '600', '700', '900'],
+  style: ['normal'],
 });
 
 const fontSourceSerif = Source_Serif_4({
@@ -32,7 +33,7 @@ const fontSourceSerif = Source_Serif_4({
   variable: '--font-source-serif',
   display: 'swap',
   weight: ['400', '600'],
-  style: ['normal', 'italic'],
+  style: ['normal'],
 });
 
 const fontBody = Inter({
@@ -46,7 +47,7 @@ const fontMono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-mono',
   display: 'swap',
-  weight: ['400', '500'],
+  weight: ['400', '700'],
 });
 
 export const metadata: Metadata = {
@@ -74,6 +75,17 @@ export const metadata: Metadata = {
     siteName: 'Surnax Technologies',
     title: 'Surnax Technologies | Digital Innovation & Marketing Edge',
     description: 'Surnax Technologies combines custom web development, video production, performance marketing, and search intelligence for brands in Jaipur and across India.',
+    images: [{ url: '/brand/og-image.png', width: 1200, height: 630, alt: 'Surnax Technologies' }],
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/brand/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/brand/favicon-16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/brand/favicon-180.png', sizes: '180x180', type: 'image/png' },
+    ],
   },
 };
 
@@ -134,6 +146,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-ivory text-txt-primary antialiased selection:bg-brand-blue/20 selection:text-ink">
+        <InitialLoader />
         <CustomCursor />
         {children}
       </body>

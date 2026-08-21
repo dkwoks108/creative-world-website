@@ -1,22 +1,38 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Container } from '@/components/ui/Container';
 import { siteConfig } from '@/data/site';
+import { CinematicVideoPlayer } from '@/components/monochrome/CinematicVideoPlayer';
+import { ScrollReveal } from '@/components/motion/ScrollReveal';
+import { MagneticButton } from '@/components/motion/MagneticButton';
+import { ScrambleHover } from '@/components/monochrome/ScrambleText';
 
 export function Footer() {
-  return (
-    <footer className="relative bg-[#08090C] text-white border-t border-white/10 pt-16 pb-12 overflow-hidden">
-      {/* Top Subtle Brand Line */}
-      <div className="pointer-events-none absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#B8FF2C] via-[#4D5CFF] to-[#31E7FF] opacity-80" />
+  const FOOTER_VIDEO_URL =
+    'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260622_080203_fd7f4f85-3a86-4837-8192-85e7bfe68e75.mp4';
 
-      <Container variant="wide" className="space-y-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+  return (
+    <footer className="relative bg-black text-white border-t-8 border-black pt-20 pb-12 overflow-hidden font-serifBody">
+      {/* Cinematic Video Background Atmosphere Layer */}
+      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
+        <CinematicVideoPlayer
+          src={FOOTER_VIDEO_URL}
+          overlayOpacity={0.8}
+          grayscale
+          contrast={1.3}
+          scanlines
+          className="w-full h-full"
+        />
+      </div>
+
+      <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-8 lg:px-12 space-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
           {/* Brand Identity & Positioning (4 cols) */}
-          <div className="md:col-span-4 space-y-5">
-            {/* White Container Card for Official Logo to ensure black wordmark remains 100% legible */}
+          <ScrollReveal direction="bottom" delay={0.1} className="md:col-span-4 space-y-6">
             <Link href="/" aria-label="Surnax Technologies home" className="inline-block">
-              <div className="p-2.5 px-4 bg-white rounded-xl shadow-sm border border-white/20 inline-flex items-center">
+              <div className="p-3 bg-white border-2 border-black inline-flex items-center">
                 <Image
                   src="/brand/logo-horizontal-transparent.png"
                   alt="Surnax Technologies"
@@ -27,146 +43,153 @@ export function Footer() {
               </div>
             </Link>
 
-            <p className="text-xs sm:text-sm text-[#9299A8] leading-relaxed max-w-sm font-normal">
+            <p className="font-serif text-sm sm:text-base text-neutral-300 leading-relaxed max-w-sm">
               {siteConfig.subheadline}
             </p>
 
-            <div className="p-4 rounded-xl bg-[#151821] border border-white/10 space-y-1 text-xs font-mono text-[#9299A8]">
-              <span className="text-[#B8FF2C] block font-bold uppercase text-[10px] tracking-wider">
+            <div className="p-5 bg-neutral-900 border-2 border-neutral-800 space-y-1 font-mono text-xs text-neutral-300">
+              <span className="text-white block font-bold uppercase text-[10px] tracking-widest mb-1">
                 JAIPUR STUDIO • EDITORIAL & PERFORMANCE
               </span>
-              <p className="text-white font-medium">{siteConfig.contactEmailPlaceholder}</p>
-              <p className="text-[11px] text-[#9299A8]">{siteConfig.locationPlaceholder}</p>
+              <p className="text-white font-semibold">{siteConfig.contactEmailPlaceholder}</p>
+              <p className="text-neutral-400 text-[11px]">{siteConfig.locationPlaceholder}</p>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Growth Services Links (3 cols) */}
-          <div className="md:col-span-3 space-y-3">
-            <span className="font-mono text-xs text-[#B8FF2C] uppercase tracking-widest block font-bold">
-              GROWTH SERVICES
+          <ScrollReveal direction="bottom" delay={0.2} className="md:col-span-3 space-y-4">
+            <span className="font-mono text-xs text-neutral-400 uppercase tracking-widest block font-bold">
+              01 / GROWTH SERVICES
             </span>
-            <ul className="space-y-2 text-xs font-mono text-[#9299A8]">
+            <ul className="space-y-2.5 font-mono text-xs text-neutral-300">
               <li>
-                <Link href="/services/performance-marketing" className="hover:text-white transition-colors">
-                  PERFORMANCE MARKETING
+                <Link href="/services/performance-marketing" className="hover:text-white hover:underline underline-offset-4 transition-colors">
+                  <ScrambleHover text="PERFORMANCE MARKETING" />
                 </Link>
               </li>
               <li>
-                <Link href="/services/seo" className="hover:text-white transition-colors">
-                  SEO & LOCAL SEARCH
+                <Link href="/services/seo" className="hover:text-white hover:underline underline-offset-4 transition-colors">
+                  <ScrambleHover text="SEO & LOCAL SEARCH" />
                 </Link>
               </li>
               <li>
-                <Link href="/services/social-media-marketing" className="hover:text-white transition-colors">
-                  SOCIAL MEDIA & BRAND
+                <Link href="/services/social-media-marketing" className="hover:text-white hover:underline underline-offset-4 transition-colors">
+                  <ScrambleHover text="SOCIAL MEDIA & BRAND" />
                 </Link>
               </li>
               <li>
-                <Link href="/services/website-development" className="hover:text-white transition-colors">
-                  WEBSITES & LANDING PAGES
+                <Link href="/services/website-development" className="hover:text-white hover:underline underline-offset-4 transition-colors">
+                  <ScrambleHover text="WEBSITES & LANDING PAGES" />
                 </Link>
               </li>
               <li>
-                <Link href="/services/growth-strategy" className="hover:text-white transition-colors">
-                  INTEGRATED STRATEGY
+                <Link href="/services/growth-strategy" className="hover:text-white hover:underline underline-offset-4 transition-colors">
+                  <ScrambleHover text="INTEGRATED STRATEGY" />
                 </Link>
               </li>
-              <li>
-                <Link href="/packages" className="hover:text-[#B8FF2C] transition-colors font-bold text-[#B8FF2C]">
-                  EXPLORE PACKAGES & PRICING →
-                </Link>
+              <li className="pt-2">
+                <MagneticButton strength={4}>
+                  <Link href="/packages" className="hover:text-white hover:underline underline-offset-4 transition-colors font-bold text-white block">
+                    <ScrambleHover text="EXPLORE PACKAGES →" />
+                  </Link>
+                </MagneticButton>
               </li>
             </ul>
-          </div>
+          </ScrollReveal>
 
           {/* Sectors & Industries Links (3 cols) */}
-          <div className="md:col-span-3 space-y-3">
-            <span className="font-mono text-xs text-[#B8FF2C] uppercase tracking-widest block font-bold">
-              SECTORS & PLAYBOOKS
+          <ScrollReveal direction="bottom" delay={0.3} className="md:col-span-3 space-y-4">
+            <span className="font-mono text-xs text-neutral-400 uppercase tracking-widest block font-bold">
+              02 / SECTORS & PLAYBOOKS
             </span>
-            <ul className="space-y-2 text-xs font-mono text-[#9299A8]">
+            <ul className="space-y-2.5 font-mono text-xs text-neutral-300">
               <li>
-                <Link href="/industries/coaching" className="hover:text-white transition-colors">
-                  COACHING INSTITUTES
+                <Link href="/industries/coaching" className="hover:text-white hover:underline underline-offset-4 transition-colors">
+                  <ScrambleHover text="COACHING INSTITUTES" />
                 </Link>
               </li>
               <li>
-                <Link href="/industries/real-estate" className="hover:text-white transition-colors">
-                  REAL ESTATE DEVELOPERS
+                <Link href="/industries/real-estate" className="hover:text-white hover:underline underline-offset-4 transition-colors">
+                  <ScrambleHover text="REAL ESTATE DEVELOPERS" />
                 </Link>
               </li>
               <li>
-                <Link href="/industries/restaurants" className="hover:text-white transition-colors">
-                  CAFES & HOSPITALITY
+                <Link href="/industries/restaurants" className="hover:text-white hover:underline underline-offset-4 transition-colors">
+                  <ScrambleHover text="CAFES & HOSPITALITY" />
                 </Link>
               </li>
               <li>
-                <Link href="/industries/salons-clinics" className="hover:text-white transition-colors">
-                  SALONS & HEALTHCARE
+                <Link href="/industries/salons-clinics" className="hover:text-white hover:underline underline-offset-4 transition-colors">
+                  <ScrambleHover text="SALONS & HEALTHCARE" />
                 </Link>
               </li>
               <li>
-                <Link href="/industries/jewelry" className="hover:text-white transition-colors">
-                  JEWELRY & LUXURY RETAIL
+                <Link href="/industries/jewelry" className="hover:text-white hover:underline underline-offset-4 transition-colors">
+                  <ScrambleHover text="JEWELRY & LUXURY RETAIL" />
                 </Link>
               </li>
               <li>
-                <Link href="/industries/clothing" className="hover:text-white transition-colors">
-                  CLOTHING & BOUTIQUES
+                <Link href="/industries/clothing" className="hover:text-white hover:underline underline-offset-4 transition-colors">
+                  <ScrambleHover text="CLOTHING & BOUTIQUES" />
                 </Link>
               </li>
-              <li>
-                <Link href="/work" className="hover:text-[#B8FF2C] transition-colors font-bold text-[#B8FF2C]">
-                  VIEW CASE STUDIES →
-                </Link>
+              <li className="pt-2">
+                <MagneticButton strength={4}>
+                  <Link href="/work" className="hover:text-white hover:underline underline-offset-4 transition-colors font-bold text-white block">
+                    <ScrambleHover text="VIEW CASE STUDIES →" />
+                  </Link>
+                </MagneticButton>
               </li>
             </ul>
-          </div>
+          </ScrollReveal>
 
           {/* Agency & Resources Links (2 cols) */}
-          <div className="md:col-span-2 space-y-3">
-            <span className="font-mono text-xs text-[#B8FF2C] uppercase tracking-widest block font-bold">
-              AGENCY & BLOG
+          <ScrollReveal direction="bottom" delay={0.4} className="md:col-span-2 space-y-4">
+            <span className="font-mono text-xs text-neutral-400 uppercase tracking-widest block font-bold">
+              03 / AGENCY
             </span>
-            <ul className="space-y-2 text-xs font-mono text-[#9299A8]">
+            <ul className="space-y-2.5 font-mono text-xs text-neutral-300">
               <li>
-                <Link href="/insights" className="hover:text-white transition-colors font-semibold text-white">
-                  INSIGHTS & BLOG
+                <Link href="/insights" className="hover:text-white hover:underline underline-offset-4 transition-colors font-semibold text-white">
+                  <ScrambleHover text="INSIGHTS & BLOG" />
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-white transition-colors">
-                  ABOUT AGENCY
+                <Link href="/about" className="hover:text-white hover:underline underline-offset-4 transition-colors">
+                  <ScrambleHover text="ABOUT AGENCY" />
                 </Link>
               </li>
               <li>
-                <Link href="/growth-audit" className="hover:text-white transition-colors">
-                  FREE GROWTH AUDIT
+                <Link href="/growth-audit" className="hover:text-white hover:underline underline-offset-4 transition-colors">
+                  <ScrambleHover text="FREE GROWTH AUDIT" />
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-white transition-colors">
-                  CONTACT STUDIO
+                <Link href="/contact" className="hover:text-white hover:underline underline-offset-4 transition-colors">
+                  <ScrambleHover text="CONTACT STUDIO" />
                 </Link>
               </li>
             </ul>
-          </div>
+          </ScrollReveal>
         </div>
 
         {/* Bottom Legal & Copyright Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#9299A8]">
+        <div className="pt-8 border-t border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-neutral-400">
           <p>© {new Date().getFullYear()} {siteConfig.brandName}. All rights reserved.</p>
 
           <div className="flex items-center space-x-6">
-            <Link href="/privacy" className="hover:text-white transition-colors">
+            <Link href="/privacy" className="hover:text-white hover:underline underline-offset-4 transition-colors">
               PRIVACY POLICY
             </Link>
-            <Link href="/terms" className="hover:text-white transition-colors">
+            <Link href="/terms" className="hover:text-white hover:underline underline-offset-4 transition-colors">
               TERMS OF SERVICE
             </Link>
           </div>
         </div>
-      </Container>
+      </div>
     </footer>
   );
 }
+
+
+

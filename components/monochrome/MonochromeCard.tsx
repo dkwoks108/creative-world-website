@@ -16,15 +16,15 @@ export const MonochromeCard: React.FC<MonochromeCardProps> = ({
   className,
   ...props
 }) => {
-  const baseStyles = 'rounded-none p-6 md:p-8 transition-colors duration-100';
+  const baseStyles = 'rounded-none p-6 md:p-8 transition-all duration-150 ease-[cubic-bezier(0.16,1,0.3,1)]';
 
   const variantStyles = {
     standard: clsx(
-      'bg-white text-black border border-black',
-      hoverInvert && 'hover:bg-black hover:text-white group'
+      'bg-white text-black border-2 border-black group',
+      hoverInvert && 'hover:bg-black hover:text-white hover:border-black'
     ),
-    inverted: 'bg-black text-white border-none',
-    borderless: 'bg-transparent text-black border-none p-0',
+    inverted: 'bg-black text-white border-2 border-black group',
+    borderless: 'bg-transparent text-black border-none p-0 group',
   };
 
   return (
@@ -33,3 +33,4 @@ export const MonochromeCard: React.FC<MonochromeCardProps> = ({
     </div>
   );
 };
+

@@ -10,51 +10,53 @@ interface ArticleCardProps {
 
 export function ArticleCard({ article }: ArticleCardProps) {
   return (
-    <article className="flex flex-col justify-between p-6 sm:p-8 rounded-2xl bg-white border border-border-subtle hover:border-border-active shadow-editorial hover:shadow-editorial-lg transition-all space-y-6 group">
+    <article className="flex flex-col justify-between p-6 sm:p-8 border-4 border-black bg-white hover:bg-neutral-50 transition-colors duration-100 space-y-6 group">
       <div className="space-y-4">
         {article.image && (
-          <div className="relative h-[200px] w-full rounded-xl overflow-hidden border border-border-subtle group">
+          <div className="relative h-[200px] w-full border-2 border-black overflow-hidden bg-neutral-100">
             <Image
               src={article.image}
               alt={article.title}
               fill
+              loading="lazy"
+              decoding="async"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              className="object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-300"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-plum/60 via-plum/10 to-transparent pointer-events-none" />
           </div>
         )}
 
-        <div className="flex items-center justify-between">
-          <span className="px-2.5 py-1 rounded-full text-[10px] font-mono bg-cream/60 border border-border-subtle text-plum font-medium">
+        <div className="flex items-center justify-between font-mono text-xs font-bold uppercase tracking-widest">
+          <span className="px-2 py-0.5 border border-black bg-white text-black">
             {article.category}
           </span>
-          <div className="flex items-center space-x-1 text-[11px] font-mono text-txt-muted">
-            <Clock className="h-3 w-3 text-coral" />
+          <div className="flex items-center gap-1 text-neutral-600">
+            <Clock size={12} />
             <span>{article.readTime}</span>
           </div>
         </div>
 
-        <h3 className="font-display font-normal text-2xl text-plum group-hover:text-coral transition-colors leading-snug">
+        <h3 className="font-serif font-bold text-2xl text-black uppercase leading-snug group-hover:underline underline-offset-4">
           {article.title}
         </h3>
 
-        <p className="text-xs sm:text-sm text-txt-secondary leading-relaxed font-normal">
+        <p className="font-serifBody text-xs sm:text-sm text-neutral-800 leading-relaxed font-normal">
           {article.description}
         </p>
       </div>
 
-      <div className="pt-4 border-t border-border-subtle flex items-center justify-between">
-        <span className="text-[11px] font-mono text-txt-muted">{article.publishedDate}</span>
+      <div className="pt-4 border-t-2 border-black flex items-center justify-between font-mono text-xs uppercase font-bold">
+        <span className="text-neutral-500">{article.publishedDate}</span>
 
         <Link
           href={`/insights/${article.slug}`}
-          className="inline-flex items-center space-x-1.5 text-xs font-mono text-plum hover:text-coral group-hover:translate-x-1 transition-all font-semibold"
+          className="inline-flex items-center gap-1.5 text-black hover:underline underline-offset-4"
         >
           <span>READ INSIGHT</span>
-          <ArrowRight className="h-3.5 w-3.5" />
+          <ArrowRight size={14} />
         </Link>
       </div>
     </article>
   );
 }
+

@@ -22,7 +22,7 @@ export default function MonochromeShowcasePage() {
         <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest font-bold">
           <span className="w-3 h-3 border border-black bg-black inline-block" />
           <span>SURNAX EDITORIAL</span>
-          <span className="text-neutral-400">/ ISSUE N° 01</span>
+          <span className="text-neutral-400">/ EDITORIAL SHOWCASE</span>
         </div>
         <nav className="hidden md:flex items-center gap-8 font-mono text-xs uppercase tracking-widest font-medium">
           <a href="#philosophy" className="hover:underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-black">Philosophy</a>
@@ -42,7 +42,7 @@ export default function MonochromeShowcasePage() {
         <div className="flex flex-col gap-6">
           <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-neutral-600">
             <span className="w-4 h-4 border-2 border-black bg-white inline-block" aria-hidden="true" />
-            <span>ESSAY N° 01 — DESIGN AS DISCIPLINE</span>
+            <span>EDITORIAL SHOWCASE — DESIGN AS DISCIPLINE</span>
           </div>
 
           <h1 className="font-serif font-bold text-6xl sm:text-8xl lg:text-9xl uppercase tracking-tighter leading-none text-black my-4">
@@ -321,7 +321,7 @@ export default function MonochromeShowcasePage() {
       <section className="bg-black text-white relative py-24 md:py-36 border-t-8 border-black overflow-hidden">
         <div className="absolute inset-0 pointer-events-none opacity-10 bg-texture-cta" aria-hidden="true" />
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-          <span className="font-mono text-xs uppercase tracking-widest text-neutral-400 block mb-4">SUBSCRIPTION N° 01</span>
+          <span className="font-mono text-xs uppercase tracking-widest text-neutral-400 block mb-4">INSIGHT SUBSCRIPTION</span>
           <h2 className="font-serif text-5xl md:text-7xl font-bold tracking-tight leading-none mb-6">
             Join the Editorial Desk
           </h2>
@@ -329,7 +329,7 @@ export default function MonochromeShowcasePage() {
             Receive monthly architectural monograph essays, typographic critique, and luxury design system updates.
           </p>
 
-          <form className="flex flex-col sm:flex-row items-center gap-4 max-w-lg mx-auto" onSubmit={(e) => e.preventDefault()}>
+          <form className="flex flex-col sm:flex-row items-center gap-4 max-w-lg mx-auto" action="#">
             <div className="w-full flex-1">
               <input
                 type="email"
