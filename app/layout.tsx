@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Instrument_Serif, Inter, JetBrains_Mono } from 'next/font/google';
+import { Instrument_Serif, Playfair_Display, Source_Serif_4, Inter, JetBrains_Mono } from 'next/font/google';
 import { siteConfig } from '@/data/site';
 import { CustomCursor } from '@/components/ui/CustomCursor';
 import { InitialLoader } from '@/components/ui/InitialLoader';
