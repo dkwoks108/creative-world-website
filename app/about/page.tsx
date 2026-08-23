@@ -114,7 +114,7 @@ export default function AboutPage() {
                 <div className="lg:col-span-5 relative h-72 sm:h-96 border-4 border-black bg-white overflow-hidden">
                   <Image
                     src="/images/about/surnax-philosophy-portrait.jpg"
-                    alt="Surnax Technologies Leadership - Growth Philosophy"
+                    alt="Surnax Leadership - Growth Philosophy"
                     fill
                     sizes="(max-width: 768px) 100vw, 40vw"
                     className="object-cover object-top hover:scale-105 transition-all duration-300"

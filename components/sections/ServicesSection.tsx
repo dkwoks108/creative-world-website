@@ -107,7 +107,7 @@ export function ServicesSection() {
                 </span>
                 <ul className="space-y-2.5">
                   {activeService.deliverables.map((item, dIdx) => (
-                    <div key={dIdx} className="flex items-start space-x-3 text-xs font-serifBody text-black p-4 border-2 border-black bg-neutral-50">
+                    <li key={dIdx} className="flex items-start space-x-3 text-xs font-serifBody text-black p-4 border-2 border-black bg-neutral-50">
                       <Check size={16} strokeWidth={2} className="text-black shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </li>
@@ -167,7 +167,7 @@ export function ServicesSection() {
                 </span>
                 <ul className="space-y-2">
                   {service.deliverables.map((item, dIdx) => (
-                    <div key={dIdx} className="flex items-start space-x-2 text-xs font-serifBody text-black">
+                    <li key={dIdx} className="flex items-start space-x-2 text-xs font-serifBody text-black">
                       <Check size={14} strokeWidth={2} className="text-black shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </li>

@@ -38,12 +38,12 @@ export async function generateMetadata({ params }: IndustryPageProps): Promise<M
 
   if (!industry) {
     return {
-      title: 'Industry Case Study Not Found | Surnax Technologies',
+      title: 'Industry Case Study Not Found | Surnax',
     };
   }
 
   return {
-    title: `${industry.industryName} Case Study & Digital System | Surnax Technologies`,
+    title: `${industry.industryName} Case Study & Digital System | Surnax`,
     description: industry.shortProblem,
     openGraph: {
       title: `${industry.industryName} Case Study: ${industry.title} | Surnax`,
@@ -71,7 +71,7 @@ export default function IndustryDetailPage({ params }: IndustryPageProps) {
     'articleSection': caseStudy.category,
     'publisher': {
       '@type': 'Organization',
-      'name': 'Surnax Technologies',
+      'name': 'Surnax',
       'logo': 'https://surnax.com/icon.png'
     }
   };

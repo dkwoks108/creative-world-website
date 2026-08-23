@@ -112,7 +112,7 @@ export default function ServiceDetailPage({ params }: ServicePageProps) {
               <div className="max-w-6xl mx-auto relative h-72 sm:h-[450px] w-full border-4 border-black bg-white">
                 <Image
                   src={service.image}
-                  alt={`${service.title} editorial visual - Surnax Technologies`}
+                  alt={`${service.title} editorial visual - Surnax`}
                   fill
                   sizes="(max-width: 1200px) 100vw, 1200px"
                   className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-300"

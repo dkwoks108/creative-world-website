@@ -7,10 +7,10 @@ import { IndustryCaseStudiesClient } from '@/components/sections/IndustryCaseStu
 import { INDUSTRY_CASE_STUDIES } from '@/data/industryCaseStudies';
 
 export const metadata: Metadata = {
-  title: 'Industry Case Studies & Digital Systems | Surnax Technologies',
+  title: 'Industry Case Studies & Digital Systems | Surnax',
   description: 'Explore custom digital solutions, web applications, automation funnels, and CRM integrations engineered by Surnax across 18 key business industries.',
   openGraph: {
-    title: 'Different Industries. Different Challenges. One Technology Partner | Surnax Technologies',
+    title: 'Different Industries. Different Challenges. One Technology Partner | Surnax',
     description: 'Explore sector-specific web development, automation systems, AI integration, and digital growth frameworks for 18 distinct industries.',
   },
   alternates: {

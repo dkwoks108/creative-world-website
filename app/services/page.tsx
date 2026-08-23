@@ -43,7 +43,7 @@ export default function ServicesPage() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
                 <div className="lg:col-span-8">
                   <p className="font-serif text-xl sm:text-2xl md:text-3xl leading-relaxed text-black tracking-tight font-normal">
-                    Traditional agencies sell isolated marketing tasks. Surnax Technologies delivers a connected growth system where web engineering, video production, local SEO, and paid acquisition compound to drive enterprise growth.
+                    Traditional agencies sell isolated marketing tasks. Surnax delivers a connected growth system where web engineering, video production, local SEO, and paid acquisition compound to drive enterprise growth.
                   </p>
                 </div>
                 <div className="lg:col-span-4 flex justify-start lg:justify-end">

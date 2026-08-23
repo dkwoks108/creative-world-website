@@ -134,7 +134,7 @@ export function InitialLoader() {
               <span className="hidden md:inline">[ 02 ] OBSERVER ACTIVE</span>
             </div>
             <div>
-              <span>SURNAX TECHNOLOGIES © {new Date().getFullYear()}</span>
+              <span>SURNAX © {new Date().getFullYear()}</span>
             </div>
           </div>
         </motion.div>

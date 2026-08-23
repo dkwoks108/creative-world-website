@@ -250,7 +250,7 @@ export function DesignProHero() {
 
       {/* 6. Bottom Scroll Explorer Indicator */}
       <footer className="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 pb-6 flex items-center justify-between font-mono text-[10px] text-[#6E7582] uppercase tracking-widest">
-        <span>SURNAX TECHNOLOGIES</span>
+        <span>SURNAX</span>
         <div className="flex items-center space-x-2 text-[#A2A8B4] animate-bounce">
           <span>SCROLL TO EXPLORE</span>
           <ArrowDown className="w-3.5 h-3.5 text-[#B8FF2C]" />

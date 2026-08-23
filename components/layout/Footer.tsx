@@ -31,7 +31,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
           {/* Brand Identity & Positioning (4 cols) */}
           <ScrollReveal direction="bottom" delay={0.1} className="md:col-span-4 space-y-6">
-            <Link href="/" aria-label="Surnax Technologies home" className="inline-block">
+            <Link href="/" aria-label="Surnax home" className="inline-block">
               <div className="p-3 bg-white border-2 border-black inline-flex items-center">
                 <Image
                   src="/brand/logo-horizontal-transparent.png"

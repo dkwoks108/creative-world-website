@@ -74,7 +74,7 @@ export function CinematicStatementSection() {
             </h2>
 
             <p className="font-serifBody text-lg sm:text-2xl text-neutral-200 leading-relaxed font-normal max-w-3xl mx-auto">
-              Traditional agency models burn budget on meaningless impressions. Surnax Technologies unifies search intent, performance video ads, and conversion engineering into one connected system.
+              Traditional agency models burn budget on meaningless impressions. Surnax unifies search intent, performance video ads, and conversion engineering into one connected system.
             </p>
 
             <div className="pt-4 flex justify-center">

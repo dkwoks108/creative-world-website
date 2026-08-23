@@ -65,7 +65,7 @@ export function HeroSection() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.65 }}
               className="font-serif text-xl sm:text-2xl md:text-3xl leading-relaxed text-black tracking-tight font-normal"
             >
-              Surnax Technologies engineers high-converting search systems, performance marketing funnels, and bespoke web platforms for ambitious Jaipur brands.
+              Surnax engineers high-converting search systems, performance marketing funnels, and bespoke web platforms for ambitious Jaipur brands.
             </motion.p>
 
             <motion.div

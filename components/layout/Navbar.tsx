@@ -46,7 +46,7 @@ export function Navbar() {
           <div className="flex items-center gap-4">
             <Link
               href="/"
-              aria-label="Surnax Technologies home"
+              aria-label="Surnax home"
               className="group flex items-center focus-visible:outline focus-visible:outline-3 focus-visible:outline-black focus-visible:outline-offset-2"
             >
               <SurnaxLogo accentColor="#000000" brandColor="#000000" textColor="#000000" height={isScrolled ? 26 : 30} />

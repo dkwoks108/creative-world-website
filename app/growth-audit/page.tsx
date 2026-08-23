@@ -65,8 +65,8 @@ export default function GrowthAuditPage() {
                 {/* Strategic Atmosphere Image */}
                 <div className="relative h-[220px] w-full border-4 border-black bg-white overflow-hidden">
                   <Image
-                    src="/images/audit/cw-growth-audit-atmosphere-01.webp"
-                    alt="Surnax Technologies Strategic Growth Diagnostic Workspace"
+                    src="/images/audit/cw-growth-audit-atmosphere-01.png"
+                    alt="Surnax Strategic Growth Diagnostic Workspace"
                     fill
                     sizes="(max-width: 1024px) 100vw, 40vw"
                     className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-300"

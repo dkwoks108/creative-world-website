@@ -25,7 +25,7 @@ export function SurnaxLogo({
       <div className={`inline-flex items-center shrink-0 ${className}`}>
         <Image
           src="/brand/symbol-only-transparent.png"
-          alt="Surnax Technologies"
+          alt="Surnax"
           width={numericHeight * 1.7}
           height={numericHeight}
           style={{ height: numericHeight, width: 'auto' }}
@@ -45,7 +45,7 @@ export function SurnaxLogo({
     <div className={`inline-flex items-center shrink-0 ${className}`}>
       <Image
         src={logoSrc}
-        alt="Surnax Technologies"
+        alt="Surnax"
         width={numericHeight * 3.8}
         height={numericHeight}
         style={{ height: numericHeight, width: 'auto' }}

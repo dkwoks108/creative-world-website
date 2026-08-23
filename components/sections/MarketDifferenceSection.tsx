@@ -151,8 +151,6 @@ export function MarketDifferenceSection() {
                   </li>
                 </ul>
               </div>
-            </MouseParallax>
-          </RevealOnScroll>
 
               <div className="pt-6 border-t-2 border-black text-xs text-black font-mono flex items-center justify-between font-bold">
                 <span>OUTCOME: PREDICTABLE REVENUE & COMPOUNDING ROI</span>

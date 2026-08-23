@@ -62,7 +62,7 @@ export function MobileMenu({ isOpen, onClose, links }: MobileMenuProps) {
     >
       {/* Drawer Header */}
       <div className="flex h-20 items-center justify-between px-6 border-b-2 border-black">
-        <Link href="/" onClick={onClose} aria-label="Surnax Technologies home">
+        <Link href="/" onClick={onClose} aria-label="Surnax home">
           <SurnaxLogo accentColor="#000000" brandColor="#000000" textColor="#000000" height={28} />
         </Link>
         <button

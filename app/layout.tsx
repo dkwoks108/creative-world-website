@@ -64,10 +64,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    siteName: 'Surnax Technologies',
-    title: 'Surnax Technologies | Digital Innovation & Marketing Edge',
-    description: 'Surnax Technologies combines custom web development, video production, performance marketing, and search intelligence for brands in Jaipur and across India.',
-    images: [{ url: '/brand/og-image.png', width: 1200, height: 630, alt: 'Surnax Technologies' }],
+    siteName: 'Surnax',
+    title: 'Surnax | Digital Innovation & Marketing Edge',
+    description: 'Surnax combines custom web development, video production, performance marketing, and search intelligence for brands in Jaipur and across India.',
+    images: [{ url: '/brand/og-image.png', width: 1200, height: 630, alt: 'Surnax' }],
   },
   icons: {
     icon: [

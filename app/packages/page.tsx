@@ -97,7 +97,7 @@ export default function PackagesPage() {
                     How is ad spend handled for Google Ads & Meta Ads?
                   </h3>
                   <p className="font-serifBody text-base text-neutral-800 leading-relaxed">
-                    Ad budget is paid directly to Google or Meta via your business ad account. Surnax Technologies manages the strategy, targeting, creative assets, video editing, copywriting, and bid optimization transparently.
+                    Ad budget is paid directly to Google or Meta via your business ad account. Surnax manages the strategy, targeting, creative assets, video editing, copywriting, and bid optimization transparently.
                   </p>
                 </div>
 
