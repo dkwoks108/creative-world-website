@@ -3,6 +3,7 @@ import { Instrument_Serif, Playfair_Display, Source_Serif_4, Inter, JetBrains_Mo
 import { siteConfig } from '@/data/site';
 import { CustomCursor } from '@/components/ui/CustomCursor';
 import { InitialLoader } from '@/components/ui/InitialLoader';
+import { SurnaxAssistantBot } from '@/components/ui/SurnaxAssistantBot';
 import './globals.css';
 
 const fontDisplay = Instrument_Serif({
@@ -136,6 +137,7 @@ export default function RootLayout({
         <InitialLoader />
         <CustomCursor />
         {children}
+        <SurnaxAssistantBot />
       </body>
     </html>
   );
