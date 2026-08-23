@@ -4,11 +4,11 @@ import { LegalPageLayout, TocItem } from '@/components/ui/LegalPageLayout';
 import { siteConfig } from '@/data/site';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Surnax Technologies',
-  description: 'Learn how Surnax Technologies collects, uses, and safeguards information provided via our digital growth audit forms and website interaction.',
+  title: 'Privacy Policy | Ceativee World Jaipur',
+  description: 'Learn how Ceativee World collects, uses, and safeguards information provided via our digital growth audit forms and website interaction.',
   openGraph: {
-    title: 'Privacy Policy | Surnax Technologies Studio',
-    description: 'Transparent privacy practices and data governance policies for Surnax Technologies in Jaipur, Rajasthan, India.',
+    title: 'Privacy Policy | Ceativee World Digital Growth Studio',
+    description: 'Transparent privacy practices and data governance policies for Ceativee World in Jaipur, Rajasthan.',
   },
 };
 
@@ -37,7 +37,7 @@ export default function PrivacyPolicyPage() {
     <LegalPageLayout
       title="Privacy Policy"
       lastUpdated="August 15, 2026"
-      description="Transparent, clear disclosure of how Surnax Technologies handles business enquiries, audit request data, and website visitor information."
+      description="Transparent, clear disclosure of how Ceativee World handles business enquiries, audit request data, and website visitor information."
       toc={privacyToc}
     >
       {/* 01. Effective Date */}

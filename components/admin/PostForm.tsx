@@ -40,20 +40,20 @@ interface PostFormProps {
 }
 
 const INTERNAL_LINKS = [
-  { label: 'Homepage', url: 'https://surnaxtech.com' },
-  { label: 'Services Main', url: 'https://surnaxtech.com/services' },
-  { label: 'SEO Services', url: 'https://surnaxtech.com/services/seo' },
-  { label: 'Performance Marketing', url: 'https://surnaxtech.com/services/performance-marketing' },
-  { label: 'Social Media Marketing', url: 'https://surnaxtech.com/services/social-media-marketing' },
-  { label: 'Website Development', url: 'https://surnaxtech.com/services/website-development' },
-  { label: 'Brand Strategy', url: 'https://surnaxtech.com/services/brand-strategy' },
-  { label: 'Industries Overview', url: 'https://surnaxtech.com/industries' },
-  { label: 'Real Estate Growth', url: 'https://surnaxtech.com/industries/real-estate' },
-  { label: 'Restaurants & Hospitality', url: 'https://surnaxtech.com/industries/restaurants' },
-  { label: 'Growth Playbooks / Work', url: 'https://surnaxtech.com/work' },
-  { label: 'Growth Audit Form', url: 'https://surnaxtech.com/growth-audit' },
-  { label: 'Contact Us', url: 'https://surnaxtech.com/contact' },
-  { label: 'About Agency', url: 'https://surnaxtech.com/about' },
+  { label: 'Homepage', url: 'https://ceativeeworld.com' },
+  { label: 'Services Main', url: 'https://ceativeeworld.com/services' },
+  { label: 'SEO Services', url: 'https://ceativeeworld.com/services/seo' },
+  { label: 'Performance Marketing', url: 'https://ceativeeworld.com/services/performance-marketing' },
+  { label: 'Social Media Marketing', url: 'https://ceativeeworld.com/services/social-media-marketing' },
+  { label: 'Website Development', url: 'https://ceativeeworld.com/services/website-development' },
+  { label: 'Brand Strategy', url: 'https://ceativeeworld.com/services/brand-strategy' },
+  { label: 'Industries Overview', url: 'https://ceativeeworld.com/industries' },
+  { label: 'Real Estate Growth', url: 'https://ceativeeworld.com/industries/real-estate' },
+  { label: 'Restaurants & Hospitality', url: 'https://ceativeeworld.com/industries/restaurants' },
+  { label: 'Growth Playbooks / Work', url: 'https://ceativeeworld.com/work' },
+  { label: 'Growth Audit Form', url: 'https://ceativeeworld.com/growth-audit' },
+  { label: 'Contact Us', url: 'https://ceativeeworld.com/contact' },
+  { label: 'About Agency', url: 'https://ceativeeworld.com/about' },
 ];
 
 export function PostForm({ initialData, categories, authors, adminPath }: PostFormProps) {
@@ -430,12 +430,12 @@ export function PostForm({ initialData, categories, authors, adminPath }: PostFo
             </div>
             <div className="p-4 bg-[#F8F9FA] rounded-xl border border-black/10 space-y-1 font-sans">
               <div className="text-[11px] text-[#202124] flex items-center gap-1">
-                <span>surnaxtech.com</span>
+                <span>ceativeeworld.com</span>
                 <span>›</span>
                 <span className="text-[#5f6368]">insights › {slug || 'your-slug'}</span>
               </div>
               <div className="text-base text-[#1a0dab] font-medium hover:underline cursor-pointer line-clamp-1">
-                {seoTitle || title || 'Article Title - Surnax Technologies'}
+                {seoTitle || title || 'Article Title - Ceativee World'}
               </div>
               <div className="text-xs text-[#4d5156] line-clamp-2">
                 {metaDescription || excerpt || 'Article description will appear here in search engine results snippets...'}
@@ -454,7 +454,7 @@ export function PostForm({ initialData, categories, authors, adminPath }: PostFo
                 {featuredImage && <img src={featuredImage} alt="OG Card" className="w-full h-full object-cover" />}
               </div>
               <div className="p-4 space-y-1 bg-white">
-                <div className="text-[10px] font-mono text-txt-muted uppercase">SURNAXTECH.COM</div>
+                <div className="text-[10px] font-mono text-txt-muted uppercase">CEATIVEEWORLD.COM</div>
                 <div className="text-sm font-bold text-ink">{ogTitle || seoTitle || title}</div>
                 <div className="text-xs text-txt-secondary line-clamp-2">{ogDescription || metaDescription || excerpt}</div>
               </div>
@@ -680,7 +680,7 @@ export function PostForm({ initialData, categories, authors, adminPath }: PostFo
                   className="w-full p-2.5 text-left text-xs hover:bg-cream transition-colors flex justify-between items-center cursor-pointer"
                 >
                   <span className="font-semibold text-ink">{link.label}</span>
-                  <span className="font-mono text-[10px] text-txt-muted">{link.url.replace('https://surnaxtech.com', '')}</span>
+                  <span className="font-mono text-[10px] text-txt-muted">{link.url.replace('https://ceativeeworld.com', '')}</span>
                 </button>
               ))}
             </div>

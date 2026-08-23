@@ -11,11 +11,11 @@ import { PackageCard } from '@/components/ui/PackageCard';
 import { packagesData } from '@/data/packages';
 
 export const metadata: Metadata = {
-  title: 'Growth Packages & Custom Quotes | Surnax Technologies',
-  description: 'Structured growth packages and custom retainers for web engineering, video production, performance ads, and SEO at Surnax Technologies.',
+  title: 'Growth Packages & Pricing | Ceativee World Jaipur',
+  description: 'Structured monthly growth packages for Jaipur businesses with custom quotation per month tailored to your business stage.',
   openGraph: {
-    title: 'Growth Packages & Retainers | Surnax Technologies',
-    description: 'Bespoke retainer structures and transparent project pricing tailored to your business scale and technical goals.',
+    title: 'Growth Packages & Custom Quotation | Ceativee World Jaipur',
+    description: 'Structured, transparent monthly marketing packages with custom quotation tailored to your business stage in Jaipur.',
   },
 };
 

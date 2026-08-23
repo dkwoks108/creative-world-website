@@ -9,11 +9,11 @@ import { MonochromeSection } from '@/components/monochrome/MonochromeSection';
 import { GrowthAuditForm } from '@/components/ui/GrowthAuditForm';
 
 export const metadata: Metadata = {
-  title: 'Free Digital Growth Audit | Surnax Technologies',
-  description: 'Request a free 2-step digital growth audit for your business. We evaluate web engineering, search visibility, paid ad bottlenecks, and video content conversion.',
+  title: 'Free Digital Growth Audit | Ceativee World Jaipur',
+  description: 'Request a free 2-step digital growth audit for your Jaipur business. We evaluate search visibility, paid ad bottlenecks, and web lead conversion.',
   openGraph: {
-    title: 'Free Digital Growth Audit | Surnax Technologies',
-    description: 'Get an actionable digital marketing and tech review tailored for your business goals.',
+    title: 'Free Digital Growth Audit | Ceativee World Jaipur',
+    description: 'Get an actionable digital marketing review tailored for Jaipur business owners.',
   },
 };
 

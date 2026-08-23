@@ -2,7 +2,7 @@ import { ServiceItem } from '@/types';
 
 export const servicesData: ServiceItem[] = [
   {
-    id: 'website-development',
+    id: 'performance-marketing',
     number: '01',
     slug: 'website-development',
     title: 'Custom Website Development',
@@ -11,35 +11,39 @@ export const servicesData: ServiceItem[] = [
     description: 'Custom React, Node.js, WordPress, and Shopify web applications engineered for speed, UX, and conversion.',
     fullDescription: 'At Surnax Technologies, website development is rooted in custom engineering rather than restrictive visual templates. We build fast, mobile-responsive corporate websites, custom React/Node.js web applications, e-commerce storefronts (Shopify & WooCommerce), and high-converting landing pages. Every build features clean semantic code, fast Core Web Vitals, custom UI components, and direct lead integration.',
     deliverables: [
-      'Custom React, Next.js & Node.js Web Engineering',
-      'PHP, WordPress & Shopify E-Commerce Development',
-      'High-Converting Landing Pages & Corporate Sites',
-      'Schema.org Structured Data & Technical SEO Architecture',
-      'WhatsApp, Call & Lead CRM Form Integration'
+      'Google Search & Commercial Intent Keyword Campaigns',
+      'Meta Ads (Instagram & Facebook) Audience & Geo Targeting',
+      'Dedicated High-Converting Campaign Landing Pages',
+      'Conversion Tracking, Attribution & Lead Verification',
+      'Weekly Ad Budget Optimization & Placement Control'
     ],
-    outcomeStatement: 'A modern, high-speed digital sales foundation engineered to convert visitor traffic into active business inquiries.',
-    ctaLabel: 'Explore Web Engineering',
+    outcomeStatement: 'A steady flow of qualified business enquiries with clear cost-per-lead tracking.',
+    ctaLabel: 'Explore Lead Generation',
     keyBenefits: [
-      'Custom UI design tailored specifically to your brand identity',
-      '100% mobile perfection and lightning-fast page loading speeds',
-      'Flexible backend architectures built on Node.js, PHP, or modern CMS engines',
-      'Built-in search engine optimization and analytics integration'
+      'Stop paying for un-targeted clicks that never convert into enquiries',
+      'Directly capture customer search intent on Google when buyers are ready',
+      'Engage local Jaipur demographics with targeted Instagram video ads',
+      'Track real cost-per-lead rather than vanity ad impressions'
     ],
     processOverview: [
-      '01 Architecture & UX Wireframing',
-      '02 Custom UI Design & Design System Setup',
-      '03 Full-Stack Frontend & Backend Engineering',
-      '04 SEO Schema & Performance Optimization',
-      '05 Quality Audit, Deployment & Form Hook Integration'
+      '01 Business & Competitor Ad Diagnosis',
+      '02 Search Keyword & Audience Structuring',
+      '03 Ad Creative, Copywriting & Landing Page Setup',
+      '04 Campaign Launch & Conversion Tracking Setup',
+      '05 Continuous Bid Optimization & Lead Quality Review'
     ],
     faqs: [
       {
-        question: 'Which technologies does Surnax Technologies use for web development?',
-        answer: 'We build custom web solutions using React, Node.js, JavaScript, HTML5/CSS3, Next.js, PHP, WordPress, and Shopify depending on your project scale and functional requirements.'
+        question: 'Which ad platform works better for Jaipur businesses: Google Ads or Meta Ads?',
+        answer: 'Google Ads is best for high-intent search queries where customers are actively searching for a specific service (e.g., "coaching institute in Jaipur", "real estate developer Jaipur"). Meta Ads (Instagram & Facebook) excels at visual storytelling, local brand awareness, and retargeting.'
       },
       {
-        question: 'How long does a custom website build take?',
-        answer: 'A high-converting landing page takes 1 to 2 weeks, while a full corporate website or custom e-commerce web app takes 3 to 6 weeks from strategy to live deployment.'
+        question: 'What ad budget do I need to start performance marketing?',
+        answer: 'We recommend starting with an ad budget that allows meaningful testing in your local sector. Our Starter and Growth packages accommodate varying budget tiers, ensuring every rupee spent is tracked against lead generation.'
+      },
+      {
+        question: 'Do you guarantee specific lead volumes or sales numbers?',
+        answer: 'No agency can honestly guarantee exact sales or lead numbers. We guarantee rigorous campaign strategy, high-intent targeting, lead page optimization, and transparent tracking to maximize your return on ad spend.'
       }
     ]
   },
@@ -167,35 +171,35 @@ export const servicesData: ServiceItem[] = [
     description: 'Engaging Instagram Reels, YouTube Shorts, explainer videos, kinetic typography, and motion graphics built to capture brand attention.',
     fullDescription: 'Video is the single most powerful tool for capturing digital attention in 2026. Surnax Technologies delivers end-to-end video editing and production—from short-form Instagram Reels and YouTube Shorts to long-form YouTube episodes, podcasts, corporate films, and product showcases. We combine kinetic typography, seamless cuts, sound design, and color grading to tell stories that convert viewers into customers.',
     deliverables: [
-      'Instagram Reels & YouTube Shorts Editing',
-      'Long-Form YouTube Videos & Podcast Production',
-      'Corporate Explainer Videos & Testimonials',
-      'Motion Graphics, Kinetic Typography & Sound Design',
-      'Professional Color Grading & Subtitle Formatting'
+      'Jaipur Local SEO & Google Business Profile Optimization',
+      'On-Page Technical & Keyword Hierarchy Structuring',
+      'High-Intent Local Content & Service Page Strategy',
+      'Schema.org Structured Data & Search Engine Indexing',
+      'Local Citation Verification & Map Pack Optimization'
     ],
-    outcomeStatement: 'High-retention video content that builds immediate brand authority and social engagement.',
-    ctaLabel: 'Explore Video Production',
+    outcomeStatement: 'Sustainable organic visibility and local map search discovery across Jaipur.',
+    ctaLabel: 'Explore Local SEO',
     keyBenefits: [
-      'Hook audience attention in the first 3 seconds of video play',
-      'Produce consistent reel content without burdening internal staff',
-      'Establish visual authority across Instagram, YouTube, and LinkedIn',
-      'Repurpose long-form content into bite-sized high-performing shorts'
+      'Capture local customers searching for services in your area of Jaipur',
+      'Build long-term digital asset value that generates free organic leads',
+      'Rank in the Google 3-Pack Map listing for local search intent',
+      'Improve website speed, mobile compliance, and technical crawlability'
     ],
     processOverview: [
-      '01 Scripting & Storyboarding Review',
-      '02 Raw Footage Assembly & Pacing',
-      '03 Motion Graphics & Subtitle Design',
-      '04 Audio Mastering & Color Grading',
-      '05 Final Render Export & Social Format Delivery'
+      '01 Technical Site & Local Audit',
+      '02 Local Keyword & Intent Mapping',
+      '03 On-Page Content & Schema Structuring',
+      '04 Google Business Profile Optimization',
+      '05 Organic Ranking & Search Impression Monitoring'
     ],
     faqs: [
       {
-        question: 'Does Surnax Technologies handle both short-form and long-form video?',
-        answer: 'Yes. We edit short-form content (Instagram Reels, YouTube Shorts) as well as long-form videos (YouTube episodes, podcasts, corporate explainers, and brand films).'
+        question: 'How long does local SEO take to show results in Jaipur?',
+        answer: 'Google Business Profile updates and local map improvements can show initial movement within 4 to 8 weeks. Comprehensive organic ranking improvements for competitive search terms typically compound over 3 to 6 months.'
       },
       {
-        question: 'What elements are included in your video editing workflow?',
-        answer: 'Our workflow includes professional cuts, kinetic typography captions, motion graphic overlays, custom sound design, color grading, and thumbnail design.'
+        question: 'Can you guarantee a #1 ranking on Google?',
+        answer: 'No. Search algorithms update continuously and Google explicitly advises against agencies promising #1 positions. We focus on search intent, local technical excellence, and sustainable rankings that drive real customer enquiries.'
       }
     ]
   }

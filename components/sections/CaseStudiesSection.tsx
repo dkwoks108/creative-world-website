@@ -30,13 +30,41 @@ export function CaseStudiesSection() {
           </p>
         </div>
 
+        {/* Bespoke 3D Growth Matrix Visual Showcase Banner */}
+        <RevealOnScroll variant="clip-up">
+          <ImageReveal duration={1.2} className="rounded-2xl overflow-hidden shadow-editorial border border-border-subtle">
+            <div className="relative w-full h-[240px] sm:h-[320px]">
+              <Image
+                src="/images/visuals/growth_matrix_visual.png"
+                alt="3D computational growth matrix visual"
+                fill
+                className="object-cover"
+                sizes="100vw"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-6 sm:p-8 space-y-2">
+                <TechScrambler text="[ COMPUTATIONAL GROWTH MODEL ]" className="text-xs font-mono text-coral font-semibold" />
+                <h3 className="font-display text-2xl sm:text-4xl text-white font-normal">
+                  Data-Driven Funnel Optimization & Attribution
+                </h3>
+              </div>
+            </div>
+          </ImageReveal>
+        </RevealOnScroll>
+
         {/* Featured Case Study Panel */}
-        <FeaturedCaseStudy caseStudy={featuredStudy} />
+        <RevealOnScroll variant="scale-in">
+          <MouseParallax strength={4}>
+            <FeaturedCaseStudy caseStudy={featuredStudy} />
+          </MouseParallax>
+        </RevealOnScroll>
 
         {/* Secondary Case Studies Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
           {secondaryStudies.map((caseStudy) => (
-            <CaseStudyCard key={caseStudy.id} caseStudy={caseStudy} />
+            <RevealOnScroll key={caseStudy.id} variant="fade-up">
+              <CaseStudyCard caseStudy={caseStudy} />
+            </RevealOnScroll>
           ))}
         </div>
       </div>

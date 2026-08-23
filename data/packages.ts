@@ -3,73 +3,74 @@ import { PackageTier } from '@/types';
 export const packagesData: PackageTier[] = [
   {
     id: 'starter',
-    name: 'Starter Growth Retainer',
-    price: 'Custom Quote',
-    period: ' / project or month',
+    name: 'Starter Package',
+    price: 'Custom Quotation',
+    period: '/ month',
     subtitle: 'Build Your Initial Digital Presence',
-    idealFor: 'Local businesses and early-stage brands looking to establish a modern website, social media reels, and search profile.',
+    idealFor: 'Small local businesses, early-stage startups, and local service providers starting their digital presence in Jaipur.',
     inclusions: [
-      'Custom Landing Page / Starter Web Build',
-      'Short-Form Video Reels & Graphic Posts',
-      'Google Business Profile & Local SEO Setup',
+      '8 Social Media Posts / month',
+      '4 Short-Form Reels / month',
+      'Captions & Local Hashtag Strategy',
       'Basic Paid Ads Setup (Google / Meta)',
-      'Monthly Performance Summary & Review'
+      'Google Business Profile Basic Optimization',
+      'Monthly Performance Summary'
     ],
     deliverables: [
-      'Modern web landing foundation',
-      'Reels and social media content production',
-      'Local search map profile optimization'
+      'Consistent monthly social media content',
+      'Initial ad campaign infrastructure',
+      'Local search map profile setup'
     ],
-    ctaText: 'Request Custom Starter Quote',
-    disclaimer: 'Pricing is customized based on project scope, video frequency, and technical requirements.'
+    ctaText: 'Get Started with Starter',
+    disclaimer: 'Final monthly scope and custom quotation depend on ad platform requirements and asset creation complexity.'
   },
   {
     id: 'growth',
-    name: 'Growth Performance Package',
-    price: 'Custom Quote',
-    period: ' / month',
+    name: 'Growth Package',
+    price: 'Custom Quotation',
+    period: '/ month',
     subtitle: 'Scale Lead Generation & Search Visibility',
-    idealFor: 'Scaling businesses, institutes, real estate developers, and clinics seeking multi-channel acquisition and web applications.',
+    idealFor: 'Growing Jaipur businesses, coaching institutes, real estate projects, and active clinics seeking consistent lead flow.',
     featured: true,
     inclusions: [
-      'Custom React / WordPress / Shopify Website Build',
-      'Instagram Reels & YouTube Shorts Video Editing',
+      '20 Social Media Posts / month',
+      '8 Short-Form Video Reels / month',
       'Full Paid Ads Management (Google Search & Meta Ads)',
-      'Technical SEO & Local Keyword Dominance',
-      'Conversion Rate Optimization & Funnel Architecture',
+      'Local SEO & Search Keyword Optimization',
+      'Dedicated Campaign Landing Page Architecture',
       'Monthly Strategic Growth Review'
     ],
     deliverables: [
-      'High-speed web platform',
-      'Continuous video reel production',
-      'Paid ad campaign optimization & CPA reduction',
-      'Transparent enquiry tracking'
+      'Active social brand presence',
+      'Continuous paid ad campaign optimization',
+      'Local map pack search visibility',
+      'Transparent cost-per-lead reporting'
     ],
-    ctaText: 'Request Growth Quote',
-    disclaimer: 'Custom retainer pricing tailored to your ad spend budget and business goals.'
+    ctaText: 'Choose Growth Package',
+    disclaimer: 'Ad spend is paid directly to platforms (Google/Meta) and managed transparently with custom quotation.'
   },
   {
     id: 'premium',
-    name: 'Enterprise Growth Partnership',
-    price: 'Custom Quote',
-    period: ' / custom scope',
-    subtitle: 'Complete Digital & Technical Partnership',
-    idealFor: 'Established brands, corporate enterprises, and high-growth companies seeking full web engineering, media production, and strategy.',
+    name: 'Premium Package',
+    price: 'Custom Quotation',
+    period: '/ month',
+    subtitle: 'Complete Digital Growth Partnership',
+    idealFor: 'Established enterprises, multi-location businesses, and market leaders wanting dominant search and digital lead acquisition.',
     inclusions: [
-      'Custom Full-Stack React / Node.js Web Application',
-      'Comprehensive Technical SEO & Keyword Domination',
-      'Full Video Production, Reels, Shorts & Brand Films',
-      'Advanced Meta & Google Ads Performance Marketing',
-      'Custom CRM / Lead Integration & API Engineering',
+      'Custom Business Website / High-Converting Landing System',
+      'Comprehensive Local & Technical SEO Campaign',
+      'Full Social Media Content & Reel Production',
+      'Advanced Google Ads & Meta Performance Marketing',
+      'Conversion Rate & Funnel Optimization',
       'Dedicated Strategic Account Director'
     ],
     deliverables: [
-      'Enterprise digital product & marketing ecosystem',
-      'National and local search dominance',
-      'Full-service creative production & engineering',
-      'Dedicated strategy & weekly performance reporting'
+      'Complete digital sales & marketing ecosystem',
+      'Dominant local organic and map search rankings',
+      'Priority creative production and ad management',
+      'Weekly performance reviews and lead pipeline audits'
     ],
-    ctaText: 'Discuss Enterprise Partnership',
-    disclaimer: 'Bespoke agreement customized to enterprise technical & marketing scope.'
+    ctaText: 'Partner at Premium',
+    disclaimer: 'Tailored scope and custom quotation built around enterprise business growth goals.'
   }
 ];

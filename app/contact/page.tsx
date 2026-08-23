@@ -9,11 +9,11 @@ import { GrowthAuditForm } from '@/components/ui/GrowthAuditForm';
 import { contactData } from '@/data/contact';
 
 export const metadata: Metadata = {
-  title: 'Contact Surnax Technologies | Web Engineering & Marketing Studio',
-  description: 'Connect with Surnax Technologies in Jaipur for custom web development, video production, performance marketing, local SEO, and growth audits.',
+  title: 'Contact Ceativee World | Digital Growth Agency Jaipur',
+  description: 'Connect with Ceativee World in Jaipur for performance marketing, local SEO, website development, and business growth audits.',
   openGraph: {
-    title: 'Contact Surnax Technologies | Web & Digital Growth Agency',
-    description: 'Direct agency contact, location details, and Growth Audit requests for Surnax Technologies.',
+    title: 'Contact Ceativee World | Growth Agency Jaipur',
+    description: 'Direct agency contact, location details, and Growth Audit requests in Jaipur.',
   },
 };
 

@@ -51,7 +51,7 @@ export default async function AdminLayout({
               <div className="bg-ivory border border-black/10 p-2 rounded-xl">
                 <Image
                   src="/logo-horizontal-transparent.png"
-                  alt="Surnax Technologies"
+                  alt="Ceativee World"
                   width={120}
                   height={35}
                   priority

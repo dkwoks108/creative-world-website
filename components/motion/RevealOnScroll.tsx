@@ -48,20 +48,20 @@ export function RevealOnScroll({
 
       switch (variant) {
         case 'fade-up':
-          fromVars = { opacity: 0, y: 35 };
+          fromVars = { opacity: 0, y: 40 };
           toVars = { ...toVars, y: 0 };
           break;
         case 'clip-up':
-          fromVars = { opacity: 0, clipPath: 'inset(100% 0% 0% 0%)' };
-          toVars = { ...toVars, clipPath: 'inset(0% 0% 0% 0%)' };
+          fromVars = { opacity: 0, y: 40, clipPath: 'inset(100% 0% 0% 0%)' };
+          toVars = { ...toVars, y: 0, clipPath: 'inset(0% 0% 0% 0%)' };
           break;
         case 'slide-left':
-          fromVars = { opacity: 0, x: -35 };
-          toVars = { ...toVars, x: 0 };
+          fromVars = { opacity: 0, x: -40, clipPath: 'inset(0% 100% 0% 0%)' };
+          toVars = { ...toVars, x: 0, clipPath: 'inset(0% 0% 0% 0%)' };
           break;
         case 'slide-right':
-          fromVars = { opacity: 0, x: 35 };
-          toVars = { ...toVars, x: 0 };
+          fromVars = { opacity: 0, x: 40, clipPath: 'inset(0% 0% 0% 100%)' };
+          toVars = { ...toVars, x: 0, clipPath: 'inset(0% 0% 0% 0%)' };
           break;
         case 'scale-in':
           fromVars = { opacity: 0, scale: 0.95 };

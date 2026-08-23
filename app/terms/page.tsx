@@ -4,11 +4,11 @@ import { LegalPageLayout, TocItem } from '@/components/ui/LegalPageLayout';
 import { siteConfig } from '@/data/site';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | Surnax Technologies',
-  description: 'Review the commercial terms, service engagement conditions, ad spend disclaimers, and governance policies for Surnax Technologies.',
+  title: 'Terms of Service | Ceativee World Jaipur',
+  description: 'Review the commercial terms, service engagement conditions, ad spend disclaimers, and agency governance policies for Ceativee World.',
   openGraph: {
-    title: 'Terms of Service | Surnax Technologies Studio',
-    description: 'Commercial terms of service for web engineering, video production, performance ads, and SEO engagements at Surnax Technologies.',
+    title: 'Terms of Service | Ceativee World Digital Growth Studio',
+    description: 'Commercial terms of service for digital marketing, performance ads, SEO, and website development engagements in Jaipur.',
   },
 };
 
@@ -42,7 +42,7 @@ export default function TermsOfServicePage() {
     <LegalPageLayout
       title="Terms of Service"
       lastUpdated="August 15, 2026"
-      description="Commercial engagement terms, service delivery scope, media spend boundaries, and governance standards for Surnax Technologies engagements."
+      description="Commercial engagement terms, service delivery scope, media spend boundaries, and governance standards for Ceativee World engagements."
       toc={termsToc}
     >
       {/* 01. Introduction */}

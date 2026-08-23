@@ -3,56 +3,63 @@
 @tailwind utilities;
 
 :root {
-  /* Minimalist Monochrome Tokens */
-  --mono-bg: #FFFFFF;
-  --mono-fg: #000000;
-  --mono-muted: #F5F5F5;
-  --mono-muted-fg: #525252;
-  --mono-accent: #000000;
-  --mono-accent-fg: #FFFFFF;
-  --mono-border: #000000;
-  --mono-border-light: #E5E5E5;
-  --mono-card: #FFFFFF;
-  --mono-card-fg: #000000;
-  --mono-ring: #000000;
-
-  /* Brand Color Spectrum Tokens (Obsidian x Acid Lime x Hyper Cobalt) */
-  --brand-lime: #B8FF2C;           /* Acid Lime primary brand signature */
-  --brand-lime-hover: #a6f514;
-  --brand-cobalt: #4D5CFF;         /* Hyper Cobalt supporting tech accent */
-  --brand-cyan: #31E7FF;           /* Electric Cyan data accent */
-  --brand-gradient: linear-gradient(135deg, #B8FF2C 0%, #4D5CFF 100%);
+  /* Official Logo Color Spectrum Tokens */
+  --brand-cyan: #00CFFF;
+  --brand-blue: #1769FF;
+  --brand-violet: #673BFF;
+  --brand-magenta: #D900FF;
+  --brand-gradient: linear-gradient(90deg, #00CFFF 0%, #1769FF 30%, #673BFF 62%, #D900FF 100%);
   
-  /* Canvas & Dark Surfaces */
-  --bg-obsidian: #08090C;          /* Main Obsidian canvas background */
-  --bg-charcoal: #101218;          /* Dark charcoal secondary background */
-  --bg-surface: #151821;           /* Elevated surface for cards & inputs */
-  --bg-inverted: #F4F5F0;          /* Inverted off-white manifesto visual break */
+  /* Canvas & Neutral Background Palette */
+  --bg-ivory: #FAF9FC;            /* Clean neutral editorial canvas */
+  --bg-cream: #F5F7FB;            /* Soft cool secondary background */
+  --bg-plum: #111111;             /* Deep Ink contrast sections & footer */
+  --ink: #111111;                 /* Primary Deep Ink text */
+  --ink-soft: #18151F;            /* Soft black secondary surface */
   
   /* Surfaces */
-  --surface-glass: rgba(16, 18, 24, 0.85); /* Glass navigation & floating overlays */
+  --surface-white: #FFFFFF;       /* Card surfaces, input backgrounds */
+  --surface-primary: #FFFFFF;     /* Cards, containers, section blocks */
+  --surface-secondary: #F5F7FB;   /* Hover surfaces, secondary elevated cards */
+  --surface-glass: rgba(255, 255, 255, 0.82); /* Glass navigation & pill overlays */
   
   /* Structural Borders */
-  --border-subtle: rgba(255, 255, 255, 0.10);  /* 1px crisp grid borders */
-  --border-active: rgba(184, 255, 44, 0.40);   /* Active Acid Lime focus border */
+  --border-subtle: rgba(17, 17, 17, 0.10);  /* 1px subtle editorial borders */
+  --border-active: rgba(17, 17, 17, 0.18);  /* Focused input & card borders */
 
   /* Typography Colors */
-  --text-primary: #F5F7FA;         /* Off-white primary text */
-  --text-secondary: #C5CBD3;       /* High-contrast body text */
-  --text-muted: #9299A8;           /* Captions, tags, metadata */
-  --text-inverted: #08090C;        /* Dark text on light inverted section */
+  --text-primary: #111111;        /* Deep Ink primary text */
+  --text-secondary: #686575;      /* Muted secondary body text */
+  --text-muted: #8A8793;          /* Captions, tags, metadata */
+  --text-on-dark: #FFFFFF;        /* Pure white text on dark sections */
+  --text-on-dark-muted: rgba(255, 255, 255, 0.70);
 
-  /* Semantic Colors */
-  --semantic-success: #10B981;
-  --semantic-warning: #F59E0B;
-  --semantic-error: #EF4444;
+  /* Brand Accents */
+  --accent-coral: #1769FF;        /* Primary interactive blue accent */
+  --accent-coral-hover: #1456D6;  /* Deep blue hover state */
+  --accent-terracotta: #673BFF;   /* Violet secondary accent */
+  --accent-gold: #00CFFF;         /* Cyan atmospheric accent */
+
+  /* Functional Semantics */
+  --semantic-success: #10B981;    /* Verification indicators */
+  --semantic-warning: #F59E0B;    /* Warnings & badges */
+  --semantic-error: #EF4444;      /* Form validation errors */
 
   /* Border Radius Tokens */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 16px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
   --radius-pill: 9999px;
+
+  /* Shadow Language Tokens */
+  --shadow-subtle: 0 2px 8px rgba(17, 17, 17, 0.04);
+  --shadow-elevated: 0 8px 24px -4px rgba(17, 17, 17, 0.06), 0 2px 6px -1px rgba(17, 17, 17, 0.03);
+  --shadow-hover: 0 20px 40px -8px rgba(17, 17, 17, 0.12), 0 4px 12px -2px rgba(17, 17, 17, 0.04);
+  --shadow-pressed: 0 3px 10px rgba(17, 17, 17, 0.08);
+  --shadow-inset: inset 0 2px 4px rgba(17, 17, 17, 0.06);
+  --shadow-inset-deep: inset 0 3px 8px rgba(17, 17, 17, 0.12);
+  --shadow-glow: 0 0 25px rgba(23, 105, 255, 0.15);
 }
 
 /* Global Reset & Base Styles */
@@ -61,7 +68,7 @@
 }
 
 html {
-  background-color: #08090C;
+  background-color: var(--bg-ivory);
   color: var(--text-primary);
   font-family: var(--font-body), sans-serif;
   text-rendering: optimizeLegibility;
@@ -73,7 +80,7 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background-color: #08090C;
+  background-color: var(--bg-ivory);
   color: var(--text-primary);
   overflow-x: hidden;
 }
@@ -102,56 +109,23 @@ button:disabled, input:disabled, select:disabled, textarea:disabled {
   -webkit-text-fill-color: transparent;
 }
 
-/* Minimalist Monochrome Texture Overlay Utilities */
-.bg-texture-lines {
-  background-image: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 1px,
-    #000000 1px,
-    #000000 2px
-  );
-  background-size: 100% 4px;
+/* Card & Surface Elevation Utilities */
+.shadow-card-elevated {
+  box-shadow: var(--shadow-elevated);
+  transition: box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1), transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.bg-texture-grid {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-  background-size: 40px 40px;
+.shadow-card-elevated:hover {
+  box-shadow: var(--shadow-hover);
 }
 
-.bg-texture-diagonal {
-  background-image: repeating-linear-gradient(
-    45deg,
-    transparent,
-    transparent 40px,
-    rgba(0, 0, 0, 0.03) 40px,
-    rgba(0, 0, 0, 0.03) 42px
-  );
+.shadow-input-recessed {
+  box-shadow: var(--shadow-inset);
+  transition: box-shadow 200ms ease, border-color 200ms ease;
 }
 
-.bg-texture-noise {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-}
-
-.bg-texture-stats {
-  background-image: repeating-linear-gradient(
-    90deg,
-    transparent,
-    transparent 1px,
-    rgba(255, 255, 255, 0.05) 1px,
-    rgba(255, 255, 255, 0.05) 2px
-  );
-  background-size: 4px 100%;
-}
-
-.bg-texture-cta {
-  background-image: radial-gradient(
-    circle at top center,
-    rgba(255, 255, 255, 0.08),
-    transparent 70%
-  );
+.shadow-input-recessed:focus, .shadow-input-recessed:focus-within {
+  box-shadow: inset 0 2px 4px rgba(17, 17, 17, 0.04), 0 0 0 3px rgba(23, 105, 255, 0.15);
 }
 
 /* Accessibility Focus Outline Baseline */

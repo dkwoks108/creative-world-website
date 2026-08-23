@@ -105,14 +105,14 @@ export function ServicesSection() {
                 <span className="font-mono text-xs uppercase tracking-widest text-neutral-500 block font-bold">
                   DELIVERABLES & EXECUTION ARCHITECTURE:
                 </span>
-                <div className="grid grid-cols-2 gap-3">
+                <ul className="space-y-2.5">
                   {activeService.deliverables.map((item, dIdx) => (
                     <div key={dIdx} className="flex items-start space-x-3 text-xs font-serifBody text-black p-4 border-2 border-black bg-neutral-50">
                       <Check size={16} strokeWidth={2} className="text-black shrink-0 mt-0.5" />
                       <span>{item}</span>
-                    </div>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             </div>
 
@@ -136,8 +136,8 @@ export function ServicesSection() {
           </div>
         </div>
 
-        {/* MOBILE STACKED EDITORIAL FLOW */}
-        <div className="grid grid-cols-1 gap-6 lg:hidden">
+        {/* MOBILE STACKED EDITORIAL FLOW (Visible on Mobile/Tablet) */}
+        <div className="grid grid-cols-1 gap-8 lg:hidden">
           {servicesData.map((service) => (
             <div
               key={service.id}
@@ -165,14 +165,14 @@ export function ServicesSection() {
                 <span className="font-mono text-[10px] text-neutral-500 uppercase tracking-widest block font-bold">
                   DELIVERABLES:
                 </span>
-                <div className="space-y-2">
+                <ul className="space-y-2">
                   {service.deliverables.map((item, dIdx) => (
                     <div key={dIdx} className="flex items-start space-x-2 text-xs font-serifBody text-black">
                       <Check size={14} strokeWidth={2} className="text-black shrink-0 mt-0.5" />
                       <span>{item}</span>
-                    </div>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
 
               <div className="p-4 border-2 border-black bg-black text-white text-xs space-y-1">

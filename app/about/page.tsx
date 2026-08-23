@@ -12,11 +12,11 @@ import { aboutData } from '@/data/about';
 import { siteConfig } from '@/data/site';
 
 export const metadata: Metadata = {
-  title: 'About Surnax Technologies | Web Engineering & Growth Studio',
-  description: 'Surnax Technologies is a result-driven digital growth and web engineering studio focused on connected search visibility, performance marketing, video production, and web conversion.',
+  title: 'About Ceativee World | Digital Growth Agency in Jaipur',
+  description: 'Ceativee World is a result-driven digital growth agency in Jaipur focused on connected search visibility, performance marketing, brand content, and web conversion.',
   openGraph: {
-    title: 'About Surnax Technologies | Web & Digital Growth Partner',
-    description: 'Discover Surnax Technologies mission, growth philosophy, and connected digital marketing systems.',
+    title: 'About Ceativee World | Digital Growth Partner in Jaipur',
+    description: 'Discover Ceativee World\'s mission, growth philosophy, and connected digital marketing systems for Jaipur businesses.',
   },
 };
 

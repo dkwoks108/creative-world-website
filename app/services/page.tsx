@@ -10,11 +10,11 @@ import { MonochromeButton } from '@/components/monochrome/MonochromeButton';
 import { servicesData } from '@/data/services';
 
 export const metadata: Metadata = {
-  title: 'Web Engineering & Digital Services | Surnax Technologies',
-  description: 'Explore Surnax Technologies core growth services: Web Engineering, Video Production, Performance Marketing, Local SEO, and Social Media Reels.',
+  title: 'Digital Marketing & Growth Services in Jaipur | Ceativee World',
+  description: 'Explore Ceativee World\'s 5 core growth services: Performance Marketing, Local SEO, Social Media & Reels, Business Websites, and Integrated Growth Packages in Jaipur.',
   openGraph: {
-    title: 'Digital Engineering & Growth Services | Surnax Technologies',
-    description: 'Connected web engineering and digital growth services designed to drive qualified leads and business scale.',
+    title: 'Digital Marketing Services in Jaipur | Ceativee World',
+    description: 'Connected digital growth services engineered to drive qualified leads, local search dominance, and business growth for Jaipur companies.',
   },
 };
 

@@ -35,7 +35,7 @@ export function Footer() {
               <div className="p-3 bg-white border-2 border-black inline-flex items-center">
                 <Image
                   src="/brand/logo-horizontal-transparent.png"
-                  alt="Surnax Technologies"
+                  alt="Ceativee World"
                   width={155}
                   height={40}
                   className="h-8 sm:h-9 w-auto object-contain"

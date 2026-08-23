@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Quote, ShieldCheck } from 'lucide-react';
 import { MonochromeSection } from '@/components/monochrome/MonochromeSection';
 import { testimonialsData } from '@/data/testimonials';

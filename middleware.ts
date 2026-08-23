@@ -3,19 +3,26 @@ import { jwtVerify } from 'jose';
 
 const COOKIE_NAME = 'cw_admin_session';
 const SECRET_KEY = new TextEncoder().encode(
-  process.env.SESSION_SECRET || 'surnax-technologies-super-secret-session-key-2026-growth'
+  process.env.SESSION_SECRET || 'ceativee-world-super-secret-session-key-2026-jaipur-growth'
 );
 
 export async function middleware(request: NextRequest) {
-  const adminPath = (process.env.ADMIN_PANEL_PATH || '/cw-control-x7k9m2').toLowerCase();
   const pathname = request.nextUrl.pathname.toLowerCase();
 
-  // Only run middleware logic on admin panel route tree
-  if (!pathname.startsWith(adminPath)) {
+  // Legacy admin path redirect to canonical /admin
+  const legacyAdminPath = '/cw-control-x7k9m2';
+  if (pathname.startsWith(legacyAdminPath)) {
+    const targetPath = pathname.replace(legacyAdminPath, '/admin') || '/admin/dashboard';
+    const redirectUrl = new URL(targetPath, request.url);
+    return NextResponse.redirect(redirectUrl, { status: 301 });
+  }
+
+  // Only apply logic to /admin routes
+  if (!pathname.startsWith('/admin')) {
     return NextResponse.next();
   }
 
-  const isLoginPage = pathname === `${adminPath}/login`;
+  const isLoginPage = pathname === '/admin/login';
   const token = request.cookies.get(COOKIE_NAME)?.value;
 
   let isValidSession = false;
@@ -28,16 +35,9 @@ export async function middleware(request: NextRequest) {
     }
   }
 
-  // Handle open redirect protection on callback URL if passed
-  const callbackUrl = request.nextUrl.searchParams.get('callbackUrl');
-  let safeCallbackPath = `${adminPath}/dashboard`;
-  if (callbackUrl && callbackUrl.startsWith(adminPath) && !callbackUrl.includes('//')) {
-    safeCallbackPath = callbackUrl;
-  }
-
-  // If user is accessing login page while already authenticated -> redirect to dashboard/callback
+  // If user is accessing login page while already authenticated -> redirect to dashboard
   if (isLoginPage && isValidSession) {
-    const redirectUrl = new URL(safeCallbackPath, request.url);
+    const redirectUrl = new URL('/admin/dashboard', request.url);
     const response = NextResponse.redirect(redirectUrl);
     response.headers.set('X-Robots-Tag', 'noindex, nofollow, noarchive');
     response.headers.set('Cache-Control', 'private, no-store, max-age=0, must-revalidate');
@@ -46,7 +46,7 @@ export async function middleware(request: NextRequest) {
 
   // Protected admin routes require valid authentication
   if (!isLoginPage && !isValidSession) {
-    const loginUrl = new URL(`${adminPath}/login`, request.url);
+    const loginUrl = new URL('/admin/login', request.url);
     const response = NextResponse.redirect(loginUrl);
     response.headers.set('X-Robots-Tag', 'noindex, nofollow, noarchive');
     response.headers.set('Cache-Control', 'private, no-store, max-age=0, must-revalidate');
@@ -65,10 +65,7 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    /*
-     * Match all admin panel routes dynamically using environment variable path or default
-     */
+    '/admin/:path*',
     '/cw-control-x7k9m2/:path*',
-    '/:path*',
   ],
 };
