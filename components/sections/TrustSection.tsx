@@ -5,10 +5,10 @@ import { MonochromeSection } from '@/components/monochrome/MonochromeSection';
 
 export function TrustSection() {
   const stats = [
-    { value: '₹12.4Cr+', label: 'REVENUE INFLUENCED', detail: 'Across direct-to-consumer & high-ticket B2B client portfolios' },
-    { value: '38M+', label: 'AUDIENCE REACHED', detail: 'Targeted organic & performance media brand engagements' },
+    { value: '₹1.4Cr+', label: 'REVENUE INFLUENCED', detail: 'Across direct-to-consumer & high-ticket B2B client portfolios' },
+    { value: '200M+', label: 'AUDIENCE REACHED', detail: 'Targeted organic & performance media brand engagements' },
     { value: '4.8×', label: 'AVERAGE ROAS', detail: 'Cross-platform paid media & search engine acquisition efficiency' },
-    { value: '27', label: 'BRANDS SCALED', detail: 'Category leaders engineered in Jaipur & pan-India markets' },
+    { value: '22', label: 'BRANDS SCALED', detail: 'Category leaders engineered in Jaipur & pan-India markets' },
   ];
 
   return (

@@ -44,88 +44,8 @@ export const servicesData: ServiceItem[] = [
     ]
   },
   {
-    id: 'video-editing',
-    number: '02',
-    slug: 'video-editing',
-    title: 'Video Editing & Production',
-    kicker: 'REELS, SHORTS & MOTION GRAPHICS',
-    image: '/images/services/video-production.png',
-    description: 'Engaging Instagram Reels, YouTube Shorts, explainer videos, kinetic typography, and motion graphics built to capture brand attention.',
-    fullDescription: 'Video is the single most powerful tool for capturing digital attention in 2026. Surnax Technologies delivers end-to-end video editing and production—from short-form Instagram Reels and YouTube Shorts to long-form YouTube episodes, podcasts, corporate films, and product showcases. We combine kinetic typography, seamless cuts, sound design, and color grading to tell stories that convert viewers into customers.',
-    deliverables: [
-      'Instagram Reels & YouTube Shorts Editing',
-      'Long-Form YouTube Videos & Podcast Production',
-      'Corporate Explainer Videos & Testimonials',
-      'Motion Graphics, Kinetic Typography & Sound Design',
-      'Professional Color Grading & Subtitle Formatting'
-    ],
-    outcomeStatement: 'High-retention video content that builds immediate brand authority and social engagement.',
-    ctaLabel: 'Explore Video Production',
-    keyBenefits: [
-      'Hook audience attention in the first 3 seconds of video play',
-      'Produce consistent reel content without burdening internal staff',
-      'Establish visual authority across Instagram, YouTube, and LinkedIn',
-      'Repurpose long-form content into bite-sized high-performing shorts'
-    ],
-    processOverview: [
-      '01 Scripting & Storyboarding Review',
-      '02 Raw Footage Assembly & Pacing',
-      '03 Motion Graphics & Subtitle Design',
-      '04 Audio Mastering & Color Grading',
-      '05 Final Render Export & Social Format Delivery'
-    ],
-    faqs: [
-      {
-        question: 'Does Surnax Technologies handle both short-form and long-form video?',
-        answer: 'Yes. We edit short-form content (Instagram Reels, YouTube Shorts) as well as long-form videos (YouTube episodes, podcasts, corporate explainers, and brand films).'
-      },
-      {
-        question: 'What elements are included in your video editing workflow?',
-        answer: 'Our workflow includes professional cuts, kinetic typography captions, motion graphic overlays, custom sound design, color grading, and thumbnail design.'
-      }
-    ]
-  },
-  {
-    id: 'social-media-marketing',
-    number: '03',
-    slug: 'social-media-marketing',
-    title: 'Social Media Marketing',
-    kicker: 'STRATEGY, CONTENT & ORGANIC GROWTH',
-    image: '/images/services/performance-marketing.png',
-    description: 'Strategic social content, visual brand identity, content calendars, and community management engineered for organic brand growth.',
-    fullDescription: 'Social media management at Surnax Technologies builds genuine market authority. We plan, design, and manage your social channels across Instagram, Facebook, LinkedIn, and YouTube. By combining strategic content pillars, eye-catching graphics, and active community engagement, we build trust and turn scrollers into brand advocates.',
-    deliverables: [
-      'Social Media Strategy & Monthly Content Calendars',
-      'Custom Graphic Design & Brand Assets',
-      'Caption Copywriting & Local Hashtag Research',
-      'Organic Growth & Community Management',
-      'Monthly Analytics & Audience Reach Reports'
-    ],
-    outcomeStatement: 'A distinct, trustworthy brand presence that keeps your business top-of-mind.',
-    ctaLabel: 'Explore Social Strategy',
-    keyBenefits: [
-      'Establish a professional visual identity across Instagram and Facebook',
-      'Maintain consistent posting without internal team burnout',
-      'Engage local Jaipur and national audience demographics',
-      'Track reach, engagement, and profile conversion metrics'
-    ],
-    processOverview: [
-      '01 Brand Audit & Competitor Review',
-      '02 Monthly Content Calendar Planning',
-      '03 Graphic Production & Copywriting',
-      '04 Publishing & Active Community Moderation',
-      '05 Performance Insights & Strategy Refinement'
-    ],
-    faqs: [
-      {
-        question: 'Which social platforms does Surnax Technologies manage?',
-        answer: 'We manage Instagram, Facebook, LinkedIn, and YouTube channels tailored to your B2B or B2C audience target.'
-      }
-    ]
-  },
-  {
     id: 'performance-marketing',
-    number: '04',
+    number: '02',
     slug: 'performance-marketing',
     title: 'Paid Advertising & Meta / Google Ads',
     kicker: 'FULL-FUNNEL PPC & CPA OPTIMIZATION',
@@ -162,8 +82,46 @@ export const servicesData: ServiceItem[] = [
     ]
   },
   {
+    id: 'social-media-marketing',
+    number: '03',
+    slug: 'social-media-marketing',
+    title: 'Social Media Marketing',
+    kicker: 'STRATEGY, CONTENT & ORGANIC GROWTH',
+    image: '/images/services/social-marketing.png',
+    description: 'Strategic social content, visual brand identity, content calendars, and community management engineered for organic brand growth.',
+    fullDescription: 'Social media management at Surnax Technologies builds genuine market authority. We plan, design, and manage your social channels across Instagram, Facebook, LinkedIn, and YouTube. By combining strategic content pillars, eye-catching graphics, and active community engagement, we build trust and turn scrollers into brand advocates.',
+    deliverables: [
+      'Social Media Strategy & Monthly Content Calendars',
+      'Custom Graphic Design & Brand Assets',
+      'Caption Copywriting & Local Hashtag Research',
+      'Organic Growth & Community Management',
+      'Monthly Analytics & Audience Reach Reports'
+    ],
+    outcomeStatement: 'A distinct, trustworthy brand presence that keeps your business top-of-mind.',
+    ctaLabel: 'Explore Social Strategy',
+    keyBenefits: [
+      'Establish a professional visual identity across Instagram and Facebook',
+      'Maintain consistent posting without internal team burnout',
+      'Engage local Jaipur and national audience demographics',
+      'Track reach, engagement, and profile conversion metrics'
+    ],
+    processOverview: [
+      '01 Brand Audit & Competitor Review',
+      '02 Monthly Content Calendar Planning',
+      '03 Graphic Production & Copywriting',
+      '04 Publishing & Active Community Moderation',
+      '05 Performance Insights & Strategy Refinement'
+    ],
+    faqs: [
+      {
+        question: 'Which social platforms does Surnax Technologies manage?',
+        answer: 'We manage Instagram, Facebook, LinkedIn, and YouTube channels tailored to your B2B or B2C audience target.'
+      }
+    ]
+  },
+  {
     id: 'seo-search-growth',
-    number: '05',
+    number: '04',
     slug: 'seo',
     title: 'SEO & Search Engine Intelligence',
     kicker: 'TECHNICAL SEO & LOCAL MAP PACK',
@@ -196,6 +154,48 @@ export const servicesData: ServiceItem[] = [
       {
         question: 'How long does SEO take to generate results in Jaipur?',
         answer: 'Google Business Profile updates and local map improvements show results in 4 to 8 weeks, while organic rankings for competitive search terms build over 3 to 6 months.'
+      }
+    ]
+  },
+  {
+    id: 'video-editing',
+    number: '05',
+    slug: 'video-editing',
+    title: 'Video Editing & Production',
+    kicker: 'REELS, SHORTS & MOTION GRAPHICS',
+    image: '/images/services/video-production.png',
+    description: 'Engaging Instagram Reels, YouTube Shorts, explainer videos, kinetic typography, and motion graphics built to capture brand attention.',
+    fullDescription: 'Video is the single most powerful tool for capturing digital attention in 2026. Surnax Technologies delivers end-to-end video editing and production—from short-form Instagram Reels and YouTube Shorts to long-form YouTube episodes, podcasts, corporate films, and product showcases. We combine kinetic typography, seamless cuts, sound design, and color grading to tell stories that convert viewers into customers.',
+    deliverables: [
+      'Instagram Reels & YouTube Shorts Editing',
+      'Long-Form YouTube Videos & Podcast Production',
+      'Corporate Explainer Videos & Testimonials',
+      'Motion Graphics, Kinetic Typography & Sound Design',
+      'Professional Color Grading & Subtitle Formatting'
+    ],
+    outcomeStatement: 'High-retention video content that builds immediate brand authority and social engagement.',
+    ctaLabel: 'Explore Video Production',
+    keyBenefits: [
+      'Hook audience attention in the first 3 seconds of video play',
+      'Produce consistent reel content without burdening internal staff',
+      'Establish visual authority across Instagram, YouTube, and LinkedIn',
+      'Repurpose long-form content into bite-sized high-performing shorts'
+    ],
+    processOverview: [
+      '01 Scripting & Storyboarding Review',
+      '02 Raw Footage Assembly & Pacing',
+      '03 Motion Graphics & Subtitle Design',
+      '04 Audio Mastering & Color Grading',
+      '05 Final Render Export & Social Format Delivery'
+    ],
+    faqs: [
+      {
+        question: 'Does Surnax Technologies handle both short-form and long-form video?',
+        answer: 'Yes. We edit short-form content (Instagram Reels, YouTube Shorts) as well as long-form videos (YouTube episodes, podcasts, corporate explainers, and brand films).'
+      },
+      {
+        question: 'What elements are included in your video editing workflow?',
+        answer: 'Our workflow includes professional cuts, kinetic typography captions, motion graphic overlays, custom sound design, color grading, and thumbnail design.'
       }
     ]
   }

@@ -144,7 +144,7 @@ export function AgencyHero() {
           {/* Right Supporting Metric (5 cols, right-aligned on lg+) */}
           <div className="lg:col-span-5 lg:text-right space-y-1">
             <div className="font-mono font-bold text-3xl sm:text-4xl lg:text-5xl text-[#B8FF2C] tracking-tight">
-              ₹12.4Cr+
+              ₹1.4Cr+
             </div>
             <span className="font-mono text-[10px] md:text-xs text-[#A2A8B4] uppercase tracking-wider block">
               Revenue influenced across campaigns

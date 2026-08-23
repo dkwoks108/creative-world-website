@@ -18,7 +18,7 @@ export const caseStudiesData: CaseStudyItem[] = [
     ],
     takeaway: 'For education and coaching in Jaipur, search intent combined with immediate mobile enquiry options outperforms generic ad impressions.',
     services: ['Performance Marketing', 'SEO & Local Search', 'Websites & Conversion'],
-    image: '/images/work/cw-work-playbook-education-01.webp',
+    image: '/images/case-studies/education-coaching.png',
     metrics: [
       {
         label: 'QUALIFIED ENQUIRY VOLUME',
@@ -51,7 +51,7 @@ export const caseStudiesData: CaseStudyItem[] = [
     ],
     takeaway: 'Qualifying buyer intent on the landing page protects sales team time and increases site-visit conversion rates.',
     services: ['Performance Marketing', 'Social Media & Creative', 'Websites & Conversion'],
-    image: '/images/work/cw-work-playbook-realestate-01.webp',
+    image: '/images/case-studies/real-estate.png',
     metrics: [
       {
         label: 'VERIFIED SITE VISITS',
@@ -84,7 +84,7 @@ export const caseStudiesData: CaseStudyItem[] = [
     ],
     takeaway: 'Combining local search intent with polished creative assets turns digital attention into store visits and sales.',
     services: ['Social Media & Creative', 'SEO & Local Search', 'Growth Strategy'],
-    image: '/images/work/cw-work-playbook-retail-01.webp',
+    image: '/images/case-studies/retail-jewelry.png',
     metrics: [
       {
         label: 'LOCAL SEARCH MAP VIEWS',

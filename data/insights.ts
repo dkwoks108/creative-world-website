@@ -10,7 +10,7 @@ export const insightsData: InsightArticle[] = [
     publishedDate: 'August 10, 2026',
     readTime: '5 min read',
     author: 'Surnax Technologies Editorial Team',
-    image: '/images/insights/cw-insight-website-2026-01.webp',
+    image: '/images/insights/website-2026.png',
     summary: 'Social media pages build initial interest, but a custom website serves as your permanent digital storefront—converting search traffic into verified phone calls and business enquiries.',
     sections: [
       {
@@ -45,7 +45,7 @@ export const insightsData: InsightArticle[] = [
     publishedDate: 'August 02, 2026',
     readTime: '6 min read',
     author: 'Surnax Technologies Editorial Team',
-    image: '/images/insights/cw-insight-seo-vs-ads-01.webp',
+    image: '/images/insights/seo-vs-ads.png',
     summary: 'Google Ads provides instant traffic for immediate sales cycles, while Local SEO builds compounding organic visibility over time. Discover how to balance both channels.',
     sections: [
       {
@@ -79,7 +79,7 @@ export const insightsData: InsightArticle[] = [
     publishedDate: 'July 26, 2026',
     readTime: '4 min read',
     author: 'Surnax Technologies Editorial Team',
-    image: '/images/insights/cw-insight-reels-mistakes-01.webp',
+    image: '/images/insights/reels-mistakes.png',
     summary: 'Viral trends don\'t always equal customer enquiries. Learn how to align short-form video reels with local brand trust and clear action triggers.',
     sections: [
       {
