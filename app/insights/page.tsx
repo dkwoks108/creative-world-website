@@ -1,19 +1,21 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { Sparkles, ArrowUpRight, BookOpen } from 'lucide-react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { MotionProvider } from '@/components/motion/MotionProvider';
-import { MonochromeSection } from '@/components/monochrome/MonochromeSection';
-import { MonochromeButton } from '@/components/monochrome/MonochromeButton';
+import { RevealOnScroll } from '@/components/motion/RevealOnScroll';
+import { CWBadge } from '@/components/ui/CWBadge';
+import { CWButton } from '@/components/ui/CWButton';
 import { ArticleCard } from '@/components/ui/ArticleCard';
 import { getPublishedInsights } from '@/lib/db-content';
 
 export const metadata: Metadata = {
-  title: 'Insights & Digital Growth Guides | Ceativee World Jaipur',
+  title: 'Insights & Digital Growth Guides | Creativee World Jaipur',
   description: 'Practical guides and articles on SEO, Local Search, Performance Marketing, Social Media Reels, and Web Conversion for Jaipur business owners.',
   openGraph: {
-    title: 'Insights & Digital Growth Guides | Ceativee World Jaipur',
+    title: 'Insights & Digital Growth Guides | Creativee World Jaipur',
     description: 'Expert digital marketing articles tailored to Jaipur market dynamics.',
   },
 };
@@ -23,66 +25,75 @@ export default async function InsightsPage() {
 
   return (
     <MotionProvider>
-      <div className="relative min-h-screen bg-white text-black font-serifBody selection:bg-black selection:text-white">
+      <div className="relative min-h-screen bg-[#07090E] text-slate-100 selection:bg-[#1769FF]/30 selection:text-white">
         <Navbar />
 
-        <main>
-          {/* 1. EDITORIAL HERO SECTION */}
-          <MonochromeSection divider="none" texture="lines" className="!py-16 md:!py-24 border-b-4 border-black">
-            <div className="flex flex-col gap-6">
-              <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-neutral-600 font-bold">
-                <span className="w-4 h-4 border-2 border-black bg-white inline-block" aria-hidden="true" />
-                <span>DIGITAL INSIGHTS & KNOWLEDGE HUB</span>
+        <main className="pt-32">
+          {/* Ambient Spectrum Glow */}
+          <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-[#1769FF]/15 via-[#673BFF]/15 to-[#D900FF]/10 blur-3xl pointer-events-none rounded-full" />
+
+          {/* 1. HERO SECTION */}
+          <section className="relative z-10 py-16 md:py-24 max-w-7xl mx-auto px-6 sm:px-8">
+            <div className="space-y-8">
+              <RevealOnScroll variant="fade-up">
+                <CWBadge variant="cyan">
+                  <BookOpen size={13} />
+                  <span>Digital Insights & Knowledge Hub</span>
+                </CWBadge>
+              </RevealOnScroll>
+
+              <div className="space-y-4 max-w-4xl">
+                <h1 className="font-display font-extrabold text-5xl sm:text-7xl lg:text-8xl tracking-tight leading-[1.05] text-white">
+                  Insights & <br />
+                  <span className="text-cw-gradient">digital dispatch.</span>
+                </h1>
+
+                <p className="font-sans text-lg sm:text-xl text-slate-300 font-light leading-relaxed pt-2">
+                  Actionable strategies, local search breakdowns, and performance marketing tactics written to help Jaipur companies make informed marketing decisions.
+                </p>
               </div>
-
-              <h1 className="font-serif font-bold text-6xl sm:text-8xl lg:text-9xl uppercase tracking-tighter leading-none text-black my-4">
-                INSIGHTS &<br />
-                DIGITAL DISPATCH<span className="text-neutral-400">.</span>
-              </h1>
-
-              <div className="w-full h-1 bg-black my-4" />
-
-              <p className="font-serif text-xl sm:text-2xl md:text-3xl leading-relaxed text-black tracking-tight font-normal max-w-4xl">
-                Actionable strategies, local search breakdowns, and performance marketing tactics written to help Jaipur companies make informed marketing decisions.
-              </p>
             </div>
-          </MonochromeSection>
+          </section>
 
           {/* 2. ARTICLES GRID */}
-          <MonochromeSection divider="thick" texture="grid">
-            <div className="space-y-12">
-              <span className="font-mono text-xs text-black uppercase tracking-widest block font-bold">
-                RECENT DISPATCHES & ARTICLES
+          <section className="relative z-10 py-16 max-w-7xl mx-auto px-6 sm:px-8 space-y-12">
+            <div className="flex items-center justify-between border-b border-white/10 pb-6">
+              <span className="font-mono text-xs text-[#00CFFF] uppercase tracking-widest font-semibold">
+                ● RECENT DISPATCHES & ARTICLES
               </span>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {articles.map((article) => (
-                  <ArticleCard key={article.id} article={article} />
-                ))}
-              </div>
             </div>
-          </MonochromeSection>
 
-          {/* 3. INVERTED BOTTOM CTA */}
-          <MonochromeSection inverted divider="none" texture="cta" className="text-center">
-            <div className="max-w-3xl mx-auto space-y-6">
-              <span className="font-mono text-xs uppercase tracking-widest text-neutral-400 font-bold block">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {articles.map((article, idx) => (
+                <RevealOnScroll key={article.id} variant="fade-up" delay={idx * 0.08}>
+                  <ArticleCard article={article} />
+                </RevealOnScroll>
+              ))}
+            </div>
+          </section>
+
+          {/* 3. BOTTOM CTA */}
+          <section className="relative z-10 py-24 max-w-7xl mx-auto px-6 sm:px-8">
+            <div className="rounded-3xl p-10 md:p-16 bg-gradient-to-tr from-[#1769FF]/20 via-[#673BFF]/20 to-[#D900FF]/20 border border-white/20 text-center space-y-6">
+              <span className="font-mono text-xs text-[#00CFFF] uppercase tracking-widest font-semibold block">
                 STRATEGIC DIAGNOSIS
               </span>
-              <h2 className="font-serif text-4xl sm:text-6xl font-bold tracking-tight leading-none uppercase">
-                Want Custom Insights for Your Business?
+              <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white max-w-2xl mx-auto">
+                Want custom insights for your business?
               </h2>
-              <p className="font-serifBody text-base sm:text-xl text-neutral-300 leading-relaxed max-w-xl mx-auto">
+              <p className="text-slate-300 text-base sm:text-lg font-light max-w-xl mx-auto">
                 Request a free growth audit. Our team will evaluate your search rankings, current ad strategy, and digital assets.
               </p>
-              <div className="pt-4">
+              <div className="pt-4 flex justify-center">
                 <Link href="/growth-audit">
-                  <MonochromeButton variant="primary" className="!bg-white !text-black hover:!bg-neutral-200" showArrow>
-                    Request Free Audit
-                  </MonochromeButton>
+                  <CWButton variant="gradient" size="lg">
+                    <span>Request Free Audit</span>
+                    <ArrowUpRight size={18} />
+                  </CWButton>
                 </Link>
               </div>
             </div>
-          </MonochromeSection>
+          </section>
         </main>
 
         <Footer />
@@ -90,4 +101,3 @@ export default async function InsightsPage() {
     </MotionProvider>
   );
 }
-

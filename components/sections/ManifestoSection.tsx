@@ -26,7 +26,7 @@ export function ManifestoSection() {
         {/* Strategic Paragraph & Pull Quote */}
         <div className="pt-8 border-t-4 border-black grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
           <div className="md:col-span-4 font-mono text-xs text-neutral-600 uppercase tracking-widest font-bold">
-            SURNAX OPERATING PRINCIPLE 01
+            CREATIVEE OPERATING PRINCIPLE 01
           </div>
           <div className="md:col-span-8 font-serifBody text-lg sm:text-xl text-black leading-relaxed font-normal p-6 border-2 border-black bg-neutral-50">
             In an era saturated with generic noise and ephemeral social metrics, true enterprise value is built by engineering proprietary positioning, high-converting digital infrastructure, and relentless performance strategy.

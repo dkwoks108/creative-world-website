@@ -15,7 +15,7 @@ export function CaseStudyIndustryCard({ caseStudy, onExplore }: Props) {
     <article className="group bg-white text-black border-4 border-black p-6 sm:p-8 flex flex-col justify-between h-full min-h-[580px] transition-colors duration-100 hover:bg-black hover:text-white rounded-none focus-within:ring-4 focus-within:ring-black">
       
       <div className="space-y-6">
-        {/* Top Full-Bleed Image Frame with Surnax Grayscale-to-Color Hover Effect */}
+        {/* Top Full-Bleed Image Frame with Creativee World Grayscale-to-Color Hover Effect */}
         {caseStudy.image ? (
           <div className="relative h-48 sm:h-56 -mx-6 sm:-mx-8 -mt-6 sm:-mt-8 mb-6 overflow-hidden border-b-4 border-black bg-neutral-100">
             <Image
@@ -58,13 +58,13 @@ export function CaseStudyIndustryCard({ caseStudy, onExplore }: Props) {
           </p>
         </div>
 
-        {/* Surnax Solution Tags */}
+        {/* Creativee World Solution Tags */}
         <div className="space-y-2 pt-2 border-t border-black group-hover:border-white transition-colors">
           <span className="text-[10px] font-mono uppercase tracking-wider block font-bold text-neutral-500 group-hover:text-neutral-400 transition-colors">
-            SURNAX SOLUTION MATRIX:
+            CREATIVEE SOLUTION MATRIX:
           </span>
           <div className="flex flex-wrap gap-1.5">
-            {caseStudy.surnaxSolution.servicesUsed.map((srv, idx) => (
+            {caseStudy.creativeeSolution.servicesUsed.map((srv, idx) => (
               <span key={idx} className="px-2 py-0.5 text-[10px] font-mono font-bold uppercase tracking-wider border border-black group-hover:border-white bg-white group-hover:bg-black text-black group-hover:text-white transition-colors">
                 {srv}
               </span>

@@ -162,7 +162,7 @@ export default function LeadsPage() {
         const csvContent = "data:text/csv;charset=utf-8," + csvRows.join("\n");
         const link = document.createElement("a");
         link.setAttribute("href", encodeURI(csvContent));
-        link.setAttribute("download", `ceativee_leads.csv`);
+        link.setAttribute("download", `creativee_leads.csv`);
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);

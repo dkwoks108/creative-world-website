@@ -3,15 +3,16 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, Check, ShieldCheck } from 'lucide-react';
+import { ArrowLeft, Check, ShieldCheck, Sparkles, ArrowUpRight } from 'lucide-react';
 import { caseStudiesData } from '@/data/case-studies';
 import { CaseStudyVisualPlaceholder } from '@/components/ui/CaseStudyVisualPlaceholder';
 import { CaseStudyResultBadge } from '@/components/ui/CaseStudyResultBadge';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { MotionProvider } from '@/components/motion/MotionProvider';
-import { MonochromeSection } from '@/components/monochrome/MonochromeSection';
-import { MonochromeButton } from '@/components/monochrome/MonochromeButton';
+import { RevealOnScroll } from '@/components/motion/RevealOnScroll';
+import { CWBadge } from '@/components/ui/CWBadge';
+import { CWButton } from '@/components/ui/CWButton';
 import { siteConfig } from '@/data/site';
 
 interface Props {
@@ -54,41 +55,42 @@ export default function CaseStudyDetailPage({ params }: Props) {
 
   return (
     <MotionProvider>
-      <div className="relative min-h-screen bg-white text-black font-serifBody selection:bg-black selection:text-white">
+      <div className="relative min-h-screen bg-[#07090E] text-slate-100 selection:bg-[#1769FF]/30 selection:text-white">
         <Navbar />
 
-        <main>
-          {/* 1. EDITORIAL HERO SECTION */}
-          <MonochromeSection divider="none" texture="lines" className="!py-16 md:!py-24 border-b-4 border-black">
-            <div className="flex flex-col gap-6">
-              <Link
-                href="/work"
-                className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-black hover:underline underline-offset-4 font-bold"
-              >
-                <ArrowLeft size={14} />
-                <span>BACK TO GROWTH PLAYBOOKS</span>
-              </Link>
+        <main className="pt-32">
+          {/* Ambient Spectrum Glow */}
+          <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-[#1769FF]/15 via-[#673BFF]/15 to-[#D900FF]/10 blur-3xl pointer-events-none rounded-full" />
 
-              <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-neutral-600 font-bold pt-2">
-                <span className="w-4 h-4 border-2 border-black bg-white inline-block" aria-hidden="true" />
-                <span>SECTOR PLAYBOOK — {study.industryPlaceholder}</span>
-              </div>
+          {/* 1. HERO SECTION */}
+          <section className="relative z-10 py-16 md:py-24 max-w-7xl mx-auto px-6 sm:px-8 space-y-6">
+            <Link
+              href="/work"
+              className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#00CFFF] hover:text-white transition-colors font-semibold"
+            >
+              <ArrowLeft size={14} />
+              <span>Back to Growth Playbooks</span>
+            </Link>
 
-              <h1 className="font-serif font-bold text-5xl sm:text-7xl lg:text-8xl uppercase tracking-tighter leading-none text-black my-2">
-                {study.title}<span className="text-neutral-400">.</span>
+            <div className="space-y-6 max-w-4xl">
+              <CWBadge variant="cyan">
+                <Sparkles size={13} />
+                <span>Sector Playbook — {study.industryPlaceholder}</span>
+              </CWBadge>
+
+              <h1 className="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-tight leading-[1.08] text-white">
+                {study.title}
               </h1>
 
-              <div className="w-full h-1 bg-black my-2" />
-
-              <p className="font-serif text-xl sm:text-2xl leading-relaxed text-black tracking-tight font-normal max-w-3xl">
+              <p className="font-sans text-lg sm:text-xl text-slate-300 font-light leading-relaxed">
                 {study.shortDescription}
               </p>
             </div>
-          </MonochromeSection>
+          </section>
 
           {/* 2. MEDIA / VISUAL SECTION */}
-          <div className="border-b-4 border-black bg-neutral-100 p-6 sm:p-12">
-            <div className="max-w-6xl mx-auto relative h-72 sm:h-[450px] w-full border-4 border-black bg-white overflow-hidden">
+          <section className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 pb-16">
+            <div className="relative h-72 sm:h-[450px] w-full rounded-3xl border border-white/15 overflow-hidden shadow-2xl">
               {study.image ? (
                 <Image
                   src={study.image}
@@ -96,7 +98,7 @@ export default function CaseStudyDetailPage({ params }: Props) {
                   fill
                   priority
                   sizes="(max-width: 1280px) 100vw, 1200px"
-                  className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-300"
+                  className="object-cover object-center hover:scale-105 transition-all duration-500"
                 />
               ) : (
                 <CaseStudyVisualPlaceholder
@@ -105,17 +107,17 @@ export default function CaseStudyDetailPage({ params }: Props) {
                 />
               )}
             </div>
-          </div>
+          </section>
 
           {/* 3. METRICS CALLOUT */}
-          <MonochromeSection divider="thick" texture="grid">
-            <div className="p-8 border-4 border-black bg-white space-y-6">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b-2 border-black pb-4 gap-2">
-                <span className="font-mono text-xs text-black uppercase tracking-widest font-bold">
-                  STRATEGIC PLAYBOOK METRICS & TARGETS
+          <section className="relative z-10 py-16 max-w-7xl mx-auto px-6 sm:px-8">
+            <div className="p-8 rounded-3xl bg-slate-900/80 border border-white/15 space-y-6">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-white/10 pb-4 gap-2">
+                <span className="font-mono text-xs text-[#00CFFF] uppercase tracking-widest font-semibold">
+                  ● STRATEGIC PLAYBOOK METRICS & TARGETS
                 </span>
-                <span className="flex items-center gap-1.5 font-mono text-xs text-neutral-600 font-bold">
-                  <ShieldCheck size={16} />
+                <span className="flex items-center gap-1.5 font-mono text-xs text-slate-400 font-medium">
+                  <ShieldCheck size={16} className="text-[#00CFFF]" />
                   <span>CONCEPTUAL GROWTH BLUEPRINT</span>
                 </span>
               </div>
@@ -126,49 +128,49 @@ export default function CaseStudyDetailPage({ params }: Props) {
                 ))}
               </div>
             </div>
-          </MonochromeSection>
+          </section>
 
           {/* 4. STRUCTURED ESSAY STORY BREAKDOWN */}
-          <MonochromeSection divider="thick" texture="lines">
-            <div className="max-w-4xl mx-auto space-y-12">
+          <section className="relative z-10 py-24 bg-slate-950/80 border-t border-white/10">
+            <div className="max-w-4xl mx-auto px-6 sm:px-8 space-y-16">
               {/* Section 01: The Challenge */}
-              <div className="space-y-3 border-t-2 border-black pt-8">
-                <span className="font-mono text-xs text-black uppercase tracking-widest block font-bold">
+              <div className="space-y-4 border-t border-white/10 pt-8">
+                <span className="font-mono text-xs text-[#00CFFF] uppercase tracking-widest block font-semibold">
                   01 — THE CHALLENGE
                 </span>
-                <h2 className="font-serif font-bold text-3xl text-black uppercase">
+                <h2 className="font-display font-bold text-2xl sm:text-3xl text-white">
                   Market Context & Friction
                 </h2>
-                <p className="font-serifBody text-base sm:text-lg text-neutral-800 leading-relaxed">
+                <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-light">
                   {study.challenge}
                 </p>
               </div>
 
               {/* Section 02: The Strategy */}
-              <div className="space-y-3 border-t-2 border-black pt-8">
-                <span className="font-mono text-xs text-black uppercase tracking-widest block font-bold">
+              <div className="space-y-4 border-t border-white/10 pt-8">
+                <span className="font-mono text-xs text-[#00CFFF] uppercase tracking-widest block font-semibold">
                   02 — THE STRATEGY
                 </span>
-                <h2 className="font-serif font-bold text-3xl text-black uppercase">
+                <h2 className="font-display font-bold text-2xl sm:text-3xl text-white">
                   Systemic Growth Architecture
                 </h2>
-                <p className="font-serifBody text-base sm:text-lg text-neutral-800 leading-relaxed">
+                <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-light">
                   {study.strategy}
                 </p>
               </div>
 
               {/* Section 03: The Execution */}
-              <div className="space-y-4 border-t-2 border-black pt-8">
-                <span className="font-mono text-xs text-black uppercase tracking-widest block font-bold">
+              <div className="space-y-4 border-t border-white/10 pt-8">
+                <span className="font-mono text-xs text-[#00CFFF] uppercase tracking-widest block font-semibold">
                   03 — THE EXECUTION
                 </span>
-                <h2 className="font-serif font-bold text-3xl text-black uppercase">
+                <h2 className="font-display font-bold text-2xl sm:text-3xl text-white">
                   Technical Implementation Steps
                 </h2>
                 <ul className="space-y-3">
                   {study.execution.map((step, idx) => (
-                    <li key={idx} className="flex items-start space-x-3 p-4 border-2 border-black bg-white text-base text-black">
-                      <Check size={18} strokeWidth={2} className="text-black shrink-0 mt-0.5" />
+                    <li key={idx} className="flex items-start space-x-3 p-4 rounded-2xl bg-slate-900/60 border border-white/10 text-sm text-slate-200">
+                      <Check size={18} className="text-[#00CFFF] shrink-0 mt-0.5" />
                       <span>{step}</span>
                     </li>
                   ))}
@@ -176,40 +178,41 @@ export default function CaseStudyDetailPage({ params }: Props) {
               </div>
 
               {/* Section 04: Key Takeaway */}
-              <div className="space-y-3 border-t-2 border-black pt-8">
-                <span className="font-mono text-xs text-black uppercase tracking-widest block font-bold">
+              <div className="space-y-4 border-t border-white/10 pt-8">
+                <span className="font-mono text-xs text-[#00CFFF] uppercase tracking-widest block font-semibold">
                   04 — STRATEGIC TAKEAWAY
                 </span>
-                <div className="p-8 border-4 border-black bg-neutral-100">
-                  <p className="font-serif text-xl text-black font-normal italic leading-relaxed">
+                <div className="p-8 rounded-3xl bg-slate-900/80 border border-white/15">
+                  <p className="font-sans text-lg sm:text-xl text-slate-200 font-light italic leading-relaxed">
                     &ldquo;{study.takeaway}&rdquo;
                   </p>
                 </div>
               </div>
             </div>
-          </MonochromeSection>
+          </section>
 
-          {/* 5. INVERTED BOTTOM CTA */}
-          <MonochromeSection inverted divider="none" texture="cta" className="text-center">
-            <div className="max-w-3xl mx-auto space-y-6">
-              <span className="font-mono text-xs uppercase tracking-widest text-neutral-400 font-bold block">
+          {/* 5. BOTTOM CTA */}
+          <section className="relative z-10 py-24 max-w-7xl mx-auto px-6 sm:px-8">
+            <div className="rounded-3xl p-10 md:p-16 bg-gradient-to-tr from-[#1769FF]/20 via-[#673BFF]/20 to-[#D900FF]/20 border border-white/20 text-center space-y-6">
+              <span className="font-mono text-xs text-[#00CFFF] uppercase tracking-widest font-semibold block">
                 CUSTOM ROADMAP
               </span>
-              <h2 className="font-serif text-4xl sm:text-6xl font-bold tracking-tight leading-none uppercase">
-                Ready to Implement This Growth Playbook?
+              <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white max-w-2xl mx-auto">
+                Ready to implement this growth playbook?
               </h2>
-              <p className="font-serifBody text-base sm:text-xl text-neutral-300 leading-relaxed max-w-xl mx-auto">
+              <p className="text-slate-300 text-base sm:text-lg font-light max-w-xl mx-auto">
                 Request a free growth audit to see how this strategy applies to your specific Jaipur business.
               </p>
-              <div className="pt-4">
+              <div className="pt-4 flex justify-center">
                 <Link href="/growth-audit">
-                  <MonochromeButton variant="primary" className="!bg-white !text-black hover:!bg-neutral-200" showArrow>
-                    Request Free Growth Audit
-                  </MonochromeButton>
+                  <CWButton variant="gradient" size="lg">
+                    <span>Request Free Growth Audit</span>
+                    <ArrowUpRight size={18} />
+                  </CWButton>
                 </Link>
               </div>
             </div>
-          </MonochromeSection>
+          </section>
         </main>
 
         <Footer />
@@ -217,4 +220,3 @@ export default function CaseStudyDetailPage({ params }: Props) {
     </MotionProvider>
   );
 }
-

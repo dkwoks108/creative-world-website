@@ -2,22 +2,28 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { SurnaxLogo } from '@/components/ui/SurnaxLogo';
+import { CreativeeLogo } from '@/components/ui/CreativeeLogo';
 
 const STATUS_MESSAGES = [
-  'INITIALIZING SYSTEM ARCHITECTURE',
-  'LOADING CINEMATIC ASSETS',
-  'SYSTEM READY // EXECUTING RENDER',
+  'Initializing growth system architecture...',
+  'Loading visual & technical assets...',
+  'Growth engine ready — executing render',
 ];
 
 export function InitialLoader() {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(() => {
+    if (typeof window !== 'undefined') {
+      return !sessionStorage.getItem('creativee_loader_shown') && !window.location.search.includes('bypassLoader=true');
+    }
+    return true;
+  });
   const [progress, setProgress] = useState<number>(0);
   const [statusIndex, setStatusIndex] = useState<number>(0);
 
   useEffect(() => {
-    // Check if loader was already displayed in this browser session
-    const hasLoadedBefore = typeof window !== 'undefined' && sessionStorage.getItem('surnax_loader_shown');
+    // Check if loader was already displayed in this browser session or bypassed for testing
+    const hasLoadedBefore = typeof window !== 'undefined' &&
+      (sessionStorage.getItem('creativee_loader_shown') || window.location.search.includes('bypassLoader=true'));
 
     if (hasLoadedBefore) {
       setIsLoading(false);
@@ -51,7 +57,7 @@ export function InitialLoader() {
           setIsLoading(false);
           document.body.style.overflow = '';
           try {
-            sessionStorage.setItem('surnax_loader_shown', 'true');
+            sessionStorage.setItem('creativee_loader_shown', 'true');
           } catch {
             // Ignore storage restrictions
           }
@@ -75,52 +81,55 @@ export function InitialLoader() {
             clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)',
             transition: { duration: 0.75, ease: [0.76, 0, 0.24, 1] },
           }}
-          className="fixed inset-0 z-[100] bg-black text-white flex flex-col justify-between p-6 sm:p-10 md:p-14 overflow-hidden select-none pointer-events-auto"
+          className="fixed inset-0 z-[100] bg-[#07090E] text-white flex flex-col justify-between p-6 sm:p-10 md:p-14 overflow-hidden select-none pointer-events-auto"
         >
-          {/* Top Telemetry Bar */}
-          <div className="flex items-center justify-between font-mono text-[10px] sm:text-xs uppercase tracking-widest text-neutral-400 font-bold border-b border-neutral-800 pb-4">
+          {/* Background Ambient Spectrum Orb */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-tr from-[#1769FF]/20 via-[#673BFF]/15 to-[#D900FF]/15 blur-3xl pointer-events-none rounded-full" />
+
+          {/* Top System Status Bar */}
+          <div className="relative z-10 flex items-center justify-between font-mono text-[11px] text-slate-400 border-b border-white/10 pb-4">
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 bg-white inline-block animate-pulse" aria-hidden="true" />
-              <span>SURNAX // SYSTEM INITIALIZATION</span>
+              <span className="w-2 h-2 rounded-full bg-[#00CFFF] inline-block animate-pulse" aria-hidden="true" />
+              <span className="font-semibold text-white">Creativee World • Growth System Engine</span>
             </div>
             <div className="hidden sm:block">
-              <span>LOC: JAIPUR, IN [26.9124° N, 75.7873° E]</span>
+              <span>Studio: Jaipur, India</span>
             </div>
           </div>
 
           {/* Center Brand & Progress Sequence */}
-          <div className="max-w-md w-full mx-auto space-y-8 text-center my-auto">
-            {/* Logo reveal with pulse scale */}
+          <div className="relative z-10 max-w-md w-full mx-auto space-y-8 text-center my-auto">
+            {/* Logo reveal */}
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.4 }}
               className="flex justify-center"
             >
-              <SurnaxLogo accentColor="#FFFFFF" brandColor="#FFFFFF" textColor="#FFFFFF" height={38} />
+              <CreativeeLogo accentColor="#FFFFFF" brandColor="#FFFFFF" textColor="#FFFFFF" height={42} />
             </motion.div>
 
-            {/* 2px Precision Progress Line */}
+            {/* Spectrum Gradient Progress Line */}
             <div className="space-y-3">
-              <div className="w-full h-1 bg-neutral-900 border border-neutral-800 overflow-hidden relative">
+              <div className="w-full h-1.5 bg-slate-900 border border-white/15 rounded-full overflow-hidden relative">
                 <motion.div
-                  className="h-full bg-white origin-left"
+                  className="h-full bg-cw-gradient origin-left rounded-full shadow-cw-glow"
                   style={{ width: `${progress}%` }}
                 />
               </div>
 
               {/* Progress Count-up & Status text */}
-              <div className="flex items-center justify-between font-mono text-xs font-bold uppercase tracking-widest text-neutral-300">
+              <div className="flex items-center justify-between font-sans text-xs text-slate-300">
                 <motion.span
                   key={statusIndex}
                   initial={{ opacity: 0, y: 4 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.15 }}
-                  className="truncate max-w-[280px] sm:max-w-none text-left"
+                  className="truncate max-w-[280px] sm:max-w-none text-left font-light"
                 >
                   {STATUS_MESSAGES[statusIndex]}
                 </motion.span>
-                <span className="tabular-nums ml-2 font-mono text-white text-sm">
+                <span className="tabular-nums ml-2 font-mono text-[#00CFFF] text-sm font-bold">
                   {progress < 10 ? `0${progress}` : progress}%
                 </span>
               </div>
@@ -128,13 +137,13 @@ export function InitialLoader() {
           </div>
 
           {/* Bottom Diagnostics Footer */}
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-2 font-mono text-[10px] uppercase tracking-widest text-neutral-500 font-bold border-t border-neutral-800 pt-4">
+          <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-2 font-mono text-[11px] text-slate-500 border-t border-white/10 pt-4">
             <div className="flex items-center gap-4">
-              <span>[ 01 ] HERO PRE-LOADED</span>
-              <span className="hidden md:inline">[ 02 ] OBSERVER ACTIVE</span>
+              <span>Verified Next.js App Router</span>
+              <span className="hidden md:inline">• Sub-2s Benchmark</span>
             </div>
             <div>
-              <span>SURNAX © {new Date().getFullYear()}</span>
+              <span>© {new Date().getFullYear()} Creativee World</span>
             </div>
           </div>
         </motion.div>

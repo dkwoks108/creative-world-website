@@ -1,7 +1,7 @@
-# CEATIVEe WORLD — PRIVATE ADMIN PANEL ARCHITECTURE
+# CREATIVEE WORLD — PRIVATE ADMIN PANEL ARCHITECTURE
 
 ## Overview
-The **Ceativee World Private Admin Panel & Mini CMS** is a production-grade content and lead management system integrated directly into the Next.js App Router workspace.
+The **Creativee World Private Admin Panel & Mini CMS** is a production-grade content and lead management system integrated directly into the Next.js App Router workspace.
 
 ---
 

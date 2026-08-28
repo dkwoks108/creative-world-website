@@ -55,7 +55,7 @@ export function LegalPageLayout({
           <div className="py-4 border-b-2 border-black bg-neutral-100 font-mono text-xs font-bold uppercase tracking-widest px-6 sm:px-12 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="flex items-center space-x-2 text-black font-bold">
               <ShieldCheck size={16} className="shrink-0" />
-              <span>SURNAX OFFICIAL LEGAL DOCUMENTATION</span>
+              <span>CREATIVEE WORLD OFFICIAL LEGAL DOCUMENTATION</span>
             </div>
             <div className="flex items-center space-x-2 text-neutral-600">
               <FileText size={14} className="shrink-0" />
@@ -102,7 +102,7 @@ export function LegalPageLayout({
                     <span>LEGAL NOTICE & JURISDICTION SUMMARY</span>
                   </div>
                   <p className="font-serifBody text-sm sm:text-base text-neutral-800 leading-relaxed font-normal">
-                    This documentation outlines the terms and data protection policies governing Surnax digital growth consulting services, audit requests, and web operations. Business agreements and formal client scopes are finalized via individual written proposals under <strong>[BUSINESS JURISDICTION TO BE CONFIRMED]</strong>.
+                    This documentation outlines the terms and data protection policies governing Creativee World digital growth consulting services, audit requests, and web operations. Business agreements and formal client scopes are finalized via individual written proposals under <strong>[BUSINESS JURISDICTION TO BE CONFIRMED]</strong>.
                   </p>
                 </div>
 

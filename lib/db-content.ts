@@ -43,7 +43,7 @@ export async function getPublishedInsights(): Promise<InsightArticle[]> {
             })
           : 'August 2026',
         readTime: '5 min read',
-        author: post.author?.name || 'Ceativee World Editorial Team',
+        author: post.author?.name || 'Creativee World Editorial Team',
         image: post.featuredImage || '/images/insights/cw-insight-website-2026-01.webp',
         summary: post.excerpt || '',
         sections,
@@ -97,7 +97,7 @@ export async function getPublishedInsightBySlug(slug: string): Promise<InsightAr
             })
           : 'August 2026',
         readTime: '5 min read',
-        author: post.author?.name || 'Ceativee World Editorial Team',
+        author: post.author?.name || 'Creativee World Editorial Team',
         image: post.featuredImage || '/images/insights/cw-insight-website-2026-01.webp',
         summary: post.excerpt || '',
         sections,

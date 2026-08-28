@@ -7,14 +7,14 @@ import { IndustryCaseStudiesClient } from '@/components/sections/IndustryCaseStu
 import { INDUSTRY_CASE_STUDIES } from '@/data/industryCaseStudies';
 
 export const metadata: Metadata = {
-  title: 'Industry Case Studies & Digital Systems | Surnax',
-  description: 'Explore custom digital solutions, web applications, automation funnels, and CRM integrations engineered by Surnax across 18 key business industries.',
+  title: 'Industry Case Studies & Digital Systems | Creativee World',
+  description: 'Explore custom digital solutions, web applications, automation funnels, and CRM integrations engineered by Creativee World across 18 key business industries.',
   openGraph: {
-    title: 'Different Industries. Different Challenges. One Technology Partner | Surnax',
+    title: 'Different Industries. Different Challenges. One Technology Partner | Creativee World',
     description: 'Explore sector-specific web development, automation systems, AI integration, and digital growth frameworks for 18 distinct industries.',
   },
   alternates: {
-    canonical: 'https://surnax.com/industries',
+    canonical: 'https://creativeworld.in/industries',
   },
 };
 
@@ -23,7 +23,7 @@ export default function IndustriesPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    'name': 'Surnax Industry Case Studies & Digital Systems',
+    'name': 'Creativee World Industry Case Studies & Digital Systems',
     'description': 'Custom web applications, automation funnels, and digital strategy solutions across 18 business sectors.',
     'itemListElement': INDUSTRY_CASE_STUDIES.map((study, index) => ({
       '@type': 'ListItem',
@@ -32,7 +32,7 @@ export default function IndustriesPage() {
         '@type': 'Article',
         'name': `${study.industryName}: ${study.title}`,
         'description': study.shortProblem,
-        'url': `https://surnax.com/industries/${study.slug}`
+        'url': `https://creativeworld.in/industries/${study.slug}`
       }
     }))
   };

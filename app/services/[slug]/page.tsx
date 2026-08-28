@@ -28,15 +28,15 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 
   if (!service) {
     return {
-      title: 'Service Not Found | Ceativee World',
+      title: 'Service Not Found | Creativee World',
     };
   }
 
   return {
-    title: `${service.title} in Jaipur | Ceativee World`,
+    title: `${service.title} in Jaipur | Creativee World`,
     description: service.description,
     openGraph: {
-      title: `${service.title} in Jaipur | Ceativee World Growth Agency`,
+      title: `${service.title} in Jaipur | Creativee World Growth Agency`,
       description: service.description,
     },
   };
@@ -55,7 +55,7 @@ export default function ServiceDetailPage({ params }: ServicePageProps) {
     name: service.title,
     provider: {
       '@type': 'Organization',
-      name: 'Ceativee World',
+      name: 'Creativee World',
       url: 'https://creativeworld.in',
     },
     areaServed: {
@@ -112,7 +112,7 @@ export default function ServiceDetailPage({ params }: ServicePageProps) {
               <div className="max-w-6xl mx-auto relative h-72 sm:h-[450px] w-full border-4 border-black bg-white">
                 <Image
                   src={service.image}
-                  alt={`${service.title} editorial visual - Surnax`}
+                  alt={`${service.title} editorial visual - Creativee World`}
                   fill
                   sizes="(max-width: 1200px) 100vw, 1200px"
                   className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-300"

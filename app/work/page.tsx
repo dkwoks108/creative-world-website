@@ -1,21 +1,22 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { ShieldCheck } from 'lucide-react';
+import { ShieldCheck, Sparkles, ArrowUpRight } from 'lucide-react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { MotionProvider } from '@/components/motion/MotionProvider';
-import { MonochromeSection } from '@/components/monochrome/MonochromeSection';
-import { MonochromeButton } from '@/components/monochrome/MonochromeButton';
+import { RevealOnScroll } from '@/components/motion/RevealOnScroll';
+import { CWBadge } from '@/components/ui/CWBadge';
+import { CWButton } from '@/components/ui/CWButton';
 import { FeaturedCaseStudy } from '@/components/ui/FeaturedCaseStudy';
 import { CaseStudyCard } from '@/components/ui/CaseStudyCard';
 import { caseStudiesData } from '@/data/case-studies';
 
 export const metadata: Metadata = {
-  title: 'Growth Playbooks & Sector Frameworks | Ceativee World Jaipur',
-  description: 'Explore Ceativee World\'s strategic digital growth playbooks engineered for Jaipur education, real estate, and retail sectors.',
+  title: 'Growth Playbooks & Sector Frameworks | Creativee World Jaipur',
+  description: 'Explore Creativee World\'s strategic digital growth playbooks engineered for Jaipur education, real estate, and retail sectors.',
   openGraph: {
-    title: 'Growth Playbooks & Frameworks | Ceativee World Jaipur',
+    title: 'Growth Playbooks & Frameworks | Creativee World Jaipur',
     description: 'Strategic growth execution blueprints demonstrating our approach to Jaipur digital acquisition and conversion.',
   },
 };
@@ -26,94 +27,103 @@ export default function WorkPage() {
 
   return (
     <MotionProvider>
-      <div className="relative min-h-screen bg-white text-black font-serifBody selection:bg-black selection:text-white">
+      <div className="relative min-h-screen bg-[#07090E] text-slate-100 selection:bg-[#1769FF]/30 selection:text-white">
         <Navbar />
 
-        <main>
-          {/* 1. EDITORIAL HERO SECTION */}
-          <MonochromeSection divider="none" texture="lines" className="!py-16 md:!py-24 border-b-4 border-black">
-            <div className="flex flex-col gap-6">
-              <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-neutral-600 font-bold">
-                <span className="w-4 h-4 border-2 border-black bg-white inline-block" aria-hidden="true" />
-                <span>CASE STUDIES & CLIENT WORK</span>
-              </div>
+        <main className="pt-32">
+          {/* Ambient Spectrum Glow */}
+          <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-[#1769FF]/15 via-[#673BFF]/15 to-[#D900FF]/10 blur-3xl pointer-events-none rounded-full" />
 
-              <h1 className="font-serif font-bold text-6xl sm:text-8xl lg:text-9xl uppercase tracking-tighter leading-none text-black my-4">
-                JAIPUR SECTOR<br />
-                GROWTH PLAYBOOKS<span className="text-neutral-400">.</span>
-              </h1>
-
-              <div className="w-full h-1 bg-black my-4" />
-
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-                <div className="lg:col-span-8">
-                  <p className="font-serif text-xl sm:text-2xl md:text-3xl leading-relaxed text-black tracking-tight font-normal">
-                    Until client-verified data is authorized, all work examples are clearly presented as strategic Growth Playbooks—demonstrating our real-world execution methodology for key Jaipur economic sectors.
-                  </p>
-                </div>
-                <div className="lg:col-span-4 flex justify-start lg:justify-end">
-                  <Link href="/growth-audit">
-                    <MonochromeButton variant="primary" showArrow>
-                      Request Playbook Audit
-                    </MonochromeButton>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </MonochromeSection>
-
-          {/* 2. HONEST PROOF NOTICE */}
-          <div className="py-4 border-b-2 border-black bg-neutral-100 font-mono text-xs text-black font-bold uppercase tracking-widest px-4 text-center flex items-center justify-center gap-2">
-            <ShieldCheck size={16} strokeWidth={2} />
-            <span>NO FAKE METRICS POLICY: ALL FRAMEWORKS BELOW REPRESENT STRATEGIC CAMPAIGN EXECUTION MODELS.</span>
-          </div>
-
-          {/* 3. FEATURED PLAYBOOK SECTION */}
-          <MonochromeSection divider="thick" texture="grid">
+          {/* 1. HERO SECTION */}
+          <section className="relative z-10 py-16 md:py-24 max-w-7xl mx-auto px-6 sm:px-8">
             <div className="space-y-8">
-              <span className="font-mono text-xs text-black uppercase tracking-widest block font-bold">
-                FEATURED GROWTH PLAYBOOK
-              </span>
-              <FeaturedCaseStudy caseStudy={featured} />
-            </div>
-          </MonochromeSection>
+              <RevealOnScroll variant="fade-up">
+                <CWBadge variant="cyan">
+                  <Sparkles size={13} />
+                  <span>Case Studies & Client Work</span>
+                </CWBadge>
+              </RevealOnScroll>
 
-          {/* 4. REMAINING PLAYBOOKS SECTION */}
-          <MonochromeSection divider="thick" texture="lines">
-            <div className="space-y-12">
-              <span className="font-mono text-xs text-black uppercase tracking-widest block font-bold">
-                SECTOR FRAMEWORKS
-              </span>
+              <div className="space-y-4 max-w-4xl">
+                <h1 className="font-display font-extrabold text-5xl sm:text-7xl lg:text-8xl tracking-tight leading-[1.05] text-white">
+                  Jaipur sector <br />
+                  <span className="text-cw-gradient">growth playbooks.</span>
+                </h1>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {remaining.map((study) => (
-                  <CaseStudyCard key={study.id} caseStudy={study} />
-                ))}
+                <p className="font-sans text-lg sm:text-xl text-slate-300 font-light leading-relaxed pt-2">
+                  Until client-verified data is authorized, all work examples are clearly presented as strategic Growth Playbooks—demonstrating our real-world execution methodology for key Jaipur economic sectors.
+                </p>
               </div>
-            </div>
-          </MonochromeSection>
 
-          {/* 5. INVERTED BOTTOM CTA SECTION */}
-          <MonochromeSection inverted divider="none" texture="cta" className="text-center">
-            <div className="max-w-3xl mx-auto space-y-6">
-              <span className="font-mono text-xs uppercase tracking-widest text-neutral-400 font-bold block">
-                CUSTOM ROADMAP
-              </span>
-              <h2 className="font-serif text-4xl sm:text-6xl font-bold tracking-tight leading-none uppercase">
-                Want a Customized Playbook for Your Business?
-              </h2>
-              <p className="font-serifBody text-base sm:text-xl text-neutral-300 leading-relaxed max-w-xl mx-auto">
-                Request a free growth audit. We will analyze your search rankings, current ad channels, and website infrastructure to build a custom growth roadmap.
-              </p>
-              <div className="pt-4">
+              <div className="pt-2">
                 <Link href="/growth-audit">
-                  <MonochromeButton variant="primary" className="!bg-white !text-black hover:!bg-neutral-200" showArrow>
-                    Request Custom Growth Audit
-                  </MonochromeButton>
+                  <CWButton variant="gradient" size="lg">
+                    <span>Request Playbook Audit</span>
+                    <ArrowUpRight size={18} />
+                  </CWButton>
                 </Link>
               </div>
             </div>
-          </MonochromeSection>
+          </section>
+
+          {/* 2. HONEST PROOF NOTICE */}
+          <section className="relative z-10 py-4 bg-slate-900/60 border-y border-white/10 font-mono text-xs text-slate-300 px-6 text-center flex items-center justify-center gap-2">
+            <ShieldCheck size={16} className="text-[#00CFFF]" />
+            <span>NO FAKE METRICS POLICY: ALL FRAMEWORKS BELOW REPRESENT STRATEGIC CAMPAIGN EXECUTION MODELS.</span>
+          </section>
+
+          {/* 3. FEATURED PLAYBOOK SECTION */}
+          <section className="relative z-10 py-24 max-w-7xl mx-auto px-6 sm:px-8 space-y-12">
+            <div className="flex items-center justify-between border-b border-white/10 pb-6">
+              <span className="font-mono text-xs text-[#00CFFF] uppercase tracking-widest font-semibold">
+                ● FEATURED GROWTH PLAYBOOK
+              </span>
+            </div>
+
+            <FeaturedCaseStudy caseStudy={featured} />
+          </section>
+
+          {/* 4. REMAINING PLAYBOOKS SECTION */}
+          <section className="relative z-10 py-24 bg-slate-950/80 border-t border-white/10">
+            <div className="max-w-7xl mx-auto px-6 sm:px-8 space-y-12">
+              <div className="flex items-center justify-between border-b border-white/10 pb-6">
+                <span className="font-mono text-xs text-[#00CFFF] uppercase tracking-widest font-semibold">
+                  ● SECTOR FRAMEWORKS
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {remaining.map((study, idx) => (
+                  <RevealOnScroll key={study.id} variant="fade-up" delay={idx * 0.1}>
+                    <CaseStudyCard caseStudy={study} />
+                  </RevealOnScroll>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* 5. BOTTOM CTA SECTION */}
+          <section className="relative z-10 py-24 max-w-7xl mx-auto px-6 sm:px-8">
+            <div className="rounded-3xl p-10 md:p-16 bg-gradient-to-tr from-[#1769FF]/20 via-[#673BFF]/20 to-[#D900FF]/20 border border-white/20 text-center space-y-6">
+              <span className="font-mono text-xs text-[#00CFFF] uppercase tracking-widest font-semibold block">
+                CUSTOM ROADMAP
+              </span>
+              <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white max-w-2xl mx-auto">
+                Want a customized playbook for your business?
+              </h2>
+              <p className="text-slate-300 text-base sm:text-lg font-light max-w-xl mx-auto">
+                Request a free growth audit. We will analyze your search rankings, current ad channels, and website infrastructure to build a custom growth roadmap.
+              </p>
+              <div className="pt-4 flex justify-center">
+                <Link href="/growth-audit">
+                  <CWButton variant="gradient" size="lg">
+                    <span>Request Custom Growth Audit</span>
+                    <ArrowUpRight size={18} />
+                  </CWButton>
+                </Link>
+              </div>
+            </div>
+          </section>
         </main>
 
         <Footer />
@@ -121,4 +131,3 @@ export default function WorkPage() {
     </MotionProvider>
   );
 }
-

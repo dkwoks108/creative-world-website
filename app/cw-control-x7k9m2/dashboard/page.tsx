@@ -62,7 +62,7 @@ export default async function AdminDashboardPage() {
             Executive Control Center
           </h1>
           <p className="text-xs sm:text-sm text-txt-secondary mt-1">
-            Ceativee World Digital Growth Agency — Content & Lead Management
+            Creativee World Digital Growth Agency — Content & Lead Management
           </p>
         </div>
 

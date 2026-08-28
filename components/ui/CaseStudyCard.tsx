@@ -11,9 +11,9 @@ interface CaseStudyCardProps {
 
 export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
   return (
-    <div className="flex flex-col justify-between p-6 border-2 border-black bg-white hover:bg-black hover:text-white transition-colors duration-100 group space-y-6">
+    <div className="flex flex-col justify-between p-6 sm:p-8 rounded-3xl bg-slate-900/60 border border-white/10 hover:border-white/20 transition-all duration-300 group space-y-6 h-full">
       <div className="space-y-4">
-        <div className="relative h-[200px] w-full border-2 border-black overflow-hidden bg-neutral-100">
+        <div className="relative h-[200px] w-full rounded-2xl border border-white/10 overflow-hidden bg-slate-950">
           {caseStudy.image ? (
             <>
               <Image
@@ -23,13 +23,13 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
                 loading="lazy"
                 decoding="async"
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover object-center filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                className="object-cover object-center group-hover:scale-105 transition-all duration-500"
               />
               <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[10px] font-mono z-10">
-                <span className="px-2 py-0.5 bg-black text-white font-bold uppercase tracking-widest border border-black group-hover:bg-white group-hover:text-black">
+                <span className="px-2.5 py-1 bg-slate-900/90 text-[#00CFFF] font-semibold uppercase tracking-wider rounded-full border border-white/10 backdrop-blur-md">
                   {caseStudy.industryPlaceholder}
                 </span>
-                <span className="px-2 py-0.5 bg-white text-black font-bold uppercase tracking-widest border border-black group-hover:bg-black group-hover:text-white">
+                <span className="px-2.5 py-1 bg-slate-900/90 text-white font-semibold uppercase tracking-wider rounded-full border border-white/10 backdrop-blur-md">
                   PLAYBOOK
                 </span>
               </div>
@@ -42,34 +42,34 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
           )}
         </div>
 
-        <div className="flex items-center justify-between text-xs font-mono text-neutral-500 group-hover:text-neutral-300 pt-2 font-bold uppercase tracking-widest">
+        <div className="flex items-center justify-between text-xs font-mono text-slate-400 pt-2 font-semibold uppercase tracking-wider">
           <span>{caseStudy.industryPlaceholder}</span>
-          <span className="w-2 h-2 bg-black group-hover:bg-white inline-block" />
+          <span className="w-2 h-2 rounded-full bg-[#00CFFF] inline-block" />
         </div>
 
-        <h3 className="font-serif font-bold text-2xl uppercase tracking-tight text-black group-hover:text-white">
+        <h3 className="font-display font-bold text-xl text-white group-hover:text-[#00CFFF] transition-colors leading-snug">
           {caseStudy.title}
         </h3>
 
-        <p className="font-serifBody text-xs leading-relaxed text-neutral-700 group-hover:text-neutral-300">
+        <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
           {caseStudy.shortDescription}
         </p>
 
         {/* Metric Badges */}
         <div className="space-y-2 pt-2">
           {caseStudy.metrics.slice(0, 1).map((metric, mIdx) => (
-            <div key={mIdx} className="p-3 border border-black group-hover:border-white bg-neutral-50 group-hover:bg-neutral-900 space-y-1">
-              <div className="font-serif font-bold text-xl leading-none text-black group-hover:text-white">{metric.value}</div>
-              <div className="font-mono text-[9px] text-neutral-600 group-hover:text-neutral-400 uppercase font-bold tracking-widest">{metric.label}</div>
+            <div key={mIdx} className="p-3.5 rounded-xl border border-white/10 bg-white/5 space-y-1">
+              <div className="font-display font-extrabold text-2xl leading-none text-[#00CFFF]">{metric.value}</div>
+              <div className="font-mono text-[10px] text-slate-300 uppercase font-medium tracking-wider">{metric.label}</div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="pt-4 border-t-2 border-black group-hover:border-white flex items-center justify-between">
-        <div className="flex flex-wrap gap-1">
+      <div className="pt-4 border-t border-white/10 flex items-center justify-between">
+        <div className="flex flex-wrap gap-1.5">
           {caseStudy.services.map((service, sIdx) => (
-            <span key={sIdx} className="px-2 py-0.5 text-[9px] font-mono text-black group-hover:text-white bg-neutral-100 group-hover:bg-neutral-800 border border-black group-hover:border-white font-bold uppercase">
+            <span key={sIdx} className="px-2.5 py-0.5 text-[10px] font-mono text-slate-300 bg-white/5 rounded-full border border-white/10 font-medium uppercase">
               {service}
             </span>
           ))}
@@ -77,13 +77,12 @@ export function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
 
         <Link
           href={`/work/${caseStudy.slug}`}
-          className="inline-flex items-center space-x-1 text-xs font-mono text-black group-hover:text-white font-bold tracking-widest"
+          className="inline-flex items-center space-x-1 text-xs font-mono text-white group-hover:text-[#00CFFF] transition-colors font-semibold tracking-wider"
         >
           <span>EXPLORE</span>
-          <ArrowUpRight size={14} strokeWidth={2} />
+          <ArrowUpRight size={14} />
         </Link>
       </div>
     </div>
   );
 }
-

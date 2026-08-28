@@ -1,40 +1,23 @@
 import type { Metadata } from 'next';
-import { Instrument_Serif, Playfair_Display, Source_Serif_4, Inter, JetBrains_Mono } from 'next/font/google';
+import { Plus_Jakarta_Sans, Inter, JetBrains_Mono } from 'next/font/google';
 import { siteConfig } from '@/data/site';
 import { CustomCursor } from '@/components/ui/CustomCursor';
 import { InitialLoader } from '@/components/ui/InitialLoader';
-import { SurnaxAssistantBot } from '@/components/ui/SurnaxAssistantBot';
+import { CreativeeAssistantBot } from '@/components/ui/CreativeeAssistantBot';
 import './globals.css';
 
-const fontDisplay = Instrument_Serif({
+const fontDisplay = Plus_Jakarta_Sans({
   subsets: ['latin'],
   variable: '--font-display',
   display: 'swap',
-  weight: ['400'],
-  style: ['normal', 'italic'],
-});
-
-const fontPlayfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair',
-  display: 'swap',
-  weight: ['400', '600', '700', '900'],
-  style: ['normal'],
-});
-
-const fontSourceSerif = Source_Serif_4({
-  subsets: ['latin'],
-  variable: '--font-source-serif',
-  display: 'swap',
-  weight: ['400', '600'],
-  style: ['normal'],
+  weight: ['400', '600', '700', '800'],
 });
 
 const fontBody = Inter({
   subsets: ['latin'],
   variable: '--font-body',
   display: 'swap',
-  weight: ['400', '500', '600'],
+  weight: ['400', '500', '600', '700'],
 });
 
 const fontMono = JetBrains_Mono({
@@ -46,29 +29,30 @@ const fontMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: `Ceativee World | Digital Growth & Marketing Agency in Jaipur`,
-    template: `%s | Ceativee World Jaipur`,
+    default: `Creativee World | Digital Growth & Marketing Agency in Jaipur`,
+    template: `%s | Creativee World Jaipur`,
   },
-  description: 'Ceativee World is a result-driven digital growth agency in Jaipur helping local businesses generate qualified leads, improve search engine visibility, run Meta & Google Ads, and build high-converting websites.',
+  description: 'Creativee World is a result-driven digital growth agency in Jaipur helping local businesses generate qualified leads, improve search engine visibility, run Meta & Google Ads, and build high-converting websites.',
   keywords: [
     'digital marketing agency in Jaipur',
     'digital marketing company Jaipur',
     'SEO services Jaipur',
+    'SEO agency Jaipur',
     'Google Ads agency Jaipur',
     'performance marketing Jaipur',
-    'website development in Jaipur',
-    'social media marketing Jaipur',
+    'website development company Jaipur',
+    'social media marketing agency Jaipur',
     'local SEO agency Jaipur',
     'digital growth agency Jaipur',
   ],
-  authors: [{ name: 'Ceativee World' }],
+  authors: [{ name: 'Creativee World' }],
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    siteName: 'Surnax',
-    title: 'Surnax | Digital Innovation & Marketing Edge',
-    description: 'Surnax combines custom web development, video production, performance marketing, and search intelligence for brands in Jaipur and across India.',
-    images: [{ url: '/brand/og-image.png', width: 1200, height: 630, alt: 'Surnax' }],
+    siteName: 'Creativee World',
+    title: 'Creativee World | Digital Growth & Marketing Agency in Jaipur',
+    description: 'Creativee World combines custom web development, video production, performance marketing, and search intelligence for brands in Jaipur and across Rajasthan.',
+    images: [{ url: '/brand/og-image.png', width: 1200, height: 630, alt: 'Creativee World' }],
   },
   icons: {
     icon: [
@@ -88,7 +72,7 @@ const jsonLdSchema = {
     {
       '@type': 'Organization',
       '@id': `${siteConfig.websiteUrlPlaceholder}/#organization`,
-      'name': 'Ceativee World',
+      'name': 'Creativee World',
       'url': siteConfig.websiteUrlPlaceholder,
       'email': siteConfig.contactEmailPlaceholder,
       'address': {
@@ -102,7 +86,7 @@ const jsonLdSchema = {
     {
       '@type': 'LocalBusiness',
       '@id': `${siteConfig.websiteUrlPlaceholder}/#localbusiness`,
-      'name': 'Ceativee World - Digital Growth Agency',
+      'name': 'Creativee World - Digital Growth Agency',
       'url': siteConfig.websiteUrlPlaceholder,
       'email': siteConfig.contactEmailPlaceholder,
       'address': {
@@ -133,11 +117,11 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
         />
       </head>
-      <body className="min-h-screen bg-ivory text-txt-primary antialiased selection:bg-brand-blue/20 selection:text-ink">
+      <body className="min-h-screen bg-[#07090E] text-slate-100 antialiased selection:bg-[#1769FF]/30 selection:text-white">
         <InitialLoader />
         <CustomCursor />
         {children}
-        <SurnaxAssistantBot />
+        <CreativeeAssistantBot />
       </body>
     </html>
   );

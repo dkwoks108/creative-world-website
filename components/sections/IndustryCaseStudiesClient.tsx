@@ -26,7 +26,7 @@ export function IndustryCaseStudiesClient() {
         item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         item.industryName.toLowerCase().includes(searchQuery.toLowerCase()) ||
         item.shortProblem.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.surnaxSolution.summary.toLowerCase().includes(searchQuery.toLowerCase());
+        item.creativeeSolution.summary.toLowerCase().includes(searchQuery.toLowerCase());
       
       return matchesCategory && matchesQuery;
     });
@@ -58,7 +58,7 @@ export function IndustryCaseStudiesClient() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
             <div className="lg:col-span-8 space-y-4">
               <p className="font-serif text-xl sm:text-2xl md:text-3xl leading-relaxed text-black tracking-tight font-normal">
-                Discover how Surnax builds custom web applications, automation funnels, CRM integrations, and performance growth engines tailored to the specific operational challenges of 18 key business sectors.
+                Discover how Creativee World builds custom web applications, automation funnels, CRM integrations, and performance growth engines tailored to the specific operational challenges of 18 key business sectors.
               </p>
               <div className="flex flex-wrap items-center gap-4 text-xs font-mono font-bold text-neutral-600 uppercase tracking-widest pt-2">
                 <span className="flex items-center gap-1.5">
@@ -202,7 +202,7 @@ export function IndustryCaseStudiesClient() {
           </h2>
 
           <p className="font-serifBody text-base sm:text-xl text-neutral-300 leading-relaxed max-w-2xl mx-auto">
-            Surnax combines technology, automation, design and digital strategy to build custom solutions tailored to real business needs.
+            Creativee World combines technology, automation, design and digital strategy to build custom solutions tailored to real business needs.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">

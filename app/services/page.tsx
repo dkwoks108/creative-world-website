@@ -1,19 +1,20 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Check } from 'lucide-react';
+import { Check, ArrowUpRight, Sparkles } from 'lucide-react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { MotionProvider } from '@/components/motion/MotionProvider';
-import { MonochromeSection } from '@/components/monochrome/MonochromeSection';
-import { MonochromeButton } from '@/components/monochrome/MonochromeButton';
+import { RevealOnScroll } from '@/components/motion/RevealOnScroll';
+import { CWBadge } from '@/components/ui/CWBadge';
+import { CWButton } from '@/components/ui/CWButton';
 import { servicesData } from '@/data/services';
 
 export const metadata: Metadata = {
-  title: 'Digital Marketing & Growth Services in Jaipur | Ceativee World',
-  description: 'Explore Ceativee World\'s 5 core growth services: Performance Marketing, Local SEO, Social Media & Reels, Business Websites, and Integrated Growth Packages in Jaipur.',
+  title: 'Digital Marketing & Growth Services in Jaipur | Creativee World',
+  description: 'Explore Creativee World\'s core growth services: Performance Marketing, Local SEO, Social Media & Reels, Business Websites, and Integrated Growth Packages in Jaipur.',
   openGraph: {
-    title: 'Digital Marketing Services in Jaipur | Ceativee World',
+    title: 'Digital Marketing Services in Jaipur | Creativee World',
     description: 'Connected digital growth services engineered to drive qualified leads, local search dominance, and business growth for Jaipur companies.',
   },
 };
@@ -21,123 +22,125 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <MotionProvider>
-      <div className="relative min-h-screen bg-white text-black font-serifBody selection:bg-black selection:text-white">
+      <div className="relative min-h-screen bg-[#07090E] text-slate-100 selection:bg-[#1769FF]/30 selection:text-white">
         <Navbar />
 
-        <main>
-          {/* 1. EDITORIAL HERO SECTION */}
-          <MonochromeSection divider="none" texture="lines" className="!py-16 md:!py-24 border-b-4 border-black">
-            <div className="flex flex-col gap-6">
-              <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-neutral-600 font-bold">
-                <span className="w-4 h-4 border-2 border-black bg-white inline-block" aria-hidden="true" />
-                <span>DIGITAL SERVICES & CAPABILITIES</span>
+        <main className="pt-32 pb-20">
+          {/* Ambient Glow */}
+          <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-[#1769FF]/15 via-[#673BFF]/15 to-[#D900FF]/10 blur-3xl pointer-events-none rounded-full" />
+
+          {/* 1. HERO SECTION */}
+          <section className="relative z-10 py-16 md:py-24 max-w-7xl mx-auto px-6 sm:px-8">
+            <div className="space-y-8">
+              <RevealOnScroll variant="fade-up">
+                <CWBadge variant="cyan">
+                  <Sparkles size={13} />
+                  <span>Digital Services & Capabilities</span>
+                </CWBadge>
+              </RevealOnScroll>
+
+              <div className="space-y-4 max-w-4xl">
+                <h1 className="font-display font-extrabold text-5xl sm:text-7xl lg:text-8xl tracking-tight leading-[1.05] text-white">
+                  Connected digital <br />
+                  <span className="text-cw-gradient">growth services.</span>
+                </h1>
+
+                <p className="font-sans text-lg sm:text-xl text-slate-300 font-light leading-relaxed pt-2">
+                  Traditional agencies sell isolated marketing tasks. Creativee World delivers a connected growth system where web engineering, video production, local SEO, and paid acquisition compound to drive enterprise revenue.
+                </p>
               </div>
 
-              <h1 className="font-serif font-bold text-6xl sm:text-8xl lg:text-9xl uppercase tracking-tighter leading-none text-black my-4">
-                CONNECTED DIGITAL<br />
-                GROWTH SERVICES<span className="text-neutral-400">.</span>
-              </h1>
-
-              <div className="w-full h-1 bg-black my-4" />
-
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-                <div className="lg:col-span-8">
-                  <p className="font-serif text-xl sm:text-2xl md:text-3xl leading-relaxed text-black tracking-tight font-normal">
-                    Traditional agencies sell isolated marketing tasks. Surnax delivers a connected growth system where web engineering, video production, local SEO, and paid acquisition compound to drive enterprise growth.
-                  </p>
-                </div>
-                <div className="lg:col-span-4 flex justify-start lg:justify-end">
-                  <Link href="/growth-audit">
-                    <MonochromeButton variant="primary" showArrow>
-                      Request Service Audit
-                    </MonochromeButton>
-                  </Link>
-                </div>
+              <div className="pt-2">
+                <Link href="/growth-audit">
+                  <CWButton variant="gradient" size="lg">
+                    <span>Request Service Audit</span>
+                    <ArrowUpRight size={18} />
+                  </CWButton>
+                </Link>
               </div>
             </div>
-          </MonochromeSection>
+          </section>
 
           {/* 2. SERVICES LISTING SECTION */}
-          <MonochromeSection divider="thick" texture="grid">
-            <div className="space-y-12">
-              {servicesData.map((service) => (
-                <div
-                  key={service.id}
-                  className="p-8 sm:p-12 border-4 border-black bg-white space-y-8 group transition-colors duration-100 hover:bg-neutral-50"
-                >
+          <section className="relative z-10 py-24 max-w-7xl mx-auto px-6 sm:px-8 space-y-12">
+            {servicesData.map((service, idx) => (
+              <RevealOnScroll key={service.id} variant="fade-up" delay={idx * 0.1}>
+                <div className="p-8 sm:p-12 rounded-3xl bg-slate-900/60 border border-white/10 hover:border-white/20 transition-all duration-300 space-y-8 group">
                   <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-8">
                     <div className="space-y-4 max-w-2xl">
                       <div className="flex items-center space-x-3">
-                        <span className="font-mono text-sm font-bold text-black border-2 border-black px-2.5 py-0.5 bg-white">
+                        <span className="font-mono text-xs font-bold text-[#00CFFF] bg-white/10 px-2.5 py-1 rounded-full border border-white/10">
                           {service.number}
                         </span>
-                        <span className="font-mono text-xs text-neutral-600 uppercase tracking-widest font-bold">
+                        <span className="font-mono text-xs text-slate-400 uppercase tracking-wider font-semibold">
                           {service.kicker}
                         </span>
                       </div>
 
-                      <h2 className="font-serif font-bold text-3xl sm:text-5xl text-black uppercase tracking-tight">
+                      <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white">
                         {service.title}
                       </h2>
 
-                      <p className="font-serifBody text-base sm:text-lg text-neutral-800 leading-relaxed font-normal">
+                      <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-light">
                         {service.description}
                       </p>
 
-                      <div className="p-4 border-2 border-black bg-neutral-100 font-mono text-xs text-black font-bold uppercase tracking-widest">
-                        <span>EXPECTED OUTCOME: {service.outcomeStatement}</span>
+                      <div className="p-4 rounded-xl border border-white/10 bg-white/5 font-mono text-xs text-[#00CFFF] font-semibold uppercase tracking-wider">
+                        <span>BENCHMARK METRIC: {service.outcomeStatement}</span>
                       </div>
                     </div>
 
                     {/* Deliverables List */}
-                    <div className="lg:w-96 space-y-4 border-2 border-black bg-white p-6">
-                      <span className="text-xs font-mono uppercase text-black font-bold block tracking-widest">
-                        KEY DELIVERABLES:
+                    <div className="lg:w-96 space-y-4 rounded-2xl border border-white/15 bg-slate-950/80 p-6">
+                      <span className="text-xs font-mono uppercase text-[#00CFFF] font-semibold block tracking-wider border-b border-white/10 pb-2">
+                        KEY SYSTEM DELIVERABLES:
                       </span>
-                      <ul className="space-y-2.5 text-xs font-serifBody text-neutral-800">
+                      <ul className="space-y-2.5 text-xs text-slate-300 font-light">
                         {service.deliverables.map((item, i) => (
                           <li key={i} className="flex items-start space-x-2">
-                            <Check size={14} strokeWidth={2} className="text-black shrink-0 mt-0.5" />
+                            <Check size={14} className="text-[#00CFFF] shrink-0 mt-0.5" />
                             <span>{item}</span>
                           </li>
                         ))}
                       </ul>
 
-                      <div className="pt-4 border-t-2 border-black">
+                      <div className="pt-4 border-t border-white/10">
                         <Link href={`/services/${service.slug}`}>
-                          <MonochromeButton variant="secondary" className="w-full justify-center" showArrow>
-                            {service.ctaLabel}
-                          </MonochromeButton>
+                          <CWButton variant="glass" size="md" className="w-full justify-center">
+                            <span>{service.ctaLabel}</span>
+                            <ArrowUpRight size={14} />
+                          </CWButton>
                         </Link>
                       </div>
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
-          </MonochromeSection>
+              </RevealOnScroll>
+            ))}
+          </section>
 
-          {/* 3. INVERTED BOTTOM CTA SECTION */}
-          <MonochromeSection inverted divider="none" texture="cta" className="text-center">
-            <div className="max-w-3xl mx-auto space-y-6">
-              <span className="font-mono text-xs uppercase tracking-widest text-neutral-400 font-bold block">
+          {/* 3. BOTTOM CTA SECTION */}
+          <section className="relative z-10 py-24 bg-slate-950/80 border-t border-white/10 text-center">
+            <div className="max-w-3xl mx-auto px-6 space-y-6">
+              <span className="font-mono text-xs uppercase tracking-widest text-[#00CFFF] font-semibold block">
                 STRATEGIC CONSULTATION
               </span>
-              <h2 className="font-serif text-4xl sm:text-6xl font-bold tracking-tight leading-none uppercase">
-                Uncertain Which Service Your Business Needs?
+              <h2 className="font-display text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight text-white">
+                Uncertain Which Service Fits Your Stage?
               </h2>
-              <p className="font-serifBody text-base sm:text-xl text-neutral-300 leading-relaxed max-w-xl mx-auto">
-                Request a free 2-Step Growth Audit. Our strategic team will diagnose your channel bottlenecks and recommend the optimal growth setup for your business.
+              <p className="text-base sm:text-xl text-slate-300 leading-relaxed font-light max-w-xl mx-auto">
+                Request a custom Growth Audit. Our strategy team will diagnose your acquisition bottlenecks and recommend the optimal setup.
               </p>
-              <div className="pt-4">
+              <div className="pt-4 flex justify-center">
                 <Link href="/growth-audit">
-                  <MonochromeButton variant="primary" className="!bg-white !text-black hover:!bg-neutral-200" showArrow>
-                    Request Free Growth Audit
-                  </MonochromeButton>
+                  <CWButton variant="gradient" size="lg">
+                    <span>Request Growth Audit</span>
+                    <ArrowUpRight size={16} />
+                  </CWButton>
                 </Link>
               </div>
             </div>
-          </MonochromeSection>
+          </section>
         </main>
 
         <Footer />
@@ -145,4 +148,3 @@ export default function ServicesPage() {
     </MotionProvider>
   );
 }
-

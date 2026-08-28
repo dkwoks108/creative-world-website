@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-interface SurnaxLogoProps {
+export interface CreativeeLogoProps {
   className?: string;
   variant?: 'full' | 'mark' | 'horizontal';
   accentColor?: string;
@@ -12,12 +12,12 @@ interface SurnaxLogoProps {
   height?: number | string;
 }
 
-export function SurnaxLogo({
+export function CreativeeLogo({
   className = '',
   variant = 'horizontal',
   textColor = '#000000',
   height = 32,
-}: SurnaxLogoProps) {
+}: CreativeeLogoProps) {
   const numericHeight = typeof height === 'number' ? height : parseInt(height, 10) || 32;
 
   if (variant === 'mark') {
@@ -25,7 +25,7 @@ export function SurnaxLogo({
       <div className={`inline-flex items-center shrink-0 ${className}`}>
         <Image
           src="/brand/symbol-only-transparent.png"
-          alt="Surnax"
+          alt="Creativee World"
           width={numericHeight * 1.7}
           height={numericHeight}
           style={{ height: numericHeight, width: 'auto' }}
@@ -45,7 +45,7 @@ export function SurnaxLogo({
     <div className={`inline-flex items-center shrink-0 ${className}`}>
       <Image
         src={logoSrc}
-        alt="Surnax"
+        alt="Creativee World"
         width={numericHeight * 3.8}
         height={numericHeight}
         style={{ height: numericHeight, width: 'auto' }}
@@ -55,4 +55,3 @@ export function SurnaxLogo({
     </div>
   );
 }
-

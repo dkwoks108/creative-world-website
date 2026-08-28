@@ -2,122 +2,128 @@ import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ShieldCheck, Target, Zap } from 'lucide-react';
+import { ShieldCheck, Target, Zap, Sparkles, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { MotionProvider } from '@/components/motion/MotionProvider';
-import { MonochromeSection } from '@/components/monochrome/MonochromeSection';
-import { MonochromeButton } from '@/components/monochrome/MonochromeButton';
+import { RevealOnScroll } from '@/components/motion/RevealOnScroll';
+import { CWBadge } from '@/components/ui/CWBadge';
+import { CWButton } from '@/components/ui/CWButton';
 import { aboutData } from '@/data/about';
 import { siteConfig } from '@/data/site';
 
 export const metadata: Metadata = {
-  title: 'About Ceativee World | Digital Growth Agency in Jaipur',
-  description: 'Ceativee World is a result-driven digital growth agency in Jaipur focused on connected search visibility, performance marketing, brand content, and web conversion.',
+  title: 'About Creativee World | Digital Growth Agency in Jaipur',
+  description: 'Creativee World is a result-driven digital growth agency in Jaipur focused on connected search visibility, performance marketing, brand content, and web conversion.',
   openGraph: {
-    title: 'About Ceativee World | Digital Growth Partner in Jaipur',
-    description: 'Discover Ceativee World\'s mission, growth philosophy, and connected digital marketing systems for Jaipur businesses.',
+    title: 'About Creativee World | Digital Growth Partner in Jaipur',
+    description: 'Discover Creativee World\'s mission, growth philosophy, and connected digital marketing systems for Jaipur businesses.',
   },
 };
 
 export default function AboutPage() {
   return (
     <MotionProvider>
-      <div className="relative min-h-screen bg-white text-black font-serifBody selection:bg-black selection:text-white">
+      <div className="relative min-h-screen bg-[#07090E] text-slate-100 selection:bg-[#1769FF]/30 selection:text-white">
         <Navbar />
 
-        <main>
-          {/* 1. EDITORIAL HERO SECTION */}
-          <MonochromeSection divider="none" texture="lines" className="!py-16 md:!py-24 border-b-4 border-black">
-            <div className="flex flex-col gap-6">
-              <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-neutral-600 font-bold">
-                <span className="w-4 h-4 border-2 border-black bg-white inline-block" aria-hidden="true" />
-                <span>AGENCY OVERVIEW & PHILOSOPHY</span>
+        <main className="pt-32">
+          {/* Ambient Spectrum Glow */}
+          <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-[#1769FF]/15 via-[#673BFF]/15 to-[#D900FF]/10 blur-3xl pointer-events-none rounded-full" />
+
+          {/* 1. HERO SECTION */}
+          <section className="relative z-10 py-16 md:py-24 max-w-7xl mx-auto px-6 sm:px-8">
+            <div className="space-y-8">
+              <RevealOnScroll variant="fade-up">
+                <CWBadge variant="cyan">
+                  <Sparkles size={13} />
+                  <span>Agency Overview & Philosophy</span>
+                </CWBadge>
+              </RevealOnScroll>
+
+              <div className="space-y-4 max-w-4xl">
+                <h1 className="font-display font-extrabold text-5xl sm:text-7xl lg:text-8xl tracking-tight leading-[1.05] text-white">
+                  Connected digital <br />
+                  <span className="text-cw-gradient">growth studio.</span>
+                </h1>
+
+                <p className="font-sans text-lg sm:text-xl text-slate-300 font-light leading-relaxed pt-2">
+                  {aboutData.tagline}
+                </p>
               </div>
 
-              <h1 className="font-serif font-bold text-6xl sm:text-8xl lg:text-9xl uppercase tracking-tighter leading-none text-black my-4">
-                CONNECTED DIGITAL<br />
-                GROWTH STUDIO<span className="text-neutral-400">.</span>
-              </h1>
-
-              <div className="w-full h-1 bg-black my-4" />
-
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-                <div className="lg:col-span-8">
-                  <p className="font-serif text-xl sm:text-2xl md:text-3xl leading-relaxed text-black tracking-tight font-normal">
-                    {aboutData.tagline}
-                  </p>
-                </div>
-                <div className="lg:col-span-4 flex justify-start lg:justify-end">
-                  <Link href="/growth-audit">
-                    <MonochromeButton variant="primary" showArrow>
-                      Request Growth Consultation
-                    </MonochromeButton>
-                  </Link>
-                </div>
+              <div className="pt-2">
+                <Link href="/growth-audit">
+                  <CWButton variant="gradient" size="lg">
+                    <span>Request Growth Consultation</span>
+                    <ArrowUpRight size={18} />
+                  </CWButton>
+                </Link>
               </div>
             </div>
-          </MonochromeSection>
+          </section>
 
           {/* 2. MISSION & VISION SECTION */}
-          <MonochromeSection divider="thick" texture="grid">
+          <section className="relative z-10 py-16 max-w-7xl mx-auto px-6 sm:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-              {/* Mission Card */}
-              <div className="p-8 border-4 border-black bg-white space-y-4 flex flex-col justify-between">
-                <div className="space-y-4">
-                  <div className="flex items-center gap-2 font-mono text-xs text-black font-bold uppercase tracking-widest">
-                    <Target size={16} />
-                    <span>OUR AGENCY MISSION</span>
+              <RevealOnScroll variant="fade-up">
+                <div className="h-full rounded-3xl p-8 bg-slate-900/60 border border-white/10 space-y-6 flex flex-col justify-between hover:border-white/20 transition-all">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-2 font-mono text-xs text-[#00CFFF] uppercase tracking-wider font-semibold">
+                      <Target size={16} />
+                      <span>OUR AGENCY MISSION</span>
+                    </div>
+                    <h2 className="font-display font-bold text-2xl sm:text-3xl text-white">
+                      Performance Over Vanity Metrics
+                    </h2>
+                    <p className="text-sm text-slate-300 leading-relaxed font-light">
+                      {aboutData.mission}
+                    </p>
                   </div>
-                  <h2 className="font-serif font-bold text-3xl sm:text-4xl text-black uppercase">
-                    Performance Over Vanity Metrics
-                  </h2>
-                  <p className="font-serifBody text-base text-neutral-800 leading-relaxed font-normal">
-                    {aboutData.mission}
-                  </p>
                 </div>
-              </div>
+              </RevealOnScroll>
 
-              {/* Vision Card */}
-              <div className="p-8 border-4 border-black bg-white space-y-4 flex flex-col justify-between">
-                <div className="space-y-4">
-                  <div className="flex items-center gap-2 font-mono text-xs text-black font-bold uppercase tracking-widest">
-                    <Zap size={16} />
-                    <span>OUR VISION</span>
+              <RevealOnScroll variant="fade-up" delay={0.1}>
+                <div className="h-full rounded-3xl p-8 bg-slate-900/60 border border-white/10 space-y-6 flex flex-col justify-between hover:border-white/20 transition-all">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-2 font-mono text-xs text-[#00CFFF] uppercase tracking-wider font-semibold">
+                      <Zap size={16} />
+                      <span>OUR VISION</span>
+                    </div>
+                    <h2 className="font-display font-bold text-2xl sm:text-3xl text-white">
+                      Rajasthan&apos;s Growth Benchmark
+                    </h2>
+                    <p className="text-sm text-slate-300 leading-relaxed font-light">
+                      {aboutData.vision}
+                    </p>
                   </div>
-                  <h2 className="font-serif font-bold text-3xl sm:text-4xl text-black uppercase">
-                    Rajasthan&apos;s Growth Benchmark
-                  </h2>
-                  <p className="font-serifBody text-base text-neutral-800 leading-relaxed font-normal">
-                    {aboutData.vision}
-                  </p>
                 </div>
-              </div>
+              </RevealOnScroll>
             </div>
-          </MonochromeSection>
+          </section>
 
           {/* 3. GROWTH PHILOSOPHY & PRINCIPLES */}
-          <MonochromeSection divider="thick" texture="lines">
-            <div className="space-y-16">
+          <section className="relative z-10 py-24 bg-slate-950/80 border-t border-white/10">
+            <div className="max-w-7xl mx-auto px-6 sm:px-8 space-y-16">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div className="lg:col-span-7 space-y-6 text-left">
-                  <span className="font-mono text-xs uppercase tracking-widest text-black font-bold block">
+                  <span className="font-mono text-xs uppercase tracking-widest text-[#00CFFF] font-semibold block">
                     OUR PHILOSOPHY
                   </span>
-                  <h2 className="font-serif font-bold text-4xl sm:text-6xl text-black uppercase leading-tight">
-                    Why Disconnected Marketing Wastes Ad Budget.
+                  <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white leading-tight">
+                    Why disconnected marketing wastes your ad budget.
                   </h2>
-                  <p className="font-serifBody text-base sm:text-xl text-neutral-800 leading-relaxed font-normal">
+                  <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-light">
                     {aboutData.philosophy}
                   </p>
                 </div>
-                <div className="lg:col-span-5 relative h-72 sm:h-96 border-4 border-black bg-white overflow-hidden">
+                <div className="lg:col-span-5 relative h-72 sm:h-96 rounded-3xl border border-white/15 overflow-hidden shadow-2xl">
                   <Image
-                    src="/images/about/surnax-philosophy-portrait.jpg"
-                    alt="Surnax Leadership - Growth Philosophy"
+                    src="/images/about/creative-philosophy-portrait.jpg"
+                    alt="Creativee World Leadership - Growth Philosophy"
                     fill
                     sizes="(max-width: 768px) 100vw, 40vw"
-                    className="object-cover object-top hover:scale-105 transition-all duration-300"
+                    className="object-cover object-top hover:scale-105 transition-all duration-500"
                     priority
                   />
                 </div>
@@ -126,47 +132,49 @@ export default function AboutPage() {
               {/* Core Principles Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {aboutData.corePrinciples.map((principle, idx) => (
-                  <div
-                    key={idx}
-                    className="p-6 border-2 border-black bg-white space-y-3 flex flex-col justify-between hover:bg-neutral-50 transition-colors"
-                  >
-                    <div className="space-y-2">
-                      <span className="font-mono text-xs text-black border border-black px-2 py-0.5 font-bold inline-block">0{idx + 1}</span>
-                      <h3 className="font-serif font-bold text-2xl text-black uppercase">
-                        {principle.title}
-                      </h3>
-                      <p className="font-serifBody text-xs text-neutral-800 leading-relaxed">
-                        {principle.description}
-                      </p>
+                  <RevealOnScroll key={idx} variant="fade-up" delay={idx * 0.1}>
+                    <div className="p-6 rounded-2xl bg-slate-900/60 border border-white/10 space-y-3 hover:border-white/20 transition-all h-full flex flex-col justify-between">
+                      <div className="space-y-3">
+                        <div className="w-7 h-7 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center font-mono text-xs text-[#00CFFF] font-bold">
+                          0{idx + 1}
+                        </div>
+                        <h3 className="font-display font-bold text-xl text-white">
+                          {principle.title}
+                        </h3>
+                        <p className="text-xs text-slate-300 leading-relaxed font-light">
+                          {principle.description}
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  </RevealOnScroll>
                 ))}
               </div>
             </div>
-          </MonochromeSection>
+          </section>
 
-          {/* 4. INVERTED BOTTOM CTA */}
-          <MonochromeSection inverted divider="none" texture="cta" className="text-center">
-            <div className="max-w-3xl mx-auto space-y-6">
-              <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-neutral-400 font-bold">
+          {/* 4. BOTTOM CTA */}
+          <section className="relative z-10 py-24 max-w-7xl mx-auto px-6 sm:px-8">
+            <div className="rounded-3xl p-10 md:p-16 bg-gradient-to-tr from-[#1769FF]/20 via-[#673BFF]/20 to-[#D900FF]/20 border border-white/20 text-center space-y-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 font-mono text-xs text-[#00CFFF]">
                 <ShieldCheck size={16} />
                 <span>100% HONEST PROOF COMMITMENT</span>
               </div>
-              <h2 className="font-serif text-4xl sm:text-6xl font-bold tracking-tight leading-none uppercase">
-                Ready for Real Business Outcomes?
+              <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white max-w-2xl mx-auto">
+                Ready for real business outcomes?
               </h2>
-              <p className="font-serifBody text-base sm:text-xl text-neutral-300 leading-relaxed max-w-2xl mx-auto">
+              <p className="text-slate-300 text-base sm:text-lg font-light max-w-xl mx-auto">
                 We believe trust is earned through verifiable business outcomes. Request a free growth audit to evaluate your current channel performance.
               </p>
-              <div className="pt-4">
+              <div className="pt-4 flex justify-center">
                 <Link href="/growth-audit">
-                  <MonochromeButton variant="primary" className="!bg-white !text-black hover:!bg-neutral-200" showArrow>
-                    {siteConfig.primaryCTA}
-                  </MonochromeButton>
+                  <CWButton variant="gradient" size="lg">
+                    <span>{siteConfig.primaryCTA}</span>
+                    <ArrowUpRight size={18} />
+                  </CWButton>
                 </Link>
               </div>
             </div>
-          </MonochromeSection>
+          </section>
         </main>
 
         <Footer />
@@ -174,4 +182,3 @@ export default function AboutPage() {
     </MotionProvider>
   );
 }
-

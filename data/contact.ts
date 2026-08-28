@@ -11,7 +11,7 @@ export interface ContactInfo {
 }
 
 export const contactData: ContactInfo = {
-  brandName: 'Ceativee World',
+  brandName: 'Creativee World',
   email: 'hello@creativeworld.in',
   location: 'Jaipur, Rajasthan, India',
   whatsappMessage: 'Connect on WhatsApp for direct agency inquiries',
@@ -22,7 +22,7 @@ export const contactData: ContactInfo = {
       answer: 'Our strategic team analyzes your website, search visibility, and current channel presence. We then reach out via email or phone with an initial diagnosis of your growth opportunities and a recommended package scope.'
     },
     {
-      question: 'Can Ceativee World work with businesses outside Jaipur?',
+      question: 'Can Creativee World work with businesses outside Jaipur?',
       answer: 'While our primary focus and local expertise are centered in Jaipur, Rajasthan, we partner with growing brands across India seeking structured performance marketing and web conversion systems.'
     },
     {

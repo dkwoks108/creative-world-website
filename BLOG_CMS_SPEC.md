@@ -1,4 +1,4 @@
-# CEATIVEe WORLD — BLOG CMS & CONTENT PUBLISHING SPECIFICATION
+# CREATIVEE WORLD — BLOG CMS & CONTENT PUBLISHING SPECIFICATION
 
 ## Overview
 The Blog CMS module provides the agency owner and editorial team with a rich publishing workflow for managing growth articles, SEO metadata, and dynamic insights listings.

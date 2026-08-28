@@ -3,7 +3,7 @@ import { TestimonialItem } from '@/types';
 export const testimonialsData: TestimonialItem[] = [
   {
     id: 'testimonial-01',
-    quotePlaceholder: 'Surnax restructured our entire acquisition funnel. Instead of running ad-hoc campaigns, we now have a connected web platform and search engine strategy that generates consistent, high-intent student enrolments month after month.',
+    quotePlaceholder: 'Creativee World restructured our entire acquisition funnel. Instead of running ad-hoc campaigns, we now have a connected web platform and search engine strategy that generates consistent, high-intent student enrolments month after month.',
     clientNamePlaceholder: 'Rajesh Sharma',
     clientRolePlaceholder: 'Managing Director',
     companyPlaceholder: 'Apex Education Group',
@@ -14,7 +14,7 @@ export const testimonialsData: TestimonialItem[] = [
   },
   {
     id: 'testimonial-02',
-    quotePlaceholder: 'The clarity and speed of Surnax engineered web systems surpassed everything we experienced with traditional agencies. Our luxury property enquiries doubled within 60 days of launching the customized landing funnels.',
+    quotePlaceholder: 'The clarity and speed of Creativee World engineered web systems surpassed everything we experienced with traditional agencies. Our luxury property enquiries doubled within 60 days of launching the customized landing funnels.',
     clientNamePlaceholder: 'Vikramaditya Rathore',
     clientRolePlaceholder: 'Head of Sales & Marketing',
     companyPlaceholder: 'Heritage Crest Estates',
@@ -25,7 +25,7 @@ export const testimonialsData: TestimonialItem[] = [
   },
   {
     id: 'testimonial-03',
-    quotePlaceholder: 'Surnax transformed our retail brand presence across Google Search and Instagram. Their video editing team produced short-form content that went viral while directly driving e-commerce storefront conversions.',
+    quotePlaceholder: 'Creativee World transformed our retail brand presence across Google Search and Instagram. Their video editing team produced short-form content that went viral while directly driving e-commerce storefront conversions.',
     clientNamePlaceholder: 'Priya Meena',
     clientRolePlaceholder: 'Founder & Brand Director',
     companyPlaceholder: 'Meena Jewels & Lifestyle',
@@ -36,7 +36,7 @@ export const testimonialsData: TestimonialItem[] = [
   },
   {
     id: 'testimonial-04',
-    quotePlaceholder: 'Their team built a ultra-fast, mobile-first web portal that handles thousands of daily active users seamlessly. Surnax approaches web engineering with architectural rigor.',
+    quotePlaceholder: 'Their team built a ultra-fast, mobile-first web portal that handles thousands of daily active users seamlessly. Creativee World approaches web engineering with architectural rigor.',
     clientNamePlaceholder: 'Ankit Khandelwal',
     clientRolePlaceholder: 'Chief Technology Officer',
     companyPlaceholder: 'TechScale Logistics & Freight',
@@ -45,7 +45,7 @@ export const testimonialsData: TestimonialItem[] = [
   },
   {
     id: 'testimonial-05',
-    quotePlaceholder: 'As a specialized legal advisory firm, trust is paramount. Surnax built our SEO authority and search position so clients looking for corporate litigation find us first on Google.',
+    quotePlaceholder: 'As a specialized legal advisory firm, trust is paramount. Creativee World built our SEO authority and search position so clients looking for corporate litigation find us first on Google.',
     clientNamePlaceholder: 'Devendra Singh Shekhawat',
     clientRolePlaceholder: 'Senior Partner',
     companyPlaceholder: 'Shekhawat & Associates Legal',
@@ -54,7 +54,7 @@ export const testimonialsData: TestimonialItem[] = [
   },
   {
     id: 'testimonial-06',
-    quotePlaceholder: 'The performance marketing and attribution models Surnax deployed gave us complete visibility into our cost-per-acquisition. No wasted budget, just raw commercial velocity.',
+    quotePlaceholder: 'The performance marketing and attribution models Creativee World deployed gave us complete visibility into our cost-per-acquisition. No wasted budget, just raw commercial velocity.',
     clientNamePlaceholder: 'Kavita Agarwal',
     clientRolePlaceholder: 'VP of Growth',
     companyPlaceholder: 'UrbanOrganics Wellness',

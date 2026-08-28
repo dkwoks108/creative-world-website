@@ -10,8 +10,8 @@ export const industriesData: IndustryItem[] = INDUSTRY_CASE_STUDIES.map((item) =
   shortDescription: item.shortProblem,
   overview: item.overview,
   growthChallenges: item.businessChallenge.points,
-  strategyPoints: item.surnaxSolution.points,
-  recommendedServices: item.surnaxSolution.servicesUsed,
+  strategyPoints: item.creativeeSolution.points,
+  recommendedServices: item.creativeeSolution.servicesUsed,
   playbookSlug: item.slug,
   faqs: item.faqs,
   image: undefined

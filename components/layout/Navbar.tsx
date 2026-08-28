@@ -3,11 +3,11 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { SurnaxLogo } from '@/components/ui/SurnaxLogo';
-import { MonochromeButton } from '@/components/monochrome/MonochromeButton';
+import { CreativeeLogo } from '@/components/ui/CreativeeLogo';
 import { SquashHamburger } from '@/components/ui/SquashHamburger';
-import { ScrambleHover } from '@/components/monochrome/ScrambleText';
 import { MobileMenu } from './MobileMenu';
+import { ArrowUpRight, Sparkles } from 'lucide-react';
+import { CWButton } from '@/components/ui/CWButton';
 
 const navLinks = [
   { label: 'Services', href: '/services' },
@@ -36,72 +36,69 @@ export function Navbar() {
 
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 bg-white border-b-4 border-black text-black transform transition-transform duration-300 ease-in-out translate-y-0 ${
-          isScrolled ? 'py-2 shadow-sm' : 'py-4'
-        }`}
-      >
-        <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-12 flex items-center justify-between">
+      <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 py-3 transition-all duration-300">
+        <div
+          className={`max-w-6xl mx-auto rounded-full transition-all duration-300 flex items-center justify-between px-6 py-2.5 ${
+            isScrolled
+              ? 'bg-[#07090E]/85 backdrop-blur-xl border border-white/15 shadow-2xl shadow-cyan-950/20'
+              : 'bg-[#07090E]/60 backdrop-blur-md border border-white/10'
+          }`}
+        >
           {/* Brand Logo */}
-          <div className="flex items-center gap-4">
-            <Link
-              href="/"
-              aria-label="Surnax home"
-              className="group flex items-center focus-visible:outline focus-visible:outline-3 focus-visible:outline-black focus-visible:outline-offset-2"
-            >
-              <SurnaxLogo accentColor="#000000" brandColor="#000000" textColor="#000000" height={isScrolled ? 26 : 30} />
-            </Link>
-          </div>
-
-          {/* Desktop Navigation Links with ScrambleHover */}
-          <nav
-            className="hidden lg:flex items-center space-x-6 font-serif"
-            aria-label="Main Navigation"
+          <Link
+            href="/"
+            aria-label="Creativee World home"
+            className="group flex items-center gap-3 focus-visible:ring-2 focus-visible:ring-[#00CFFF]"
           >
+            <CreativeeLogo textColor="#ffffff" height={28} />
+          </Link>
+
+          {/* Desktop Sentence-Case Navigation Links */}
+          <nav className="hidden lg:flex items-center space-x-6 text-sm font-medium">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
+              const isActive = pathname === link.href || pathname?.startsWith(`${link.href}/`);
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative text-sm font-bold tracking-tight transition-all duration-100 py-1 focus-visible:outline focus-visible:outline-3 focus-visible:outline-black ${
+                  className={`transition-colors duration-200 relative py-1 ${
                     isActive
-                      ? 'text-black underline underline-offset-8 decoration-2'
-                      : 'text-neutral-700 hover:text-black hover:underline underline-offset-4'
+                      ? 'text-white font-semibold'
+                      : 'text-slate-300 hover:text-white'
                   }`}
                 >
-                  <ScrambleHover text={link.label} />
+                  <span>{link.label}</span>
+                  {isActive && (
+                    <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-cw-gradient rounded-full" />
+                  )}
                 </Link>
               );
             })}
           </nav>
 
-          {/* Right Action CTA */}
-          <div className="hidden lg:flex items-center">
-            <Link href="/growth-audit">
-              <MonochromeButton variant="primary" showArrow className="!py-2 !px-4 !text-xs">
-                <ScrambleHover text="Start Audit" />
-              </MonochromeButton>
+          {/* Glowing Gradient CTA & Mobile Menu Toggle */}
+          <div className="flex items-center space-x-3">
+            <Link href="/growth-audit" className="hidden sm:block">
+              <CWButton variant="gradient" size="sm">
+                <span>Growth Audit</span>
+                <ArrowUpRight size={15} />
+              </CWButton>
             </Link>
+
+            {/* Mobile Menu Button */}
+            <div className="lg:hidden">
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="p-2 rounded-full border border-white/20 bg-slate-900/80 text-white hover:border-[#00CFFF] transition-colors"
+                aria-label="Toggle navigation menu"
+              >
+                <SquashHamburger isOpen={isMobileMenuOpen} />
+              </button>
+            </div>
           </div>
 
-          {/* Mobile Menu Trigger with SquashHamburger */}
-          <div className="flex items-center lg:hidden">
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="flex items-center gap-3 px-3.5 py-2 border-2 border-black bg-white text-black font-mono text-xs uppercase tracking-widest font-bold hover:bg-black hover:text-white transition-colors duration-100 focus-visible:outline focus-visible:outline-3 focus-visible:outline-black"
-              aria-label="Toggle navigation menu"
-              aria-expanded={isMobileMenuOpen}
-            >
-              <span>{isMobileMenuOpen ? 'CLOSE' : 'MENU'}</span>
-              <SquashHamburger isOpen={isMobileMenuOpen} />
-            </button>
-          </div>
         </div>
       </header>
-
-      {/* Spacer for fixed header */}
-      <div className={isScrolled ? 'h-16' : 'h-20'} aria-hidden="true" />
 
       {/* Mobile Drawer */}
       <MobileMenu
@@ -112,6 +109,3 @@ export function Navbar() {
     </>
   );
 }
-
-
-

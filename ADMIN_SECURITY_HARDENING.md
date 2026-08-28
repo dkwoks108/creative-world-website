@@ -1,7 +1,7 @@
-# CEATIVEe WORLD — ADMIN SECURITY HARDENING SPECIFICATION
+# CREATIVEE WORLD — ADMIN SECURITY HARDENING SPECIFICATION
 
 ## Overview
-This document specifies the enterprise security architecture for the Ceativee World private CMS admin panel.
+This document specifies the enterprise security architecture for the Creativee World private CMS admin panel.
 
 ---
 

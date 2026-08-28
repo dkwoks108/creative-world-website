@@ -50,7 +50,7 @@ export function IndustryTrustGrid() {
           Built For Real-World Business Challenges
         </h2>
         <p className="font-serifBody text-base sm:text-xl text-neutral-700 leading-relaxed">
-          From civil service academies to luxury hotels, law practices, and sustainable consumer brands—Surnax constructs custom digital systems around real operational needs.
+          From civil service academies to luxury hotels, law practices, and sustainable consumer brands—Creativee World constructs custom digital systems around real operational needs.
         </p>
       </div>
 

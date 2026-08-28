@@ -25,7 +25,7 @@ export interface IndustryCaseStudy {
     summary: string;
     points: string[];
   };
-  surnaxSolution: {
+  creativeeSolution: {
     summary: string;
     servicesUsed: string[];
     points: string[];
@@ -91,8 +91,8 @@ export const INDUSTRY_CASE_STUDIES: IndustryCaseStudy[] = [
         'Lack of automated counseling booking systems reduces conversion rates'
       ]
     },
-    surnaxSolution: {
-      summary: 'Surnax builds high-converting educational portals, automated WhatsApp lead routing, and targeted Google Search campaigns.',
+    creativeeSolution: {
+      summary: 'Creativee World builds high-converting educational portals, automated WhatsApp lead routing, and targeted Google Search campaigns.',
       servicesUsed: ['Custom Web Applications', 'SEO & Local Search', 'Automation & CRM', 'Performance Marketing'],
       points: [
         'High-speed admission portals featuring interactive syllabus finders and faculty video demos',
@@ -160,8 +160,8 @@ export const INDUSTRY_CASE_STUDIES: IndustryCaseStudy[] = [
         'Lack of real-time sentiment monitoring across constituency digital channels'
       ]
     },
-    surnaxSolution: {
-      summary: 'Surnax crafts secure leader portals, constituent grievance intake systems, and high-capacity digital broadcasting funnels.',
+    creativeeSolution: {
+      summary: 'Creativee World crafts secure leader portals, constituent grievance intake systems, and high-capacity digital broadcasting funnels.',
       servicesUsed: ['Custom Web Applications', 'Digital Branding', 'Analytics & Dashboards', 'Workflow Automation'],
       points: [
         'Secure official leadership portals showcasing legislative achievements and vision documents',
@@ -223,8 +223,8 @@ export const INDUSTRY_CASE_STUDIES: IndustryCaseStudy[] = [
         'Unstructured payment gateways causing friction during checkout'
       ]
     },
-    surnaxSolution: {
-      summary: 'Surnax engineers high-converting financial masterclass funnels, automated SMS/WhatsApp reminders, and secure student dashboards.',
+    creativeeSolution: {
+      summary: 'Creativee World engineers high-converting financial masterclass funnels, automated SMS/WhatsApp reminders, and secure student dashboards.',
       servicesUsed: ['E-Commerce & Funnels', 'Custom Web Applications', 'Automation & CRM', 'Performance Marketing'],
       points: [
         'Interactive webinar registration funnels with live countdown timer and seat counters',
@@ -286,8 +286,8 @@ export const INDUSTRY_CASE_STUDIES: IndustryCaseStudy[] = [
         'Slow loading imagery diminishing property visual luxury appeal'
       ]
     },
-    surnaxSolution: {
-      summary: 'Surnax delivers custom hotel reservation portals, wedding venue inquiry engines, and high-speed visual showcases.',
+    creativeeSolution: {
+      summary: 'Creativee World delivers custom hotel reservation portals, wedding venue inquiry engines, and high-speed visual showcases.',
       servicesUsed: ['Custom Web Applications', 'Digital Branding', 'SEO & Local Search', 'Booking Systems'],
       points: [
         'Custom direct booking interface with date picker, room selection, and add-on amenities',
@@ -349,8 +349,8 @@ export const INDUSTRY_CASE_STUDIES: IndustryCaseStudy[] = [
         'Lack of central repository for past project completion certificates and credentials'
       ]
     },
-    surnaxSolution: {
-      summary: 'Surnax engineers secure tender document vaults, automated bid readiness checkers, and enterprise procurement trackers.',
+    creativeeSolution: {
+      summary: 'Creativee World engineers secure tender document vaults, automated bid readiness checkers, and enterprise procurement trackers.',
       servicesUsed: ['Custom Web Applications', 'Workflow Automation', 'Analytics & Dashboards', 'Custom Software'],
       points: [
         'Encrypted document repository for company GST, ISO, balance sheets, and completion certificates',
@@ -412,8 +412,8 @@ export const INDUSTRY_CASE_STUDIES: IndustryCaseStudy[] = [
         'Difficulty demonstrating verified customer travel reviews and photo blogs'
       ]
     },
-    surnaxSolution: {
-      summary: 'Surnax builds interactive travel itinerary builders, instant quote engines, and search-optimized destination guides.',
+    creativeeSolution: {
+      summary: 'Creativee World builds interactive travel itinerary builders, instant quote engines, and search-optimized destination guides.',
       servicesUsed: ['Custom Web Applications', 'SEO & Local Search', 'Automation & CRM', 'Business Websites'],
       points: [
         'Interactive day-by-day itinerary explorer with high-resolution destination previews',
@@ -475,8 +475,8 @@ export const INDUSTRY_CASE_STUDIES: IndustryCaseStudy[] = [
         'Lack of direct monetization channels for digital courses, presets, or merch'
       ]
     },
-    surnaxSolution: {
-      summary: 'Surnax crafts personal creator websites, real-time dynamic media kits, brand inquiry forms, and digital storefronts.',
+    creativeeSolution: {
+      summary: 'Creativee World crafts personal creator websites, real-time dynamic media kits, brand inquiry forms, and digital storefronts.',
       servicesUsed: ['Custom Web Applications', 'Digital Branding', 'E-Commerce', 'Social Media & Brand Growth'],
       points: [
         'Personal creator hub featuring YouTube/Instagram API video integrations and bio links',
@@ -538,8 +538,8 @@ export const INDUSTRY_CASE_STUDIES: IndustryCaseStudy[] = [
         'Inefficient manual patient intake leading to long waiting room delays'
       ]
     },
-    surnaxSolution: {
-      summary: 'Surnax delivers secure doctor portals, automated SMS appointment reminders, and local medical search optimization.',
+    creativeeSolution: {
+      summary: 'Creativee World delivers secure doctor portals, automated SMS appointment reminders, and local medical search optimization.',
       servicesUsed: ['Custom Web Applications', 'SEO & Local Search', 'Automation & CRM', 'Business Websites'],
       points: [
         'Clean patient portal detailing doctor credentials, specializations, and clinic hours',
@@ -607,8 +607,8 @@ export const INDUSTRY_CASE_STUDIES: IndustryCaseStudy[] = [
         'No secure encrypted intake channel for confidential case documents'
       ]
     },
-    surnaxSolution: {
-      summary: 'Surnax builds legal practice websites, client intake screeners, secure retainer payment flows, and document upload portals.',
+    creativeeSolution: {
+      summary: 'Creativee World builds legal practice websites, client intake screeners, secure retainer payment flows, and document upload portals.',
       servicesUsed: ['Custom Web Applications', 'Digital Branding', 'SEO & Local Search', 'Workflow Automation'],
       points: [
         'Authoritative legal website showcasing firm partners, landmark case domains, and credentials',
@@ -670,8 +670,8 @@ export const INDUSTRY_CASE_STUDIES: IndustryCaseStudy[] = [
         'Siloed admissions data making applicant tracking difficult for registrar office'
       ]
     },
-    surnaxSolution: {
-      summary: 'Surnax engineers next-generation college web portals, multi-step application engines, and digital campus experience hubs.',
+    creativeeSolution: {
+      summary: 'Creativee World engineers next-generation college web portals, multi-step application engines, and digital campus experience hubs.',
       servicesUsed: ['Custom Web Applications', 'Custom Software', 'SEO & Local Search', 'Automation & CRM'],
       points: [
         'Modern, lightning-fast institution portal highlighting departments, placement stats, and campus life',
@@ -733,8 +733,8 @@ export const INDUSTRY_CASE_STUDIES: IndustryCaseStudy[] = [
         'Difficulty showcasing distinct film reels, drone cinematography, and album design samples'
       ]
     },
-    surnaxSolution: {
-      summary: 'Surnax crafts high-speed cinematic portfolio sites, interactive date availability checkers, and custom wedding package builders.',
+    creativeeSolution: {
+      summary: 'Creativee World crafts high-speed cinematic portfolio sites, interactive date availability checkers, and custom wedding package builders.',
       servicesUsed: ['Custom Web Applications', 'Digital Branding', 'SEO & Local Search', 'Booking Systems'],
       points: [
         'Ultra-fast cinematic portfolio site with optimized lazy-loading high-res galleries and embedded 4K video reels',
@@ -796,8 +796,8 @@ export const INDUSTRY_CASE_STUDIES: IndustryCaseStudy[] = [
         'No automated system to collect non-refundable advance booking deposits'
       ]
     },
-    surnaxSolution: {
-      summary: 'Surnax delivers stylish beauty lookbook portals, automated date booking calendars, and advance deposit payment flows.',
+    creativeeSolution: {
+      summary: 'Creativee World delivers stylish beauty lookbook portals, automated date booking calendars, and advance deposit payment flows.',
       servicesUsed: ['Custom Web Applications', 'Digital Branding', 'Automation & CRM', 'Booking Systems'],
       points: [
         'Visual lookbook showcase categorized by Bridal, HD Airbrush, Sangeet, and Editorial makeup styles',
@@ -859,8 +859,8 @@ export const INDUSTRY_CASE_STUDIES: IndustryCaseStudy[] = [
         'Difficulties managing therapist schedules across multiple treatment beds'
       ]
     },
-    surnaxSolution: {
-      summary: 'Surnax constructs clinic booking portals, patient rehab progress dashboards, and automated session reminder funnels.',
+    creativeeSolution: {
+      summary: 'Creativee World constructs clinic booking portals, patient rehab progress dashboards, and automated session reminder funnels.',
       servicesUsed: ['Custom Web Applications', 'SEO & Local Search', 'Automation & CRM', 'Business Websites'],
       points: [
         'Multi-session appointment booking system for knee, back, sports injury, and post-surgery rehab',
@@ -922,8 +922,8 @@ export const INDUSTRY_CASE_STUDIES: IndustryCaseStudy[] = [
         'Lack of online visibility for specialized group classes (Spin, Yoga, HIIT)'
       ]
     },
-    surnaxSolution: {
-      summary: 'Surnax engineers gym membership portals, automated pass claiming funnels, class schedulers, and renewal reminders.',
+    creativeeSolution: {
+      summary: 'Creativee World engineers gym membership portals, automated pass claiming funnels, class schedulers, and renewal reminders.',
       servicesUsed: ['Custom Web Applications', 'SEO & Local Search', 'Automation & CRM', 'Performance Marketing'],
       points: [
         'High-converting 1-Day Trial Pass landing page with instant QR code delivery to mobile',
@@ -985,8 +985,8 @@ export const INDUSTRY_CASE_STUDIES: IndustryCaseStudy[] = [
         'Static paper menus that are expensive to re-print when prices or seasonal items change'
       ]
     },
-    surnaxSolution: {
-      summary: 'Surnax builds high-speed digital QR menus, direct ordering portals, local map SEO boosters, and loyalty reward funnels.',
+    creativeeSolution: {
+      summary: 'Creativee World builds high-speed digital QR menus, direct ordering portals, local map SEO boosters, and loyalty reward funnels.',
       servicesUsed: ['Custom Web Applications', 'SEO & Local Search', 'Digital Branding', 'E-Commerce'],
       points: [
         'Instant loading Mobile QR Menu allowing table dining guests to browse and order directly',
@@ -1048,8 +1048,8 @@ export const INDUSTRY_CASE_STUDIES: IndustryCaseStudy[] = [
         'Low conversion rates when sending traffic to generic 3rd party course platforms'
       ]
     },
-    surnaxSolution: {
-      summary: 'Surnax deploys automated Instagram DM trigger funnels, high-converting checkout landing pages, and custom course portals.',
+    creativeeSolution: {
+      summary: 'Creativee World deploys automated Instagram DM trigger funnels, high-converting checkout landing pages, and custom course portals.',
       servicesUsed: ['Custom Web Applications', 'Automation & CRM', 'E-Commerce & Funnels', 'Performance Marketing'],
       points: [
         'Automated Comment-to-DM bot sending instant course landing links whenever users comment key phrases',
@@ -1111,8 +1111,8 @@ export const INDUSTRY_CASE_STUDIES: IndustryCaseStudy[] = [
         'Difficulty managing seasonal collection launches and stock inventory alerts'
       ]
     },
-    surnaxSolution: {
-      summary: 'Surnax crafts headless e-commerce storefronts, interactive collection lookbooks, size guide engines, and retargeting ad flows.',
+    creativeeSolution: {
+      summary: 'Creativee World crafts headless e-commerce storefronts, interactive collection lookbooks, size guide engines, and retargeting ad flows.',
       servicesUsed: ['E-Commerce & Funnels', 'Custom Web Applications', 'Digital Branding', 'Performance Marketing'],
       points: [
         'Headless Next.js e-commerce storefront rendering collection grids in under 1 second',
@@ -1174,8 +1174,8 @@ export const INDUSTRY_CASE_STUDIES: IndustryCaseStudy[] = [
         'Unoptimized mobile store failing to highlight eco-friendly packaging and purity standards'
       ]
     },
-    surnaxSolution: {
-      summary: 'Surnax constructs farm-to-table e-commerce platforms, recurring subscription box management engines, and origin verification portals.',
+    creativeeSolution: {
+      summary: 'Creativee World constructs farm-to-table e-commerce platforms, recurring subscription box management engines, and origin verification portals.',
       servicesUsed: ['E-Commerce & Funnels', 'Custom Web Applications', 'Digital Branding', 'Automation & CRM'],
       points: [
         'Clean eco-aesthetic e-commerce portal with farm-to-table batch traceability QR verifier',

@@ -1,7 +1,7 @@
-# CEATIVEe WORLD — PRIVATE ADMIN PANEL SECURITY AUDIT & SAFEGUARDS
+# CREATIVEE WORLD — PRIVATE ADMIN PANEL SECURITY AUDIT & SAFEGUARDS
 
 ## Overview
-This document specifies the multi-layer security protections implemented for the Ceativee World private administration panel.
+This document specifies the multi-layer security protections implemented for the Creativee World private administration panel.
 
 ---
 

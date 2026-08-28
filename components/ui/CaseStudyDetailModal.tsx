@@ -59,7 +59,7 @@ export function CaseStudyDetailModal({ caseStudy, isOpen, onClose }: Props) {
             <span className="w-3 h-3 bg-white inline-block animate-pulse shrink-0" />
             <div>
               <span className="font-mono text-[10px] uppercase font-bold tracking-widest text-neutral-400 block">
-                SURNAX SECTOR DOSSIER
+                CREATIVEE SECTOR DOSSIER
               </span>
               <h2 id="modal-title" className="font-serif font-bold text-base sm:text-xl text-white tracking-tight leading-none truncate max-w-[260px] sm:max-w-xl">
                 {caseStudy.industryName}: {caseStudy.title}
@@ -121,14 +121,14 @@ export function CaseStudyDetailModal({ caseStudy, isOpen, onClose }: Props) {
           <section className="space-y-6 border-b-2 border-black pb-8">
             <div className="flex items-center gap-2 font-mono text-xs font-bold text-neutral-500 uppercase tracking-widest">
               <span className="px-2 py-0.5 border border-black bg-neutral-100 text-black">03</span>
-              <span>SURNAX STRATEGY</span>
+              <span>CREATIVEE STRATEGY</span>
             </div>
             <p className="font-serifBody text-base text-neutral-800 leading-relaxed font-medium">
-              {caseStudy.surnaxSolution.summary}
+              {caseStudy.creativeeSolution.summary}
             </p>
 
             <div className="space-y-3">
-              {caseStudy.surnaxSolution.points.map((pt, idx) => (
+              {caseStudy.creativeeSolution.points.map((pt, idx) => (
                 <div key={idx} className="p-4 border-2 border-black bg-white hover:bg-black hover:text-white transition-colors duration-100 space-y-1 group">
                   <div className="font-mono text-xs font-bold text-neutral-500 group-hover:text-neutral-300 flex items-center gap-2 transition-colors">
                     <CheckCircle2 size={16} className="text-black group-hover:text-white transition-colors shrink-0" />
@@ -148,7 +148,7 @@ export function CaseStudyDetailModal({ caseStudy, isOpen, onClose }: Props) {
             </div>
             
             <div className="flex flex-wrap gap-2">
-              {caseStudy.surnaxSolution.servicesUsed.map((srv, idx) => (
+              {caseStudy.creativeeSolution.servicesUsed.map((srv, idx) => (
                 <span key={idx} className="px-3 py-1.5 border-2 border-black bg-black text-white font-mono text-xs font-bold uppercase tracking-wider">
                   {srv}
                 </span>
@@ -238,7 +238,7 @@ export function CaseStudyDetailModal({ caseStudy, isOpen, onClose }: Props) {
                 09 / NEXT STEPS
               </span>
               <h3 className="font-serif font-bold text-2xl sm:text-3xl text-white tracking-tight">
-                Build Something Better With Surnax
+                Build Something Better With Creativee World
               </h3>
               <p className="font-serifBody text-sm text-neutral-300">
                 Ready to transform your {caseStudy.industryName} business with automated digital systems?

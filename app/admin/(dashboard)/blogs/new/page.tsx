@@ -29,7 +29,7 @@ export default function NewBlogPage() {
     excerpt: "",
     categoryName: "Websites",
     featuredImage: "/images/insights/cw-insight-website-2026-01.webp",
-    featuredImageAlt: "Ceativee World Blog Featured Image",
+    featuredImageAlt: "Creativee World Blog Featured Image",
     status: "PUBLISHED",
     seoTitle: "",
     metaDescription: "",
@@ -54,7 +54,7 @@ export default function NewBlogPage() {
       ...prev,
       title: val,
       slug: generatedSlug,
-      seoTitle: `${val} | Ceativee World Jaipur`,
+      seoTitle: `${val} | Creativee World Jaipur`,
     }));
   };
 
@@ -141,7 +141,7 @@ export default function NewBlogPage() {
               <Sparkles className="text-cyan-400" size={24} />
               Create New Article
             </h1>
-            <p className="text-xs text-slate-400">Publish high-authority insights for Ceativee World</p>
+            <p className="text-xs text-slate-400">Publish high-authority insights for Creativee World</p>
           </div>
         </div>
 

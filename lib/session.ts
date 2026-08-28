@@ -5,7 +5,7 @@ import { db } from './db';
 
 const COOKIE_NAME = 'cw_admin_session';
 const SECRET_KEY = new TextEncoder().encode(
-  process.env.SESSION_SECRET || 'ceativee-world-super-secret-session-key-2026-jaipur-growth'
+  process.env.SESSION_SECRET || 'creativee-world-super-secret-session-key-2026-jaipur-growth'
 );
 
 const IDLE_TIMEOUT_MINUTES = parseInt(process.env.ADMIN_IDLE_TIMEOUT_MINUTES || '30', 10);

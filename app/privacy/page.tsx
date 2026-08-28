@@ -4,11 +4,11 @@ import { LegalPageLayout, TocItem } from '@/components/ui/LegalPageLayout';
 import { siteConfig } from '@/data/site';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Ceativee World Jaipur',
-  description: 'Learn how Ceativee World collects, uses, and safeguards information provided via our digital growth audit forms and website interaction.',
+  title: 'Privacy Policy | Creativee World Jaipur',
+  description: 'Learn how Creativee World collects, uses, and safeguards information provided via our digital growth audit forms and website interaction.',
   openGraph: {
-    title: 'Privacy Policy | Ceativee World Digital Growth Studio',
-    description: 'Transparent privacy practices and data governance policies for Ceativee World in Jaipur, Rajasthan.',
+    title: 'Privacy Policy | Creativee World Digital Growth Studio',
+    description: 'Transparent privacy practices and data governance policies for Creativee World in Jaipur, Rajasthan.',
   },
 };
 
@@ -37,7 +37,7 @@ export default function PrivacyPolicyPage() {
     <LegalPageLayout
       title="Privacy Policy"
       lastUpdated="August 15, 2026"
-      description="Transparent, clear disclosure of how Ceativee World handles business enquiries, audit request data, and website visitor information."
+      description="Transparent, clear disclosure of how Creativee World handles business enquiries, audit request data, and website visitor information."
       toc={privacyToc}
     >
       {/* 01. Effective Date */}
@@ -49,7 +49,7 @@ export default function PrivacyPolicyPage() {
           1. Effective Date & Scope
         </h2>
         <p className="font-serifBody text-sm sm:text-base text-neutral-800 leading-relaxed font-normal">
-          This Privacy Policy is effective as of <strong>August 15, 2026</strong> and applies to all visitors, business owners, and clients accessing the digital platforms operated by <strong>Surnax</strong> (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;), headquartered in Jaipur, Rajasthan, India.
+          This Privacy Policy is effective as of <strong>August 15, 2026</strong> and applies to all visitors, business owners, and clients accessing the digital platforms operated by <strong>Creativee World</strong> (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;), headquartered in Jaipur, Rajasthan, India.
         </p>
       </section>
 
@@ -62,7 +62,7 @@ export default function PrivacyPolicyPage() {
           2. Introduction
         </h2>
         <p className="font-serifBody text-sm sm:text-base text-neutral-800 leading-relaxed font-normal">
-          At Surnax, we believe digital growth consulting requires transparency—not only in performance metrics, but also in how personal and business data is handled. This document explains what information we collect when you explore our website, request a Growth Audit, or contact our agency, and how that information is used responsibly.
+          At Creativee World, we believe digital growth consulting requires transparency—not only in performance metrics, but also in how personal and business data is handled. This document explains what information we collect when you explore our website, request a Growth Audit, or contact our agency, and how that information is used responsibly.
         </p>
       </section>
 
@@ -128,7 +128,7 @@ export default function PrivacyPolicyPage() {
           6. How We Use Information
         </h2>
         <p className="font-serifBody text-sm sm:text-base text-neutral-800 leading-relaxed font-normal">
-          Surnax uses collected business information strictly for legitimate commercial consulting purposes:
+          Creativee World uses collected business information strictly for legitimate commercial consulting purposes:
         </p>
         <ul className="list-disc pl-6 space-y-2 font-serifBody text-sm sm:text-base text-neutral-800 font-normal">
           <li>Conducting initial digital growth audits and channel diagnostic reviews.</li>
@@ -147,7 +147,7 @@ export default function PrivacyPolicyPage() {
           7. Website Analytics and Cookies
         </h2>
         <p className="font-serifBody text-sm sm:text-base text-neutral-800 leading-relaxed font-normal">
-          <strong>Current Operational Status:</strong> As of the effective date, the Surnax core presentation website does not actively run intrusive third-party cross-site advertising tracking pixels (such as Meta Pixel or third-party behavioral remarketing networks). 
+          <strong>Current Operational Status:</strong> As of the effective date, the Creativee World core presentation website does not actively run intrusive third-party cross-site advertising tracking pixels (such as Meta Pixel or third-party behavioral remarketing networks). 
         </p>
         <p className="font-serifBody text-sm sm:text-base text-neutral-800 leading-relaxed font-normal">
           Standard essential functional session cookies or local web storage may be utilized by our web application framework strictly to support UI preferences, fluid animations, and secure form state handling.
@@ -219,7 +219,7 @@ export default function PrivacyPolicyPage() {
           12. Data Security
         </h2>
         <p className="font-serifBody text-sm sm:text-base text-neutral-800 leading-relaxed font-normal">
-          Surnax employs reasonable technical safeguards—including HTTPS encryption in transit and restricted team access—to protect incoming audit information. However, no internet transmission method is 100% immune to security vulnerabilities.
+          Creativee World employs reasonable technical safeguards—including HTTPS encryption in transit and restricted team access—to protect incoming audit information. However, no internet transmission method is 100% immune to security vulnerabilities.
         </p>
       </section>
 
@@ -258,7 +258,7 @@ export default function PrivacyPolicyPage() {
           15. External Links
         </h2>
         <p className="font-serifBody text-sm sm:text-base text-neutral-800 leading-relaxed font-normal">
-          Our website may contain references or links to client platforms or external resources. Surnax is not responsible for the privacy practices or content of third-party external websites.
+          Our website may contain references or links to client platforms or external resources. Creativee World is not responsible for the privacy practices or content of third-party external websites.
         </p>
       </section>
 
@@ -287,7 +287,7 @@ export default function PrivacyPolicyPage() {
           If you have questions regarding this Privacy Policy or our data governance practices, please contact our Jaipur studio team:
         </p>
         <div className="p-6 border-2 border-black bg-white space-y-2 font-mono text-xs text-black uppercase">
-          <p className="font-bold text-black text-sm">SURNAX STUDIO TEAM</p>
+          <p className="font-bold text-black text-sm">CREATIVEE WORLD STUDIO TEAM</p>
           <p>Email: {siteConfig.contactEmailPlaceholder}</p>
           <p>Location: {siteConfig.locationPlaceholder}</p>
         </div>

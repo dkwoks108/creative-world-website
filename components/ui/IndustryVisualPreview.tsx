@@ -82,7 +82,7 @@ export function IndustryVisualPreview({ concept, industryName, className = '' }:
               {getIcon()}
             </div>
             <div>
-              <span className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest block">SURNAX DIGITAL CORE</span>
+              <span className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest block">CREATIVEE DIGITAL CORE</span>
               <h4 className="text-xs sm:text-sm font-bold text-black tracking-wide truncate max-w-[220px]">{concept.tagline}</h4>
             </div>
           </div>
@@ -129,7 +129,7 @@ export function IndustryVisualPreview({ concept, industryName, className = '' }:
       <div className="mt-3 flex items-center justify-between text-[9px] text-neutral-600 font-mono font-bold">
         <span className="flex items-center gap-1">
           <ShieldCheck size={12} className="text-black" />
-          SURNAX ARCHITECTURE SPEC
+          CREATIVEE ARCHITECTURE SPEC
         </span>
         <span className="text-black hover:underline transition-colors flex items-center gap-1 uppercase">
           SYSTEM SPECIFIED <ArrowRight size={10} />

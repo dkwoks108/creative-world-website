@@ -33,7 +33,7 @@ export function ConversionSection() {
             <div className="relative h-36 w-full border border-neutral-800">
               <Image
                 src="/images/sections/growth-audit-telemetry.png"
-                alt="Surnax Growth Audit Diagnostics Telemetry Dashboard"
+                alt="Creativee World Growth Audit Diagnostics Telemetry Dashboard"
                 fill
                 sizes="(max-width: 768px) 100vw, 400px"
                 className="object-cover object-center grayscale contrast-125 opacity-90"

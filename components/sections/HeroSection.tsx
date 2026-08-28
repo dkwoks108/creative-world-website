@@ -21,7 +21,7 @@ export function HeroSection() {
       {/* LAYER 1: Background Watermark (Depth 0.25x) */}
       <ParallaxElement speed={0.25} className="absolute top-1/2 left-0 -translate-y-1/2 w-full pointer-events-none opacity-5 select-none overflow-hidden" aria-hidden="true">
         <ScrollVelocityText speed={0.25} className="font-serif font-bold text-[18vw] uppercase tracking-tighter leading-none whitespace-nowrap text-black">
-          SURNAX DIGITAL ENGINE SURNAX ARCHITECTURE
+          CREATIVEE DIGITAL ENGINE CREATIVEE ARCHITECTURE
         </ScrollVelocityText>
       </ParallaxElement>
 
@@ -65,7 +65,7 @@ export function HeroSection() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.65 }}
               className="font-serif text-xl sm:text-2xl md:text-3xl leading-relaxed text-black tracking-tight font-normal"
             >
-              Surnax engineers high-converting search systems, performance marketing funnels, and bespoke web platforms for ambitious Jaipur brands.
+              Creativee World engineers high-converting search systems, performance marketing funnels, and bespoke web platforms for ambitious Jaipur brands.
             </motion.p>
 
             <motion.div
@@ -116,7 +116,7 @@ export function HeroSection() {
             {/* Status bar */}
             <div className="absolute bottom-0 inset-x-0 bg-black/90 border-t-2 border-black p-3 font-mono text-[10px] text-white flex justify-between items-center z-20">
               <span>DIGITAL SHOWCASE</span>
-              <span className="text-neutral-400">SURNAX REEL</span>
+              <span className="text-neutral-400">CREATIVEE REEL</span>
             </div>
           </motion.div>
         </ParallaxElement>

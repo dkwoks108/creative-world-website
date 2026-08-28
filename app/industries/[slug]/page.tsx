@@ -38,19 +38,19 @@ export async function generateMetadata({ params }: IndustryPageProps): Promise<M
 
   if (!industry) {
     return {
-      title: 'Industry Case Study Not Found | Surnax',
+      title: 'Industry Case Study Not Found | Creativee World',
     };
   }
 
   return {
-    title: `${industry.industryName} Case Study & Digital System | Surnax`,
+    title: `${industry.industryName} Case Study & Digital System | Creativee World`,
     description: industry.shortProblem,
     openGraph: {
-      title: `${industry.industryName} Case Study: ${industry.title} | Surnax`,
+      title: `${industry.industryName} Case Study: ${industry.title} | Creativee World`,
       description: industry.shortProblem,
     },
     alternates: {
-      canonical: `https://surnax.com/industries/${industry.slug}`,
+      canonical: `https://creativeworld.in/industries/${industry.slug}`,
     },
   };
 }
@@ -71,8 +71,8 @@ export default function IndustryDetailPage({ params }: IndustryPageProps) {
     'articleSection': caseStudy.category,
     'publisher': {
       '@type': 'Organization',
-      'name': 'Surnax',
-      'logo': 'https://surnax.com/icon.png'
+      'name': 'Creativee World',
+      'logo': 'https://creativeworld.in/icon.png'
     }
   };
 
@@ -140,7 +140,7 @@ export default function IndustryDetailPage({ params }: IndustryPageProps) {
             </div>
           </MonochromeSection>
 
-          {/* 3. BUSINESS BOTTLENECKS & SURNAX SOLUTIONS GRID */}
+          {/* 3. BUSINESS BOTTLENECKS & CREATIVEE WORLD SOLUTIONS GRID */}
           <MonochromeSection divider="thick" texture="none">
             <div className="space-y-16">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -179,7 +179,7 @@ export default function IndustryDetailPage({ params }: IndustryPageProps) {
                 <div className="space-y-6">
                   <div className="flex items-center gap-2 font-mono text-xs font-bold text-neutral-500 uppercase tracking-widest">
                     <span className="w-4 h-4 bg-black text-white text-[10px] flex items-center justify-center font-bold">03</span>
-                    <span>SURNAX SOLUTION STRATEGY</span>
+                    <span>CREATIVEE SOLUTION STRATEGY</span>
                   </div>
 
                   <h2 className="font-serif font-bold text-3xl sm:text-4xl tracking-tight leading-none text-black">
@@ -187,11 +187,11 @@ export default function IndustryDetailPage({ params }: IndustryPageProps) {
                   </h2>
 
                   <p className="font-serifBody text-base text-neutral-700">
-                    {caseStudy.surnaxSolution.summary}
+                    {caseStudy.creativeeSolution.summary}
                   </p>
 
                   <div className="space-y-4">
-                    {caseStudy.surnaxSolution.points.map((point, idx) => (
+                    {caseStudy.creativeeSolution.points.map((point, idx) => (
                       <div key={idx} className="p-6 border-2 border-black bg-white group hover:bg-black hover:text-white transition-colors duration-100 space-y-2">
                         <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest font-bold text-neutral-500 group-hover:text-neutral-400">
                           <Check size={16} strokeWidth={2} className="text-black group-hover:text-[#B8FF2C] transition-colors duration-100" />
@@ -298,7 +298,7 @@ export default function IndustryDetailPage({ params }: IndustryPageProps) {
                 09 / STRATEGIC ENGAGEMENT
               </span>
               <h2 className="font-serif text-4xl sm:text-6xl font-bold tracking-tight leading-none text-white">
-                Build Something Better With Surnax
+                Build Something Better With Creativee World
               </h2>
               <p className="font-serifBody text-base sm:text-xl text-neutral-300 leading-relaxed max-w-2xl mx-auto">
                 Ready to engineer a high-converting digital system for your {caseStudy.industryName} business?

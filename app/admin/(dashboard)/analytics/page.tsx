@@ -124,7 +124,7 @@ export default function AnalyticsPage() {
         const url = URL.createObjectURL(dataBlob);
         const link = document.createElement('a');
         link.href = url;
-        link.download = `ceativee-analytics-${timeRange}-${Date.now()}.json`;
+        link.download = `creativee-analytics-${timeRange}-${Date.now()}.json`;
         link.click();
     };
 

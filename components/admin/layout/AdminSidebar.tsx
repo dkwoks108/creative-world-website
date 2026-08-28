@@ -20,7 +20,7 @@ export default function AdminSidebar() {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [user, setUser] = useState<UserProfile | null>(null);
-  const [siteName, setSiteName] = useState("CEATIVEE WORLD");
+  const [siteName, setSiteName] = useState("CREATIVEE WORLD");
   const [logoUrl, setLogoUrl] = useState<string | null>(null);
 
   useEffect(() => {

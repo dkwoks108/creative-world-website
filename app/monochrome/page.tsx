@@ -21,7 +21,7 @@ export default function MonochromeShowcasePage() {
       <header className="sticky top-0 z-50 bg-white border-b-2 border-black py-4 px-6 md:px-12 flex items-center justify-between">
         <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest font-bold">
           <span className="w-3 h-3 border border-black bg-black inline-block" />
-          <span>SURNAX EDITORIAL</span>
+          <span>CREATIVEE EDITORIAL</span>
           <span className="text-neutral-400">/ EDITORIAL SHOWCASE</span>
         </div>
         <nav className="hidden md:flex items-center gap-8 font-mono text-xs uppercase tracking-widest font-medium">
@@ -353,7 +353,7 @@ export default function MonochromeShowcasePage() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 font-mono text-xs uppercase tracking-widest text-neutral-600">
           <div className="flex items-center gap-3 font-bold text-black">
             <span className="w-3 h-3 border border-black bg-black inline-block" />
-            <span>SURNAX © 2026</span>
+            <span>CREATIVEE WORLD © 2026</span>
           </div>
           <div>MINIMALIST MONOCHROME DESIGN SYSTEM</div>
           <Link href="/" className="hover:underline underline-offset-4 text-black font-bold">

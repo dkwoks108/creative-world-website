@@ -113,7 +113,7 @@ export function MarketDifferenceSection() {
                 <div className="flex items-center justify-between border-b-2 border-black pb-4">
                   <div>
                     <span className="font-mono text-xs text-black uppercase tracking-widest block font-bold">
-                      SURNAX GROWTH SYSTEM
+                      CREATIVEE GROWTH SYSTEM
                     </span>
                     <h3 className="font-serif font-bold text-2xl text-black uppercase mt-1">
                       Connected Growth Ecosystem
@@ -129,7 +129,7 @@ export function MarketDifferenceSection() {
                   <div className="relative h-44 w-full border border-neutral-800">
                     <Image
                       src="/images/sections/market-difference-engine.png"
-                      alt="Surnax Revenue Engine Node Architecture Graph"
+                      alt="Creativee World Revenue Engine Node Architecture Graph"
                       fill
                       sizes="(max-width: 768px) 100vw, 600px"
                       className="object-cover object-center grayscale contrast-125 opacity-90"

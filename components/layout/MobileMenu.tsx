@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { X, ArrowRight } from 'lucide-react';
 import gsap from 'gsap';
-import { SurnaxLogo } from '@/components/ui/SurnaxLogo';
+import { CreativeeLogo } from '@/components/ui/CreativeeLogo';
 import { MonochromeButton } from '@/components/monochrome/MonochromeButton';
 
 interface MobileMenuProps {
@@ -62,8 +62,8 @@ export function MobileMenu({ isOpen, onClose, links }: MobileMenuProps) {
     >
       {/* Drawer Header */}
       <div className="flex h-20 items-center justify-between px-6 border-b-2 border-black">
-        <Link href="/" onClick={onClose} aria-label="Surnax home">
-          <SurnaxLogo accentColor="#000000" brandColor="#000000" textColor="#000000" height={28} />
+        <Link href="/" onClick={onClose} aria-label="Creativee World home">
+          <CreativeeLogo accentColor="#000000" brandColor="#000000" textColor="#000000" height={28} />
         </Link>
         <button
           onClick={onClose}

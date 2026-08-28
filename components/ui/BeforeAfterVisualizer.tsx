@@ -112,7 +112,7 @@ export function BeforeAfterVisualizer({
           <div className="lg:col-span-2 flex flex-col items-center justify-center py-4 lg:py-0">
             <div className="p-4 border-2 border-black bg-black text-white font-mono text-center space-y-2 w-full max-w-[200px]">
               <Zap size={20} className="mx-auto text-white animate-pulse" />
-              <div className="text-[10px] uppercase font-bold tracking-widest text-white">SURNAX ENGINE</div>
+              <div className="text-[10px] uppercase font-bold tracking-widest text-white">CREATIVEE ENGINE</div>
               <div className="text-[9px] text-neutral-300 leading-tight">AUTOMATION &amp; TECH MATRIX</div>
               <ArrowRight size={16} className="mx-auto text-white hidden lg:block" />
             </div>
@@ -126,7 +126,7 @@ export function BeforeAfterVisualizer({
               <div className="flex items-center justify-between font-mono text-xs uppercase font-bold tracking-widest text-neutral-300 mb-4 pb-3 border-b-2 border-neutral-800">
                 <span className="flex items-center gap-2 text-white">
                   <CheckCircle2 size={16} className="text-white" />
-                  SURNAX DIGITAL SYSTEM
+                  CREATIVEE DIGITAL SYSTEM
                 </span>
                 <span className="px-2 py-0.5 bg-white text-black text-[10px] font-bold">TRANSFORMED</span>
               </div>

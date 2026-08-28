@@ -53,7 +53,7 @@ export default function AdminLogin() {
             </div>
           </div>
           <CardTitle className="text-2xl font-bold text-white tracking-tight font-poppins">
-            CEATIVEE WORLD ADMIN
+            CREATIVEE WORLD ADMIN
           </CardTitle>
           <CardDescription className="text-slate-400 text-xs mt-1">
             Executive Portal for Authorized Management
@@ -78,7 +78,7 @@ export default function AdminLogin() {
                     required
                     autoComplete="email"
                     className="w-full pl-10 pr-4 py-3 bg-[#0D121F] border border-[#1E293B] rounded-xl text-white placeholder-slate-600 focus:outline-none focus:ring-1 focus:ring-cyan-500/50 focus:border-cyan-500 transition-all text-sm"
-                    placeholder="admin@ceativeeworld.com"
+                    placeholder="admin@creativeeworld.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
@@ -141,7 +141,7 @@ export default function AdminLogin() {
                 <span>256-bit Encrypted Session Security</span>
               </div>
               <p className="text-[10px] text-slate-500 mt-1">
-                © 2026 Ceativee World Jaipur. All Rights Reserved.
+                © 2026 Creativee World Jaipur. All Rights Reserved.
               </p>
             </div>
           </div>

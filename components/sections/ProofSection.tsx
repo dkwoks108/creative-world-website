@@ -51,7 +51,7 @@ export function ProofSection() {
             </h2>
 
             <p className="font-serifBody text-lg sm:text-xl text-neutral-800 leading-relaxed font-normal">
-              Direct insights from leaders and founders who partnered with Surnax to scale search visibility, digital marketing ROI, and web systems.
+              Direct insights from leaders and founders who partnered with Creativee World to scale search visibility, digital marketing ROI, and web systems.
             </p>
           </div>
 

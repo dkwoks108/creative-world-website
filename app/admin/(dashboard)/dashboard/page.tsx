@@ -131,7 +131,7 @@ export default function AdminDashboard() {
               LIVE SYSTEM
             </span>
           </div>
-          <p className="text-xs text-slate-400 mt-1">Real-time telemetry for Ceativee World Digital Infrastructure</p>
+          <p className="text-xs text-slate-400 mt-1">Real-time telemetry for Creativee World Digital Infrastructure</p>
         </div>
 
         <div className="flex gap-3">

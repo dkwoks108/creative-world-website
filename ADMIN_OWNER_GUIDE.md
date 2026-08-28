@@ -1,14 +1,14 @@
-# CEATIVEe WORLD — AGENCY OWNER ADMIN MANUAL & HANDOFF GUIDE
+# CREATIVEE WORLD — AGENCY OWNER ADMIN MANUAL & HANDOFF GUIDE
 
-Welcome to your private Ceativee World Administration Control Center! This guide explains how to manage your agency's website content, review client growth inquiries, upload media assets, configure taxonomies, and maintain search engine visibility.
+Welcome to your private Creativee World Administration Control Center! This guide explains how to manage your agency's website content, review client growth inquiries, upload media assets, configure taxonomies, and maintain search engine visibility.
 
 ---
 
 ## 1. Accessing Your Admin Control Panel
 
-- **Secret Login URL**: `https://ceativeeworld.com/cw-control-x7k9m2/login`
-- **Default Master Admin Email**: `admin@ceativeeworld.com`
-- **Default Master Password**: `CeativeeAdmin2026!`
+- **Secret Login URL**: `https://creativeworld.in/cw-control-x7k9m2/login`
+- **Default Master Admin Email**: `admin@creativeworld.in`
+- **Default Master Password**: `CreativeeAdmin2026!`
 
 *Security Note: Bookmark this URL privately. Never share login links or master credentials.*
 

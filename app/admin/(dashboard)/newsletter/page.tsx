@@ -39,7 +39,7 @@ export default function AdminNewsletter() {
         const encodedUri = encodeURI(csvContent);
         const link = document.createElement("a");
         link.setAttribute("href", encodedUri);
-        link.setAttribute("download", "ceativee_newsletter_subscribers.csv");
+        link.setAttribute("download", "creativee_newsletter_subscribers.csv");
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);

@@ -93,7 +93,7 @@ export function MethodologySection() {
             <div className="relative h-56 w-full border border-neutral-800">
               <Image
                 src="/images/sections/methodology-protocol-network.png"
-                alt="Surnax Architectural Execution Process Flow Network"
+                alt="Creativee World Architectural Execution Process Flow Network"
                 fill
                 sizes="1200px"
                 className="object-cover object-center grayscale contrast-125 opacity-90"

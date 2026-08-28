@@ -12,11 +12,11 @@ export interface AboutContent {
 }
 
 export const aboutData: AboutContent = {
-  title: 'About Ceativee World',
+  title: 'About Creativee World',
   tagline: 'We Solve Business Growth Problems Through Integrated Digital Systems.',
   mission: 'To empower Jaipur businesses with honest, performance-driven digital marketing systems that turn search visibility, brand content, and paid advertising into predictable revenue growth.',
   vision: 'To become the premier digital growth partner in Rajasthan—recognized for data transparency, human copywriting, technical excellence, and genuine business impact.',
-  philosophy: 'Traditional agencies treat paid ads, search optimization, social media, and web development as isolated silos. Ceativee World unifies these channels into a connected growth engine where every campaign, ad rupee, and website interaction compounds to drive qualified customer enquiries.',
+  philosophy: 'Traditional agencies treat paid ads, search optimization, social media, and web development as isolated silos. Creativee World unifies these channels into a connected growth engine where every campaign, ad rupee, and website interaction compounds to drive qualified customer enquiries.',
   corePrinciples: [
     {
       title: 'Business Outcomes Over Vanity Metrics',
