@@ -9,18 +9,22 @@ import { CreativeeLogo } from '@/components/ui/CreativeeLogo';
 
 export function AgencyHero() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [videoError, setVideoError] = useState(false);
 
   return (
     <section className="relative w-full min-h-screen bg-[#050608] text-[#F5F7FA] font-sans overflow-hidden flex flex-col justify-between select-none">
       {/* 1. Cinematic Video Background */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0 opacity-40 pointer-events-none"
-        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_105406_16f4600d-7a92-4292-b96e-b19156c7830a.mp4"
-      />
+      {!videoError && (
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          onError={() => setVideoError(true)}
+          className="absolute inset-0 w-full h-full object-cover z-0 opacity-40 pointer-events-none"
+          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_105406_16f4600d-7a92-4292-b96e-b19156c7830a.mp4"
+        />
+      )}
 
       {/* Sophisticated Dark Overlay & Directional Gradient */}
       <div className="absolute inset-0 bg-[#050608]/60 z-0 pointer-events-none" />
