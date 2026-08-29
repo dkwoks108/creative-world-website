@@ -17,10 +17,10 @@ export function InitialLoader() {
       return;
     }
 
-    // Trigger rapid initial progress animation (0 -> 100 in 250ms)
+    // Trigger rapid numeric progress animation (01 -> 100 in 300ms)
     setIsLoading(true);
     const startTime = Date.now();
-    const duration = 250;
+    const duration = 300;
 
     const interval = setInterval(() => {
       const elapsed = Date.now() - startTime;
@@ -54,16 +54,23 @@ export function InitialLoader() {
         <motion.div
           key="initial-loader"
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0, transition: { duration: 0.2 } }}
-          className="fixed top-0 left-0 right-0 z-[100] bg-[#07090E]/95 border-b border-[#00CFFF]/30 px-6 py-2 flex items-center justify-between pointer-events-none select-none backdrop-blur-md"
+          exit={{ opacity: 0, transition: { duration: 0.25, ease: 'easeInOut' } }}
+          className="fixed inset-0 z-[100] bg-[#07090E] flex flex-col items-center justify-center pointer-events-none select-none"
         >
-          <div className="flex items-center gap-3 text-xs font-mono text-[#00CFFF] uppercase tracking-wider">
-            <span className="w-2 h-2 rounded-full bg-[#00CFFF] animate-pulse" />
-            <span>CREATIVEE WORLD INITIALIZING</span>
-          </div>
+          {/* Centered Hero Number (01 -> 100) */}
+          <div className="flex flex-col items-center justify-center space-y-4">
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0.8 }}
+              animate={{ scale: 1, opacity: 1 }}
+              className="font-display text-7xl sm:text-9xl font-extrabold text-white tracking-tighter tabular-nums"
+            >
+              {formattedCount}
+            </motion.div>
 
-          <div className="font-mono text-sm font-bold text-white tracking-widest tabular-nums">
-            {formattedCount}%
+            {/* Minimal Brand Mark */}
+            <div className="text-slate-400 text-xs font-mono tracking-widest uppercase">
+              CREATIVEE WORLD
+            </div>
           </div>
         </motion.div>
       )}
