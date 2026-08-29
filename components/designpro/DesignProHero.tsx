@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, ArrowDown, Menu, X, TrendingUp } from 'lucide-react';
 import { ShinyText } from './ShinyText';
@@ -33,38 +34,38 @@ export function DesignProHero() {
       <header className="relative z-20 w-full border-b border-white/10 bg-[#050608]/50 backdrop-blur-md">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 py-4 flex items-center justify-between gap-6">
           {/* Logo */}
-          <a href="#" className="flex items-center group">
+          <Link href="/" className="flex items-center group">
             <CreativeeLogo accentColor="#00CFFF" textColor="#F5F7FA" height={32} />
-          </a>
+          </Link>
 
           {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center space-x-8 text-xs font-mono uppercase tracking-widest text-[#A2A8B4]">
-            <a href="#work" className="hover:text-[#F5F7FA] transition-colors">
+            <Link href="/work" className="hover:text-[#F5F7FA] transition-colors">
               Work
-            </a>
-            <a href="#services" className="hover:text-[#F5F7FA] transition-colors">
+            </Link>
+            <Link href="/services" className="hover:text-[#F5F7FA] transition-colors">
               Services
-            </a>
-            <a href="#about" className="hover:text-[#F5F7FA] transition-colors">
+            </Link>
+            <Link href="/about" className="hover:text-[#F5F7FA] transition-colors">
               About
-            </a>
-            <a href="#insights" className="hover:text-[#F5F7FA] transition-colors">
+            </Link>
+            <Link href="/insights" className="hover:text-[#F5F7FA] transition-colors">
               Insights
-            </a>
-            <a href="#contact" className="hover:text-[#F5F7FA] transition-colors">
+            </Link>
+            <Link href="/contact" className="hover:text-[#F5F7FA] transition-colors">
               Contact
-            </a>
+            </Link>
           </nav>
 
           {/* Desktop Primary CTA Button */}
           <div className="hidden lg:flex items-center space-x-4">
-            <a
-              href="#contact"
+            <Link
+              href="/growth-audit"
               className="group inline-flex items-center space-x-2 px-5 py-2.5 rounded-full bg-[#00CFFF] text-[#050608] font-semibold text-xs uppercase tracking-wider hover:bg-[#33d6ff] transition-all duration-300 hover:scale-[1.03] shadow-[0_0_20px_rgba(0,207,255,0.25)]"
             >
               <span>START A PROJECT</span>
               <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-0.5" />
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Hamburger Button (< lg) */}
@@ -90,32 +91,32 @@ export function DesignProHero() {
               className="lg:hidden absolute top-full left-0 right-0 border-b border-white/10 bg-[#050608]/95 backdrop-blur-2xl p-6 space-y-6 shadow-2xl"
             >
               <nav className="flex flex-col space-y-4 font-mono text-sm uppercase tracking-widest text-[#A2A8B4]">
-                <a href="#work" className="hover:text-[#00CFFF] transition-colors py-1" onClick={() => setMobileMenuOpen(false)}>
+                <Link href="/work" className="hover:text-[#00CFFF] transition-colors py-1" onClick={() => setMobileMenuOpen(false)}>
                   01 // Work
-                </a>
-                <a href="#services" className="hover:text-[#00CFFF] transition-colors py-1" onClick={() => setMobileMenuOpen(false)}>
+                </Link>
+                <Link href="/services" className="hover:text-[#00CFFF] transition-colors py-1" onClick={() => setMobileMenuOpen(false)}>
                   02 // Services
-                </a>
-                <a href="#about" className="hover:text-[#00CFFF] transition-colors py-1" onClick={() => setMobileMenuOpen(false)}>
+                </Link>
+                <Link href="/about" className="hover:text-[#00CFFF] transition-colors py-1" onClick={() => setMobileMenuOpen(false)}>
                   03 // About
-                </a>
-                <a href="#insights" className="hover:text-[#00CFFF] transition-colors py-1" onClick={() => setMobileMenuOpen(false)}>
+                </Link>
+                <Link href="/insights" className="hover:text-[#00CFFF] transition-colors py-1" onClick={() => setMobileMenuOpen(false)}>
                   04 // Insights
-                </a>
-                <a href="#contact" className="hover:text-[#00CFFF] transition-colors py-1" onClick={() => setMobileMenuOpen(false)}>
+                </Link>
+                <Link href="/contact" className="hover:text-[#00CFFF] transition-colors py-1" onClick={() => setMobileMenuOpen(false)}>
                   05 // Contact
-                </a>
+                </Link>
               </nav>
 
               <div className="pt-4 border-t border-white/10">
-                <a
-                  href="#contact"
+                <Link
+                  href="/growth-audit"
                   className="w-full inline-flex items-center justify-center space-x-2 px-6 py-3 rounded-full bg-[#00CFFF] text-[#050608] font-bold text-xs uppercase tracking-wider"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <span>START A PROJECT</span>
                   <ArrowUpRight className="w-4 h-4" />
-                </a>
+                </Link>
               </div>
             </motion.div>
           )}
@@ -228,23 +229,23 @@ export function DesignProHero() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="flex flex-wrap items-center gap-6 pt-4 border-t border-white/10"
         >
-          <a
-            href="#contact"
+          <Link
+            href="/growth-audit"
             className="group inline-flex items-center space-x-3 px-8 py-4 rounded-full bg-[#00CFFF] text-[#050608] font-bold text-sm uppercase tracking-wider hover:bg-[#33d6ff] transition-all duration-300 hover:scale-[1.03] shadow-[0_0_30px_rgba(0,207,255,0.3)]"
           >
             <span>START A PROJECT</span>
             <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-0.5" />
-          </a>
+          </Link>
 
-          <a
-            href="#work"
+          <Link
+            href="/work"
             className="group inline-flex items-center space-x-2 text-xs font-mono uppercase tracking-widest text-[#F5F7FA] hover:text-[#00CFFF] transition-colors py-2"
           >
             <span className="border-b border-white/20 group-hover:border-[#00CFFF] transition-colors pb-0.5">
               VIEW OUR WORK
             </span>
             <ArrowUpRight className="w-3.5 h-3.5 text-[#00CFFF]" />
-          </a>
+          </Link>
         </motion.div>
       </div>
 
