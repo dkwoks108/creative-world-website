@@ -3,61 +3,33 @@
 @tailwind utilities;
 
 :root {
-  /* Creativee World Logo Color Spectrum */
+  /* Creativee World Logo Spectrum Tokens */
   --cw-cyan: #00CFFF;
   --cw-blue: #1769FF;
   --cw-indigo: #4F46E5;
   --cw-violet: #673BFF;
   --cw-magenta: #D900FF;
 
-  /* Gradients */
-  --cw-gradient-primary: linear-gradient(135deg, #00CFFF 0%, #1769FF 35%, #673BFF 70%, #D900FF 100%);
-  --cw-gradient-accent: linear-gradient(90deg, #1769FF 0%, #D900FF 100%);
-  --cw-gradient-[#07090E]: linear-gradient(180deg, #07090E 0%, #0E131F 100%);
-
   /* Surface Canvases */
+  --cw-obsidian: #07090E;
+  --cw-surface-slate: #0B0F19;
+  --cw-surface-container: #121826;
+  --cw-border-hairline: rgba(255, 255, 255, 0.08);
+
+  /* Gradients */
+  --cw-gradient-primary: linear-gradient(135deg, #00CFFF 0%, #1769FF 40%, #673BFF 75%, #D900FF 100%);
+  --cw-gradient-accent: linear-gradient(90deg, #1769FF 0%, #00CFFF 100%);
+
+  /* Legacy variable mappings */
   --cw-dark-bg: #07090E;
-  --cw-dark-card: #0E131F;
+  --cw-dark-card: #121826;
   --cw-light-bg: #FAFBFF;
   --cw-light-card: #FFFFFF;
 
-  /* Legacy variable mapping */
   --brand-cyan: #00CFFF;
   --brand-blue: #1769FF;
   --brand-violet: #673BFF;
   --brand-magenta: #D900FF;
-  --brand-gradient: var(--cw-gradient-primary);
-
-  --bg-ivory: #FAFBFF;
-  --bg-cream: #F1F5F9;
-  --bg-plum: #07090E;
-  --ink: #0F172A;
-  --ink-soft: #1E293B;
-
-  --surface-white: #FFFFFF;
-  --surface-primary: #FFFFFF;
-  --surface-secondary: #FAFBFF;
-  --surface-glass: rgba(14, 19, 31, 0.75);
-
-  --border-subtle: rgba(255, 255, 255, 0.10);
-  --border-active: #1769FF;
-
-  --text-primary: #0F172A;
-  --text-secondary: #475569;
-  --text-muted: #64748B;
-  --text-on-dark: #F8FAFC;
-  --text-on-dark-muted: #94A3B8;
-
-  --accent-coral: #1769FF;
-  --accent-coral-hover: #00CFFF;
-  --accent-terracotta: #673BFF;
-  --accent-gold: #00CFFF;
-
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
-  --radius-xl: 20px;
-  --radius-pill: 9999px;
 }
 
 /* Global Reset & Base Styles */
@@ -66,7 +38,7 @@
 }
 
 html {
-  background-color: var(--cw-dark-bg);
+  background-color: var(--cw-obsidian);
   color: #F8FAFC;
   font-family: var(--font-body), 'Inter', sans-serif;
   text-rendering: optimizeLegibility;
@@ -78,12 +50,12 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background-color: var(--cw-dark-bg);
+  background-color: var(--cw-obsidian);
   color: #F8FAFC;
   overflow-x: hidden;
 }
 
-/* Gradient Utility Classes */
+/* Editorial Gradient & Text Utility Classes */
 .bg-cw-gradient {
   background: var(--cw-gradient-primary);
 }
@@ -104,75 +76,62 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/* Ambient Radial Glow Field */
-.cw-ambient-glow {
-  position: relative;
-}
-.cw-ambient-glow::before {
-  content: "";
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(23, 105, 255, 0.18) 0%, rgba(217, 0, 255, 0.08) 45%, transparent 70%);
-  filter: blur(80px);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Glassmorphism Panel Utilities & Alternating Rhythm Surfaces */
+/* Editorial Surface Classes */
 .bg-cw-obsidian {
   background-color: #07090E;
 }
 
-.bg-cw-surface {
+.bg-cw-slate {
   background-color: #0B0F19;
 }
 
-.bg-cw-panel {
-  background-color: #111625;
+.bg-cw-container {
+  background-color: #121826;
 }
 
-.cw-glass-nav {
-  background: rgba(7, 9, 14, 0.85);
+.cw-navbar-glass {
+  background: rgba(7, 9, 14, 0.90);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+/* Card Surface Classes */
 .cw-card-standard {
-  background-color: #0E1422;
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  border-radius: 1rem;
-  transition: border-color 250ms ease, transform 250ms ease;
+  background-color: #121826;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  transition: border-color 200ms ease, transform 200ms ease;
 }
 .cw-card-standard:hover {
-  border-color: rgba(0, 207, 255, 0.35);
+  border-color: rgba(0, 207, 255, 0.3);
   transform: translateY(-2px);
 }
 
 .cw-card-glass {
-  background: rgba(14, 19, 31, 0.60);
+  background: rgba(18, 24, 38, 0.70);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  border-radius: 1rem;
-  transition: border-color 250ms ease, transform 250ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 250ms ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  transition: border-color 200ms ease, transform 200ms ease;
 }
-
 .cw-card-glass:hover {
   border-color: rgba(0, 207, 255, 0.4);
-  box-shadow: 0 12px 40px -10px rgba(0, 207, 255, 0.20);
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
 .cw-card-editorial {
-  background-color: #0C101B;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 1rem;
+  background-color: #0B0F19;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 1.25rem;
+}
+
+.cw-card-featured {
+  background: linear-gradient(180deg, #121826 0%, #0B0F19 100%);
+  border: 1px solid rgba(0, 207, 255, 0.3);
+  border-radius: 1.25rem;
+  box-shadow: 0 10px 40px -10px rgba(0, 207, 255, 0.15);
 }
 
 /* Accessibility Focus Outline Baseline */
@@ -190,4 +149,5 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
 

@@ -131,7 +131,7 @@ export default async function ServicesPage() {
                       <div className="pt-4 border-t border-white/10">
                         <Link href={`/services/${service.slug}`}>
                           <CWButton variant="glass" size="md" className="w-full justify-center">
-                            <span>{service.ctaLabel}</span>
+                            <span>{service.ctaLabel || `Explore ${service.title || 'Capability'}`}</span>
                             <ArrowUpRight size={14} />
                           </CWButton>
                         </Link>

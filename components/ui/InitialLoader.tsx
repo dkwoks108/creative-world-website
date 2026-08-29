@@ -4,30 +4,23 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export function InitialLoader() {
-  const [isLoading, setIsLoading] = useState<boolean>(() => {
-    if (typeof window !== 'undefined') {
-      return !sessionStorage.getItem('creativee_loader_shown') && !window.location.search.includes('bypassLoader=true');
-    }
-    return true;
-  });
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [progress, setProgress] = useState<number>(0);
 
   useEffect(() => {
     // Check if loader was already displayed in this browser session or bypassed
-    const hasLoadedBefore = typeof window !== 'undefined' &&
+    const hasLoadedBefore =
+      typeof window !== 'undefined' &&
       (sessionStorage.getItem('creativee_loader_shown') || window.location.search.includes('bypassLoader=true'));
 
     if (hasLoadedBefore) {
-      setIsLoading(false);
       return;
     }
 
-    // Lock scroll during initialization
-    document.body.style.overflow = 'hidden';
-
-    // Smooth count-up timer sequence (0 -> 100 over ~1.2s)
+    // Trigger rapid initial progress animation (0 -> 100 in 250ms)
+    setIsLoading(true);
     const startTime = Date.now();
-    const duration = 1200;
+    const duration = 250;
 
     const interval = setInterval(() => {
       const elapsed = Date.now() - startTime;
@@ -39,39 +32,38 @@ export function InitialLoader() {
         clearInterval(interval);
         setTimeout(() => {
           setIsLoading(false);
-          document.body.style.overflow = '';
           try {
             sessionStorage.setItem('creativee_loader_shown', 'true');
           } catch {
             // Ignore storage restrictions
           }
-        }, 150);
+        }, 50);
       }
     }, 16);
 
-    return () => {
-      clearInterval(interval);
-      document.body.style.overflow = '';
-    };
+    return () => clearInterval(interval);
   }, []);
+
+  if (!isLoading) return null;
 
   const formattedCount = progress < 10 ? `0${progress}` : `${progress}`;
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence>
       {isLoading && (
         <motion.div
           key="initial-loader"
-          initial={{ y: 0 }}
-          exit={{
-            y: '-100%',
-            transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] },
-          }}
-          className="fixed inset-0 z-[100] bg-[#07090E] text-white flex items-center justify-center overflow-hidden select-none pointer-events-auto"
+          initial={{ opacity: 1 }}
+          exit={{ opacity: 0, transition: { duration: 0.2 } }}
+          className="fixed top-0 left-0 right-0 z-[100] bg-[#07090E]/95 border-b border-[#00CFFF]/30 px-6 py-2 flex items-center justify-between pointer-events-none select-none backdrop-blur-md"
         >
-          {/* Pure 0-100 Numerical Progression - Nothing Else */}
-          <div className="font-mono text-8xl sm:text-[14rem] md:text-[18rem] font-extrabold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00CFFF] to-[#1769FF] leading-none tabular-nums select-none">
-            {formattedCount}
+          <div className="flex items-center gap-3 text-xs font-mono text-[#00CFFF] uppercase tracking-wider">
+            <span className="w-2 h-2 rounded-full bg-[#00CFFF] animate-pulse" />
+            <span>CREATIVEE WORLD INITIALIZING</span>
+          </div>
+
+          <div className="font-mono text-sm font-bold text-white tracking-widest tabular-nums">
+            {formattedCount}%
           </div>
         </motion.div>
       )}

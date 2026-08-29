@@ -3,7 +3,7 @@
 import React from 'react';
 
 export interface CWButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'gradient' | 'glass' | 'outline' | 'ghost';
+  variant?: 'gradient' | 'glass' | 'outline' | 'ghost' | 'secondary';
   size?: 'sm' | 'md' | 'lg';
   fullWidth?: boolean;
   children: React.ReactNode;
@@ -24,6 +24,7 @@ export function CWButton({
     glass: 'bg-white/10 text-white backdrop-blur-md border border-white/20 hover:bg-white/20 hover:border-white/40 hover:scale-[1.02]',
     outline: 'bg-transparent text-slate-100 border border-slate-700 hover:border-[#1769FF] hover:text-[#00CFFF] hover:scale-[1.02]',
     ghost: 'bg-transparent text-slate-300 hover:text-white hover:bg-white/5',
+    secondary: 'bg-[#121826] text-white border border-slate-800 hover:border-[#00CFFF]/40 hover:bg-[#1A2234] hover:scale-[1.02]',
   };
 
   const sizeStyles = {

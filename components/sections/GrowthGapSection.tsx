@@ -4,17 +4,16 @@ import React from 'react';
 import Link from 'next/link';
 import { ArrowUpRight, AlertCircle, CheckCircle2, TrendingDown, TrendingUp, Sparkles } from 'lucide-react';
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll';
-import { CWCard } from '@/components/ui/CWCard';
 import { CWButton } from '@/components/ui/CWButton';
 import { CWBadge } from '@/components/ui/CWBadge';
 
 export function GrowthGapSection() {
   return (
-    <section className="py-24 bg-[#FAFBFF] text-slate-900 relative overflow-hidden border-t border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 space-y-16">
+    <section className="py-24 bg-[#0B0F19] text-white relative overflow-hidden border-t border-b border-slate-800/80">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 space-y-16">
         
         {/* Section Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end border-b border-slate-200 pb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end border-b border-slate-800 pb-10">
           <div className="lg:col-span-8 space-y-4">
             <RevealOnScroll variant="fade-up">
               <CWBadge variant="cyan">
@@ -23,15 +22,15 @@ export function GrowthGapSection() {
               </CWBadge>
             </RevealOnScroll>
 
-            <h2 className="font-display font-extrabold text-4xl sm:text-6xl text-slate-900 tracking-tight leading-tight">
+            <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight leading-tight">
               Isolated marketing tactics <br />
               <span className="text-cw-gradient">vs. connected growth systems.</span>
             </h2>
           </div>
 
-          <div className="lg:col-span-4 text-sm text-slate-600 space-y-2 font-light">
-            <p className="font-medium text-slate-900">
-              Local Jaipur businesses lose up to 60% of potential high-intent leads due to disconnected agencies and siloes.
+          <div className="lg:col-span-4 text-sm text-slate-300 space-y-2 font-sans">
+            <p>
+              Local Jaipur businesses lose up to 60% of potential high-intent leads due to disconnected freelancers and slow website templates.
             </p>
           </div>
         </div>
@@ -41,43 +40,43 @@ export function GrowthGapSection() {
           
           {/* Model A: Siloed Tactics */}
           <RevealOnScroll variant="fade-up" delay={0.1}>
-            <div className="cw-light-glass-card rounded-3xl p-8 space-y-8 flex flex-col justify-between border-slate-200 bg-white/90">
+            <div className="cw-card-standard p-8 space-y-8 flex flex-col justify-between h-full bg-[#121826]/70 border-slate-800">
               <div className="space-y-6">
-                <div className="flex items-center justify-between border-b border-slate-100 pb-4 text-xs font-semibold">
-                  <span className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full">
+                <div className="flex items-center justify-between border-b border-slate-800 pb-4 text-xs font-mono">
+                  <span className="px-3 py-1 bg-rose-500/10 text-rose-400 rounded-full border border-rose-500/20">
                     Model A // Siloed Vendor Trap
                   </span>
-                  <span className="text-rose-500 font-medium flex items-center gap-1">
-                    <TrendingDown size={16} />
+                  <span className="text-rose-400 font-medium flex items-center gap-1">
+                    <TrendingDown size={14} />
                     High Ad Waste
                   </span>
                 </div>
 
                 <div className="space-y-2">
-                  <h3 className="font-display font-bold text-2xl text-slate-900">
-                    Hiring Disconnected Freelancers & Agencies
+                  <h3 className="font-display font-bold text-2xl text-white">
+                    Hiring Disconnected Freelancers
                   </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed font-light">
-                    Managing separate vendors for SEO, web templates, and social ads causes fragmented messaging, slow WordPress loads, and unverified lead tracking.
+                  <p className="text-sm text-slate-400 leading-relaxed">
+                    Managing separate freelancers for SEO, web templates, and social ads causes fragmented messaging, slow WordPress loads, and unverified lead tracking.
                   </p>
                 </div>
 
-                <div className="space-y-3 text-xs text-slate-700">
+                <div className="space-y-3 text-xs text-slate-300">
                   {[
-                    'Ad spend wasted without lead attribution',
-                    'Slow template sites that drop mobile traffic',
-                    'Zero direct WhatsApp customer routes',
+                    'Ad spend wasted without closed-loop attribution',
+                    'Slow WordPress templates that drop mobile traffic',
+                    'Zero direct CRM lead routing',
                     'Inconsistent brand storytelling across channels',
                   ].map((item, idx) => (
-                    <div key={idx} className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/80">
-                      <AlertCircle size={16} className="text-rose-500 shrink-0" />
+                    <div key={idx} className="flex items-center gap-3 p-3 rounded-xl bg-[#07090E] border border-slate-800">
+                      <AlertCircle size={15} className="text-rose-400 shrink-0" />
                       <span>{item}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="p-4 rounded-2xl bg-rose-50 text-rose-700 font-mono text-xs font-semibold uppercase tracking-wide">
+              <div className="p-3.5 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-300 font-mono text-xs font-semibold uppercase tracking-wider">
                 OUTCOME: HIGH CAC & UNPREDICTABLE LEADS
               </div>
             </div>
@@ -85,45 +84,45 @@ export function GrowthGapSection() {
 
           {/* Model B: Connected Growth System */}
           <RevealOnScroll variant="fade-up" delay={0.2}>
-            <div className="cw-glass-card rounded-3xl p-8 space-y-8 flex flex-col justify-between border-white/20 bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-white shadow-cw-glow">
+            <div className="cw-card-featured p-8 space-y-8 flex flex-col justify-between h-full relative">
               <div className="space-y-6">
-                <div className="flex items-center justify-between border-b border-white/10 pb-4 text-xs font-semibold">
-                  <span className="px-3 py-1 bg-[#1769FF] text-white rounded-full">
+                <div className="flex items-center justify-between border-b border-slate-800 pb-4 text-xs font-mono">
+                  <span className="px-3 py-1 bg-[#1769FF]/20 text-[#00CFFF] rounded-full border border-[#00CFFF]/30">
                     Model B // Connected System
                   </span>
                   <span className="text-[#00CFFF] font-medium flex items-center gap-1">
-                    <TrendingUp size={16} />
-                    Predictable Revenue
+                    <TrendingUp size={14} />
+                    Predictable Pipeline
                   </span>
                 </div>
 
                 <div className="space-y-2">
                   <h3 className="font-display font-bold text-2xl text-white">
-                    The Creativee World Connected Engine
+                    Creativee World Connected Engine
                   </h3>
-                  <p className="text-sm text-slate-300 leading-relaxed font-light">
+                  <p className="text-sm text-slate-300 leading-relaxed">
                     A unified commercial growth system where high-intent search ads, short reels, local SEO, and sub-2s Next.js web applications work together seamlessly.
                   </p>
                 </div>
 
-                <div className="space-y-3 text-xs text-slate-200 font-light">
+                <div className="space-y-3 text-xs text-slate-200">
                   {[
-                    'Sub-2s Next.js web app optimized for conversions',
+                    'Sub-2s Next.js web application optimized for conversion',
                     'Top search placement on Google & Map Pack',
                     'Meta Reels scripted for 3-second hook rate',
-                    'Closed-loop WhatsApp & CRM lead tracking',
+                    'Closed-loop CRM lead tracking',
                   ].map((item, idx) => (
-                    <div key={idx} className="flex items-center gap-3 p-3 rounded-xl bg-slate-800/80 border border-white/10">
-                      <CheckCircle2 size={16} className="text-[#00CFFF] shrink-0" />
+                    <div key={idx} className="flex items-center gap-3 p-3 rounded-xl bg-[#07090E] border border-slate-800">
+                      <CheckCircle2 size={15} className="text-[#00CFFF] shrink-0" />
                       <span>{item}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="p-4 rounded-2xl bg-slate-800/90 text-[#00CFFF] font-mono text-xs font-semibold uppercase tracking-wide flex items-center justify-between">
-                <span>OUTCOME: SCALABLE PIPELINE GROWTH</span>
-                <span>● VERIFIED</span>
+              <div className="p-3.5 rounded-xl bg-[#00CFFF]/10 border border-[#00CFFF]/25 text-[#00CFFF] font-mono text-xs font-semibold uppercase tracking-wider flex items-center justify-between">
+                <span>OUTCOME: VERIFIED REVENUE GROWTH</span>
+                <span>● CONNECTED</span>
               </div>
             </div>
           </RevealOnScroll>
@@ -131,18 +130,18 @@ export function GrowthGapSection() {
         </div>
 
         {/* Diagnostic Action Bar */}
-        <div className="cw-light-glass-card rounded-3xl p-8 bg-white border border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="cw-card-standard p-8 bg-[#121826] border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-1">
-            <h3 className="font-display font-bold text-2xl text-slate-900">
+            <h3 className="font-display font-bold text-2xl text-white">
               Audit your current marketing efficiency
             </h3>
-            <p className="text-sm text-slate-600 font-light">
+            <p className="text-sm text-slate-400">
               Receive a free 15-minute breakdown of your traffic bottlenecks and ad waste in Jaipur.
             </p>
           </div>
 
           <Link href="/growth-audit">
-            <CWButton variant="gradient" size="md">
+            <CWButton variant="gradient" size="md" className="shrink-0">
               <span>Get Free Diagnostic</span>
               <ArrowUpRight size={16} />
             </CWButton>

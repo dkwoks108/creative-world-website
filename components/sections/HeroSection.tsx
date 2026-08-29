@@ -3,128 +3,160 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { MonochromeSection } from '@/components/monochrome/MonochromeSection';
-import { MonochromeButton } from '@/components/monochrome/MonochromeButton';
-import { VideoScrubber } from '@/components/motion/VideoScrubber';
-import { SplitTextReveal } from '@/components/motion/SplitTextReveal';
-import { MagneticButton } from '@/components/motion/MagneticButton';
-import { ParallaxElement } from '@/components/motion/ParallaxElement';
-import { ScrollVelocityText } from '@/components/monochrome/EditorialScrollReveal';
-import { ScrambleHover } from '@/components/monochrome/ScrambleText';
+import { CWButton } from '@/components/ui/CWButton';
+import { ArrowUpRight, TrendingUp, ShieldCheck, Zap, BarChart3, CheckCircle2 } from 'lucide-react';
 
 export function HeroSection() {
-  const HERO_VIDEO_URL =
-    'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260622_083515_290e5a10-0b95-41af-a5e2-32b6389baa4d.mp4';
-
   return (
-    <MonochromeSection divider="none" texture="lines" className="!py-12 md:!py-24 border-b-4 border-black relative overflow-hidden">
-      {/* LAYER 1: Background Watermark (Depth 0.25x) */}
-      <ParallaxElement speed={0.25} className="absolute top-1/2 left-0 -translate-y-1/2 w-full pointer-events-none opacity-5 select-none overflow-hidden" aria-hidden="true">
-        <ScrollVelocityText speed={0.25} className="font-serif font-bold text-[18vw] uppercase tracking-tighter leading-none whitespace-nowrap text-black">
-          CREATIVEE DIGITAL ENGINE CREATIVEE ARCHITECTURE
-        </ScrollVelocityText>
-      </ParallaxElement>
+    <section className="relative bg-[#07090E] pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden border-b border-slate-800/80">
+      {/* Background Subtle Gradient Grid Overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-        {/* Left Column: Title Sequence Content (7 cols, Depth 0.08x) */}
-        <ParallaxElement speed={0.08} className="lg:col-span-7 flex flex-col gap-6">
-          {/* Stage 3: Clean Metadata Tag */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-            className="flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-neutral-600 font-bold"
-          >
-            <span className="w-4 h-4 border-2 border-black bg-white inline-block" aria-hidden="true" />
-            <span>DIGITAL ENGINE & PERFORMANCE MARKETING</span>
-          </motion.div>
-
-          {/* Stage 6: Line-by-Line Playfair Headline Reveal */}
-          <div className="my-2">
-            <SplitTextReveal
-              as="h1"
-              text="DIGITAL ENGINE."
-              delay={0.35}
-              className="font-serif font-bold text-6xl sm:text-8xl lg:text-9xl uppercase tracking-tighter leading-none text-black"
-            />
-          </div>
-
-          {/* Stage 2: Travelling Horizontal Rule */}
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-            className="w-full h-1 bg-black origin-left my-2"
-          />
-
-          {/* Stage 8: Paragraph & CTAs */}
-          <div className="space-y-6">
-            <motion.p
-              initial={{ opacity: 0, y: 15 }}
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          {/* Left Column: Editorial Headline & Conversion Offer (7 cols) */}
+          <div className="lg:col-span-7 space-y-8">
+            
+            {/* Category Subtitle */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.65 }}
-              className="font-serif text-xl sm:text-2xl md:text-3xl leading-relaxed text-black tracking-tight font-normal"
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-[#00CFFF]/25 bg-[#00CFFF]/5 text-xs font-mono text-[#00CFFF]"
             >
-              Creativee World engineers high-converting search systems, performance marketing funnels, and bespoke web platforms for ambitious Jaipur brands.
+              <span className="w-2 h-2 rounded-full bg-[#00CFFF] animate-pulse" />
+              <span>Jaipur Digital Growth & Creative Technology Studio</span>
+            </motion.div>
+
+            {/* Main Editorial Headline */}
+            <motion.h1
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="font-display font-extrabold text-4xl sm:text-6xl lg:text-6xl tracking-tight text-white leading-[1.08]"
+            >
+              We build connected search visibility &amp; <span className="text-cw-gradient">high-conversion revenue</span> systems.
+            </motion.h1>
+
+            {/* Paragraph Copy */}
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-lg sm:text-xl text-slate-300 leading-relaxed font-sans max-w-2xl"
+            >
+              Creativee World combines authority SEO, high-converting Meta reels, intent Google Ads, and sub-2s web software for ambitious commercial brands in Jaipur.
             </motion.p>
 
+            {/* CTAs */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4 pt-2"
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="flex flex-wrap items-center gap-4 pt-2"
             >
-              <MagneticButton strength={6}>
-                <Link href="/growth-audit">
-                  <MonochromeButton variant="primary" showArrow className="justify-center">
-                    <ScrambleHover text="Schedule Free Audit" />
-                  </MonochromeButton>
-                </Link>
-              </MagneticButton>
-              <MagneticButton strength={4}>
-                <Link href="/services">
-                  <MonochromeButton variant="secondary" className="justify-center">
-                    <ScrambleHover text="Explore Services" />
-                  </MonochromeButton>
-                </Link>
-              </MagneticButton>
+              <Link href="/growth-audit">
+                <CWButton variant="gradient" size="lg" className="px-7 py-3.5 text-base">
+                  <span>Get Free Growth Audit</span>
+                  <ArrowUpRight size={18} />
+                </CWButton>
+              </Link>
+              <Link href="/services">
+                <CWButton variant="secondary" size="lg" className="px-7 py-3.5 text-base">
+                  <span>Explore Capabilities</span>
+                </CWButton>
+              </Link>
+            </motion.div>
+
+            {/* Trust Signals Row */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="pt-6 border-t border-slate-800/80 grid grid-cols-3 gap-4 text-slate-400 text-xs sm:text-sm font-sans"
+            >
+              <div className="flex items-center gap-2">
+                <ShieldCheck size={16} className="text-[#00CFFF] shrink-0" />
+                <span>Verified ROI Tracking</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Zap size={16} className="text-[#1769FF] shrink-0" />
+                <span>Sub-2s Web Load Speed</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <TrendingUp size={16} className="text-[#D900FF] shrink-0" />
+                <span>Closed-Loop Lead CRM</span>
+              </div>
             </motion.div>
           </div>
-        </ParallaxElement>
 
-        {/* LAYER 2: Hero Video Layer (Depth 0.15x) */}
-        <ParallaxElement speed={0.15} className="lg:col-span-5 relative">
+          {/* Right Column: Live Interactive Growth Metric Dossier Widget (5 cols) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
-            className="border-4 border-black bg-black shadow-none overflow-hidden relative group"
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="lg:col-span-5"
           >
-            <VideoScrubber
-              src={HERO_VIDEO_URL}
-              priority
-              overlayOpacity={0.3}
-              grayscale
-              contrast={1.2}
-              scanlines
-              className="h-[320px] sm:h-[420px] md:h-[480px] w-full"
-            />
-            {/* Corner Badge */}
-            <div className="absolute top-4 left-4 bg-white border-2 border-black px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-widest text-black z-20">
-              INTERACTIVE REEL
-            </div>
-            {/* Status bar */}
-            <div className="absolute bottom-0 inset-x-0 bg-black/90 border-t-2 border-black p-3 font-mono text-[10px] text-white flex justify-between items-center z-20">
-              <span>DIGITAL SHOWCASE</span>
-              <span className="text-neutral-400">CREATIVEE REEL</span>
+            <div className="cw-card-featured p-6 space-y-6 relative overflow-hidden">
+              {/* Header */}
+              <div className="flex items-center justify-between border-b border-slate-800 pb-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 rounded-lg bg-[#00CFFF]/10 text-[#00CFFF]">
+                    <BarChart3 size={20} />
+                  </div>
+                  <div>
+                    <h3 className="font-display font-bold text-sm text-white">GROWTH ENGINE DOSSIER</h3>
+                    <p className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">Live Studio Performance</p>
+                  </div>
+                </div>
+                <span className="inline-flex items-center gap-1.5 text-[11px] font-mono text-[#00CFFF] bg-[#00CFFF]/10 px-2.5 py-1 rounded-full border border-[#00CFFF]/20">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00CFFF] animate-ping" />
+                  ACTIVE
+                </span>
+              </div>
+
+              {/* Stat 1: Revenue Influenced */}
+              <div className="p-4 rounded-xl bg-[#0B0F19] border border-slate-800 space-y-1">
+                <div className="flex justify-between text-xs text-slate-400">
+                  <span>Revenue Influenced (Q1/Q2 2026)</span>
+                  <span className="text-[#00CFFF] font-mono font-bold">+184% YoY</span>
+                </div>
+                <div className="text-3xl font-display font-extrabold text-white tracking-tight">
+                  ₹1.42<span className="text-[#00CFFF]">Cr+</span>
+                </div>
+                <div className="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden mt-2">
+                  <div className="bg-cw-gradient h-full w-[84%]" />
+                </div>
+              </div>
+
+              {/* Stat 2 Grid */}
+              <div className="grid grid-cols-2 gap-3">
+                <div className="p-3.5 rounded-xl bg-[#0B0F19] border border-slate-800 space-y-1">
+                  <div className="text-[11px] text-slate-400 font-sans">Meta Ads ROAS</div>
+                  <div className="text-xl font-display font-bold text-white">4.82x Avg</div>
+                  <div className="text-[10px] text-[#00CFFF] font-mono">Verified Attributions</div>
+                </div>
+                <div className="p-3.5 rounded-xl bg-[#0B0F19] border border-slate-800 space-y-1">
+                  <div className="text-[11px] text-slate-400 font-sans">Organic Search</div>
+                  <div className="text-xl font-display font-bold text-white">Top 3 Rank</div>
+                  <div className="text-[10px] text-[#1769FF] font-mono">High-Intent Queries</div>
+                </div>
+              </div>
+
+              {/* System Guarantee */}
+              <div className="pt-2 flex items-center justify-between text-xs text-slate-400 border-t border-slate-800">
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle2 size={14} className="text-[#00CFFF]" />
+                  <span>Jaipur Local Market Supremacy</span>
+                </div>
+                <span className="font-mono text-[10px] text-slate-400 uppercase">ISO 9001 PROCESS</span>
+              </div>
             </div>
           </motion.div>
-        </ParallaxElement>
+
+        </div>
       </div>
-    </MonochromeSection>
+    </section>
   );
 }
-
-
-
-
