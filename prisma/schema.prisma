@@ -13,6 +13,7 @@ model AdminUser {
   passwordHash String
   name         String
   role         String    @default("ADMIN")
+  avatarUrl    String?
   createdAt    DateTime  @default(now())
   updatedAt    DateTime  @updatedAt
   sessions     Session[]
@@ -61,37 +62,40 @@ model Tag {
 }
 
 model Post {
-  id               String         @id @default(uuid())
-  title            String
-  slug             String         @unique
-  excerpt          String?
-  content          String         // Structured JSON or HTML string
-  authorId         String?
-  author           Author?        @relation(fields: [authorId], references: [id])
-  categoryId       String?
-  category         Category?      @relation(fields: [categoryId], references: [id])
-  featuredImage    String?
-  featuredImageAlt String?
-  imageCaption     String?
-  status           String         @default("DRAFT") // DRAFT, REVIEW, SCHEDULED, PUBLISHED, ARCHIVED
-  publishAt        DateTime?
-  seoTitle         String?
-  metaDescription  String?
-  canonicalUrl     String?
-  ogTitle          String?
-  ogDescription    String?
-  ogImage          String?
-  noIndex          Boolean        @default(false)
-  noFollow         Boolean        @default(false)
-  primaryKeyword   String?
+  id                String         @id @default(uuid())
+  title             String
+  slug              String         @unique
+  excerpt           String?
+  content           String         // Structured JSON or HTML string
+  authorId          String?
+  author            Author?        @relation(fields: [authorId], references: [id])
+  categoryId        String?
+  category          Category?      @relation(fields: [categoryId], references: [id])
+  featuredImage     String?
+  featuredImageAlt  String?
+  imageCaption      String?
+  status            String         @default("DRAFT") // DRAFT, REVIEW, SCHEDULED, PUBLISHED, ARCHIVED
+  visibility        String         @default("Public") // Public, Private, Password
+  featured          Boolean        @default(false)
+  publishAt         DateTime?
+  scheduledAt       DateTime?
+  seoTitle          String?
+  metaDescription   String?
+  canonicalUrl      String?
+  ogTitle           String?
+  ogDescription     String?
+  ogImage           String?
+  noIndex           Boolean        @default(false)
+  noFollow          Boolean        @default(false)
+  primaryKeyword    String?
   secondaryKeywords String?
-  faqsJson         String?
-  lastEditor       String?
-  views            Int            @default(0)
-  createdAt        DateTime       @default(now())
-  updatedAt        DateTime       @updatedAt
-  tags             PostTag[]
-  revisions        PostRevision[]
+  faqsJson          String?
+  lastEditor        String?
+  views             Int            @default(0)
+  createdAt         DateTime       @default(now())
+  updatedAt         DateTime       @updatedAt
+  tags              PostTag[]
+  revisions         PostRevision[]
 
   @@index([slug])
   @@index([status])
@@ -119,6 +123,35 @@ model PostRevision {
   createdAt       DateTime @default(now())
 }
 
+model Page {
+  id              String         @id @default(uuid())
+  title           String
+  slug            String         @unique
+  content         String         // Structured JSON or HTML string
+  excerpt         String?
+  template        String         @default("default") // default, full-width, landing
+  status          String         @default("PUBLISHED") // DRAFT, PUBLISHED
+  seoTitle        String?
+  metaDescription String?
+  ogImage         String?
+  publishedAt     DateTime?      @default(now())
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+  revisions       PageRevision[]
+
+  @@index([slug])
+}
+
+model PageRevision {
+  id        String   @id @default(uuid())
+  pageId    String
+  page      Page     @relation(fields: [pageId], references: [id], onDelete: Cascade)
+  title     String
+  content   String
+  createdBy String
+  createdAt DateTime @default(now())
+}
+
 model Media {
   id        String   @id @default(uuid())
   filename  String
@@ -133,30 +166,39 @@ model Media {
 }
 
 model Inquiry {
-  id           String        @id @default(uuid())
-  name         String
-  email        String
-  phone        String?
-  businessName String?
-  companyName  String?
-  websiteUrl   String?
-  goal         String?
-  budget       String?
-  budgetRange  String?
-  businessSize String?
-  timeline     String?
-  priority     String?       @default("Medium")
-  assignedTo   String?
+  id            String            @id @default(uuid())
+  name          String
+  email         String
+  phone         String?
+  businessName  String?
+  companyName   String?
+  websiteUrl    String?
+  goal          String?
+  budget        String?
+  budgetRange   String?
+  businessSize  String?
+  timeline      String?
+  priority      String?           @default("Medium") // High, Medium, Low
+  assignedTo    String?
   lastContacted DateTime?
   nextFollowup  DateTime?
-  leadScore    Int?          @default(0)
-  message      String
-  status       String        @default("New") // New, Contacted, Qualified, Proposal Sent, Closed Won, Closed Lost, Spam
-  source       String        @default("Website Form")
-  service      String?
-  notes        InquiryNote[]
-  createdAt    DateTime      @default(now())
-  updatedAt    DateTime      @updatedAt
+  leadScore     Int?              @default(0)
+  message       String
+  status        String            @default("New") // New, Contacted, Qualified, Proposal Sent, Won, Lost, Spam
+  source        String            @default("Website Form")
+  service       String?
+  utmSource     String?
+  utmMedium     String?
+  utmCampaign   String?
+  referrer      String?
+  ipAddress     String?
+  device        String?
+  landingPage   String?
+  notes         InquiryNote[]
+  events        InquiryEvent[]
+  followups     InquiryFollowup[]
+  createdAt     DateTime          @default(now())
+  updatedAt     DateTime          @updatedAt
 
   @@index([status])
   @@index([createdAt])
@@ -171,6 +213,52 @@ model InquiryNote {
   createdAt DateTime @default(now())
 }
 
+model InquiryEvent {
+  id          String   @id @default(uuid())
+  inquiryId   String
+  inquiry     Inquiry  @relation(fields: [inquiryId], references: [id], onDelete: Cascade)
+  eventType   String   // CREATED, CONTACTED, QUALIFIED, PROPOSAL_SENT, WON, LOST, NOTE_ADDED
+  description String
+  createdBy   String   @default("System")
+  createdAt   DateTime @default(now())
+}
+
+model InquiryFollowup {
+  id        String   @id @default(uuid())
+  inquiryId String
+  inquiry   Inquiry  @relation(fields: [inquiryId], references: [id], onDelete: Cascade)
+  dueDate   DateTime
+  status    String   @default("Pending") // Pending, Completed, Missed
+  notes     String?
+  createdBy String   @default("Admin")
+  createdAt DateTime @default(now())
+}
+
+model Contact {
+  id          String   @id @default(uuid())
+  name        String
+  email       String   @unique
+  phone       String?
+  companyName String?
+  role        String?
+  type        String   @default("Lead") // Lead, Client, Prospect, Partner
+  tags        String?  // JSON array string or comma separated
+  notes       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Company {
+  id        String   @id @default(uuid())
+  name      String   @unique
+  domain    String?
+  industry  String?
+  size      String?
+  location  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
 model Service {
   id          String   @id @default(uuid())
   name        String
@@ -180,6 +268,9 @@ model Service {
   status      String   @default("Published") // Published, Draft
   icon        String?
   features    String?  // JSON array string
+  process     String?  // JSON array string
+  benefits    String?  // JSON array string
+  faqs        String?  // JSON array string
   sortOrder   Int      @default(0)
   seoTitle    String?
   seoDesc     String?
@@ -203,6 +294,104 @@ model PricingPlan {
   updatedAt     DateTime @updatedAt
 }
 
+model CaseStudy {
+  id           String   @id @default(uuid())
+  title        String
+  slug         String   @unique
+  client       String?
+  industry     String?
+  summary      String?
+  content      String?
+  challenge    String?
+  solution     String?
+  results      String?  // JSON or text
+  image        String?
+  technologies String?  // JSON array string
+  status       String   @default("Published")
+  sortOrder    Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model TeamMember {
+  id           String   @id @default(uuid())
+  name         String
+  designation  String
+  department   String?
+  photoUrl     String?
+  bio          String?
+  email        String?
+  phone        String?
+  linkedinUrl  String?
+  instagramUrl String?
+  twitterUrl   String?
+  sortOrder    Int      @default(0)
+  status       String   @default("Active") // Active, Inactive
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Testimonial {
+  id              String   @id @default(uuid())
+  clientName      String
+  company         String?
+  designation     String?
+  photoUrl        String?
+  rating          Int      @default(5)
+  quote           String
+  serviceCategory String?
+  status          String   @default("Approved") // Pending, Approved, Draft
+  sortOrder       Int      @default(0)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model NavigationMenu {
+  id        String     @id @default(uuid())
+  name      String     @unique
+  slug      String     @unique
+  location  String     @default("header") // header, footer, mobile
+  items     MenuItem[]
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+}
+
+model MenuItem {
+  id         String          @id @default(uuid())
+  menuId     String
+  menu       NavigationMenu  @relation(fields: [menuId], references: [id], onDelete: Cascade)
+  label      String
+  href       String
+  target     String          @default("_self")
+  icon       String?
+  sortOrder  Int             @default(0)
+  parentId   String?
+  createdAt  DateTime        @default(now())
+  updatedAt  DateTime        @updatedAt
+}
+
+model Form {
+  id             String           @id @default(uuid())
+  name           String
+  slug           String           @unique
+  fieldsJson     String           // JSON string of fields
+  autoReplyEmail Boolean          @default(true)
+  status         String           @default("Active")
+  submissions    FormSubmission[]
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+}
+
+model FormSubmission {
+  id        String   @id @default(uuid())
+  formId    String
+  form      Form     @relation(fields: [formId], references: [id], onDelete: Cascade)
+  dataJson  String
+  ipAddress String?
+  userAgent String?
+  createdAt DateTime @default(now())
+}
+
 model NewsletterSubscriber {
   id        String   @id @default(uuid())
   email     String   @unique
@@ -219,21 +408,6 @@ model BlogComment {
   content   String
   status    String   @default("Pending") // Pending, Approved, Rejected, Spam
   createdAt DateTime @default(now())
-}
-
-model CaseStudy {
-  id        String   @id @default(uuid())
-  title     String
-  slug      String   @unique
-  client    String?
-  industry  String?
-  summary   String?
-  content   String?
-  results   String?  // JSON or text
-  image     String?
-  status    String   @default("Published")
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
 }
 
 model ChatbotLead {
@@ -263,10 +437,11 @@ model Redirect {
 model AuditLog {
   id         String   @id @default(uuid())
   userId     String?
+  userName   String?
   action     String
   resource   String
   resourceId String?
   details    String?
+  ipAddress  String?
   createdAt  DateTime @default(now())
 }
-

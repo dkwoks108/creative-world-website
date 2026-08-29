@@ -160,23 +160,88 @@ export default async function InsightDetailPage({ params }: InsightPageProps) {
                 </ul>
               </div>
 
-              {/* Main Content Sections */}
-              <div className="space-y-12 pt-6">
-                {article.sections.map((section, idx) => (
-                  <div key={idx} className="space-y-4 border-t border-white/10 pt-8">
-                    <span className="font-mono text-xs text-slate-400 font-semibold uppercase tracking-widest block">
-                      SECTION 0{idx + 1}
-                    </span>
-                    <h2 className="font-display font-bold text-2xl sm:text-3xl text-white">
-                      {section.heading}
-                    </h2>
-                    {section.paragraphs.map((p, pIdx) => (
-                      <p key={pIdx} className="text-slate-300 text-base sm:text-lg leading-relaxed font-light">
-                        {p}
-                      </p>
-                    ))}
-                  </div>
-                ))}
+              {/* Main Content Render Engine (Handles Structured Blocks & Legacy Sections) */}
+              <div className="space-y-8 pt-6">
+                {Array.isArray(article.sections) && article.sections.length > 0 ? (
+                  article.sections.map((node: any, idx: number) => {
+                    // Check if node is structured block format
+                    if (node.type) {
+                      switch (node.type) {
+                        case "heading":
+                          return (
+                            <h2 key={idx} className="font-display font-bold text-2xl sm:text-4xl text-white pt-4">
+                              {node.text}
+                            </h2>
+                          );
+                        case "list":
+                          return (
+                            <ul key={idx} className="list-disc list-inside space-y-2 text-slate-300 text-base sm:text-lg font-light">
+                              {(node.items || []).map((item: string, iIdx: number) => (
+                                <li key={iIdx}>{item}</li>
+                              ))}
+                            </ul>
+                          );
+                        case "quote":
+                          return (
+                            <blockquote key={idx} className="border-l-4 border-[#00CFFF] pl-4 py-2 italic text-slate-200 text-lg sm:text-xl font-serif bg-slate-900/40 my-4 rounded-r">
+                              "{node.text}"
+                            </blockquote>
+                          );
+                        case "image":
+                          return (
+                            <div key={idx} className="my-6">
+                              <img src={node.src} alt={node.alt || article.title} className="w-full h-auto rounded-2xl border border-white/10" />
+                              {node.caption && <p className="text-xs text-slate-400 text-center mt-2 font-mono">{node.caption}</p>}
+                            </div>
+                          );
+                        case "table":
+                          return (
+                            <div key={idx} className="my-6 overflow-x-auto">
+                              <table className="w-full border-collapse border border-white/15 text-sm text-slate-300">
+                                <tbody>
+                                  {(node.tableRows || []).map((row: string[], rIdx: number) => (
+                                    <tr key={rIdx} className={rIdx === 0 ? "bg-slate-800 font-bold text-white" : "border-t border-white/10"}>
+                                      {row.map((cell: string, cIdx: number) => (
+                                        <td key={cIdx} className="border border-white/10 p-3">{cell}</td>
+                                      ))}
+                                    </tr>
+                                  ))}
+                                </tbody>
+                              </table>
+                            </div>
+                          );
+                        case "paragraph":
+                        default:
+                          return (
+                            <p key={idx} className="text-slate-300 text-base sm:text-lg leading-relaxed font-light">
+                              {node.text}
+                            </p>
+                          );
+                      }
+                    }
+
+                    // Legacy section format fallback
+                    return (
+                      <div key={idx} className="space-y-4 border-t border-white/10 pt-8">
+                        <span className="font-mono text-xs text-slate-400 font-semibold uppercase tracking-widest block">
+                          SECTION 0{idx + 1}
+                        </span>
+                        <h2 className="font-display font-bold text-2xl sm:text-3xl text-white">
+                          {node.heading}
+                        </h2>
+                        {node.paragraphs?.map((p: string, pIdx: number) => (
+                          <p key={pIdx} className="text-slate-300 text-base sm:text-lg leading-relaxed font-light">
+                            {p}
+                          </p>
+                        ))}
+                      </div>
+                    );
+                  })
+                ) : (
+                  <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-light">
+                    {article.summary}
+                  </p>
+                )}
               </div>
             </div>
           </section>

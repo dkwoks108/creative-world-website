@@ -249,7 +249,7 @@ export function CreativeeAssistantBot() {
                           href="https://wa.me/917062597062?text=Hello%20Creativee%20World%20team%2C%20I%27m%20interested%20in%20your%20services.%20I%27d%20like%20to%20discuss%20my%20project."
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center justify-between p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-medium text-emerald-400 transition-colors"
+                          className="flex items-center justify-between p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-medium text-[#00CFFF] transition-colors"
                         >
                           <span className="flex items-center gap-2">
                             <span>WhatsApp Direct</span>

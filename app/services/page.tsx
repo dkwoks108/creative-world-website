@@ -9,6 +9,7 @@ import { RevealOnScroll } from '@/components/motion/RevealOnScroll';
 import { CWBadge } from '@/components/ui/CWBadge';
 import { CWButton } from '@/components/ui/CWButton';
 import { servicesData } from '@/data/services';
+import { prisma } from '@/lib/site-settings';
 
 export const metadata: Metadata = {
   title: 'Digital Marketing & Growth Services in Jaipur | Creativee World',
@@ -19,7 +20,30 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+  let dbServices: any[] = [];
+  try {
+    dbServices = await prisma.service.findMany({
+      orderBy: { sortOrder: 'asc' },
+    });
+  } catch (e) {
+    console.error('Failed to load services from database:', e);
+  }
+
+  const listToRender = dbServices.length > 0
+    ? dbServices.map((s, idx) => ({
+        id: s.id,
+        number: `0${idx + 1}`,
+        kicker: s.category || 'Capability Offering',
+        title: s.title,
+        description: s.description,
+        outcomeStatement: s.pricing || 'High ROI Scalability',
+        deliverables: ['Custom Growth Blueprint', 'Dedicated Campaign Lead', 'Real-Time ROI Dashboard'],
+        slug: s.slug,
+        ctaLabel: `Explore ${s.title}`,
+      }))
+    : servicesData;
+
   return (
     <MotionProvider>
       <div className="relative min-h-screen bg-[#07090E] text-slate-100 selection:bg-[#1769FF]/30 selection:text-white">
@@ -63,7 +87,7 @@ export default function ServicesPage() {
 
           {/* 2. SERVICES LISTING SECTION */}
           <section className="relative z-10 py-24 max-w-7xl mx-auto px-6 sm:px-8 space-y-12">
-            {servicesData.map((service, idx) => (
+            {listToRender.map((service, idx) => (
               <RevealOnScroll key={service.id} variant="fade-up" delay={idx * 0.1}>
                 <div className="p-8 sm:p-12 rounded-3xl bg-slate-900/60 border border-white/10 hover:border-white/20 transition-all duration-300 space-y-8 group">
                   <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-8">

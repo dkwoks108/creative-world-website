@@ -6,22 +6,23 @@ import { usePathname } from 'next/navigation';
 import { CreativeeLogo } from '@/components/ui/CreativeeLogo';
 import { SquashHamburger } from '@/components/ui/SquashHamburger';
 import { MobileMenu } from './MobileMenu';
-import { ArrowUpRight, Sparkles } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { CWButton } from '@/components/ui/CWButton';
 
-const navLinks = [
+const defaultNavLinks = [
   { label: 'Services', href: '/services' },
-  { label: 'Industries', href: '/industries' },
   { label: 'Work', href: '/work' },
-  { label: 'Packages', href: '/packages' },
+  { label: 'Agency', href: '/agency' },
   { label: 'Insights', href: '/insights' },
-  { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ];
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [navLinks, setNavLinks] = useState(defaultNavLinks);
+  const [ctaLabel, setCtaLabel] = useState('Growth Audit');
+  const [ctaHref, setCtaHref] = useState('/growth-audit');
   const pathname = usePathname();
 
   useEffect(() => {
@@ -31,6 +32,25 @@ export function Navbar() {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Fetch dynamic site data from DB
+    fetch('/api/site-data')
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          if (data.navigation && data.navigation.length > 0) {
+            setNavLinks(data.navigation);
+          }
+          if (data.settings?.header_cta_label) {
+            setCtaLabel(data.settings.header_cta_label);
+          }
+          if (data.settings?.header_cta_href) {
+            setCtaHref(data.settings.header_cta_href);
+          }
+        }
+      })
+      .catch((err) => console.error('Navbar site-data fetch error:', err));
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -53,7 +73,7 @@ export function Navbar() {
             <CreativeeLogo textColor="#ffffff" height={28} />
           </Link>
 
-          {/* Desktop Sentence-Case Navigation Links */}
+          {/* Desktop Dynamic Navigation Links */}
           <nav className="hidden lg:flex items-center space-x-6 text-sm font-medium">
             {navLinks.map((link) => {
               const isActive = pathname === link.href || pathname?.startsWith(`${link.href}/`);
@@ -78,9 +98,9 @@ export function Navbar() {
 
           {/* Glowing Gradient CTA & Mobile Menu Toggle */}
           <div className="flex items-center space-x-3">
-            <Link href="/growth-audit" className="hidden sm:block">
+            <Link href={ctaHref} className="hidden sm:block">
               <CWButton variant="gradient" size="sm">
-                <span>Growth Audit</span>
+                <span>{ctaLabel}</span>
                 <ArrowUpRight size={15} />
               </CWButton>
             </Link>

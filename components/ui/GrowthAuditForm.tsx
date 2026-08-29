@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { Check, AlertCircle, Loader2 } from 'lucide-react';
-import { MonochromeButton } from '@/components/monochrome/MonochromeButton';
+import { Check, AlertCircle, ArrowUpRight, ArrowLeft } from 'lucide-react';
+import { CWButton } from '@/components/ui/CWButton';
 
 const formSchema = z.object({
   fullName: z.string().min(2, 'Full name must be at least 2 characters.'),
@@ -67,24 +67,24 @@ export function GrowthAuditForm() {
 
   if (isSubmitted) {
     return (
-      <div className="p-8 sm:p-10 border-4 border-black bg-white text-center space-y-6">
-        <div className="w-16 h-16 border-2 border-black bg-black text-white flex items-center justify-center mx-auto">
-          <Check size={32} strokeWidth={2} />
+      <div className="p-8 sm:p-12 rounded-3xl border border-white/15 bg-slate-900/90 text-center space-y-6 shadow-2xl backdrop-blur-2xl">
+        <div className="w-16 h-16 rounded-2xl bg-cw-gradient text-white flex items-center justify-center mx-auto shadow-cw-glow">
+          <Check size={32} />
         </div>
 
-        <div className="space-y-2">
-          <span className="font-mono text-xs text-neutral-600 uppercase tracking-widest block font-bold">
-            REQUEST RECEIVED
+        <div className="space-y-2 max-w-md mx-auto">
+          <span className="font-mono text-xs text-[#00CFFF] font-semibold uppercase tracking-wider block">
+            REQUEST RECEIVED // SUCCESS
           </span>
-          <h3 className="font-serif font-bold text-3xl text-black uppercase">
-            YOUR GROWTH AUDIT REQUEST IS IN.
+          <h3 className="font-display font-extrabold text-3xl sm:text-4xl text-white">
+            Your Growth Audit Request Is In.
           </h3>
-          <p className="font-serifBody text-sm text-neutral-800 leading-relaxed max-w-md mx-auto">
+          <p className="text-sm text-slate-300 font-light leading-relaxed">
             We will review your submission details and analyze your growth opportunities. Expect a direct email from our strategic team within 24 hours.
           </p>
         </div>
 
-        <div className="pt-4 border-t-2 border-black text-xs font-mono text-black font-bold uppercase tracking-widest">
+        <div className="pt-4 border-t border-white/10 text-xs font-mono text-slate-400 uppercase tracking-wider">
           <span>NO AUTOMATED SALES SEQUENCE • DIRECT STRATEGIC REVIEW</span>
         </div>
       </div>
@@ -95,22 +95,22 @@ export function GrowthAuditForm() {
     <form
       id="audit-form"
       onSubmit={handleSubmit(onSubmit)}
-      className="p-8 sm:p-10 border-4 border-black bg-white space-y-6"
+      className="p-8 sm:p-12 rounded-3xl border border-white/15 bg-slate-900/80 backdrop-blur-2xl space-y-6 shadow-2xl"
     >
       {/* Form Progress Indicator */}
-      <div className="flex items-center justify-between border-b-2 border-black pb-4">
-        <span className="font-mono text-xs text-black uppercase tracking-widest font-bold">
+      <div className="flex items-center justify-between border-b border-white/10 pb-4">
+        <span className="font-mono text-xs text-[#00CFFF] font-semibold uppercase tracking-wider">
           STEP {step} OF 2 — {step === 1 ? 'GROWTH CONTEXT' : 'PROJECT DETAILS'}
         </span>
         <div className="flex items-center space-x-2">
           <span
-            className={`w-6 h-2 inline-block border border-black ${
-              step >= 1 ? 'bg-black' : 'bg-white'
+            className={`w-6 h-2 rounded-full transition-all ${
+              step >= 1 ? 'bg-[#00CFFF] shadow-cw-glow' : 'bg-slate-800'
             }`}
           />
           <span
-            className={`w-6 h-2 inline-block border border-black ${
-              step === 2 ? 'bg-black' : 'bg-white'
+            className={`w-6 h-2 rounded-full transition-all ${
+              step === 2 ? 'bg-[#00CFFF] shadow-cw-glow' : 'bg-slate-800'
             }`}
           />
         </div>
@@ -118,54 +118,54 @@ export function GrowthAuditForm() {
 
       {/* STEP 1 FIELDS */}
       {step === 1 && (
-        <div className="space-y-4">
+        <div className="space-y-5">
           <div>
-            <label className="block text-xs font-mono uppercase text-black mb-1.5 font-bold tracking-widest">
-              FULL NAME <span className="text-neutral-500">*</span>
+            <label className="block text-xs font-mono uppercase text-slate-300 mb-2 font-semibold tracking-wider">
+              FULL NAME <span className="text-[#00CFFF]">*</span>
             </label>
             <input
               {...register('fullName')}
               placeholder="e.g. Sarah Jenkins"
-              className="w-full px-4 py-3 border-2 border-black bg-white text-black placeholder-neutral-400 text-sm font-serifBody focus:outline-none focus:bg-neutral-50 transition-colors"
+              className="w-full px-4 py-3.5 rounded-2xl border border-white/15 bg-slate-950/80 text-white placeholder-slate-500 text-sm font-sans focus:outline-none focus:border-[#00CFFF] transition-colors"
             />
             {errors.fullName && (
-              <span className="text-xs font-mono text-black font-bold mt-1 block">[!] {errors.fullName.message}</span>
+              <span className="text-xs font-mono text-rose-400 mt-1.5 block">[!] {errors.fullName.message}</span>
             )}
           </div>
 
           <div>
-            <label className="block text-xs font-mono uppercase text-black mb-1.5 font-bold tracking-widest">
-              BUSINESS EMAIL <span className="text-neutral-500">*</span>
+            <label className="block text-xs font-mono uppercase text-slate-300 mb-2 font-semibold tracking-wider">
+              BUSINESS EMAIL <span className="text-[#00CFFF]">*</span>
             </label>
             <input
               {...register('email')}
               type="email"
               placeholder="sarah@company.com"
-              className="w-full px-4 py-3 border-2 border-black bg-white text-black placeholder-neutral-400 text-sm font-serifBody focus:outline-none focus:bg-neutral-50 transition-colors"
+              className="w-full px-4 py-3.5 rounded-2xl border border-white/15 bg-slate-950/80 text-white placeholder-slate-500 text-sm font-sans focus:outline-none focus:border-[#00CFFF] transition-colors"
             />
             {errors.email && (
-              <span className="text-xs font-mono text-black font-bold mt-1 block">[!] {errors.email.message}</span>
+              <span className="text-xs font-mono text-rose-400 mt-1.5 block">[!] {errors.email.message}</span>
             )}
           </div>
 
           <div>
-            <label className="block text-xs font-mono uppercase text-black mb-1.5 font-bold tracking-widest">
+            <label className="block text-xs font-mono uppercase text-slate-300 mb-2 font-semibold tracking-wider">
               COMPANY WEBSITE (OPTIONAL)
             </label>
             <input
               {...register('website')}
               placeholder="https://company.com"
-              className="w-full px-4 py-3 border-2 border-black bg-white text-black placeholder-neutral-400 text-sm font-serifBody focus:outline-none focus:bg-neutral-50 transition-colors"
+              className="w-full px-4 py-3.5 rounded-2xl border border-white/15 bg-slate-950/80 text-white placeholder-slate-500 text-sm font-sans focus:outline-none focus:border-[#00CFFF] transition-colors"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-mono uppercase text-black mb-1.5 font-bold tracking-widest">
-              PRIMARY GROWTH GOAL <span className="text-neutral-500">*</span>
+            <label className="block text-xs font-mono uppercase text-slate-300 mb-2 font-semibold tracking-wider">
+              PRIMARY GROWTH GOAL <span className="text-[#00CFFF]">*</span>
             </label>
             <select
               {...register('primaryGoal')}
-              className="w-full px-4 py-3 border-2 border-black bg-white text-black text-sm font-serifBody focus:outline-none focus:bg-neutral-50 transition-colors cursor-pointer"
+              className="w-full px-4 py-3.5 rounded-2xl border border-white/15 bg-slate-950 text-white text-sm font-sans focus:outline-none focus:border-[#00CFFF] transition-colors cursor-pointer"
             >
               <option value="Performance Marketing">Performance Marketing & Paid Ads (Google / Meta)</option>
               <option value="Local SEO & Search">SEO & Local Search Visibility (Jaipur Focus)</option>
@@ -176,28 +176,29 @@ export function GrowthAuditForm() {
             </select>
           </div>
 
-          <MonochromeButton
+          <CWButton
             type="button"
-            variant="primary"
-            showArrow
+            variant="gradient"
+            size="lg"
             className="w-full mt-4 justify-center"
             onClick={handleNextStep}
           >
-            Continue to Project Details
-          </MonochromeButton>
+            <span>Continue to Project Details</span>
+            <ArrowUpRight size={18} />
+          </CWButton>
         </div>
       )}
 
       {/* STEP 2 FIELDS */}
       {step === 2 && (
-        <div className="space-y-4">
+        <div className="space-y-5">
           <div>
-            <label className="block text-xs font-mono uppercase text-black mb-1.5 font-bold tracking-widest">
+            <label className="block text-xs font-mono uppercase text-slate-300 mb-2 font-semibold tracking-wider">
               ESTIMATED MONTHLY BUDGET
             </label>
             <select
               {...register('budgetRange')}
-              className="w-full px-4 py-3 border-2 border-black bg-white text-black text-sm font-serifBody focus:outline-none focus:bg-neutral-50 transition-colors cursor-pointer"
+              className="w-full px-4 py-3.5 rounded-2xl border border-white/15 bg-slate-950 text-white text-sm font-sans focus:outline-none focus:border-[#00CFFF] transition-colors cursor-pointer"
             >
               <option value="Starter (₹7.9k–₹13k/mo)">Starter Package (₹7,999 – ₹12,999 / month)</option>
               <option value="Growth (₹15k–₹25k/mo)">Growth Package (₹15,000 – ₹25,000 / month)</option>
@@ -208,12 +209,12 @@ export function GrowthAuditForm() {
           </div>
 
           <div>
-            <label className="block text-xs font-mono uppercase text-black mb-1.5 font-bold tracking-widest">
+            <label className="block text-xs font-mono uppercase text-slate-300 mb-2 font-semibold tracking-wider">
               EXPECTED TIMELINE
             </label>
             <select
               {...register('timeline')}
-              className="w-full px-4 py-3 border-2 border-black bg-white text-black text-sm font-serifBody focus:outline-none focus:bg-neutral-50 transition-colors cursor-pointer"
+              className="w-full px-4 py-3.5 rounded-2xl border border-white/15 bg-slate-950 text-white text-sm font-sans focus:outline-none focus:border-[#00CFFF] transition-colors cursor-pointer"
             >
               <option value="As soon as possible">As soon as possible</option>
               <option value="Within 30 days">Within 30 days</option>
@@ -223,55 +224,57 @@ export function GrowthAuditForm() {
           </div>
 
           <div>
-            <label className="block text-xs font-mono uppercase text-black mb-1.5 font-bold tracking-widest">
+            <label className="block text-xs font-mono uppercase text-slate-300 mb-2 font-semibold tracking-wider">
               PROJECT NOTES / GROWTH CHALLENGES
             </label>
             <textarea
               {...register('notes')}
               rows={3}
               placeholder="What are your current growth bottlenecks?"
-              className="w-full px-4 py-3 border-2 border-black bg-white text-black placeholder-neutral-400 text-sm font-serifBody focus:outline-none focus:bg-neutral-50 transition-colors resize-none"
+              className="w-full px-4 py-3.5 rounded-2xl border border-white/15 bg-slate-950/80 text-white placeholder-slate-500 text-sm font-sans focus:outline-none focus:border-[#00CFFF] transition-colors resize-none"
             />
           </div>
 
           {submitError && (
-            <div className="flex items-center space-x-2 text-xs font-mono font-bold text-black p-3 border-2 border-black bg-neutral-100">
+            <div className="flex items-center space-x-2 text-xs font-mono font-semibold text-rose-400 p-3.5 rounded-2xl border border-rose-500/30 bg-rose-500/10">
               <AlertCircle size={16} className="shrink-0" />
               <span>{submitError}</span>
             </div>
           )}
 
           <div className="flex items-center space-x-3 pt-2">
-            <MonochromeButton
+            <CWButton
               type="button"
-              variant="secondary"
+              variant="glass"
+              size="lg"
               className="w-1/3 justify-center"
               onClick={() => setStep(1)}
               disabled={isSubmitting}
             >
-              Back
-            </MonochromeButton>
+              <ArrowLeft size={16} />
+              <span>Back</span>
+            </CWButton>
 
-            <MonochromeButton
+            <CWButton
               type="submit"
-              variant="primary"
-              showArrow={!isSubmitting}
+              variant="gradient"
+              size="lg"
               className="w-2/3 justify-center"
               disabled={isSubmitting}
             >
-              {isSubmitting ? 'Submitting...' : 'Request Growth Audit'}
-            </MonochromeButton>
+              <span>{isSubmitting ? 'Submitting...' : 'Request Growth Audit'}</span>
+              {!isSubmitting && <ArrowUpRight size={18} />}
+            </CWButton>
           </div>
         </div>
       )}
 
       {/* Reassurance Privacy Note */}
       <div className="pt-2 text-center">
-        <p className="text-[11px] text-neutral-600 leading-relaxed font-mono uppercase tracking-widest font-bold">
+        <p className="text-[11px] text-slate-400 leading-relaxed font-mono uppercase tracking-wider">
           No spam. No automated sales sequence. Direct technical review.
         </p>
       </div>
     </form>
   );
 }
-

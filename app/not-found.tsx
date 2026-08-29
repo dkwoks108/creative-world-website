@@ -1,51 +1,61 @@
 import React from 'react';
 import Link from 'next/link';
-import { Home, Search } from 'lucide-react';
+import { Home, ArrowUpRight, Search } from 'lucide-react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
-import { Container } from '@/components/ui/Container';
-import { Button } from '@/components/ui/Button';
+import { MotionProvider } from '@/components/motion/MotionProvider';
+import { RevealOnScroll } from '@/components/motion/RevealOnScroll';
+import { CWBadge } from '@/components/ui/CWBadge';
+import { CWButton } from '@/components/ui/CWButton';
 
 export default function NotFound() {
   return (
-    <div className="relative min-h-screen bg-ivory text-txt-primary flex flex-col justify-between">
-      <Navbar />
+    <MotionProvider>
+      <div className="relative min-h-screen bg-[#07090E] text-slate-100 flex flex-col justify-between selection:bg-[#1769FF]/30 selection:text-white">
+        <Navbar />
 
-      <main className="flex-1 flex items-center justify-center py-32">
-        <Container variant="standard" className="text-center space-y-8">
-          <div className="space-y-4">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white border border-border-subtle shadow-editorial-sm">
-              <span className="h-1.5 w-1.5 rounded-full bg-coral animate-pulse" />
-              <span className="font-mono text-xs uppercase tracking-widest text-plum/80 font-medium">
-                ERROR 404 — PAGE NOT FOUND
-              </span>
+        <main className="flex-1 flex items-center justify-center py-36 relative">
+          {/* Ambient Glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-gradient-to-tr from-[#1769FF]/15 via-[#673BFF]/15 to-[#D900FF]/10 blur-3xl pointer-events-none rounded-full" />
+
+          <div className="relative z-10 max-w-xl mx-auto px-6 text-center space-y-8">
+            <RevealOnScroll variant="fade-up">
+              <CWBadge variant="cyan">
+                <span>404 // Route Off-Script</span>
+              </CWBadge>
+            </RevealOnScroll>
+
+            <div className="space-y-4">
+              <h1 className="font-display font-extrabold text-5xl sm:text-7xl text-white tracking-tight leading-tight">
+                This page went <br />
+                <span className="text-cw-gradient">off-script.</span>
+              </h1>
+
+              <p className="text-base text-slate-300 font-light leading-relaxed max-w-md mx-auto">
+                The URL or resource you are looking for has been moved, renamed, or is unavailable in our digital growth platform.
+              </p>
             </div>
 
-            <h1 className="font-display font-normal text-4xl sm:text-6xl text-plum tracking-tight">
-              Route Does Not Exist.
-            </h1>
-
-            <p className="text-sm sm:text-base text-txt-secondary leading-relaxed max-w-md mx-auto font-normal">
-              The page or resource you are looking for has been moved, renamed, or is unavailable in our digital growth platform.
-            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+              <Link href="/">
+                <CWButton variant="gradient" size="md">
+                  <Home className="w-4 h-4" />
+                  <span>Return Home</span>
+                </CWButton>
+              </Link>
+              <Link href="/services">
+                <CWButton variant="glass" size="md">
+                  <Search className="w-4 h-4" />
+                  <span>Explore Services</span>
+                  <ArrowUpRight className="w-4 h-4" />
+                </CWButton>
+              </Link>
+            </div>
           </div>
+        </main>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <Link href="/">
-              <Button variant="primary" size="md" icon={<Home className="h-4 w-4" />}>
-                Return to Homepage
-              </Button>
-            </Link>
-            <Link href="/services">
-              <Button variant="outline" size="md" icon={<Search className="h-4 w-4" />}>
-                Explore Growth Services
-              </Button>
-            </Link>
-          </div>
-        </Container>
-      </main>
-
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </MotionProvider>
   );
 }

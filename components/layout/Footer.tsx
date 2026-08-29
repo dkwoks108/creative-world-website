@@ -1,15 +1,33 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { CreativeeLogo } from '@/components/ui/CreativeeLogo';
 import { ArrowUpRight, Mail, MapPin, Phone, Sparkles } from 'lucide-react';
-import { siteConfig } from '@/data/site';
 import { CWButton } from '@/components/ui/CWButton';
 import { CWBadge } from '@/components/ui/CWBadge';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+
+  const [address, setAddress] = useState('Jaipur, Rajasthan, India');
+  const [email, setEmail] = useState('hello@creativeworld.in');
+  const [phone, setPhone] = useState('+91 98290 12345');
+  const [copyright, setCopyright] = useState(`© ${currentYear} Creativee World. All rights reserved.`);
+
+  useEffect(() => {
+    fetch('/api/site-data')
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success && data.settings) {
+          if (data.settings.company_address) setAddress(data.settings.company_address);
+          if (data.settings.company_email) setEmail(data.settings.company_email);
+          if (data.settings.company_phone) setPhone(data.settings.company_phone);
+          if (data.settings.footer_copyright) setCopyright(data.settings.footer_copyright);
+        }
+      })
+      .catch((err) => console.error('Footer site-data error:', err));
+  }, [currentYear]);
 
   return (
     <footer className="relative bg-[#07090E] text-slate-100 border-t border-white/10 pt-20 pb-12 overflow-hidden">
@@ -57,11 +75,15 @@ export function Footer() {
             <div className="space-y-2 text-xs text-slate-400 font-mono">
               <div className="flex items-center gap-2">
                 <MapPin size={14} className="text-[#00CFFF]" />
-                <span>Jaipur, Rajasthan, India</span>
+                <span>{address}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail size={14} className="text-[#00CFFF]" />
-                <span>{siteConfig.contactEmailPlaceholder}</span>
+                <span>{email}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone size={14} className="text-[#00CFFF]" />
+                <span>{phone}</span>
               </div>
             </div>
           </div>
@@ -77,7 +99,6 @@ export function Footer() {
               <li><Link href="/services/google-ads" className="hover:text-[#00CFFF] transition-colors">Google Ads</Link></li>
               <li><Link href="/services/performance-marketing" className="hover:text-[#00CFFF] transition-colors">Meta Performance Ads</Link></li>
               <li><Link href="/services/reels-video-production" className="hover:text-[#00CFFF] transition-colors">Video & Short Reels</Link></li>
-              <li><Link href="/services/local-seo-google-maps" className="hover:text-[#00CFFF] transition-colors">Local Maps SEO</Link></li>
             </ul>
           </div>
 
@@ -91,8 +112,6 @@ export function Footer() {
               <li><Link href="/industries/real-estate" className="hover:text-[#00CFFF] transition-colors">Luxury Real Estate</Link></li>
               <li><Link href="/industries/healthcare-clinics" className="hover:text-[#00CFFF] transition-colors">Healthcare & Clinics</Link></li>
               <li><Link href="/industries/retail-jewelry" className="hover:text-[#00CFFF] transition-colors">Fine Jewelry & Retail</Link></li>
-              <li><Link href="/industries/hospitality-resorts" className="hover:text-[#00CFFF] transition-colors">Hospitality & Resorts</Link></li>
-              <li><Link href="/industries/corporate-legal" className="hover:text-[#00CFFF] transition-colors">Corporate Legal</Link></li>
             </ul>
           </div>
 
@@ -104,7 +123,6 @@ export function Footer() {
             <ul className="space-y-2.5 text-sm text-slate-400 font-light">
               <li><Link href="/about" className="hover:text-[#00CFFF] transition-colors">About Studio</Link></li>
               <li><Link href="/work" className="hover:text-[#00CFFF] transition-colors">Case Studies</Link></li>
-              <li><Link href="/packages" className="hover:text-[#00CFFF] transition-colors">Engagement Packages</Link></li>
               <li><Link href="/insights" className="hover:text-[#00CFFF] transition-colors">Insights & Journal</Link></li>
               <li><Link href="/contact" className="hover:text-[#00CFFF] transition-colors">Contact Studio</Link></li>
             </ul>
@@ -114,7 +132,7 @@ export function Footer() {
 
         {/* Bottom Legal & Copyright Bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-light">
-          <p>© {currentYear} Creativee World. All rights reserved.</p>
+          <p>{copyright}</p>
           
           <div className="flex items-center space-x-6">
             <Link href="/privacy" className="hover:text-slate-300 transition-colors">Privacy Policy</Link>
