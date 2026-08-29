@@ -80,7 +80,7 @@ export default function AdminTeamPage() {
               Team & Leadership Directory
             </h1>
             <p className="text-xs text-slate-400">
-              Manage agency team profiles and leadership dynamic display on `/about` and `/agency`.
+              Manage agency team profiles and leadership dynamic display on `/about`.
             </p>
           </div>
         </div>
