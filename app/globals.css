@@ -122,42 +122,57 @@ body {
   z-index: 0;
 }
 
-/* Glassmorphism Panel Utilities */
+/* Glassmorphism Panel Utilities & Alternating Rhythm Surfaces */
+.bg-cw-obsidian {
+  background-color: #07090E;
+}
+
+.bg-cw-surface {
+  background-color: #0B0F19;
+}
+
+.bg-cw-panel {
+  background-color: #111625;
+}
+
 .cw-glass-nav {
-  background: rgba(7, 9, 14, 0.75);
+  background: rgba(7, 9, 14, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
 }
 
-.cw-glass-card {
-  background: rgba(14, 19, 31, 0.7);
+.cw-card-standard {
+  background-color: #0E1422;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 1rem;
+  transition: border-color 250ms ease, transform 250ms ease;
+}
+.cw-card-standard:hover {
+  border-color: rgba(0, 207, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.cw-card-glass {
+  background: rgba(14, 19, 31, 0.60);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 1rem;
+  transition: border-color 250ms ease, transform 250ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 250ms ease;
+}
+
+.cw-card-glass:hover {
+  border-color: rgba(0, 207, 255, 0.4);
+  box-shadow: 0 12px 40px -10px rgba(0, 207, 255, 0.20);
+  transform: translateY(-3px);
+}
+
+.cw-card-editorial {
+  background-color: #0C101B;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: border-color 300ms ease, transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms ease;
-}
-
-.cw-glass-card:hover {
-  border-color: rgba(23, 105, 255, 0.4);
-  box-shadow: 0 12px 40px -10px rgba(23, 105, 255, 0.25);
-  transform: translateY(-4px);
-}
-
-.cw-light-glass-card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
-  transition: border-color 300ms ease, transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms ease;
-}
-
-.cw-light-glass-card:hover {
-  border-color: rgba(23, 105, 255, 0.3);
-  box-shadow: 0 20px 40px -10px rgba(23, 105, 255, 0.15);
-  transform: translateY(-4px);
+  border-radius: 1rem;
 }
 
 /* Accessibility Focus Outline Baseline */
@@ -175,3 +190,4 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
