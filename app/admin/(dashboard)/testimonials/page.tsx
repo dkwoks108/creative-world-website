@@ -112,7 +112,7 @@ export default function AdminTestimonialsPage() {
                   {t.status}
                 </span>
               </div>
-              <p className="text-xs text-slate-300 italic">"{t.quote}"</p>
+              <p className="text-xs text-slate-300 italic">&quot;{t.quote}&quot;</p>
               <div className="pt-2 border-t border-[#1A2333]">
                 <h4 className="text-xs font-bold text-white">{t.clientName}</h4>
                 <p className="text-[11px] text-slate-400">{t.designation} {t.company && `• ${t.company}`}</p>

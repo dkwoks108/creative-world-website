@@ -27,7 +27,7 @@ export function ScrollProgress() {
     <div className="fixed top-0 left-0 right-0 z-50 h-[2px] pointer-events-none bg-transparent">
       <div
         ref={progressBarRef}
-        className="h-full w-full bg-coral origin-left scale-x-0 transition-transform"
+        className="h-full w-full bg-gradient-to-r from-[#1769FF] via-[#00CFFF] to-[#D900FF] origin-left scale-x-0 transition-transform"
       />
     </div>
   );

@@ -13,28 +13,28 @@ export function CaseStudyVisualPlaceholder({
 }: CaseStudyVisualPlaceholderProps) {
   return (
     <div
-      className={`relative w-full h-full min-h-[260px] sm:min-h-[320px] rounded-xl bg-cream/40 border border-border-subtle overflow-hidden flex flex-col justify-between p-6 ${className}`}
+      className={`relative w-full h-full min-h-[260px] sm:min-h-[320px] rounded-xl bg-slate-900/60 border border-white/10 backdrop-blur-md overflow-hidden flex flex-col justify-between p-6 ${className}`}
     >
       {/* Background Lighting Gradients */}
-      <div className="absolute top-0 right-0 w-48 h-48 bg-coral/10 blur-[70px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-48 h-48 bg-gold/10 blur-[80px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 right-0 w-48 h-48 bg-[#1769FF]/15 blur-[70px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#00CFFF]/15 blur-[80px] rounded-full pointer-events-none" />
 
       {/* Grid Pattern Overlay */}
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#1b133c08_1px,transparent_1px),linear-gradient(to_bottom,#1b133c08_1px,transparent_1px)] bg-[size:1.5rem_1.5rem]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:1.5rem_1.5rem]" />
 
       {/* Top Metadata Header */}
-      <div className="relative z-10 flex items-center justify-between border-b border-border-subtle pb-3">
-        <span className="font-mono text-[10px] text-txt-muted uppercase tracking-widest">
+      <div className="relative z-10 flex items-center justify-between border-b border-white/10 pb-3">
+        <span className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">
           GROWTH PLAYBOOK BLUEPRINT
         </span>
-        <span className="px-2 py-0.5 rounded text-[9px] font-mono uppercase bg-coral/10 text-coral border border-coral/30 font-medium">
+        <span className="px-2 py-0.5 rounded text-[9px] font-mono uppercase bg-[#00CFFF]/10 text-[#00CFFF] border border-[#00CFFF]/30 font-semibold">
           {industry}
         </span>
       </div>
 
       {/* Center Technical Graphic Abstract Node */}
       <div className="relative z-10 my-auto text-center space-y-2 py-4">
-        <div className="mx-auto w-12 h-12 rounded-lg bg-white border border-border-subtle shadow-editorial-sm flex items-center justify-center text-plum">
+        <div className="mx-auto w-12 h-12 rounded-lg bg-slate-800 border border-white/10 shadow-lg flex items-center justify-center text-[#00CFFF]">
           <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path
               strokeLinecap="round"
@@ -44,18 +44,18 @@ export function CaseStudyVisualPlaceholder({
             />
           </svg>
         </div>
-        <span className="font-display font-normal text-xl text-plum block">
+        <span className="font-display font-bold text-xl text-white block">
           {clientName}
         </span>
-        <span className="text-[10px] text-txt-muted font-mono uppercase tracking-wider block">
+        <span className="text-[10px] text-slate-400 font-mono uppercase tracking-wider block">
           JAIPUR SECTOR BLUEPRINT
         </span>
       </div>
 
       {/* Bottom Footer Indicator */}
-      <div className="relative z-10 flex items-center justify-between border-t border-border-subtle pt-3 text-[10px] font-mono text-txt-muted">
+      <div className="relative z-10 flex items-center justify-between border-t border-white/10 pt-3 text-[10px] font-mono text-slate-400">
         <span>STRATEGY STATUS: ACTIVE BLUEPRINT</span>
-        <span className="h-1.5 w-1.5 rounded-full bg-coral animate-pulse" />
+        <span className="h-1.5 w-1.5 rounded-full bg-[#00CFFF] animate-pulse" />
       </div>
     </div>
   );

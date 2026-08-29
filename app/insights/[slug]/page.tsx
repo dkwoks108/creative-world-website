@@ -184,7 +184,7 @@ export default async function InsightDetailPage({ params }: InsightPageProps) {
                         case "quote":
                           return (
                             <blockquote key={idx} className="border-l-4 border-[#00CFFF] pl-4 py-2 italic text-slate-200 text-lg sm:text-xl font-serif bg-slate-900/40 my-4 rounded-r">
-                              "{node.text}"
+                              &quot;{node.text}&quot;
                             </blockquote>
                           );
                         case "image":

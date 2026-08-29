@@ -13,7 +13,7 @@ export function InitialLoader() {
   const [progress, setProgress] = useState<number>(0);
 
   useEffect(() => {
-    // Check if loader was already displayed in this browser session or bypassed for testing
+    // Check if loader was already displayed in this browser session or bypassed
     const hasLoadedBefore = typeof window !== 'undefined' &&
       (sessionStorage.getItem('creativee_loader_shown') || window.location.search.includes('bypassLoader=true'));
 
@@ -45,7 +45,7 @@ export function InitialLoader() {
           } catch {
             // Ignore storage restrictions
           }
-        }, 200);
+        }, 150);
       }
     }, 16);
 
@@ -65,38 +65,13 @@ export function InitialLoader() {
           initial={{ y: 0 }}
           exit={{
             y: '-100%',
-            transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
+            transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] },
           }}
-          className="fixed inset-0 z-[100] bg-[#07090E] text-white flex flex-col justify-between p-8 sm:p-12 md:p-16 overflow-hidden select-none pointer-events-auto"
+          className="fixed inset-0 z-[100] bg-[#07090E] text-white flex items-center justify-center overflow-hidden select-none pointer-events-auto"
         >
-          {/* Ambient Spectrum Lighting */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gradient-to-tr from-[#1769FF]/20 via-[#673BFF]/20 to-[#D900FF]/15 blur-3xl pointer-events-none rounded-full" />
-
-          {/* Minimal Header */}
-          <div className="relative z-10 flex items-center justify-between font-mono text-xs uppercase tracking-widest text-slate-400">
-            <span className="font-bold text-white tracking-widest">CREATIVEE WORLD</span>
-            <span className="text-[#00CFFF]">● DIGITAL GROWTH ENGINE</span>
-          </div>
-
-          {/* Hero 01 -> 100 Numerical Progression */}
-          <div className="relative z-10 my-auto text-center space-y-4">
-            <div className="font-mono text-7xl sm:text-9xl lg:text-[14rem] font-extrabold tracking-tighter text-cw-gradient leading-none tabular-nums select-none">
-              {formattedCount}
-            </div>
-
-            {/* Subtle Minimal Progress Line */}
-            <div className="max-w-xs mx-auto h-0.5 bg-slate-800 rounded-full overflow-hidden">
-              <div
-                className="h-full bg-gradient-to-r from-[#1769FF] via-[#00CFFF] to-[#D900FF] transition-all duration-75"
-                style={{ width: `${progress}%` }}
-              />
-            </div>
-          </div>
-
-          {/* Minimal Footer */}
-          <div className="relative z-10 flex items-center justify-between font-mono text-[11px] text-slate-500 uppercase tracking-widest">
-            <span>JAIPUR • INDIA</span>
-            <span>{progress}% LOADED</span>
+          {/* Pure 0-100 Numerical Progression - Nothing Else */}
+          <div className="font-mono text-8xl sm:text-[14rem] md:text-[18rem] font-extrabold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white via-[#00CFFF] to-[#1769FF] leading-none tabular-nums select-none">
+            {formattedCount}
           </div>
         </motion.div>
       )}

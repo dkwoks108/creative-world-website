@@ -18,7 +18,7 @@ export function ShinyText({
   disabled = false,
   speed = 4,
   className = '',
-  baseColor = '#B8FF2C',
+  baseColor = '#00CFFF',
   shineColor = '#F5F7FA',
   spread = 100,
 }: ShinyTextProps) {

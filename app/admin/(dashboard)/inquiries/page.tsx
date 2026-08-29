@@ -268,7 +268,7 @@ export default function InquiriesCRMPage() {
                 </div>
 
                 <p className="text-xs text-slate-300 line-clamp-2 bg-[#090D14] p-2.5 rounded-xl border border-[#1A2333]">
-                  "{item.message}"
+                  &quot;{item.message}&quot;
                 </p>
 
                 <div className="flex items-center justify-between text-[11px] text-slate-500 pt-1">
@@ -352,7 +352,7 @@ export default function InquiriesCRMPage() {
                   </p>
                 )}
                 <p className="text-xs text-slate-300 pt-1">
-                  "{activeInquiry.message}"
+                  &quot;{activeInquiry.message}&quot;
                 </p>
               </div>
 

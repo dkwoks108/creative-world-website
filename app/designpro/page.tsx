@@ -5,12 +5,12 @@ import { AgencyNextSection } from '@/components/agency/AgencyNextSection';
 
 export const metadata: Metadata = {
   title: 'DesignPro — Premium Digital Growth & Engineering',
-  description: 'Obsidian x Acid Lime x Hyper Cobalt cinematic hero section and editorial transition.',
+  description: 'Electric Cyan Dark Glass cinematic hero section and editorial transition.',
 };
 
 export default function DesignProPage() {
   return (
-    <main className="bg-[#050608]">
+    <main className="bg-[#07090E]">
       <DesignProHero />
       <AgencyNextSection />
     </main>

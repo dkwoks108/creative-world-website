@@ -39,7 +39,7 @@ export default function IndustriesPage() {
 
   return (
     <MotionProvider>
-      <div className="relative min-h-screen bg-white text-black font-serifBody selection:bg-black selection:text-white">
+      <div className="relative min-h-screen bg-[#07090E] text-white font-sans selection:bg-[#00CFFF] selection:text-black">
         {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"

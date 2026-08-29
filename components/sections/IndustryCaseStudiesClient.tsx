@@ -2,14 +2,13 @@
 
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
-import { Search, Filter, RefreshCw, ShieldCheck, Sparkles } from 'lucide-react';
+import { Search, Filter, RefreshCw, ShieldCheck, Sparkles, ArrowUpRight } from 'lucide-react';
 import { INDUSTRY_CASE_STUDIES, getAllIndustryCategories, IndustryCaseStudy } from '@/data/industryCaseStudies';
 import { CaseStudyIndustryCard } from '@/components/ui/CaseStudyIndustryCard';
 import { CaseStudyDetailModal } from '@/components/ui/CaseStudyDetailModal';
 import { BeforeAfterVisualizer } from '@/components/ui/BeforeAfterVisualizer';
 import { IndustryTrustGrid } from '@/components/ui/IndustryTrustGrid';
-import { MonochromeSection } from '@/components/monochrome/MonochromeSection';
-import { MonochromeButton } from '@/components/monochrome/MonochromeButton';
+import { Container } from '@/components/ui/Container';
 
 export function IndustryCaseStudiesClient() {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
@@ -35,39 +34,40 @@ export function IndustryCaseStudiesClient() {
   return (
     <>
       {/* 1. HERO SECTION */}
-      <MonochromeSection divider="none" texture="lines" className="!py-16 md:!py-24 border-b-4 border-black">
-        <div className="flex flex-col gap-6">
-          <div className="flex items-center justify-between font-mono text-xs uppercase tracking-widest text-neutral-600 font-bold">
-            <div className="flex items-center gap-3">
-              <span className="w-4 h-4 border-2 border-black bg-black inline-block" aria-hidden="true" />
+      <section className="relative py-16 md:py-24 border-b border-white/10 overflow-hidden bg-[#07090E] text-white">
+        <div className="pointer-events-none absolute -top-40 right-0 w-[600px] h-[600px] bg-[#1769FF]/15 blur-[160px] rounded-full z-0" />
+        <div className="pointer-events-none absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#00CFFF]/10 blur-[150px] rounded-full z-0" />
+
+        <Container variant="wide" className="relative z-10 space-y-8">
+          <div className="flex items-center justify-between font-mono text-xs uppercase tracking-widest text-slate-400 font-semibold">
+            <div className="flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-[#00CFFF] animate-pulse" />
               <span>INDUSTRY CASE STUDIES &amp; DIGITAL SYSTEMS</span>
             </div>
-            <span className="hidden sm:inline-block border border-black bg-white px-2 py-0.5 text-black">
+            <span className="hidden sm:inline-block border border-white/15 bg-slate-900/80 px-3 py-1 rounded-full text-slate-200">
               18 SECTORS COVERED
             </span>
           </div>
 
-          <h1 className="font-serif font-bold text-5xl sm:text-7xl lg:text-9xl uppercase tracking-tighter leading-none text-black my-4">
+          <h1 className="font-display font-bold text-4xl sm:text-6xl lg:text-8xl uppercase tracking-tight text-white leading-tight">
             DIFFERENT INDUSTRIES.<br />
             DIFFERENT CHALLENGES.<br />
-            <span className="text-neutral-400">ONE TECHNOLOGY PARTNER.</span>
+            <span className="text-[#00CFFF]">ONE TECHNOLOGY PARTNER.</span>
           </h1>
 
-          <div className="w-full h-1 bg-black my-4" />
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end pt-4 border-t border-white/10">
             <div className="lg:col-span-8 space-y-4">
-              <p className="font-serif text-xl sm:text-2xl md:text-3xl leading-relaxed text-black tracking-tight font-normal">
+              <p className="text-lg sm:text-xl md:text-2xl leading-relaxed text-slate-300 font-normal">
                 Discover how Creativee World builds custom web applications, automation funnels, CRM integrations, and performance growth engines tailored to the specific operational challenges of 18 key business sectors.
               </p>
-              <div className="flex flex-wrap items-center gap-4 text-xs font-mono font-bold text-neutral-600 uppercase tracking-widest pt-2">
+              <div className="flex flex-wrap items-center gap-4 text-xs font-mono font-semibold text-slate-400 uppercase tracking-widest pt-2">
                 <span className="flex items-center gap-1.5">
-                  <ShieldCheck size={14} className="text-black" />
+                  <ShieldCheck size={14} className="text-[#00CFFF]" />
                   NO FABRICATED METRICS
                 </span>
                 <span>•</span>
                 <span className="flex items-center gap-1.5">
-                  <Sparkles size={14} className="text-black" />
+                  <Sparkles size={14} className="text-[#00CFFF]" />
                   ILLUSTRATIVE SECTOR DOSSIERS
                 </span>
               </div>
@@ -75,29 +75,30 @@ export function IndustryCaseStudiesClient() {
 
             <div className="lg:col-span-4 flex justify-start lg:justify-end">
               <Link href="/contact">
-                <MonochromeButton variant="primary" showArrow>
-                  Start Your Project
-                </MonochromeButton>
+                <button className="group inline-flex items-center space-x-3 px-8 py-4 rounded-full bg-[#00CFFF] text-[#050608] font-bold text-sm uppercase tracking-wider hover:bg-[#33d6ff] transition-all duration-300 hover:scale-[1.03] shadow-[0_0_30px_rgba(0,207,255,0.3)]">
+                  <span>Start Your Project</span>
+                  <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-0.5" />
+                </button>
               </Link>
             </div>
           </div>
-        </div>
-      </MonochromeSection>
+        </Container>
+      </section>
 
       {/* 2. FILTER & SEARCH CONTROL BAR */}
-      <MonochromeSection divider="thick" texture="grid" className="bg-neutral-50 !py-8">
-        <div className="space-y-6">
-          <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 border-2 border-black bg-white p-4">
+      <section className="py-8 border-b border-white/10 bg-[#0A0E17]/60 text-white">
+        <Container variant="wide" className="space-y-6">
+          <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 border border-white/10 bg-slate-900/60 backdrop-blur-md p-4 rounded-2xl">
             {/* Search Input */}
             <div className="relative flex-1">
-              <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-neutral-400 w-4 h-4" />
+              <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 w-4 h-4" />
               <input
                 type="text"
                 value={searchQuery}
                 aria-label="Search industry case studies"
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search by industry name, problem, or technology solution..."
-                className="w-full pl-10 pr-4 py-2 border-2 border-black bg-white font-serifBody text-sm text-black placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-black"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-white/10 bg-slate-950 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-[#00CFFF] font-sans"
               />
             </div>
 
@@ -108,7 +109,7 @@ export function IndustryCaseStudiesClient() {
                   setSelectedCategory('All');
                   setSearchQuery('');
                 }}
-                className="flex items-center justify-center gap-2 px-4 py-2 border-2 border-black bg-neutral-100 hover:bg-black hover:text-white font-mono text-xs font-bold uppercase tracking-wider transition-colors"
+                className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-white/10 bg-slate-800 hover:bg-[#00CFFF] hover:text-[#050608] font-mono text-xs font-bold uppercase tracking-wider transition-all"
               >
                 <RefreshCw size={12} />
                 <span>Reset Filters</span>
@@ -118,7 +119,7 @@ export function IndustryCaseStudiesClient() {
 
           {/* Category Filter Pills */}
           <div className="flex flex-wrap items-center gap-2 pt-2" role="tablist" aria-label="Filter case studies by sector category">
-            <span className="font-mono text-xs font-bold text-neutral-500 uppercase tracking-wider mr-2 flex items-center gap-1">
+            <span className="font-mono text-xs font-semibold text-slate-400 uppercase tracking-wider mr-2 flex items-center gap-1">
               <Filter size={12} /> SECTOR CATEGORIES:
             </span>
             {categories.map((cat) => (
@@ -127,10 +128,10 @@ export function IndustryCaseStudiesClient() {
                 role="tab"
                 aria-selected={selectedCategory === cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-3 py-1.5 border-2 border-black font-mono text-xs font-bold uppercase tracking-wider transition-all duration-100 ${
+                className={`px-3.5 py-1.5 rounded-full font-mono text-xs font-bold uppercase tracking-wider transition-all duration-200 border ${
                   selectedCategory === cat
-                    ? 'bg-black text-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]'
-                    : 'bg-white text-black hover:bg-neutral-100'
+                    ? 'bg-[#00CFFF] text-[#050608] border-[#00CFFF] shadow-[0_0_15px_rgba(0,207,255,0.4)]'
+                    : 'bg-slate-900/60 text-slate-300 border-white/10 hover:border-white/30 hover:text-white'
                 }`}
               >
                 {cat}
@@ -139,87 +140,96 @@ export function IndustryCaseStudiesClient() {
           </div>
 
           {/* Result Count Status */}
-          <div className="flex items-center justify-between font-mono text-xs text-neutral-500 uppercase font-bold tracking-widest pt-2">
+          <div className="flex items-center justify-between font-mono text-xs text-slate-400 uppercase font-semibold tracking-widest pt-2">
             <span>
               SHOWING {filteredCaseStudies.length} OF {INDUSTRY_CASE_STUDIES.length} INDUSTRY CASE STUDIES
             </span>
             {selectedCategory !== 'All' && <span>CATEGORY: {selectedCategory}</span>}
           </div>
-        </div>
-      </MonochromeSection>
+        </Container>
+      </section>
 
       {/* 3. CASE STUDY CARDS GRID SECTION */}
-      <MonochromeSection divider="thick" texture="none" className="bg-white">
-        {filteredCaseStudies.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredCaseStudies.map((caseStudy) => (
-              <CaseStudyIndustryCard
-                key={caseStudy.id}
-                caseStudy={caseStudy}
-                onExplore={(study) => setActiveModalCaseStudy(study)}
-              />
-            ))}
-          </div>
-        ) : (
-          <div className="p-12 border-4 border-black bg-neutral-50 text-center space-y-4 max-w-2xl mx-auto my-8">
-            <h3 className="font-serif font-bold text-2xl text-black">No matching industries found</h3>
-            <p className="font-serifBody text-sm text-neutral-600">
-              Try adjusting your search keywords or switching category filters.
-            </p>
-            <button
-              onClick={() => {
-                setSelectedCategory('All');
-                setSearchQuery('');
-              }}
-              className="px-6 py-2.5 border-2 border-black bg-black text-white font-mono text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-colors"
-            >
-              Show All 18 Industries
-            </button>
-          </div>
-        )}
-      </MonochromeSection>
+      <section className="py-16 border-b border-white/10 bg-[#07090E]">
+        <Container variant="wide">
+          {filteredCaseStudies.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredCaseStudies.map((caseStudy) => (
+                <CaseStudyIndustryCard
+                  key={caseStudy.id}
+                  caseStudy={caseStudy}
+                  onExplore={(study) => setActiveModalCaseStudy(study)}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="p-12 rounded-3xl border border-white/10 bg-slate-900/60 backdrop-blur-md text-center space-y-4 max-w-2xl mx-auto my-8 text-white">
+              <h3 className="font-display font-bold text-2xl text-white">No matching industries found</h3>
+              <p className="text-sm text-slate-300">
+                Try adjusting your search keywords or switching category filters.
+              </p>
+              <button
+                onClick={() => {
+                  setSelectedCategory('All');
+                  setSearchQuery('');
+                }}
+                className="px-6 py-3 rounded-full bg-[#00CFFF] text-[#050608] font-mono text-xs font-bold uppercase tracking-widest hover:bg-[#33d6ff] transition-all"
+              >
+                Show All 18 Industries
+              </button>
+            </div>
+          )}
+        </Container>
+      </section>
 
       {/* 4. BEFORE / AFTER TRANSFORMATION SECTION */}
-      <MonochromeSection divider="thick" texture="grid" className="bg-neutral-100">
-        <BeforeAfterVisualizer />
-      </MonochromeSection>
+      <section className="py-20 border-b border-white/10 bg-[#0A0E17]/60">
+        <Container variant="wide">
+          <BeforeAfterVisualizer />
+        </Container>
+      </section>
 
       {/* 5. TRUST & SECTOR BREADTH SECTION */}
-      <MonochromeSection divider="thick" texture="lines" className="bg-white">
-        <IndustryTrustGrid />
-      </MonochromeSection>
+      <section className="py-20 border-b border-white/10 bg-[#07090E]">
+        <Container variant="wide">
+          <IndustryTrustGrid />
+        </Container>
+      </section>
 
       {/* 6. FINAL CONVERSION CTA SECTION */}
-      <MonochromeSection inverted divider="ultra" texture="cta" className="text-center">
-        <div className="max-w-4xl mx-auto space-y-8">
-          <span className="font-mono text-xs uppercase tracking-widest text-neutral-400 font-bold block">
+      <section className="py-24 relative overflow-hidden text-center bg-[#07090E]">
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#1769FF]/20 via-[#00CFFF]/20 to-[#D900FF]/20 blur-[120px]" />
+
+        <Container variant="wide" className="relative z-10 max-w-4xl mx-auto space-y-8">
+          <span className="font-mono text-xs uppercase tracking-widest text-[#00CFFF] font-bold block">
             CUSTOM INDUSTRY ENGINEERING
           </span>
 
-          <h2 className="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-none text-white">
+          <h2 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-none text-white uppercase">
             Your Industry Has Problems.<br />
             We Build The Systems That Solve Them.
           </h2>
 
-          <p className="font-serifBody text-base sm:text-xl text-neutral-300 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-base sm:text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto font-normal">
             Creativee World combines technology, automation, design and digital strategy to build custom solutions tailored to real business needs.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <Link href="/contact">
-              <MonochromeButton variant="secondary" className="!border-white !text-white hover:!bg-white hover:!text-black w-full sm:w-auto" showArrow>
-                Start a Conversation
-              </MonochromeButton>
+              <button className="group inline-flex items-center space-x-3 px-8 py-4 rounded-full bg-[#00CFFF] text-[#050608] font-bold text-sm uppercase tracking-wider hover:bg-[#33d6ff] transition-all duration-300 hover:scale-[1.03] shadow-[0_0_30px_rgba(0,207,255,0.3)]">
+                <span>Start a Conversation</span>
+                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-0.5" />
+              </button>
             </Link>
 
             <Link href="/services">
-              <MonochromeButton variant="secondary" className="!border-white !text-white hover:!bg-white hover:!text-black w-full sm:w-auto">
+              <button className="px-8 py-4 rounded-full border border-white/15 bg-slate-800/80 hover:bg-white hover:text-black text-white font-mono text-xs uppercase tracking-widest font-bold transition-all">
                 Explore Our Services
-              </MonochromeButton>
+              </button>
             </Link>
           </div>
-        </div>
-      </MonochromeSection>
+        </Container>
+      </section>
 
       {/* DETAILED CASE STUDY DOSSIER MODAL */}
       <CaseStudyDetailModal
