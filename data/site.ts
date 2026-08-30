@@ -6,6 +6,10 @@ export interface SiteConfig {
   secondaryCTA: string;
   statusIndicator: string;
   contactEmailPlaceholder: string;
+  contactPhonePlaceholder: string;
+  whatsappUrl: string;
+  telLink: string;
+  mailtoLink: string;
   websiteUrlPlaceholder: string;
   locationPlaceholder: string;
 }
@@ -17,7 +21,11 @@ export const siteConfig: SiteConfig = {
   primaryCTA: "Get a Free Growth Audit",
   secondaryCTA: "Explore Our Work",
   statusIndicator: "● Accepting Select Growth Projects in Jaipur",
-  contactEmailPlaceholder: "hello@creativeworld.in",
+  contactEmailPlaceholder: "marketing.creativeworld@gmail.com",
+  contactPhonePlaceholder: "+91 73571 59122",
+  whatsappUrl: "https://wa.me/917357159122",
+  telLink: "tel:+917357159122",
+  mailtoLink: "mailto:marketing.creativeworld@gmail.com",
   websiteUrlPlaceholder: "https://creativeworld.in",
   locationPlaceholder: "Jaipur, Rajasthan, India",
 };

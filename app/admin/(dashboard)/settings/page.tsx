@@ -8,8 +8,8 @@ export default function AdminSettings() {
     const [settings, setSettings] = useState<Record<string, string>>({
         site_name: "CREATIVE WORLD",
         site_description: "Premium Digital Marketing & Web Development Agency",
-        contact_email: "hello@creativeeworld.com",
-        contact_phone: "+91 98765 43210",
+        contact_email: "marketing.creativeworld@gmail.com",
+        contact_phone: "+91 73571 59122",
         address: "Jaipur, Rajasthan, India",
         primary_color: "#22d3ee",
         currency: "INR",

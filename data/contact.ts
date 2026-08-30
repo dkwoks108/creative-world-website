@@ -1,6 +1,11 @@
 export interface ContactInfo {
   brandName: string;
   email: string;
+  phone: string;
+  whatsappNumber: string;
+  whatsappUrl: string;
+  telLink: string;
+  mailtoLink: string;
   location: string;
   whatsappMessage: string;
   responseExpectation: string;
@@ -12,9 +17,14 @@ export interface ContactInfo {
 
 export const contactData: ContactInfo = {
   brandName: 'Creativee World',
-  email: 'hello@creativeworld.in',
+  email: 'marketing.creativeworld@gmail.com',
+  phone: '+91 73571 59122',
+  whatsappNumber: '+917357159122',
+  whatsappUrl: 'https://wa.me/917357159122',
+  telLink: 'tel:+917357159122',
+  mailtoLink: 'mailto:marketing.creativeworld@gmail.com',
   location: 'Jaipur, Rajasthan, India',
-  whatsappMessage: 'Connect on WhatsApp for direct agency inquiries',
+  whatsappMessage: 'Connect on WhatsApp (+91 73571 59122) for direct agency inquiries',
   responseExpectation: 'Our growth team reviews every submission within 24 business hours. No aggressive sales sequences—just a focused review of your business growth opportunities.',
   faqs: [
     {

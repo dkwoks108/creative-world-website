@@ -7,7 +7,6 @@ import { ArrowUpRight, Video, Code, BarChart3, Sparkles } from 'lucide-react';
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll';
 import { CWBadge } from '@/components/ui/CWBadge';
 import { CWCard } from '@/components/ui/CWCard';
-import { CinematicVideoPlayer } from '@/components/ui/CinematicVideoPlayer';
 
 export function CreativeTechFusionSection() {
   const fusionPillars = [
@@ -116,17 +115,6 @@ export function CreativeTechFusionSection() {
             );
           })}
         </div>
-
-        {/* Interactive Video Player Frame */}
-        <RevealOnScroll variant="fade-up">
-          <div className="space-y-4">
-            <div className="flex items-center justify-between text-xs font-mono text-slate-400">
-              <span>CINEMATIC SHOWCASE // REELS & PRODUCTION FRAME</span>
-              <span className="text-[#00CFFF]">4K HIGH-BITRATE REELS ENGINE</span>
-            </div>
-            <CinematicVideoPlayer src="/brand/hero-video.mp4" poster="/brand/og-image.png" />
-          </div>
-        </RevealOnScroll>
 
       </div>
     </section>

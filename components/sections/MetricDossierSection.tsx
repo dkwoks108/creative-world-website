@@ -72,9 +72,9 @@ export function MetricDossierSection() {
                 {item.relatedCaseStudySlug && (
                   <div className="pt-4 border-t border-slate-100">
                     <Link href={`/work/${item.relatedCaseStudySlug}`}>
-                      <CWButton variant="outline" size="sm" fullWidth>
+                      <CWButton variant="secondary" className="!bg-slate-950 !text-white hover:!bg-[#1769FF] font-semibold transition-all shadow-md" size="sm" fullWidth>
                         <span>View Verified Dossier</span>
-                        <ArrowUpRight size={15} />
+                        <ArrowUpRight size={15} className="text-[#00CFFF]" />
                       </CWButton>
                     </Link>
                   </div>

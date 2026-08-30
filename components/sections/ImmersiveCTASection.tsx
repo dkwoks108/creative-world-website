@@ -94,8 +94,8 @@ export function ImmersiveCTASection() {
         {/* Location & Quick Contact Line */}
         <div className="pt-8 border-t border-white/10 flex flex-wrap items-center justify-between gap-6 font-mono text-xs text-slate-400 uppercase tracking-wider">
           <div>LOCATION: {siteConfig.locationPlaceholder}</div>
-          <div>EMAIL: {siteConfig.contactEmailPlaceholder}</div>
-          <div>WEB: {siteConfig.websiteUrlPlaceholder}</div>
+          <div>EMAIL: <a href={`mailto:${siteConfig.contactEmailPlaceholder}`} className="hover:text-white transition-colors">{siteConfig.contactEmailPlaceholder}</a></div>
+          <div>PHONE / WHATSAPP: <a href="https://wa.me/917357159122" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">{siteConfig.contactPhonePlaceholder}</a></div>
         </div>
 
       </div>

@@ -131,7 +131,7 @@ export default function TermsOfServicePage() {
           6. Project Communication
         </h2>
         <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-light">
-          Official project communications, strategic deliverables, and performance updates take place via official email correspondence ({siteConfig.contactEmailPlaceholder}) or scheduled client calls during normal business operating hours.
+          Official project communications, strategic deliverables, and performance updates take place via official email correspondence (marketing.creativeworld@gmail.com) or scheduled client calls during normal business operating hours.
         </p>
       </section>
 
@@ -346,8 +346,9 @@ export default function TermsOfServicePage() {
         </p>
         <div className="p-6 rounded-2xl border border-white/15 bg-slate-900/80 space-y-2 font-mono text-xs text-slate-300">
           <p className="font-bold text-white text-sm">CREATIVEE WORLD COMMERCIAL TEAM</p>
-          <p>Email: {siteConfig.contactEmailPlaceholder}</p>
-          <p>Location: {siteConfig.locationPlaceholder}</p>
+          <p>Email: marketing.creativeworld@gmail.com</p>
+          <p>Phone / WhatsApp: +91 73571 59122</p>
+          <p>Location: C-Scheme, Jaipur, Rajasthan</p>
         </div>
       </section>
     </LegalPageLayout>

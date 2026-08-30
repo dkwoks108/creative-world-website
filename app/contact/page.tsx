@@ -1,6 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
-import { Mail, MapPin, MessageSquare, ShieldCheck, Sparkles } from 'lucide-react';
+import { Mail, MapPin, MessageSquare, Phone, ShieldCheck, Sparkles } from 'lucide-react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { MotionProvider } from '@/components/motion/MotionProvider';
@@ -79,22 +79,31 @@ export default function ContactPage() {
                   </div>
 
                   {/* Email */}
-                  <div className="p-5 rounded-2xl bg-slate-900/60 border border-white/10 flex items-start space-x-4">
-                    <Mail size={20} className="text-[#00CFFF] shrink-0 mt-1" />
+                  <a href={contactData.mailtoLink} className="p-5 rounded-2xl bg-slate-900/60 border border-white/10 flex items-start space-x-4 hover:border-[#00CFFF]/40 transition-all group block">
+                    <Mail size={20} className="text-[#00CFFF] shrink-0 mt-1 group-hover:scale-110 transition-transform" />
                     <div className="space-y-1">
                       <span className="font-mono text-xs text-slate-400 uppercase block font-semibold">EMAIL ENQUIRIES</span>
-                      <p className="text-sm font-medium text-white">{contactData.email}</p>
+                      <p className="text-sm font-medium text-white group-hover:text-[#00CFFF] transition-colors">{contactData.email}</p>
                     </div>
-                  </div>
+                  </a>
 
-                  {/* Response Policy */}
-                  <div className="p-5 rounded-2xl bg-slate-900/60 border border-white/10 flex items-start space-x-4">
-                    <MessageSquare size={20} className="text-[#00CFFF] shrink-0 mt-1" />
+                  {/* Phone */}
+                  <a href={contactData.telLink} className="p-5 rounded-2xl bg-slate-900/60 border border-white/10 flex items-start space-x-4 hover:border-[#00CFFF]/40 transition-all group block">
+                    <Phone size={20} className="text-[#00CFFF] shrink-0 mt-1 group-hover:scale-110 transition-transform" />
+                    <div className="space-y-1">
+                      <span className="font-mono text-xs text-slate-400 uppercase block font-semibold">PHONE ENQUIRIES</span>
+                      <p className="text-sm font-medium text-white group-hover:text-[#00CFFF] transition-colors">{contactData.phone}</p>
+                    </div>
+                  </a>
+
+                  {/* WhatsApp Direct */}
+                  <a href={contactData.whatsappUrl} target="_blank" rel="noopener noreferrer" className="p-5 rounded-2xl bg-slate-900/60 border border-white/10 flex items-start space-x-4 hover:border-emerald-500/40 transition-all group block">
+                    <MessageSquare size={20} className="text-emerald-400 shrink-0 mt-1 group-hover:scale-110 transition-transform" />
                     <div className="space-y-1">
                       <span className="font-mono text-xs text-slate-400 uppercase block font-semibold">WHATSAPP DIRECT</span>
-                      <p className="text-sm font-medium text-white">{contactData.whatsappMessage}</p>
+                      <p className="text-sm font-medium text-white group-hover:text-emerald-400 transition-colors">{contactData.whatsappMessage}</p>
                     </div>
-                  </div>
+                  </a>
                 </div>
 
                 {/* Privacy Notice */}

@@ -27,9 +27,9 @@ async function main() {
   const defaultSettings: Record<string, string> = {
     company_name: 'Creativee World',
     company_tagline: 'Digital Growth & Performance Marketing Agency',
-    company_phone: '+91 98290 12345',
-    company_email: 'hello@creativeworld.in',
-    company_whatsapp: '+91 98290 12345',
+    company_phone: '+91 73571 59122',
+    company_email: 'marketing.creativeworld@gmail.com',
+    company_whatsapp: '+91 73571 59122',
     company_address: 'Creativee Tower, C-Scheme, Jaipur, Rajasthan 302001, India',
     google_maps_url: 'https://maps.google.com/?q=C-Scheme+Jaipur',
     working_hours: 'Mon - Sat: 9:30 AM - 7:00 PM',
@@ -71,15 +71,24 @@ async function main() {
     { label: 'Services', href: '/services', sortOrder: 2 },
     { label: 'Work', href: '/work', sortOrder: 3 },
     { label: 'Packages', href: '/packages', sortOrder: 4 },
-    { label: 'About', href: '/about', sortOrder: 5 },
-    { label: 'Contact', href: '/contact', sortOrder: 6 },
+    { label: 'Blog', href: '/blog', sortOrder: 5 },
+    { label: 'About', href: '/about', sortOrder: 6 },
+    { label: 'Contact', href: '/contact', sortOrder: 7 },
   ];
 
   for (const item of headerItems) {
     const existing = await prisma.menuItem.findFirst({
       where: { menuId: headerMenu.id, href: item.href },
     });
-    if (!existing) {
+    if (existing) {
+      await prisma.menuItem.update({
+        where: { id: existing.id },
+        data: {
+          label: item.label,
+          sortOrder: item.sortOrder,
+        },
+      });
+    } else {
       await prisma.menuItem.create({
         data: {
           menuId: headerMenu.id,

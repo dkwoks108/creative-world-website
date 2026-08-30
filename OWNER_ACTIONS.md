@@ -7,8 +7,8 @@ While the website code, routes, components, design system, and SEO infrastructur
 ---
 
 ### 1. Contact & Business Data
-- [ ] **Official Business Phone & WhatsApp Number**: Replace default contact strings in `data/site.ts` and `data/contact.ts`.
-- [ ] **Official Support/Sales Email**: Verify `hello@creativeworld.in` or provide target email address.
+- [x] **Official Business Phone & WhatsApp Number**: Updated canonical phone/WhatsApp to `+91 73571 59122` in `data/site.ts`, `data/contact.ts`, and `lib/site-settings.ts`.
+- [x] **Official Support/Sales Email**: Updated canonical email to `marketing.creativeworld@gmail.com` across entire repository.
 - [ ] **Physical Office Address**: Provide street address in Jaipur for Google Business Profile sync and footer display.
 
 ### 2. Verified Client Assets & Permissions

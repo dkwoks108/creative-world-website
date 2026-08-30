@@ -39,9 +39,9 @@ export default function WebsiteControlCenterPage() {
   const [settings, setSettings] = useState({
     company_name: "Creativee World",
     company_tagline: "Digital Growth & Performance Marketing Agency",
-    company_phone: "+91 98290 12345",
-    company_email: "hello@creativeworld.in",
-    company_whatsapp: "+91 98290 12345",
+    company_phone: "+91 73571 59122",
+    company_email: "marketing.creativeworld@gmail.com",
+    company_whatsapp: "+91 73571 59122",
     company_address: "Creativee Tower, C-Scheme, Jaipur, Rajasthan 302001, India",
     google_maps_url: "https://maps.google.com/?q=C-Scheme+Jaipur",
     working_hours: "Mon - Sat: 9:30 AM - 7:00 PM",

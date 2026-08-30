@@ -75,6 +75,17 @@ const jsonLdSchema = {
       'name': 'Creativee World',
       'url': siteConfig.websiteUrlPlaceholder,
       'email': siteConfig.contactEmailPlaceholder,
+      'telephone': '+917357159122',
+      'contactPoint': [
+        {
+          '@type': 'ContactPoint',
+          'telephone': '+917357159122',
+          'contactType': 'customer service',
+          'email': siteConfig.contactEmailPlaceholder,
+          'areaServed': 'IN',
+          'availableLanguage': ['English', 'Hindi']
+        }
+      ],
       'address': {
         '@type': 'PostalAddress',
         'addressLocality': 'Jaipur',
@@ -89,6 +100,7 @@ const jsonLdSchema = {
       'name': 'Creativee World - Digital Growth Agency',
       'url': siteConfig.websiteUrlPlaceholder,
       'email': siteConfig.contactEmailPlaceholder,
+      'telephone': '+917357159122',
       'address': {
         '@type': 'PostalAddress',
         'addressLocality': 'Jaipur',

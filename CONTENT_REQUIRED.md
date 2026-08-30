@@ -3,7 +3,7 @@
 ## 1. CRITICAL BRAND & DEPLOYMENT DATA
 - [ ] **Official Brand Name**: Replace `[PROVISIONAL BRAND NAME: VALENCE GROWTH LABS]` in `data/site.ts`.
 - [ ] **Production Domain URL**: Replace `https://placeholder-growth-studio.com` in `app/sitemap.ts` and `app/robots.ts`.
-- [ ] **Official Business Email**: Replace `hello@growth-studio-placeholder.com` in `data/site.ts`.
+- [x] **Official Business Email**: Updated to `marketing.creativeworld@gmail.com` in `data/site.ts`, `data/contact.ts`, `Footer.tsx`, and `lib/site-settings.ts`.
 - [ ] **Vector Brand Logo**: Replace SVG icon/mark in `components/layout/Navbar.tsx` and `components/layout/Footer.tsx`.
 - [ ] **Form Endpoint API / CRM Webhook**: Connect `onSubmit` handler in `components/ui/GrowthAuditForm.tsx` to live backend.
 

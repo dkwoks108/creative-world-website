@@ -1,85 +1,282 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { CWButton } from '@/components/ui/CWButton';
-import { ArrowUpRight, ShieldCheck, Zap, TrendingUp, BarChart3, CheckCircle2 } from 'lucide-react';
-import { siteConfig } from '@/data/site';
+import { ArrowUpRight, ShieldCheck, Zap, TrendingUp, Check } from 'lucide-react';
+
+// Typewriter Hook
+function useTypewriter(text: string, speed = 38, startDelay = 600) {
+  const [displayed, setDisplayed] = useState('');
+  const [done, setDone] = useState(false);
+
+  useEffect(() => {
+    let index = 0;
+    let intervalId: NodeJS.Timeout;
+
+    const timeoutId = setTimeout(() => {
+      intervalId = setInterval(() => {
+        if (index < text.length) {
+          setDisplayed(text.slice(0, index + 1));
+          index++;
+        } else {
+          setDone(true);
+          clearInterval(intervalId);
+        }
+      }, speed);
+    }, startDelay);
+
+    return () => {
+      clearTimeout(timeoutId);
+      if (intervalId) clearInterval(intervalId);
+    };
+  }, [text, speed, startDelay]);
+
+  return { displayed, done };
+}
 
 export function CreativeHeroSection() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const prevXRef = useRef<number | null>(null);
+  const targetTimeRef = useRef<number>(0);
+  const isSeekingRef = useRef<boolean>(false);
+
+  // Available service pills for growth diagnosis
+  const serviceOptions = [
+    'Connected Search SEO',
+    'Performance Ads (Meta/Google)',
+    'Next.js Web Engineering',
+    'High-Converting Reels',
+    'Local GMB Dominance',
+  ];
+
+  const [selectedServices, setSelectedServices] = useState<string[]>([
+    'Connected Search SEO',
+    'Performance Ads (Meta/Google)',
+  ]);
+
+  const toggleService = (service: string) => {
+    setSelectedServices((prev) =>
+      prev.includes(service) ? prev.filter((s) => s !== service) : [...prev, service]
+    );
+  };
+
+  // Video Scrubbing & Autoplay Logic
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (window.innerWidth < 1024) {
+      video.autoplay = true;
+      video.loop = true;
+      video.play().catch(() => {});
+      return;
+    }
+
+    video.pause();
+
+    const handleSeeked = () => {
+      isSeekingRef.current = false;
+    };
+    video.addEventListener('seeked', handleSeeked);
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (window.innerWidth < 1024) return;
+
+      if (prevXRef.current === null) {
+        prevXRef.current = e.clientX;
+        return;
+      }
+
+      const delta = e.clientX - prevXRef.current;
+      prevXRef.current = e.clientX;
+
+      if (!video.duration || isNaN(video.duration)) return;
+
+      const deltaFraction = (delta / window.innerWidth) * 0.8;
+      const newTargetTime = Math.min(
+        Math.max(targetTimeRef.current + deltaFraction * video.duration, 0),
+        video.duration
+      );
+
+      targetTimeRef.current = newTargetTime;
+
+      if (!isSeekingRef.current) {
+        isSeekingRef.current = true;
+        video.currentTime = newTargetTime;
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      video.removeEventListener('seeked', handleSeeked);
+    };
+  }, []);
+
+  // Typewriter Headline text
+  const headlineText = "We build connected search visibility\n& high-conversion revenue systems.";
+  const { displayed, done } = useTypewriter(headlineText, 35, 400);
+
   return (
-    <section className="relative bg-[#07090E] pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden border-b border-slate-800/80">
-      {/* Background Subtle Grid & Ambient Growth Engine Visual */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+    <section className="relative bg-[#07090E] pt-32 pb-20 md:pt-36 md:pb-28 overflow-hidden border-b border-slate-800/80 min-h-[90vh] flex items-center">
       
-      {/* Ambient Visual Background Art */}
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-full max-w-2xl h-[600px] opacity-20 pointer-events-none blur-sm lg:blur-none transition-opacity duration-1000">
-        <Image
-          src="/visuals/homepage/hero-growth-engine.webp"
-          alt="Creativee World Growth Engine Visual"
-          fill
-          priority
-          className="object-contain object-right"
+      {/* Background Interactive Video (100% visible on RIGHT side, no dark filter or overlay text box) */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none w-full h-full bg-[#07090E]">
+        <video
+          ref={videoRef}
+          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260601_110537_3a579fa0-7bbc-4d94-9d25-0e816c7840f5.mp4"
+          muted
+          playsInline
+          preload="auto"
+          className="w-full h-full object-cover object-right opacity-100 scale-105"
         />
+        {/* Soft horizontal gradient transition for left-side text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#07090E] via-[#07090E]/60 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#07090E]/40 via-transparent to-[#07090E] pointer-events-none" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      {/* Grid Pattern Mask */}
+      <div className="absolute inset-0 z-[1] bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+
+      {/* Main Content Layer (Left: Text & Service Selector; Right: 100% Unobstructed 3D Video) */}
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 relative z-10 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
           
-          {/* Left Column: Editorial Headline & Conversion Offer (7 cols) */}
+          {/* LEFT COLUMN: All Text Content & Interactive Service Selector (7 cols) */}
           <div className="lg:col-span-7 space-y-8">
             
-            {/* Category Subtitle */}
+            {/* Category Pill */}
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-[#00CFFF]/25 bg-[#00CFFF]/5 text-xs font-mono text-[#00CFFF]"
+              className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-[#00CFFF]/30 bg-[#00CFFF]/10 text-xs font-mono text-[#00CFFF]"
             >
               <span className="w-2 h-2 rounded-full bg-[#00CFFF] animate-pulse" />
-              <span>Jaipur Digital Growth &amp; Creative Technology Studio</span>
+              <span>JAIPUR DIGITAL GROWTH &amp; CREATIVE TECHNOLOGY STUDIO</span>
             </motion.div>
 
-            {/* Main Editorial Headline */}
-            <motion.h1
-              initial={{ opacity: 0, y: 16 }}
+            {/* Main Typewriter Headline */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-display font-extrabold text-4xl sm:text-6xl lg:text-6xl tracking-tight text-white leading-[1.08]"
+              transition={{ duration: 0.6 }}
             >
-              We build connected search visibility &amp; <span className="text-cw-gradient">high-conversion revenue</span> systems.
-            </motion.h1>
+              <h1 className="font-display font-extrabold text-4xl sm:text-5xl lg:text-[58px] tracking-tight text-white leading-[1.08] select-none w-full whitespace-pre-wrap">
+                {displayed}
+                {!done && (
+                  <span className="inline-block w-[3px] h-[1.05em] bg-[#00CFFF] align-middle ml-1.5 animate-blink" />
+                )}
+                {done && (
+                  <span className="bg-gradient-to-r from-[#00CFFF] via-[#8B5CF6] to-[#EC4899] bg-clip-text text-transparent ml-2">.</span>
+                )}
+              </h1>
+            </motion.div>
 
-            {/* Paragraph Copy */}
+            {/* Secondary Description */}
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg sm:text-xl text-slate-300 leading-relaxed font-sans max-w-2xl"
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-lg sm:text-xl text-slate-300 leading-relaxed font-sans max-w-2xl font-light"
             >
               Creativee World combines authority SEO, high-converting Meta reels, intent Google Ads, and sub-2s web software for commercial brands in Jaipur.
             </motion.p>
 
-            {/* CTAs */}
+            {/* Multi-Select Growth Capability Selector */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-wrap items-center gap-4 pt-2"
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="space-y-4 pt-2"
             >
-              <Link href="/growth-audit">
-                <CWButton variant="gradient" size="lg" className="group shadow-[0_0_30px_rgba(0,207,255,0.25)]">
-                  <span>Claim Free Growth Audit</span>
-                  <ArrowUpRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </CWButton>
-              </Link>
-              <Link href="/services">
-                <CWButton variant="secondary" size="lg">
-                  Explore Capabilities
-                </CWButton>
-              </Link>
+              <div className="space-y-1">
+                <h3 className="text-lg sm:text-xl font-display font-bold text-white tracking-tight">
+                  What growth capabilities do you need?
+                </h3>
+                <p className="text-xs font-mono text-slate-400">
+                  Select all that apply to customize your growth audit
+                </p>
+              </div>
+
+              {/* Service Pills Container */}
+              <div className="flex flex-wrap gap-2.5 pt-1">
+                {serviceOptions.map((service) => {
+                  const isSelected = selectedServices.includes(service);
+                  return (
+                    <motion.button
+                      key={service}
+                      type="button"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.97 }}
+                      onClick={() => toggleService(service)}
+                      className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all duration-200 flex items-center gap-2 cursor-pointer ${
+                        isSelected
+                          ? 'bg-[#00CFFF] text-[#07090E] font-bold shadow-[0_0_20px_rgba(0,207,255,0.4)] border border-[#00CFFF]'
+                          : 'bg-[#0B0F19]/90 text-slate-300 border border-white/10 hover:border-[#00CFFF]/40 hover:bg-[#121826]'
+                      }`}
+                    >
+                      {isSelected && (
+                        <motion.span
+                          initial={{ scale: 0, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                        >
+                          <Check size={14} strokeWidth={3} className="text-[#07090E]" />
+                        </motion.span>
+                      )}
+                      <span>{service}</span>
+                    </motion.button>
+                  );
+                })}
+              </div>
+
+              {/* Contingent Feedback Status Banner */}
+              <AnimatePresence mode="wait">
+                {selectedServices.length === 0 ? (
+                  <motion.p
+                    key="empty"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 0.5 }}
+                    exit={{ opacity: 0 }}
+                    className="text-xs italic text-slate-400 font-mono pt-1"
+                  >
+                    Please click to select services above to customize your growth audit request.
+                  </motion.p>
+                ) : (
+                  <motion.div
+                    key="selected"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ type: 'spring', stiffness: 260, damping: 22 }}
+                    className="overflow-hidden pt-2"
+                  >
+                    <div className="p-4 sm:p-5 rounded-2xl bg-[#0B0F19]/95 border border-[#00CFFF]/40 shadow-[0_0_30px_rgba(0,207,255,0.15)] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                      <div className="space-y-1">
+                        <span className="text-[10px] font-mono uppercase tracking-widest text-[#00CFFF] font-bold block">
+                          READY TO INQUIRE ABOUT:
+                        </span>
+                        <p className="text-xs sm:text-sm font-sans text-white font-medium">
+                          {selectedServices.join(' • ')}
+                        </p>
+                      </div>
+                      <Link
+                        href={`/growth-audit?services=${encodeURIComponent(selectedServices.join(','))}`}
+                        className="shrink-0"
+                      >
+                        <CWButton variant="gradient" size="sm" className="group shadow-lg">
+                          <span>Claim Custom Audit</span>
+                          <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                        </CWButton>
+                      </Link>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
 
             {/* Trust Signals */}
@@ -102,81 +299,11 @@ export function CreativeHeroSection() {
                 <span>Closed-Loop Lead CRM</span>
               </div>
             </motion.div>
+
           </div>
 
-          {/* Right Column: Live Interactive Growth Metric Dossier Widget (5 cols) */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="lg:col-span-5"
-          >
-            <div className="cw-card-featured p-6 space-y-6 relative overflow-hidden group">
-              {/* Card Art Overlay */}
-              <div className="absolute inset-0 opacity-15 group-hover:opacity-25 transition-opacity pointer-events-none">
-                <Image
-                  src="/visuals/homepage/hero-growth-engine.webp"
-                  alt="Growth Engine Architecture"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-
-              {/* Header */}
-              <div className="flex items-center justify-between border-b border-slate-800 pb-4 relative z-10">
-                <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-lg bg-[#00CFFF]/10 text-[#00CFFF]">
-                    <BarChart3 size={20} />
-                  </div>
-                  <div>
-                    <h3 className="font-display font-bold text-sm text-white">GROWTH ENGINE DOSSIER</h3>
-                    <p className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">Live Studio Performance</p>
-                  </div>
-                </div>
-                <span className="inline-flex items-center gap-1.5 text-[11px] font-mono text-[#00CFFF] bg-[#00CFFF]/10 px-2.5 py-1 rounded-full border border-[#00CFFF]/20">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#00CFFF] animate-ping" />
-                  ACTIVE
-                </span>
-              </div>
-
-              {/* Stat 1: Revenue Influenced */}
-              <div className="p-4 rounded-xl bg-[#0B0F19] border border-slate-800 space-y-1">
-                <div className="flex justify-between text-xs text-slate-400">
-                  <span>Revenue Influenced (Q1/Q2 2026)</span>
-                  <span className="text-[#00CFFF] font-mono font-bold">+184% YoY</span>
-                </div>
-                <div className="text-3xl font-display font-extrabold text-white tracking-tight">
-                  ₹1.42<span className="text-[#00CFFF]">Cr+</span>
-                </div>
-                <div className="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden mt-2">
-                  <div className="bg-cw-gradient h-full w-[84%]" />
-                </div>
-              </div>
-
-              {/* Stat 2 Grid */}
-              <div className="grid grid-cols-2 gap-3">
-                <div className="p-3.5 rounded-xl bg-[#0B0F19] border border-slate-800 space-y-1">
-                  <div className="text-[11px] text-slate-400 font-sans">Meta Ads ROAS</div>
-                  <div className="text-xl font-display font-bold text-white">4.82x Avg</div>
-                  <div className="text-[10px] text-[#00CFFF] font-mono">Verified Attributions</div>
-                </div>
-                <div className="p-3.5 rounded-xl bg-[#0B0F19] border border-slate-800 space-y-1">
-                  <div className="text-[11px] text-slate-400 font-sans">Organic Search</div>
-                  <div className="text-xl font-display font-bold text-white">Top 3 Rank</div>
-                  <div className="text-[10px] text-[#1769FF] font-mono">High-Intent Queries</div>
-                </div>
-              </div>
-
-              {/* System Guarantee */}
-              <div className="pt-2 flex items-center justify-between text-xs text-slate-400 border-t border-slate-800">
-                <div className="flex items-center gap-1.5">
-                  <CheckCircle2 size={14} className="text-[#00CFFF]" />
-                  <span>Jaipur Local Market Supremacy</span>
-                </div>
-                <span className="font-mono text-[10px] text-slate-400 uppercase">ISO 9001 PROCESS</span>
-              </div>
-            </div>
-          </motion.div>
+          {/* RIGHT COLUMN: Clear 3D Visual Zone (5 cols - Completely Unobstructed on Right) */}
+          <div className="hidden lg:block lg:col-span-5 min-h-[400px] pointer-events-none" />
 
         </div>
       </div>

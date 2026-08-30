@@ -10,9 +10,11 @@ import { ArrowUpRight } from 'lucide-react';
 import { CWButton } from '@/components/ui/CWButton';
 
 const defaultNavLinks = [
+  { label: 'Home', href: '/' },
   { label: 'Services', href: '/services' },
   { label: 'Work', href: '/work' },
   { label: 'Packages', href: '/packages' },
+  { label: 'Blog', href: '/blog' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ];
