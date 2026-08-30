@@ -44,15 +44,15 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Industries */}
+          {/* Column 3: Growth Systems */}
           <div className="space-y-4">
-            <h4 className="text-xs font-mono font-bold text-white uppercase tracking-widest">Focus Sectors</h4>
+            <h4 className="text-xs font-mono font-bold text-white uppercase tracking-widest">Growth Systems</h4>
             <ul className="space-y-2.5 text-sm">
-              <li><Link href="/industries#coaching" className="hover:text-white transition-colors">Coaching & Education</Link></li>
-              <li><Link href="/industries#realestate" className="hover:text-white transition-colors">Real Estate & Developers</Link></li>
-              <li><Link href="/industries#jewelry" className="hover:text-white transition-colors">Retail & Luxury Jewelry</Link></li>
-              <li><Link href="/industries#healthcare" className="hover:text-white transition-colors">Hospitals & Clinics</Link></li>
-              <li><Link href="/industries#hospitality" className="hover:text-white transition-colors">Hotels & Hospitality</Link></li>
+              <li><Link href="/services" className="hover:text-white transition-colors">Growth Capabilities</Link></li>
+              <li><Link href="/packages" className="hover:text-white transition-colors">Growth Packages</Link></li>
+              <li><Link href="/work" className="hover:text-white transition-colors">Client Case Studies</Link></li>
+              <li><Link href="/about" className="hover:text-white transition-colors">Agency Overview</Link></li>
+              <li><Link href="/contact" className="hover:text-white transition-colors">Contact Strategy Team</Link></li>
             </ul>
           </div>
 

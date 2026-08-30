@@ -11,7 +11,6 @@ import { CWButton } from '@/components/ui/CWButton';
 
 const defaultNavLinks = [
   { label: 'Services', href: '/services' },
-  { label: 'Industries', href: '/industries' },
   { label: 'Work', href: '/work' },
   { label: 'Packages', href: '/packages' },
   { label: 'About', href: '/about' },

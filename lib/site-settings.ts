@@ -84,22 +84,20 @@ export async function getHeaderNavigation() {
     return [
       { id: '1', label: 'Home', href: '/' },
       { id: '2', label: 'Services', href: '/services' },
-      { id: '3', label: 'Industries', href: '/industries' },
-      { id: '4', label: 'Work', href: '/work' },
-      { id: '5', label: 'Packages', href: '/packages' },
-      { id: '6', label: 'About', href: '/about' },
-      { id: '7', label: 'Contact', href: '/contact' },
+      { id: '3', label: 'Work', href: '/work' },
+      { id: '4', label: 'Packages', href: '/packages' },
+      { id: '5', label: 'About', href: '/about' },
+      { id: '6', label: 'Contact', href: '/contact' },
     ];
   } catch (error) {
     console.error('Error fetching navigation:', error);
     return [
       { id: '1', label: 'Home', href: '/' },
       { id: '2', label: 'Services', href: '/services' },
-      { id: '3', label: 'Industries', href: '/industries' },
-      { id: '4', label: 'Work', href: '/work' },
-      { id: '5', label: 'Packages', href: '/packages' },
-      { id: '6', label: 'About', href: '/about' },
-      { id: '7', label: 'Contact', href: '/contact' },
+      { id: '3', label: 'Work', href: '/work' },
+      { id: '4', label: 'Packages', href: '/packages' },
+      { id: '5', label: 'About', href: '/about' },
+      { id: '6', label: 'Contact', href: '/contact' },
     ];
   }
 }

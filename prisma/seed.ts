@@ -69,11 +69,10 @@ async function main() {
   const headerItems = [
     { label: 'Home', href: '/', sortOrder: 1 },
     { label: 'Services', href: '/services', sortOrder: 2 },
-    { label: 'Industries', href: '/industries', sortOrder: 3 },
-    { label: 'Work', href: '/work', sortOrder: 4 },
-    { label: 'Packages', href: '/packages', sortOrder: 5 },
-    { label: 'About', href: '/about', sortOrder: 6 },
-    { label: 'Contact', href: '/contact', sortOrder: 7 },
+    { label: 'Work', href: '/work', sortOrder: 3 },
+    { label: 'Packages', href: '/packages', sortOrder: 4 },
+    { label: 'About', href: '/about', sortOrder: 5 },
+    { label: 'Contact', href: '/contact', sortOrder: 6 },
   ];
 
   for (const item of headerItems) {

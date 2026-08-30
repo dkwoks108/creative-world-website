@@ -5,7 +5,6 @@ import { CreativeHeroSection } from '@/components/sections/CreativeHeroSection';
 import { GrowthGapSection } from '@/components/sections/GrowthGapSection';
 import { GrowthSystemSection } from '@/components/sections/GrowthSystemSection';
 import { InteractiveServicePanel } from '@/components/sections/InteractiveServicePanel';
-import { IndustryStoryWall } from '@/components/sections/IndustryStoryWall';
 import { MetricDossierSection } from '@/components/sections/MetricDossierSection';
 import { CreativeTechFusionSection } from '@/components/sections/CreativeTechFusionSection';
 import { PackageDecisionMatrix } from '@/components/sections/PackageDecisionMatrix';
@@ -34,10 +33,7 @@ export default function HomePage() {
           {/* SECTION 04: Interactive Service Workspace */}
           <InteractiveServicePanel />
 
-          {/* SECTION 05: Editorial Industry Storytelling Wall */}
-          <IndustryStoryWall />
-
-          {/* SECTION 06: Commercial Proof & Data Metric Wall */}
+          {/* SECTION 05: Commercial Proof & Data Metric Wall */}
           <MetricDossierSection />
 
           {/* SECTION 07: Creative + Tech Fusion Section */}
