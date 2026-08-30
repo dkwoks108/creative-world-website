@@ -2,48 +2,44 @@ import { ServiceItem } from '@/types';
 
 export const servicesData: ServiceItem[] = [
   {
-    id: 'performance-marketing',
+    id: 'website-development',
     number: '01',
     slug: 'website-development',
     title: 'Custom Website Development',
-    kicker: 'REACT, NODE, WORDPRESS & SHOPIFY',
+    kicker: 'REACT, NEXT.JS, NODE & E-COMMERCE',
     image: '/images/services/web-engineering.png',
-    description: 'Custom React, Node.js, WordPress, and Shopify web applications engineered for speed, UX, and conversion.',
-    fullDescription: 'At Creativee World, website development is rooted in custom engineering rather than restrictive visual templates. We build fast, mobile-responsive corporate websites, custom React/Next.js web applications, e-commerce storefronts (Shopify & WooCommerce), and high-converting landing pages. Every build features clean semantic code, fast Core Web Vitals, custom UI components, and direct lead integration.',
+    description: 'Custom React, Next.js, WordPress, and Shopify web applications engineered for speed, high conversion, and seamless user experience.',
+    fullDescription: 'At Creativee World, website development is rooted in custom engineering rather than restrictive visual templates. We build fast, mobile-responsive corporate websites, custom React/Next.js web applications, e-commerce storefronts (Shopify & WooCommerce), and high-converting landing pages. Every build features clean semantic code, fast Core Web Vitals, custom UI components, and direct lead CRM integration.',
     deliverables: [
-      'Google Search & Commercial Intent Keyword Campaigns',
-      'Meta Ads (Instagram & Facebook) Audience & Geo Targeting',
-      'Dedicated High-Converting Campaign Landing Pages',
-      'Conversion Tracking, Attribution & Lead Verification',
-      'Weekly Ad Budget Optimization & Placement Control'
+      'Custom Next.js & React Web Application Architecture',
+      'Mobile-First Responsive Design & Micro-Animations',
+      'Core Web Vitals & Page Speed Optimization (90+ score)',
+      'SEO-Friendly Headless CMS & Dynamic Content Architecture',
+      'Lead Capture Forms & WhatsApp API Integration'
     ],
-    outcomeStatement: 'A steady flow of qualified business enquiries with clear cost-per-lead tracking.',
-    ctaLabel: 'Explore Lead Generation',
+    outcomeStatement: 'A lightning-fast, high-converting digital storefront that builds authority and converts visitors into leads.',
+    ctaLabel: 'Explore Web Engineering',
     keyBenefits: [
-      'Stop paying for un-targeted clicks that never convert into enquiries',
-      'Directly capture customer search intent on Google when buyers are ready',
-      'Engage local Jaipur demographics with targeted Instagram video ads',
-      'Track real cost-per-lead rather than vanity ad impressions'
+      'Replace slow, generic templates with high-performance Next.js code',
+      'Provide an ultra-fast mobile experience for higher Google rankings',
+      'Integrate automated lead forms directly into your CRM or WhatsApp',
+      'Scale effortlessly with modular design systems and WCAG accessibility'
     ],
     processOverview: [
-      '01 Business & Competitor Ad Diagnosis',
-      '02 Search Keyword & Audience Structuring',
-      '03 Ad Creative, Copywriting & Landing Page Setup',
-      '04 Campaign Launch & Conversion Tracking Setup',
-      '05 Continuous Bid Optimization & Lead Quality Review'
+      '01 UX Discovery & Architecture Wireframing',
+      '02 Modern UI Design System & Component Library',
+      '03 Front-End & Back-End Application Development',
+      '04 Performance Tuning & Core Web Vitals Optimization',
+      '05 Testing, Deployment & CMS Handoff'
     ],
     faqs: [
       {
-        question: 'Which ad platform works better for Jaipur businesses: Google Ads or Meta Ads?',
-        answer: 'Google Ads is best for high-intent search queries where customers are actively searching for a specific service (e.g., "coaching institute in Jaipur", "real estate developer Jaipur"). Meta Ads (Instagram & Facebook) excels at visual storytelling, local brand awareness, and retargeting.'
+        question: 'Why choose Next.js and custom code over standard WordPress templates?',
+        answer: 'Custom Next.js websites load up to 5x faster, deliver superior mobile user experience, provide bulletproof security, and achieve higher Google Core Web Vitals scores than bloated template sites.'
       },
       {
-        question: 'What ad budget do I need to start performance marketing?',
-        answer: 'We recommend starting with an ad budget that allows meaningful testing in your local sector. Our Starter and Growth packages accommodate varying budget tiers, ensuring every rupee spent is tracked against lead generation.'
-      },
-      {
-        question: 'Do you guarantee specific lead volumes or sales numbers?',
-        answer: 'No agency can honestly guarantee exact sales or lead numbers. We guarantee rigorous campaign strategy, high-intent targeting, lead page optimization, and transparent tracking to maximize your return on ad spend.'
+        question: 'How long does a custom website development project take?',
+        answer: 'Typical high-converting marketing websites and custom web applications take 2 to 4 weeks depending on scope, custom interactions, and content integrations.'
       }
     ]
   },
@@ -59,8 +55,8 @@ export const servicesData: ServiceItem[] = [
     deliverables: [
       'Google Search & Commercial Intent PPC Campaigns',
       'Meta Ads (Instagram & Facebook) Geo & Interest Targeting',
-      'Conversion Rate Optimization & Ad Copy Testing',
-      'Conversion Tracking, Attribution & Lead Verification',
+      'Conversion Rate Optimization & High-Intent Landing Pages',
+      'Attribution Setup, Meta Pixel & Google Analytics 4',
       'Weekly Bid Optimization & CPA Reduction Control'
     ],
     outcomeStatement: 'A steady, predictable pipeline of qualified business enquiries with transparent cost-per-lead tracking.',
@@ -82,6 +78,10 @@ export const servicesData: ServiceItem[] = [
       {
         question: 'Which is better for my business: Google Ads or Meta Ads?',
         answer: 'Google Ads is ideal for capturing active, immediate search intent (e.g., "website developer in Jaipur"). Meta Ads (Instagram/Facebook) excels at visual brand awareness, interest targeting, and retargeting.'
+      },
+      {
+        question: 'What ad budget do I need to start performance marketing?',
+        answer: 'We recommend starting with an ad budget that allows meaningful testing in your local sector. Our packages accommodate varying budget tiers, ensuring every rupee spent is tracked against lead generation.'
       }
     ]
   },
@@ -96,10 +96,10 @@ export const servicesData: ServiceItem[] = [
     fullDescription: 'Social media management at Creativee World builds genuine market authority. We plan, design, and manage your social channels across Instagram, Facebook, LinkedIn, and YouTube. By combining strategic content pillars, eye-catching graphics, and active community engagement, we build trust and turn scrollers into brand advocates.',
     deliverables: [
       'Social Media Strategy & Monthly Content Calendars',
-      'Custom Graphic Design & Brand Assets',
-      'Caption Copywriting & Local Hashtag Research',
-      'Organic Growth & Community Management',
-      'Monthly Analytics & Audience Reach Reports'
+      'Custom Graphic Design & Brand Asset Creation',
+      'Caption Copywriting & Local Hashtag Strategy',
+      'Organic Community Moderation & Direct Outreach',
+      'Monthly Analytics & Audience Reach Performance Reports'
     ],
     outcomeStatement: 'A distinct, trustworthy brand presence that keeps your business top-of-mind.',
     ctaLabel: 'Explore Social Strategy',
@@ -124,7 +124,7 @@ export const servicesData: ServiceItem[] = [
     ]
   },
   {
-    id: 'seo-search-growth',
+    id: 'seo',
     number: '04',
     slug: 'seo',
     title: 'SEO & Search Engine Intelligence',
@@ -171,35 +171,31 @@ export const servicesData: ServiceItem[] = [
     description: 'Engaging Instagram Reels, YouTube Shorts, explainer videos, kinetic typography, and motion graphics built to capture brand attention.',
     fullDescription: 'Video is the single most powerful tool for capturing digital attention in 2026. Creativee World delivers end-to-end video editing and production—from short-form Instagram Reels and YouTube Shorts to long-form YouTube episodes, podcasts, corporate films, and product showcases. We combine kinetic typography, seamless cuts, sound design, and color grading to tell stories that convert viewers into customers.',
     deliverables: [
-      'Jaipur Local SEO & Google Business Profile Optimization',
-      'On-Page Technical & Keyword Hierarchy Structuring',
-      'High-Intent Local Content & Service Page Strategy',
-      'Schema.org Structured Data & Search Engine Indexing',
-      'Local Citation Verification & Map Pack Optimization'
+      'Instagram Reels & YouTube Shorts Content Editing',
+      'Kinetic Typography & Motion Graphic Animation',
+      'Professional Sound Design, Mixing & Dialogue Enhancement',
+      'Cinematic Color Grading & Visual Hook Optimization',
+      'Brand Intro, Outro & Subtitle Overlay Package'
     ],
-    outcomeStatement: 'Sustainable organic visibility and local map search discovery across Jaipur.',
-    ctaLabel: 'Explore Local SEO',
+    outcomeStatement: 'High-impact video content engineered to capture attention and boost engagement across social algorithms.',
+    ctaLabel: 'Explore Video Production',
     keyBenefits: [
-      'Capture local customers searching for services in your area of Jaipur',
-      'Build long-term digital asset value that generates free organic leads',
-      'Rank in the Google 3-Pack Map listing for local search intent',
-      'Improve website speed, mobile compliance, and technical crawlability'
+      'Capture scroller attention within the first 3 seconds with dynamic visual hooks',
+      'Maintain a steady stream of vertical Reels and Shorts for algorithm reach',
+      'Elevate raw video footage with professional color grading and crisp audio',
+      'Increase video watch time and follower retention'
     ],
     processOverview: [
-      '01 Technical Site & Local Audit',
-      '02 Local Keyword & Intent Mapping',
-      '03 On-Page Content & Schema Structuring',
-      '04 Google Business Profile Optimization',
-      '05 Organic Ranking & Search Impression Monitoring'
+      '01 Video Asset Audit & Storyboard Planning',
+      '02 Footage Selection, Trimming & Pacing Alignment',
+      '03 Motion Graphics, Subtitles & Color Grading',
+      '04 Audio Polish & Sound Effects Mixing',
+      '05 Final Render & Multi-Platform Export'
     ],
     faqs: [
       {
-        question: 'How long does local SEO take to show results in Jaipur?',
-        answer: 'Google Business Profile updates and local map improvements can show initial movement within 4 to 8 weeks. Comprehensive organic ranking improvements for competitive search terms typically compound over 3 to 6 months.'
-      },
-      {
-        question: 'Can you guarantee a #1 ranking on Google?',
-        answer: 'No. Search algorithms update continuously and Google explicitly advises against agencies promising #1 positions. We focus on search intent, local technical excellence, and sustainable rankings that drive real customer enquiries.'
+        question: 'What format do I need to send for video editing?',
+        answer: 'You can upload raw camera/phone footage via Google Drive, Dropbox, or WeTransfer. We handle all trimming, color grading, captioning, and sound design to deliver upload-ready MP4 files.'
       }
     ]
   }

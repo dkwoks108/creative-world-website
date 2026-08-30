@@ -20,6 +20,7 @@ export function InteractiveServicePanel() {
     'meta-ads': Target,
     'performance-marketing': BarChart,
     'social-media-marketing': Share2,
+    'video-editing': Video,
     'reels-video-production': Video,
     'local-seo-google-maps': MapPin,
     'cro-landing-pages': Layers,
