@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowUpRight, Video, Code, BarChart3, Sparkles } from 'lucide-react';
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll';
 import { CWBadge } from '@/components/ui/CWBadge';
@@ -56,6 +57,27 @@ export function CreativeTechFusionSection() {
             </p>
           </div>
         </div>
+
+        {/* Signature Visual Showcase */}
+        <RevealOnScroll variant="fade-up">
+          <div className="relative w-full h-[280px] sm:h-[400px] rounded-3xl overflow-hidden border border-slate-800 bg-[#07090E] shadow-[0_0_50px_rgba(217,0,255,0.15)] group">
+            <Image
+              src="/visuals/homepage/creative-tech-fusion.webp"
+              alt="Creative Technology Fusion Visualization"
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-1000"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#07090E] via-transparent to-transparent opacity-80" />
+            <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between font-mono text-xs text-white z-10">
+              <span className="bg-[#07090E]/80 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10 text-[#D900FF] font-bold">
+                CREATIVE REELS + NEXT.JS + SEARCH INTELLIGENCE
+              </span>
+              <span className="hidden sm:inline bg-[#00CFFF]/20 backdrop-blur-md text-[#00CFFF] px-4 py-2 rounded-xl border border-[#00CFFF]/30">
+                100% UNIFIED COMMERCIAL ENGINE
+              </span>
+            </div>
+          </div>
+        </RevealOnScroll>
 
         {/* 3 Pillar Glassmorphism Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

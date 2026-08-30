@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowUpRight, Check, Zap, Rocket, Crown, ShieldCheck } from 'lucide-react';
 import { packagesData } from '@/data/packages';
 import { PackageTier } from '@/types';
@@ -16,6 +17,12 @@ export function PackageDecisionMatrix() {
     START: 'starter',
     GROW: 'growth',
     SCALE: 'dominance',
+  };
+
+  const packageVisualMap: Record<'START' | 'GROW' | 'SCALE', string> = {
+    START: '/visuals/packages/starter-foundation.webp',
+    GROW: '/visuals/packages/growth-expansion.webp',
+    SCALE: '/visuals/packages/premium-infrastructure.webp',
   };
 
   const currentPackage: PackageTier = packagesData.find(pkg => pkg.id === stageMap[activeStage]) || packagesData[1];
@@ -60,26 +67,22 @@ export function PackageDecisionMatrix() {
             { stage: 'SCALE', label: 'STAGE 03 // SCALE', desc: 'Full-Funnel Dominance & Custom Next.js', icon: Crown },
           ].map((item) => {
             const Icon = item.icon;
-            const isSelected = activeStage === item.stage;
+            const isActive = activeStage === item.stage;
             return (
               <button
                 key={item.stage}
-                onClick={() => setActiveStage(item.stage as any)}
-                className={`p-6 rounded-2xl text-left transition-all flex flex-col justify-between space-y-4 ${
-                  isSelected 
-                    ? 'border-2 border-[#00CFFF]/50 bg-slate-900/90 text-white shadow-cw-glow' 
-                    : 'border border-white/10 bg-slate-900/40 text-slate-400 hover:border-white/20 hover:text-white'
+                onClick={() => setActiveStage(item.stage as 'START' | 'GROW' | 'SCALE')}
+                className={`p-6 rounded-2xl border text-left transition-all duration-300 space-y-3 ${
+                  isActive
+                    ? 'border-[#00CFFF] bg-[#00CFFF]/10 shadow-[0_0_30px_rgba(0,207,255,0.15)] text-white'
+                    : 'border-slate-800 bg-[#0B0F19]/60 hover:border-slate-700 text-slate-400'
                 }`}
               >
-                <div className="flex items-center justify-between font-mono text-xs font-semibold">
-                  <span className={isSelected ? 'text-[#00CFFF]' : 'text-slate-400'}>{item.label}</span>
-                  <Icon size={20} className={isSelected ? 'text-[#00CFFF]' : 'text-slate-400'} />
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-xs font-bold tracking-wider">{item.label}</span>
+                  <Icon size={18} className={isActive ? 'text-[#00CFFF]' : 'text-slate-500'} />
                 </div>
-
-                <div>
-                  <h3 className="font-display font-bold text-xl text-white">{item.stage} STAGE</h3>
-                  <p className="text-xs text-slate-400 font-light leading-relaxed pt-1">{item.desc}</p>
-                </div>
+                <p className="text-xs font-sans font-medium">{item.desc}</p>
               </button>
             );
           })}
@@ -103,7 +106,7 @@ export function PackageDecisionMatrix() {
                   <p className="font-display font-semibold text-lg text-[#00CFFF]">
                     {currentPackage.subtitle}
                   </p>
-                  <p className="text-sm text-slate-300 leading-relaxed font-light pt-1">
+                  <p className="text-sm text-slate-300 leading-relaxed font-light">
                     {currentPackage.idealFor}
                   </p>
                 </div>
@@ -130,8 +133,18 @@ export function PackageDecisionMatrix() {
             </div>
 
             {/* Right Pricing & Action Card */}
-            <div className="lg:col-span-5 p-8 rounded-2xl border border-white/15 bg-slate-950/80 space-y-8 flex flex-col justify-between">
-              <div className="space-y-6">
+            <div className="lg:col-span-5 p-8 rounded-2xl border border-white/15 bg-slate-950/80 space-y-8 flex flex-col justify-between relative overflow-hidden group">
+              {/* Dynamic Stage Visual Artwork Background */}
+              <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity pointer-events-none">
+                <Image
+                  src={packageVisualMap[activeStage]}
+                  alt={`${currentPackage.name} Architecture`}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              <div className="space-y-6 relative z-10">
                 <div className="font-mono text-xs text-[#00CFFF] font-semibold uppercase tracking-wider border-b border-white/10 pb-3">
                   INVESTMENT & SCOPE
                 </div>

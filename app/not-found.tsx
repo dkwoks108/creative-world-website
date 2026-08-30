@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Home, ArrowUpRight, Search } from 'lucide-react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
@@ -23,6 +24,18 @@ export default function NotFound() {
               <CWBadge variant="cyan">
                 <span>404 // Route Off-Script</span>
               </CWBadge>
+            </RevealOnScroll>
+
+            {/* 404 Art Visual */}
+            <RevealOnScroll variant="fade-up">
+              <div className="relative w-48 h-48 mx-auto rounded-3xl overflow-hidden border border-slate-800 bg-[#07090E] shadow-[0_0_40px_rgba(0,207,255,0.2)]">
+                <Image
+                  src="/visuals/errors/404-reconnect.webp"
+                  alt="404 Route Signal Lost"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </RevealOnScroll>
 
             <div className="space-y-4">

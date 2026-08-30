@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowUpRight, AlertCircle, CheckCircle2, TrendingDown, TrendingUp, Sparkles } from 'lucide-react';
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll';
 import { CWButton } from '@/components/ui/CWButton';
@@ -34,6 +35,27 @@ export function GrowthGapSection() {
             </p>
           </div>
         </div>
+
+        {/* Visual Transformation Engine Banner */}
+        <RevealOnScroll variant="fade-up">
+          <div className="relative w-full h-[220px] sm:h-[320px] rounded-2xl overflow-hidden border border-slate-800 bg-[#07090E]">
+            <Image
+              src="/visuals/homepage/growth-gap-system.webp"
+              alt="Fragmented Marketing Transformation Visual"
+              fill
+              className="object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#07090E] via-transparent to-transparent opacity-80" />
+            <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between font-mono text-xs text-slate-300">
+              <span className="bg-[#07090E]/80 px-3 py-1.5 rounded-lg border border-slate-800">
+                STAGE 01: SILOED FRAGMENTS
+              </span>
+              <span className="hidden sm:inline bg-[#00CFFF]/10 text-[#00CFFF] px-3 py-1.5 rounded-lg border border-[#00CFFF]/25">
+                STAGE 02: CONNECTED REVENUE MACHINE
+              </span>
+            </div>
+          </div>
+        </RevealOnScroll>
 
         {/* 2 Column Comparison Architecture */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">

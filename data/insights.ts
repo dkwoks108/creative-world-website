@@ -10,7 +10,7 @@ export const insightsData: InsightArticle[] = [
     publishedDate: 'August 10, 2026',
     readTime: '5 min read',
     author: 'Creativee World Editorial Team',
-    image: '/images/insights/website-2026.png',
+    image: '/visuals/insights/website-2026.webp',
     summary: 'Social media pages build initial interest, but a custom website serves as your permanent digital storefront—converting search traffic into verified phone calls and business enquiries.',
     sections: [
       {
@@ -45,7 +45,7 @@ export const insightsData: InsightArticle[] = [
     publishedDate: 'August 02, 2026',
     readTime: '6 min read',
     author: 'Creativee World Editorial Team',
-    image: '/images/insights/seo-vs-ads.png',
+    image: '/visuals/insights/seo-vs-ads.webp',
     summary: 'Google Ads provides instant traffic for immediate sales cycles, while Local SEO builds compounding organic visibility over time. Discover how to balance both channels.',
     sections: [
       {
@@ -79,7 +79,7 @@ export const insightsData: InsightArticle[] = [
     publishedDate: 'July 26, 2026',
     readTime: '4 min read',
     author: 'Creativee World Editorial Team',
-    image: '/images/insights/reels-mistakes.png',
+    image: '/visuals/insights/reels-mistakes.webp',
     summary: 'Viral trends don\'t always equal customer enquiries. Learn how to align short-form video reels with local brand trust and clear action triggers.',
     sections: [
       {

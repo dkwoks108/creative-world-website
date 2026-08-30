@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowUpRight, Sparkles, Mail, MessageSquare } from 'lucide-react';
 import { siteConfig } from '@/data/site';
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll';
@@ -12,8 +13,18 @@ export function ImmersiveCTASection() {
   return (
     <section className="py-32 bg-[#07090E] text-slate-100 border-b border-white/10 relative overflow-hidden">
       
-      {/* Background Subtle Spectrum Glow */}
+      {/* Background Subtle Spectrum Glow & Conversion Signal Visual */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-[#1769FF]/15 via-[#673BFF]/15 to-[#D900FF]/15 blur-3xl pointer-events-none rounded-full" />
+      
+      {/* Ambient Conversion Signal Visual Overlay */}
+      <div className="absolute inset-0 opacity-15 pointer-events-none">
+        <Image
+          src="/visuals/homepage/conversion-signal.webp"
+          alt="Growth Signal Background"
+          fill
+          className="object-cover"
+        />
+      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 space-y-16">
         

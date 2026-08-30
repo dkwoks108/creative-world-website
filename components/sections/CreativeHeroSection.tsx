@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { CWButton } from '@/components/ui/CWButton';
 import { ArrowUpRight, ShieldCheck, Zap, TrendingUp, BarChart3, CheckCircle2 } from 'lucide-react';
@@ -10,8 +11,19 @@ import { siteConfig } from '@/data/site';
 export function CreativeHeroSection() {
   return (
     <section className="relative bg-[#07090E] pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden border-b border-slate-800/80">
-      {/* Background Subtle Grid Overlay */}
+      {/* Background Subtle Grid & Ambient Growth Engine Visual */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+      
+      {/* Ambient Visual Background Art */}
+      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-full max-w-2xl h-[600px] opacity-20 pointer-events-none blur-sm lg:blur-none transition-opacity duration-1000">
+        <Image
+          src="/visuals/homepage/hero-growth-engine.webp"
+          alt="Creativee World Growth Engine Visual"
+          fill
+          priority
+          className="object-contain object-right"
+        />
+      </div>
 
       <div className="max-w-7xl mx-auto px-6 sm:px-10 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -58,35 +70,35 @@ export function CreativeHeroSection() {
               className="flex flex-wrap items-center gap-4 pt-2"
             >
               <Link href="/growth-audit">
-                <CWButton variant="gradient" size="lg" className="px-7 py-3.5 text-base">
-                  <span>{siteConfig.primaryCTA || 'Get Free Growth Audit'}</span>
-                  <ArrowUpRight size={18} />
+                <CWButton variant="gradient" size="lg" className="group shadow-[0_0_30px_rgba(0,207,255,0.25)]">
+                  <span>Claim Free Growth Audit</span>
+                  <ArrowUpRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </CWButton>
               </Link>
               <Link href="/services">
-                <CWButton variant="secondary" size="lg" className="px-7 py-3.5 text-base">
-                  <span>Explore Capabilities</span>
+                <CWButton variant="secondary" size="lg">
+                  Explore Capabilities
                 </CWButton>
               </Link>
             </motion.div>
 
-            {/* Trust Signals Row */}
+            {/* Trust Signals */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="pt-6 border-t border-slate-800/80 grid grid-cols-3 gap-4 text-slate-400 text-xs sm:text-sm font-sans"
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="pt-6 border-t border-slate-800/80 flex flex-wrap items-center gap-6 text-xs font-mono text-slate-400"
             >
               <div className="flex items-center gap-2">
-                <ShieldCheck size={16} className="text-[#00CFFF] shrink-0" />
-                <span>Verified ROI Tracking</span>
+                <ShieldCheck size={16} className="text-[#00CFFF]" />
+                <span>100% Attributable Commercial Growth</span>
               </div>
               <div className="flex items-center gap-2">
-                <Zap size={16} className="text-[#1769FF] shrink-0" />
-                <span>Sub-2s Web Load Speed</span>
+                <Zap size={16} className="text-[#1769FF]" />
+                <span>Sub-2s Next.js Web Architecture</span>
               </div>
               <div className="flex items-center gap-2">
-                <TrendingUp size={16} className="text-[#D900FF] shrink-0" />
+                <TrendingUp size={16} className="text-[#D900FF]" />
                 <span>Closed-Loop Lead CRM</span>
               </div>
             </motion.div>
@@ -99,9 +111,19 @@ export function CreativeHeroSection() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="lg:col-span-5"
           >
-            <div className="cw-card-featured p-6 space-y-6 relative overflow-hidden">
+            <div className="cw-card-featured p-6 space-y-6 relative overflow-hidden group">
+              {/* Card Art Overlay */}
+              <div className="absolute inset-0 opacity-15 group-hover:opacity-25 transition-opacity pointer-events-none">
+                <Image
+                  src="/visuals/homepage/hero-growth-engine.webp"
+                  alt="Growth Engine Architecture"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
               {/* Header */}
-              <div className="flex items-center justify-between border-b border-slate-800 pb-4">
+              <div className="flex items-center justify-between border-b border-slate-800 pb-4 relative z-10">
                 <div className="flex items-center gap-3">
                   <div className="p-2 rounded-lg bg-[#00CFFF]/10 text-[#00CFFF]">
                     <BarChart3 size={20} />
