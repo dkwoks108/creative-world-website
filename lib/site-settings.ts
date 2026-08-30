@@ -37,7 +37,7 @@ export const DEFAULT_SITE_SETTINGS: SiteSettings = {
   working_hours: 'Mon - Sat: 9:30 AM - 7:00 PM',
   logo_url: '/logo-symbol.png',
   dark_logo_url: '/logo-symbol.png',
-  favicon_url: '/favicon.ico',
+  favicon_url: '/apple-icon.png',
   social_instagram: 'https://instagram.com/creativeworld_in',
   social_linkedin: 'https://linkedin.com/company/creativeworld-in',
   social_youtube: 'https://youtube.com/@creativeworld_in',
