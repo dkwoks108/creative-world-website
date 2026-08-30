@@ -44,12 +44,12 @@ export default async function ServicesPage() {
 
               <div className="space-y-4 max-w-4xl">
                 <h1 className="font-display font-extrabold text-5xl sm:text-7xl lg:text-8xl tracking-tight leading-[1.05] text-white">
-                  Connected digital <br />
-                  <span className="text-cw-gradient">growth services.</span>
+                  Integrated acquisition <br />
+                  <span className="text-cw-gradient">growth capabilities.</span>
                 </h1>
 
                 <p className="font-sans text-lg sm:text-xl text-slate-300 font-light leading-relaxed pt-2">
-                  Traditional agencies sell isolated marketing tasks. Creativee World delivers a connected growth system where web engineering, video production, local SEO, and paid acquisition compound to drive enterprise revenue.
+                  Explore Creativee World&apos;s 5 core growth modules—Web Development, Performance Ads, Social Media Strategy, Local SEO, and Video Production—engineered to generate qualified leads for Jaipur businesses.
                 </p>
               </div>
 

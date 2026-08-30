@@ -119,7 +119,6 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-[#07090E] text-slate-100 antialiased selection:bg-[#1769FF]/30 selection:text-white">
         <InitialLoader />
-        <CustomCursor />
         {children}
         <CreativeeAssistantBot />
       </body>

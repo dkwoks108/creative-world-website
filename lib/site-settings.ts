@@ -43,8 +43,8 @@ export const DEFAULT_SITE_SETTINGS: SiteSettings = {
   social_youtube: 'https://youtube.com/@creativeworld_in',
   social_facebook: 'https://facebook.com/creativeworld.in',
   social_x: 'https://x.com/creativeworld_in',
-  header_cta_label: 'Book Strategy Audit',
-  header_cta_href: '/contact',
+  header_cta_label: 'Free Growth Audit',
+  header_cta_href: '/growth-audit',
   footer_copyright: '© 2026 Creativee World Digital Agency. All rights reserved.',
 };
 

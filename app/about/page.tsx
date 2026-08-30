@@ -43,12 +43,12 @@ export default function AboutPage() {
 
               <div className="space-y-4 max-w-4xl">
                 <h1 className="font-display font-extrabold text-5xl sm:text-7xl lg:text-8xl tracking-tight leading-[1.05] text-white">
-                  Connected digital <br />
-                  <span className="text-cw-gradient">growth studio.</span>
+                  Engineered for <br />
+                  <span className="text-cw-gradient">business authority.</span>
                 </h1>
 
                 <p className="font-sans text-lg sm:text-xl text-slate-300 font-light leading-relaxed pt-2">
-                  {aboutData.tagline}
+                  Creativee World is a Jaipur-based digital growth partner. We combine technical search strategy, high-conversion web engineering, and commercial video production to turn market presence into predictable revenue.
                 </p>
               </div>
 
