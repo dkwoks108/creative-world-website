@@ -10,8 +10,9 @@ import { MaskReveal } from '@/components/motion/MaskReveal';
 import { servicesData } from '@/data/services';
 
 export function ServicesSection() {
+  const uniqueServices = Array.from(new Map(servicesData.map(s => [s.id, s])).values());
   const [activeIndex, setActiveIndex] = useState<number>(0);
-  const activeService = servicesData[activeIndex] || servicesData[0];
+  const activeService = uniqueServices[activeIndex] || uniqueServices[0];
 
   return (
     <MonochromeSection id="services" divider="thick" texture="grid">
@@ -37,7 +38,7 @@ export function ServicesSection() {
         <div className="hidden lg:grid grid-cols-12 gap-10 items-start">
           {/* Left Column: Numbered Service Selector List (5 cols) */}
           <div className="col-span-5 flex flex-col border-2 border-black divide-y-2 divide-black bg-white">
-            {servicesData.map((service, idx) => {
+            {uniqueServices.map((service, idx) => {
               const isActive = idx === activeIndex;
               return (
                 <button
@@ -138,7 +139,7 @@ export function ServicesSection() {
 
         {/* MOBILE STACKED EDITORIAL FLOW (Visible on Mobile/Tablet) */}
         <div className="grid grid-cols-1 gap-8 lg:hidden">
-          {servicesData.map((service) => (
+          {uniqueServices.map((service) => (
             <div
               key={service.id}
               className="p-6 border-2 border-black bg-white space-y-6"

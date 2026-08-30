@@ -10,8 +10,9 @@ import { CWBadge } from '@/components/ui/CWBadge';
 import { CWCard } from '@/components/ui/CWCard';
 
 export function InteractiveServicePanel() {
-  const [selectedServiceId, setSelectedServiceId] = useState<string>(servicesData[0].id);
-  const activeService = servicesData.find(s => s.id === selectedServiceId) || servicesData[0];
+  const uniqueServices = Array.from(new Map(servicesData.map(s => [s.id, s])).values());
+  const [selectedServiceId, setSelectedServiceId] = useState<string>(uniqueServices[0]?.id || 'website-development');
+  const activeService = uniqueServices.find(s => s.id === selectedServiceId) || uniqueServices[0];
 
   const serviceIcons: Record<string, any> = {
     'website-development': Code,
@@ -55,7 +56,7 @@ export function InteractiveServicePanel() {
 
         {/* Floating Service Pill Tabs */}
         <div className="flex flex-wrap gap-2.5">
-          {servicesData.map((svc) => {
+          {uniqueServices.map((svc) => {
             const Icon = serviceIcons[svc.id] || Layers;
             const isSelected = svc.id === selectedServiceId;
             return (
