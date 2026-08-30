@@ -21,28 +21,7 @@ export const metadata: Metadata = {
 };
 
 export default async function ServicesPage() {
-  let dbServices: any[] = [];
-  try {
-    dbServices = await prisma.service.findMany({
-      orderBy: { sortOrder: 'asc' },
-    });
-  } catch (e) {
-    console.error('Failed to load services from database:', e);
-  }
-
-  const listToRender = dbServices.length > 0
-    ? dbServices.map((s, idx) => ({
-        id: s.id,
-        number: `0${idx + 1}`,
-        kicker: s.category || 'Capability Offering',
-        title: s.title,
-        description: s.description,
-        outcomeStatement: s.pricing || 'High ROI Scalability',
-        deliverables: ['Custom Growth Blueprint', 'Dedicated Campaign Lead', 'Real-Time ROI Dashboard'],
-        slug: s.slug,
-        ctaLabel: `Explore ${s.title}`,
-      }))
-    : servicesData;
+  const listToRender = servicesData;
 
   return (
     <MotionProvider>

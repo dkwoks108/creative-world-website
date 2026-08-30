@@ -93,45 +93,60 @@ async function main() {
   }
 
   // 4. Seed Services
-  const servicesData = [
+  const dbServicesSeed = [
     {
-      name: 'Custom Web & App Engineering',
-      slug: 'custom-web-development',
-      description: 'Award-winning high performance Next.js & React web applications designed for conversion.',
-      icon: 'Code2',
+      name: 'Custom Website Development',
+      slug: 'website-development',
+      description: 'Custom React, Next.js, WordPress, and Shopify web applications engineered for speed, high conversion, and seamless user experience.',
+      icon: 'Code',
       sortOrder: 1,
-      features: JSON.stringify(['Next.js App Router', 'WebGL & 3D Interactivity', 'Full Headless CMS', 'WCAG AA Accessibility']),
+      features: JSON.stringify(['Custom Next.js & React Web Architecture', 'Mobile-First Responsive Design', 'Core Web Vitals & Page Speed (90+ score)', 'SEO-Friendly Headless CMS Integration']),
     },
     {
-      name: 'Search Intelligence & SEO',
-      slug: 'search-engine-optimization',
-      description: 'Data-driven Local SEO and technical search strategies to dominate organic rankings.',
-      icon: 'Search',
-      sortOrder: 2,
-      features: JSON.stringify(['Local Map Pack Dominance', 'Technical SEO Audits', 'AEO AI Search Optimization', 'Content Marketing']),
-    },
-    {
-      name: 'Performance Advertising & PPC',
+      name: 'Paid Advertising & Meta / Google Ads',
       slug: 'performance-marketing',
-      description: 'ROAS-focused paid campaigns across Google Ads, Meta, and LinkedIn.',
-      icon: 'TrendingUp',
-      sortOrder: 3,
-      features: JSON.stringify(['Google Search & Shopping Ads', 'Meta Reels & Feed Ads', 'Conversion Rate Optimization', 'Realtime Attribution']),
+      description: 'High-intent Google Search campaigns and targeted Meta ads (Instagram & Facebook) engineered to generate qualified customer leads.',
+      icon: 'Target',
+      sortOrder: 2,
+      features: JSON.stringify(['Google Search & PPC Campaigns', 'Meta Ads Geo & Interest Targeting', 'Conversion Rate Optimization', 'GA4 & Meta Pixel Attribution']),
     },
     {
-      name: 'Brand Direction & Visual Production',
-      slug: 'brand-identity-video',
-      description: 'Cinematic brand identity systems, video commercials, and visual storytelling.',
-      icon: 'Video',
+      name: 'Social Media Marketing',
+      slug: 'social-media-marketing',
+      description: 'Strategic social content, visual brand identity, content calendars, and community management engineered for organic brand growth.',
+      icon: 'Share2',
+      sortOrder: 3,
+      features: JSON.stringify(['Monthly Content Calendars', 'Custom Graphic Design & Copywriting', 'Organic Community Moderation', 'Monthly Analytics Reports']),
+    },
+    {
+      name: 'SEO & Search Engine Intelligence',
+      slug: 'seo',
+      description: 'Technical search optimization, site speed enhancement, local Jaipur keyword strategies, and Google Business Profile optimization.',
+      icon: 'Search',
       sortOrder: 4,
-      features: JSON.stringify(['Cinematic Video Production', '3D Visual Assets', 'Brand Architecture', 'Social Content Suites']),
+      features: JSON.stringify(['Technical SEO Audit & Speed Tuning', 'On-Page Keyword Hierarchy', 'Google Business Profile & Map Pack', 'Schema.org Structured Data']),
+    },
+    {
+      name: 'Video Editing & Production',
+      slug: 'video-editing',
+      description: 'Engaging Instagram Reels, YouTube Shorts, explainer videos, kinetic typography, and motion graphics built to capture brand attention.',
+      icon: 'Video',
+      sortOrder: 5,
+      features: JSON.stringify(['Instagram Reels & Shorts Editing', 'Kinetic Typography & Motion Graphics', 'Professional Sound Design & Mixing', 'Cinematic Color Grading']),
     },
   ];
 
-  for (const s of servicesData) {
+  for (const s of dbServicesSeed) {
     await prisma.service.upsert({
       where: { slug: s.slug },
-      update: {},
+      update: {
+        name: s.name,
+        description: s.description,
+        icon: s.icon,
+        sortOrder: s.sortOrder,
+        features: s.features,
+        status: 'Published',
+      },
       create: {
         name: s.name,
         slug: s.slug,
