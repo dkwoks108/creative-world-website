@@ -7,16 +7,43 @@ import { MotionProvider } from '@/components/motion/MotionProvider';
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll';
 import { CWBadge } from '@/components/ui/CWBadge';
 import { GrowthAuditForm } from '@/components/ui/GrowthAuditForm';
+import { FAQSection } from '@/components/ui/FAQSection';
 import { contactData } from '@/data/contact';
 
 export const metadata: Metadata = {
   title: 'Contact Creativee World | Digital Growth Agency Jaipur',
   description: 'Connect with Creativee World in Jaipur for performance marketing, local SEO, website development, and business growth audits.',
+  keywords: [
+    'contact digital marketing agency Jaipur',
+    'Creativee World Jaipur address',
+    'growth audit request Jaipur',
+    'digital agency inquiry Jaipur',
+    'WhatsApp marketing agency Jaipur',
+  ],
   openGraph: {
     title: 'Contact Creativee World | Growth Agency Jaipur',
-    description: 'Direct agency contact, location details, and Growth Audit requests in Jaipur.',
+    description: 'Direct agency contact, office details, and Growth Audit requests in Jaipur.',
+    url: 'https://creativeworld.in/contact',
+    siteName: 'Creativee World',
+    locale: 'en_IN',
+    type: 'website',
+    images: [{ url: '/brand/og-image.png', width: 1200, height: 630, alt: 'Contact Creativee World' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Creativee World | Growth Agency Jaipur',
+    description: 'Get in touch with Creativee World in Jaipur for performance marketing and web development.',
+    images: ['/brand/og-image.png'],
+  },
+  alternates: {
+    canonical: 'https://creativeworld.in/contact',
   },
 };
+
+const contactFaqsFormatted = contactData.faqs.map((f) => ({
+  question: f.question,
+  answer: f.answer,
+}));
 
 export default function ContactPage() {
   return (
@@ -124,37 +151,18 @@ export default function ContactPage() {
                   </h2>
                 </div>
 
-                  <GrowthAuditForm />
+                <GrowthAuditForm />
               </div>
             </div>
           </section>
 
-          {/* 3. CONTACT FAQS */}
-          <section className="relative z-10 py-24 bg-slate-950/80 border-t border-white/10">
-            <div className="max-w-4xl mx-auto px-6 sm:px-8 space-y-12">
-              <div className="space-y-3 text-center">
-                <span className="font-mono text-xs uppercase tracking-widest text-[#00CFFF] font-semibold block">
-                  INQUIRIES & SUPPORT
-                </span>
-                <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white">
-                  Frequently asked questions
-                </h2>
-              </div>
-
-              <div className="space-y-4">
-                {contactData.faqs.map((faq, idx) => (
-                  <div key={idx} className="p-6 rounded-2xl bg-slate-900/60 border border-white/10 space-y-2">
-                    <h3 className="font-display font-bold text-lg text-white">
-                      {faq.question}
-                    </h3>
-                    <p className="text-sm text-slate-300 font-light leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
+          {/* 3. CONTACT FAQS WITH JSON-LD SCHEMA */}
+          <FAQSection
+            badge="INQUIRIES & SUPPORT FAQ"
+            title="Frequently Asked Inquiry Questions"
+            description="Clear details on our consultation process, audit turnarounds, and direct communication channels."
+            faqs={contactFaqsFormatted}
+          />
         </main>
 
         <Footer />

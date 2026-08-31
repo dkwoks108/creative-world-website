@@ -1,23 +1,64 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { ShieldCheck, HelpCircle, Sparkles, Check, ArrowUpRight } from 'lucide-react';
+import { ShieldCheck, Sparkles, Check, ArrowUpRight } from 'lucide-react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { MotionProvider } from '@/components/motion/MotionProvider';
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll';
 import { CWBadge } from '@/components/ui/CWBadge';
 import { CWButton } from '@/components/ui/CWButton';
+import { FAQSection } from '@/components/ui/FAQSection';
 import { packagesData } from '@/data/packages';
 
 export const metadata: Metadata = {
   title: 'Growth Packages & Pricing | Creativee World Jaipur',
-  description: 'Structured monthly growth packages for Jaipur businesses with custom quotation per month tailored to your business stage.',
+  description: 'Structured, transparent monthly marketing packages and custom proposals for Jaipur businesses tailored to your growth stage.',
+  keywords: [
+    'digital marketing packages Jaipur',
+    'SEO pricing Jaipur',
+    'Meta ads monthly retainer Jaipur',
+    'Google Ads agency pricing Jaipur',
+    'digital marketing agency cost Jaipur',
+  ],
   openGraph: {
-    title: 'Growth Packages & Custom Quotation | Creativee World Jaipur',
-    description: 'Structured, transparent monthly marketing packages with custom quotation tailored to your business stage in Jaipur.',
+    title: 'Growth Packages & Pricing | Creativee World Jaipur',
+    description: 'Structured, transparent monthly marketing packages with custom proposals tailored to your business stage in Jaipur.',
+    url: 'https://creativeworld.in/packages',
+    siteName: 'Creativee World',
+    locale: 'en_IN',
+    type: 'website',
+    images: [{ url: '/brand/og-image.png', width: 1200, height: 630, alt: 'Creativee World Packages & Pricing' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Growth Packages & Pricing | Creativee World Jaipur',
+    description: 'Transparent monthly retainers and custom scopes for performance advertising, SEO, and web development.',
+    images: ['/brand/og-image.png'],
+  },
+  alternates: {
+    canonical: 'https://creativeworld.in/packages',
   },
 };
+
+const packagesFaqs = [
+  {
+    question: 'How is ad spend handled for Google Ads & Meta Ads?',
+    answer: 'Ad budget is paid directly to Google or Meta via your company’s business ad account. Creativee World manages campaign strategy, audience targeting, ad creatives, video editing, copywriting, and bid optimization transparently.',
+  },
+  {
+    question: 'Are there any hidden setup fees?',
+    answer: 'No. All setup fees, tracking pixel configurations, and initial audits are clearly itemized in your custom proposal before work begins.',
+  },
+  {
+    question: 'Can we request custom deliverables outside standard packages?',
+    answer: 'Yes! We construct custom package scopes for multi-location businesses, enterprise real estate projects, and specialized e-commerce brands.',
+  },
+  {
+    question: 'What contract length is required for monthly growth retainers?',
+    answer: 'Our growth packages operate on flexible monthly retainers with standard 30-day notice, allowing your business complete operational agility without rigid long-term lock-ins.',
+  },
+];
 
 export default function PackagesPage() {
   return (
@@ -35,7 +76,7 @@ export default function PackagesPage() {
               <RevealOnScroll variant="fade-up">
                 <CWBadge variant="cyan">
                   <Sparkles size={13} />
-                  <span>Growth Packages & Custom Quotation</span>
+                  <span>Growth Packages &amp; Custom Quotation</span>
                 </CWBadge>
               </RevealOnScroll>
 
@@ -71,7 +112,7 @@ export default function PackagesPage() {
           <section className="relative z-10 py-24 max-w-7xl mx-auto px-6 sm:px-8 space-y-12">
             <div className="flex items-center justify-between border-b border-white/10 pb-6">
               <span className="font-mono text-xs text-[#00CFFF] uppercase tracking-widest font-semibold">
-                ● RETAINER & PROJECT PACKAGES
+                ● RETAINER &amp; PROJECT PACKAGES
               </span>
             </div>
 
@@ -143,46 +184,13 @@ export default function PackagesPage() {
             </div>
           </section>
 
-          {/* 4. COMMERCIAL FAQS */}
-          <section className="relative z-10 py-24 bg-slate-950/80 border-t border-white/10">
-            <div className="max-w-4xl mx-auto px-6 sm:px-8 space-y-12">
-              <div className="space-y-4 text-center">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-[#00CFFF]">
-                  <HelpCircle size={14} />
-                  <span>Commercial & Scope FAQs</span>
-                </div>
-                <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white">
-                  Frequently asked questions
-                </h2>
-              </div>
-
-              <div className="space-y-4">
-                {[
-                  {
-                    q: 'How is ad spend handled for Google Ads & Meta Ads?',
-                    a: 'Ad budget is paid directly to Google or Meta via your business ad account. Creativee World manages the strategy, targeting, creative assets, video editing, copywriting, and bid optimization transparently.',
-                  },
-                  {
-                    q: 'Are there any hidden setup fees?',
-                    a: 'No. All setup fees, initial audits, and tracking configuration are clearly outlined in your initial package agreement before work begins.',
-                  },
-                  {
-                    q: 'Can we request custom deliverables outside standard packages?',
-                    a: 'Yes. We build custom package scopes for multi-location businesses, enterprise real estate projects, and specialized e-commerce brands.',
-                  },
-                ].map((faq, fIdx) => (
-                  <div key={fIdx} className="p-6 rounded-2xl bg-slate-900/60 border border-white/10 space-y-2">
-                    <h3 className="font-display font-bold text-lg text-white">
-                      {faq.q}
-                    </h3>
-                    <p className="text-sm text-slate-300 font-light leading-relaxed">
-                      {faq.a}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
+          {/* 4. COMMERCIAL FAQS WITH JSON-LD SCHEMA */}
+          <FAQSection
+            badge="COMMERCIAL & SCOPE FAQ"
+            title="Frequently Asked Billing & Scope Questions"
+            description="Clear guidelines on ad account management, setup fees, and custom retainer scope."
+            faqs={packagesFaqs}
+          />
 
           {/* 5. BOTTOM CTA */}
           <section className="relative z-10 py-24 max-w-7xl mx-auto px-6 sm:px-8">

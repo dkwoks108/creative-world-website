@@ -2,24 +2,61 @@ import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ShieldCheck, Target, Zap, Sparkles, ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import { ShieldCheck, Target, Zap, Sparkles, ArrowUpRight } from 'lucide-react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { MotionProvider } from '@/components/motion/MotionProvider';
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll';
 import { CWBadge } from '@/components/ui/CWBadge';
 import { CWButton } from '@/components/ui/CWButton';
+import { FAQSection } from '@/components/ui/FAQSection';
 import { aboutData } from '@/data/about';
 import { siteConfig } from '@/data/site';
 
 export const metadata: Metadata = {
   title: 'About Creativee World | Digital Growth Agency in Jaipur',
   description: 'Creativee World is a result-driven digital growth agency in Jaipur focused on connected search visibility, performance marketing, brand content, and web conversion.',
+  keywords: [
+    'about Creativee World Jaipur',
+    'digital marketing agency Jaipur',
+    'growth agency Jaipur team',
+    'performance marketing agency Jaipur',
+    'best digital agency Jaipur',
+  ],
   openGraph: {
     title: 'About Creativee World | Digital Growth Partner in Jaipur',
     description: 'Discover Creativee World\'s mission, growth philosophy, and connected digital marketing systems for Jaipur businesses.',
+    url: 'https://creativeworld.in/about',
+    siteName: 'Creativee World',
+    locale: 'en_IN',
+    type: 'website',
+    images: [{ url: '/brand/og-image.png', width: 1200, height: 630, alt: 'About Creativee World Jaipur' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Creativee World | Digital Growth Partner Jaipur',
+    description: 'Engineered for business authority. Learn about Creativee World Jaipur’s growth philosophy.',
+    images: ['/brand/og-image.png'],
+  },
+  alternates: {
+    canonical: 'https://creativeworld.in/about',
   },
 };
+
+const aboutFaqs = [
+  {
+    question: 'Where is Creativee World based?',
+    answer: 'Creativee World is based in Jaipur, Rajasthan. We serve businesses across Jaipur, Rajasthan, and nationwide across India.',
+  },
+  {
+    question: 'What makes Creativee World different from traditional marketing agencies in Jaipur?',
+    answer: 'Traditional agencies sell disconnected services like social posts or simple design. We operate as a connected growth partner, unifying technical search strategy, high-conversion web engineering, performance ads, and closed-loop lead tracking.',
+  },
+  {
+    question: 'How do I start working with Creativee World?',
+    answer: 'You can request a free Growth Audit on our website. Our team will review your business presence, current search rankings, and ad channels, then schedule a 1-on-1 strategy briefing.',
+  },
+];
 
 export default function AboutPage() {
   return (
@@ -37,7 +74,7 @@ export default function AboutPage() {
               <RevealOnScroll variant="fade-up">
                 <CWBadge variant="cyan">
                   <Sparkles size={13} />
-                  <span>Agency Overview & Philosophy</span>
+                  <span>Agency Overview &amp; Philosophy</span>
                 </CWBadge>
               </RevealOnScroll>
 
@@ -152,7 +189,15 @@ export default function AboutPage() {
             </div>
           </section>
 
-          {/* 4. BOTTOM CTA */}
+          {/* 4. ABOUT FAQS WITH JSON-LD SCHEMA */}
+          <FAQSection
+            badge="ABOUT AGENCY FAQ"
+            title="Questions About Our Agency"
+            description="Learn more about our team, location, and collaborative approach."
+            faqs={aboutFaqs}
+          />
+
+          {/* 5. BOTTOM CTA */}
           <section className="relative z-10 py-24 max-w-7xl mx-auto px-6 sm:px-8">
             <div className="rounded-3xl p-10 md:p-16 bg-gradient-to-tr from-[#1769FF]/20 via-[#673BFF]/20 to-[#D900FF]/20 border border-white/20 text-center space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 font-mono text-xs text-[#00CFFF]">

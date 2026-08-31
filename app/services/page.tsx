@@ -8,17 +8,59 @@ import { MotionProvider } from '@/components/motion/MotionProvider';
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll';
 import { CWBadge } from '@/components/ui/CWBadge';
 import { CWButton } from '@/components/ui/CWButton';
+import { FAQSection } from '@/components/ui/FAQSection';
 import { servicesData } from '@/data/services';
-import { prisma } from '@/lib/site-settings';
 
 export const metadata: Metadata = {
   title: 'Digital Marketing & Growth Services in Jaipur | Creativee World',
-  description: 'Explore Creativee World\'s core growth services: Performance Marketing, Local SEO, Social Media & Reels, Business Websites, and Integrated Growth Packages in Jaipur.',
+  description: 'Explore Creativee World\'s core growth services: Performance Marketing, Local SEO, Social Media & Reels, Business Website Engineering, and Integrated Growth Packages in Jaipur.',
+  keywords: [
+    'digital marketing services Jaipur',
+    'SEO services Jaipur',
+    'Meta ads agency Jaipur',
+    'Google Ads marketing Jaipur',
+    'website development services Jaipur',
+    'Instagram reels production Jaipur',
+    'local search marketing Jaipur',
+  ],
   openGraph: {
-    title: 'Digital Marketing Services in Jaipur | Creativee World',
+    title: 'Digital Marketing & Growth Services in Jaipur | Creativee World',
     description: 'Connected digital growth services engineered to drive qualified leads, local search dominance, and business growth for Jaipur companies.',
+    url: 'https://creativeworld.in/services',
+    siteName: 'Creativee World',
+    locale: 'en_IN',
+    type: 'website',
+    images: [{ url: '/brand/og-image.png', width: 1200, height: 630, alt: 'Creativee World Services' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Digital Growth Services Jaipur | Creativee World',
+    description: 'Custom web software, local search SEO, Meta/Google PPC campaigns, and commercial video production.',
+    images: ['/brand/og-image.png'],
+  },
+  alternates: {
+    canonical: 'https://creativeworld.in/services',
   },
 };
+
+const servicesFaqs = [
+  {
+    question: 'Which services are included in Creativee World’s growth modules?',
+    answer: 'We provide 5 core integrated services: Custom Website Development (Next.js/React/WordPress), Performance Marketing (Meta & Google Ads), Local & National SEO, Social Media Brand Management, and Commercial Video Production for Instagram Reels & YouTube.',
+  },
+  {
+    question: 'Can I select individual services or do I need an integrated package?',
+    answer: 'You can hire Creativee World for single specialized services (e.g., custom website engineering or local SEO) or opt for integrated retainer packages for full acquisition growth.',
+  },
+  {
+    question: 'What technology stack do you use for website development?',
+    answer: 'We build enterprise web software using Next.js 14, React, TypeScript, TailwindCSS, and Prisma SQLite/PostgreSQL, ensuring sub-2 second load times and top Core Web Vitals scores.',
+  },
+  {
+    question: 'How do you measure and report service deliverables?',
+    answer: 'We provide real-time monthly dossiers tracking key business metrics: cost-per-lead (CPL), search keyword position gains, return on ad spend (ROAS), and converted CRM inquiries.',
+  },
+];
 
 export default async function ServicesPage() {
   const listToRender = servicesData;
@@ -38,7 +80,7 @@ export default async function ServicesPage() {
               <RevealOnScroll variant="fade-up">
                 <CWBadge variant="cyan">
                   <Sparkles size={13} />
-                  <span>Digital Services & Capabilities</span>
+                  <span>Digital Services &amp; Capabilities</span>
                 </CWBadge>
               </RevealOnScroll>
 
@@ -122,7 +164,15 @@ export default async function ServicesPage() {
             ))}
           </section>
 
-          {/* 3. BOTTOM CTA SECTION */}
+          {/* 3. SERVICES FAQ SECTION WITH JSON-LD SCHEMA */}
+          <FAQSection
+            badge="SERVICES & CAPABILITIES FAQ"
+            title="Service & Execution Questions"
+            description="Clear details on our deliverables, technology stack, and campaign reporting."
+            faqs={servicesFaqs}
+          />
+
+          {/* 4. BOTTOM CTA SECTION */}
           <section className="relative z-10 py-24 bg-slate-950/80 border-t border-white/10 text-center">
             <div className="max-w-3xl mx-auto px-6 space-y-6">
               <span className="font-mono text-xs uppercase tracking-widest text-[#00CFFF] font-semibold block">

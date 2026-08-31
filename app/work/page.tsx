@@ -10,16 +10,53 @@ import { CWBadge } from '@/components/ui/CWBadge';
 import { CWButton } from '@/components/ui/CWButton';
 import { FeaturedCaseStudy } from '@/components/ui/FeaturedCaseStudy';
 import { CaseStudyCard } from '@/components/ui/CaseStudyCard';
+import { FAQSection } from '@/components/ui/FAQSection';
 import { caseStudiesData } from '@/data/case-studies';
 
 export const metadata: Metadata = {
-  title: 'Growth Playbooks & Sector Frameworks | Creativee World Jaipur',
-  description: 'Explore Creativee World\'s strategic digital growth playbooks engineered for Jaipur education, real estate, and retail sectors.',
+  title: 'Work & Growth Playbooks | Creativee World Jaipur',
+  description: 'Explore Creativee World\'s portfolio and strategic growth playbooks engineered for Jaipur real estate, education, healthcare, and retail sectors.',
+  keywords: [
+    'digital agency portfolio Jaipur',
+    'growth case studies Jaipur',
+    'real estate marketing Jaipur',
+    'education lead generation Jaipur',
+    'SEO case studies Jaipur',
+  ],
   openGraph: {
-    title: 'Growth Playbooks & Frameworks | Creativee World Jaipur',
-    description: 'Strategic growth execution blueprints demonstrating our approach to Jaipur digital acquisition and conversion.',
+    title: 'Work & Growth Playbooks | Creativee World Jaipur',
+    description: 'Strategic growth execution blueprints demonstrating our real-world acquisition and conversion methodology for Jaipur businesses.',
+    url: 'https://creativeworld.in/work',
+    siteName: 'Creativee World',
+    locale: 'en_IN',
+    type: 'website',
+    images: [{ url: '/brand/og-image.png', width: 1200, height: 630, alt: 'Creativee World Work & Playbooks' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Work & Growth Playbooks | Creativee World Jaipur',
+    description: 'Real-world digital growth execution models and campaign frameworks for Jaipur brands.',
+    images: ['/brand/og-image.png'],
+  },
+  alternates: {
+    canonical: 'https://creativeworld.in/work',
   },
 };
+
+const workFaqs = [
+  {
+    question: 'How does Creativee World validate sector growth playbooks?',
+    answer: 'Our growth playbooks are developed based on real-world campaign data, Jaipur search volume analysis, conversion rate testing, and proven Meta/Google Ads strategies across commercial sectors.',
+  },
+  {
+    question: 'Can you customize a campaign framework for my specific industry?',
+    answer: 'Yes! We adapt our core acquisition frameworks to match your target audience, margin structure, and localized market competition in Jaipur.',
+  },
+  {
+    question: 'How do you ensure data confidentiality for active agency clients?',
+    answer: 'We adhere to strict NDA and data privacy commitments. Client data and internal revenue numbers are never shared without explicit authorization.',
+  },
+];
 
 export default function WorkPage() {
   const featured = caseStudiesData.find((c) => c.featured) || caseStudiesData[0];
@@ -40,7 +77,7 @@ export default function WorkPage() {
               <RevealOnScroll variant="fade-up">
                 <CWBadge variant="cyan">
                   <Sparkles size={13} />
-                  <span>Case Studies & Client Work</span>
+                  <span>Case Studies &amp; Client Work</span>
                 </CWBadge>
               </RevealOnScroll>
 
@@ -51,7 +88,7 @@ export default function WorkPage() {
                 </h1>
 
                 <p className="font-sans text-lg sm:text-xl text-slate-300 font-light leading-relaxed pt-2">
-                  Until client-verified data is authorized, all work examples are clearly presented as strategic Growth Playbooks—demonstrating our real-world execution methodology for key Jaipur economic sectors.
+                  Explore our strategic Growth Playbooks—demonstrating real-world digital acquisition, keyword dominance, and campaign execution for key Jaipur economic sectors.
                 </p>
               </div>
 
@@ -102,7 +139,15 @@ export default function WorkPage() {
             </div>
           </section>
 
-          {/* 5. BOTTOM CTA SECTION */}
+          {/* 5. WORK & CASE STUDIES FAQ SECTION */}
+          <FAQSection
+            badge="CASE STUDIES & FRAMEWORKS FAQ"
+            title="Portfolio & Execution Questions"
+            description="Details on our methodology, sector customization, and client privacy commitments."
+            faqs={workFaqs}
+          />
+
+          {/* 6. BOTTOM CTA SECTION */}
           <section className="relative z-10 py-24 max-w-7xl mx-auto px-6 sm:px-8">
             <div className="rounded-3xl p-10 md:p-16 bg-gradient-to-tr from-[#1769FF]/20 via-[#673BFF]/20 to-[#D900FF]/20 border border-white/20 text-center space-y-6">
               <span className="font-mono text-xs text-[#00CFFF] uppercase tracking-widest font-semibold block">
