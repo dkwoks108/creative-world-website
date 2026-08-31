@@ -7,13 +7,13 @@ async function main() {
   console.log('Seeding Creativee World Admin & Content database...');
 
   // 1. Seed Admin User
-  const defaultEmail = process.env.ADMIN_EMAIL || 'admin@creativeworld.in';
-  const defaultPassword = 'CreativeeAdmin2026!';
+  const defaultEmail = process.env.ADMIN_EMAIL || 'xyz123@gmail.com';
+  const defaultPassword = process.env.ADMIN_PASSWORD || '1234asdf1234@';
   const hashedPassword = await bcrypt.hash(defaultPassword, 10);
 
   const admin = await prisma.adminUser.upsert({
     where: { email: defaultEmail },
-    update: { passwordHash: hashedPassword },
+    update: { email: defaultEmail, passwordHash: hashedPassword },
     create: {
       email: defaultEmail,
       name: 'Agency Admin',
