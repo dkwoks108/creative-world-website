@@ -78,7 +78,7 @@ export default function AdminLogin() {
                     required
                     autoComplete="email"
                     className="w-full pl-10 pr-4 py-3 bg-[#0D121F] border border-[#1E293B] rounded-xl text-white placeholder-slate-600 focus:outline-none focus:ring-1 focus:ring-cyan-500/50 focus:border-cyan-500 transition-all text-sm"
-                    placeholder="admin@creativeeworld.com"
+                    placeholder="Enter your admin email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
@@ -100,7 +100,7 @@ export default function AdminLogin() {
                     required
                     autoComplete="current-password"
                     className="w-full pl-10 pr-4 py-3 bg-[#0D121F] border border-[#1E293B] rounded-xl text-white placeholder-slate-600 focus:outline-none focus:ring-1 focus:ring-cyan-500/50 focus:border-cyan-500 transition-all text-sm"
-                    placeholder="••••••••••••"
+                    placeholder="Enter your password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
