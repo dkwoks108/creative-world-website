@@ -10,6 +10,7 @@ import { CWButton } from '@/components/ui/CWButton';
 const formSchema = z.object({
   fullName: z.string().min(2, 'Full name must be at least 2 characters.'),
   email: z.string().email('Please enter a valid business email address.'),
+  phone: z.string().optional(),
   website: z.string().optional(),
   primaryGoal: z.string().min(1, 'Please select your primary growth goal.'),
   budgetRange: z.string().optional(),
@@ -35,6 +36,7 @@ export function GrowthAuditForm() {
     defaultValues: {
       fullName: '',
       email: '',
+      phone: '',
       website: '',
       primaryGoal: 'Performance Marketing',
       budgetRange: 'Not sure yet',
@@ -44,7 +46,7 @@ export function GrowthAuditForm() {
   });
 
   const handleNextStep = async () => {
-    const isStep1Valid = await trigger(['fullName', 'email', 'primaryGoal']);
+    const isStep1Valid = await trigger(['fullName', 'email', 'phone', 'primaryGoal']);
     if (isStep1Valid) {
       setStep(2);
     }
@@ -67,7 +69,7 @@ export function GrowthAuditForm() {
 
   if (isSubmitted) {
     return (
-      <div className="p-8 sm:p-12 rounded-3xl border border-white/15 bg-slate-900/90 text-center space-y-6 shadow-2xl backdrop-blur-2xl">
+      <div className="p-6 sm:p-10 md:p-12 rounded-3xl border border-white/15 bg-slate-900/90 text-center space-y-6 shadow-2xl backdrop-blur-2xl">
         <div className="w-16 h-16 rounded-2xl bg-cw-gradient text-white flex items-center justify-center mx-auto shadow-cw-glow">
           <Check size={32} />
         </div>
@@ -80,7 +82,7 @@ export function GrowthAuditForm() {
             Your Growth Audit Request Is In.
           </h3>
           <p className="text-sm text-slate-300 font-light leading-relaxed">
-            We will review your submission details and analyze your growth opportunities. Expect a direct email from our strategic team within 24 hours.
+            We will review your submission details and analyze your growth opportunities. Expect a direct contact response from our strategic team within 24 hours.
           </p>
         </div>
 
@@ -95,7 +97,7 @@ export function GrowthAuditForm() {
     <form
       id="audit-form"
       onSubmit={handleSubmit(onSubmit)}
-      className="p-8 sm:p-12 rounded-3xl border border-white/15 bg-slate-900/80 backdrop-blur-2xl space-y-6 shadow-2xl"
+      className="p-5 sm:p-8 md:p-10 rounded-3xl border border-white/15 bg-slate-900/80 backdrop-blur-2xl space-y-6 shadow-2xl"
     >
       {/* Form Progress Indicator */}
       <div className="flex items-center justify-between border-b border-white/10 pb-4">
@@ -126,7 +128,7 @@ export function GrowthAuditForm() {
             <input
               {...register('fullName')}
               placeholder="e.g. Sarah Jenkins"
-              className="w-full px-4 py-3.5 rounded-2xl border border-white/15 bg-slate-950/80 text-white placeholder-slate-500 text-sm font-sans focus:outline-none focus:border-[#00CFFF] transition-colors"
+              className="w-full px-4 py-3.5 rounded-2xl border border-white/15 bg-slate-950/80 text-white placeholder-slate-500 text-base sm:text-sm font-sans focus:outline-none focus:border-[#00CFFF] transition-colors"
             />
             {errors.fullName && (
               <span className="text-xs font-mono text-rose-400 mt-1.5 block">[!] {errors.fullName.message}</span>
@@ -141,10 +143,27 @@ export function GrowthAuditForm() {
               {...register('email')}
               type="email"
               placeholder="sarah@company.com"
-              className="w-full px-4 py-3.5 rounded-2xl border border-white/15 bg-slate-950/80 text-white placeholder-slate-500 text-sm font-sans focus:outline-none focus:border-[#00CFFF] transition-colors"
+              className="w-full px-4 py-3.5 rounded-2xl border border-white/15 bg-slate-950/80 text-white placeholder-slate-500 text-base sm:text-sm font-sans focus:outline-none focus:border-[#00CFFF] transition-colors"
             />
             {errors.email && (
               <span className="text-xs font-mono text-rose-400 mt-1.5 block">[!] {errors.email.message}</span>
+            )}
+          </div>
+
+          <div>
+            <label className="block text-xs font-mono uppercase text-slate-300 mb-2 font-semibold tracking-wider">
+              PHONE / WHATSAPP NUMBER
+            </label>
+            <input
+              {...register('phone')}
+              type="tel"
+              inputMode="tel"
+              autoComplete="tel"
+              placeholder="e.g. +91 73571 59122"
+              className="w-full px-4 py-3.5 rounded-2xl border border-white/15 bg-slate-950/80 text-white placeholder-slate-500 text-base sm:text-sm font-sans focus:outline-none focus:border-[#00CFFF] transition-colors"
+            />
+            {errors.phone && (
+              <span className="text-xs font-mono text-rose-400 mt-1.5 block">[!] {errors.phone.message}</span>
             )}
           </div>
 
@@ -155,7 +174,7 @@ export function GrowthAuditForm() {
             <input
               {...register('website')}
               placeholder="https://company.com"
-              className="w-full px-4 py-3.5 rounded-2xl border border-white/15 bg-slate-950/80 text-white placeholder-slate-500 text-sm font-sans focus:outline-none focus:border-[#00CFFF] transition-colors"
+              className="w-full px-4 py-3.5 rounded-2xl border border-white/15 bg-slate-950/80 text-white placeholder-slate-500 text-base sm:text-sm font-sans focus:outline-none focus:border-[#00CFFF] transition-colors"
             />
           </div>
 
@@ -165,7 +184,7 @@ export function GrowthAuditForm() {
             </label>
             <select
               {...register('primaryGoal')}
-              className="w-full px-4 py-3.5 rounded-2xl border border-white/15 bg-slate-950 text-white text-sm font-sans focus:outline-none focus:border-[#00CFFF] transition-colors cursor-pointer"
+              className="w-full px-4 py-3.5 rounded-2xl border border-white/15 bg-slate-950 text-white text-base sm:text-sm font-sans focus:outline-none focus:border-[#00CFFF] transition-colors cursor-pointer"
             >
               <option value="Performance Marketing">Performance Marketing & Paid Ads (Google / Meta)</option>
               <option value="Local SEO & Search">SEO & Local Search Visibility (Jaipur Focus)</option>
@@ -198,7 +217,7 @@ export function GrowthAuditForm() {
             </label>
             <select
               {...register('budgetRange')}
-              className="w-full px-4 py-3.5 rounded-2xl border border-white/15 bg-slate-950 text-white text-sm font-sans focus:outline-none focus:border-[#00CFFF] transition-colors cursor-pointer"
+              className="w-full px-4 py-3.5 rounded-2xl border border-white/15 bg-slate-950 text-white text-base sm:text-sm font-sans focus:outline-none focus:border-[#00CFFF] transition-colors cursor-pointer"
             >
               <option value="Starter (₹7.9k–₹13k/mo)">Starter Package (₹7,999 – ₹12,999 / month)</option>
               <option value="Growth (₹15k–₹25k/mo)">Growth Package (₹15,000 – ₹25,000 / month)</option>
@@ -214,7 +233,7 @@ export function GrowthAuditForm() {
             </label>
             <select
               {...register('timeline')}
-              className="w-full px-4 py-3.5 rounded-2xl border border-white/15 bg-slate-950 text-white text-sm font-sans focus:outline-none focus:border-[#00CFFF] transition-colors cursor-pointer"
+              className="w-full px-4 py-3.5 rounded-2xl border border-white/15 bg-slate-950 text-white text-base sm:text-sm font-sans focus:outline-none focus:border-[#00CFFF] transition-colors cursor-pointer"
             >
               <option value="As soon as possible">As soon as possible</option>
               <option value="Within 30 days">Within 30 days</option>
@@ -231,7 +250,7 @@ export function GrowthAuditForm() {
               {...register('notes')}
               rows={3}
               placeholder="What are your current growth bottlenecks?"
-              className="w-full px-4 py-3.5 rounded-2xl border border-white/15 bg-slate-950/80 text-white placeholder-slate-500 text-sm font-sans focus:outline-none focus:border-[#00CFFF] transition-colors resize-none"
+              className="w-full px-4 py-3.5 rounded-2xl border border-white/15 bg-slate-950/80 text-white placeholder-slate-500 text-base sm:text-sm font-sans focus:outline-none focus:border-[#00CFFF] transition-colors resize-none"
             />
           </div>
 

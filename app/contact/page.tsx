@@ -124,9 +124,7 @@ export default function ContactPage() {
                   </h2>
                 </div>
 
-                <div className="p-8 rounded-3xl bg-slate-900/80 border border-white/15">
                   <GrowthAuditForm />
-                </div>
               </div>
             </div>
           </section>

@@ -430,7 +430,7 @@ export function CreativeeAssistantBot() {
                           placeholder="Your Name"
                           value={leadForm.name}
                           onChange={(e) => setLeadForm({ ...leadForm, name: e.target.value })}
-                          className="w-full px-3.5 py-2 rounded-xl bg-[#05070B] border border-white/15 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#00CFFF]"
+                          className="w-full px-3.5 py-2 rounded-xl bg-[#05070B] border border-white/15 text-base sm:text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#00CFFF]"
                         />
                         <input
                           type="tel"
@@ -438,7 +438,7 @@ export function CreativeeAssistantBot() {
                           placeholder="Phone / WhatsApp Number"
                           value={leadForm.phone}
                           onChange={(e) => setLeadForm({ ...leadForm, phone: e.target.value })}
-                          className="w-full px-3.5 py-2 rounded-xl bg-[#05070B] border border-white/15 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#00CFFF]"
+                          className="w-full px-3.5 py-2 rounded-xl bg-[#05070B] border border-white/15 text-base sm:text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#00CFFF]"
                         />
                         <button
                           type="submit"
@@ -497,7 +497,7 @@ export function CreativeeAssistantBot() {
               value={inputVal}
               onChange={(e) => setInputVal(e.target.value)}
               placeholder="Type your inquiry or message..."
-              className="flex-1 px-4 py-2.5 rounded-full bg-[#05070B] border border-white/15 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#00CFFF]"
+              className="flex-1 px-4 py-2.5 rounded-full bg-[#05070B] border border-white/15 text-base sm:text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#00CFFF]"
             />
             <button
               type="submit"

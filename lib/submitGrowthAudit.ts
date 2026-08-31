@@ -1,6 +1,7 @@
 export interface GrowthAuditPayload {
   fullName: string;
   email: string;
+  phone?: string;
   website?: string;
   primaryGoal: string;
   budgetRange?: string;
